@@ -1,0 +1,5513 @@
+:: StoryTitle
+Greenpeace X Coney Update
+
+
+:: StoryData
+{
+	"ifid": "3ADB110E-9ADA-4B6F-B0B9-1FA69E09EEC3",
+	"format": "SugarCube",
+	"format-version": "2.36.1",
+	"start": "landing",
+	"zoom": 0.6
+}
+
+
+:: Story Stylesheet [stylesheet]
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;700&display=swap');
+@import url("./styles/generics.css");
+@import url("./styles/styles.css");
+
+
+
+
+
+:: Story JavaScript [script]
+$('#ui-bar').remove();
+$(document.head).find('#style-ui-bar').remove();
+// TYPEWRITER FN
+!function() {
+    postrender.typewriter = function (b) {
+        if (this.tags) {
+            var r = new RegExp("t8n.typewriter.([0-9]+)(?:[^0-9]|$)","g");
+            var t = r.exec(this.tags.toString());
+            if (t) {
+                typeout(b, t[1]+0);
+            }
+        }
+        return b;
+    };
+    var typeout = function(c,t) {
+        var Furl = function(current) {
+            this.n = current;
+            this.out = false;
+            this.data = current.nodeValue;
+            current.nodeValue = "";
+            this.kids = [];
+            var cn = current.childNodes;
+            if (current.style && current.style.display=="none") {
+                return;
+            }
+            while (cn.length>0) {
+                var f = new Furl(cn[0]);
+                current.removeChild(cn[0]);
+                f.out = true;this.kids.push(f);
+            }
+        };
+        var nodes = new Furl(c);
+        var unfurl = function(furled,d) {
+            var n = furled.n;
+            if (furled.out) {
+                d.appendChild(n);
+                furled.out = false;
+            }
+            if (furled.data) {
+                n.nodeValue += furled.data[0];
+                furled.data = furled.data.slice(1);
+                return true;
+            }
+            for (var j=0; j<furled.kids.length; j++) {
+                var ret = unfurl(furled.kids[j],n);
+                if (ret) {
+                    return true;
+                }
+            }
+            return false;
+        };
+        var title = passage();
+        var intr = setInterval (
+            function() {
+                if (passage() == title && unfurl(nodes,null)) {
+                    return;
+                }
+                clearInterval(intr);
+            }
+        ,t);
+    };
+}();
+
+
+
+
+
+
+:: StoryInit {"position":"100,100","size":"100,100"}
+<<cacheaudio "weirdnoise" "assets/audio/weirdnoise.mp3">>
+<<cacheaudio "pyramidtransition_1" "assets/audio/pyramidtransition_1.mp3">>
+<<cacheaudio "pyramidtransition_2" "assets/audio/pyramidtransition_2.mp3">>
+<<cacheaudio "pyramidtransition_4" "assets/audio/pyramidtransition_4.mp3">>
+<<cacheaudio "completionbloop_4" "assets/audio/completionbloop_4.mp3">>
+<<cacheaudio "modulelist_1" "assets/audio/modulelist_1.mp3">>
+<<cacheaudio "eeg_1" "assets/audio/eeg_1.mp3">>
+<<cacheaudio "Kipu" "assets/audio/eeg_kipu.mp3">>
+<<cacheaudio "Allo" "assets/audio/eeg_allo.mp3">>
+<<cacheaudio "Tez" "assets/audio/eeg_tez.mp3">>
+<<cacheaudio "Outa" "assets/audio/eeg_outa.mp3">>
+<<cacheaudio "Lucia" "assets/audio/eeg_lucia.mp3">>
+<<cacheaudio "Sowe" "assets/audio/eeg_sowe.mp3">>
+<<cacheaudio "60supported" "assets/audio/60secs_supported.mp3">>
+<<cacheaudio "buildwithcul" "assets/audio/buildwithculmination_1.mp3">>
+
+<<waitforaudio>>
+
+<<set $mod1 to false>>
+<<set $mod2 to false>>
+
+
+
+
+:: header [nobr]{"position":"100,225","size":"100,100"}
+<header>
+  <h1 class="title">$module</h1>
+    <subtitle>$modulename</subtitle>
+</header>
+
+
+:: footer [nobr]{"position":"100,375","size":"100,100"}
+<footer class="fixed">
+  <div class="nav-wrapper btns">
+    <div class="nav-item">
+      <<button "Replay">><<goto $passage>><</button>> 
+    </div>
+    <div class="nav-item">
+      <<button "Back">><<goto $prevpass>><</button>>
+    </div>
+  </div>
+  <div class="nav-wrapper">
+    <div class="nav-item logo">
+      <img src="assets/img/triangles-08.png">
+    </div>
+  </div></footer>
+
+:: footerbox [nobr]{"position":"100,375","size":"100,100"}
+<footer>
+  <div class="nav-wrapper btns">
+    <div class="nav-item">
+      <<button "Replay">><<goto $passage>><</button>> 
+    </div>
+    <div class="nav-item">
+      <<button "Back">><<goto $prevpass>><</button>>
+    </div>
+  </div>
+  <div class="nav-wrapper">
+    <div class="nav-item logo">
+      <img src="assets/img/triangles-08.png">
+    </div>
+  </div></footer>
+
+:: footerskip [nobr]{"position":"100,375","size":"100,100"}
+<footer class="fixed">
+  <div class="nav-wrapper btns">
+    <div class="nav-item">
+      <<button "Replay">><<goto $passage>><</button>> 
+    </div>
+    <div class="nav-item">
+      <<button "Back">><<goto $prevpass>><</button>>
+    </div>
+    <div class="nav-item">
+      <<button "Skip">><<set $prevpass to $passage>><<goto $nextpass>><</button>>
+    </div>
+  </div>
+  <div class="nav-wrapper">
+    <div class="nav-item logo">
+      <img src="assets/img/triangles-08.png">
+    </div>
+  </div></footer>
+
+:: footervid [nobr]{"position":"100,375","size":"100,100"}
+<footer class="fixed">
+ <div class="nav-wrapper ">
+
+   <div class="nav-wrapper btns">
+    <div class="nav-item">
+    <<button "Next">><<set $prevpass to $passage>><<goto $nextpass>><</button>>  </div>
+  </div>
+  </div></footer>
+
+:: footervidend [nobr]{"position":"100,375","size":"100,100"}
+<footer class="fixed space">
+ <div class="">
+   <div class="nav-wrapper ">
+    <div class="nav-item">
+    <<button "Back">><<goto $prevpass>><</button>>  </div>
+  </div>
+
+  </div>
+ <div class="nav-wrapper">
+   <div class="nav-wrapper  ">
+      <div class="nav-item">
+    <<button "Click here when done">><<set $prevpass to $passage>><<goto $nextpass>><</button>>  </div>
+  </div>
+  </div></footer>
+
+:: footercode [nobr]{"position":"100,375","size":"100,100"}
+<footer>
+  <div class="nav-wrapper ">
+   <div class="nav-wrapper btns">
+    <div class="nav-item">
+      <<button "Back">><<goto $prevpass>><</button>>
+    </div>
+  </div>
+  </div>
+  <div class="nav-wrapper">
+    <div class="nav-item logo">
+          <img src="assets/img/triangles-08.png">
+    </div>
+  </div></footer>
+
+:: loading [nobr]
+
+<div class="loading-container">
+  <div class="container">
+    <div class="side left"></div>
+    <div class="side front"></div>
+    <div class="side right"></div>
+    <div class="side back"></div>
+    /* <div class="shadow"></div> */
+  </div>
+  <div class="loading-title-container">
+  <div id="mount"></div>
+  <<audio "pyramidtransition_4" play>>
+ <<timed 0.1s>><<replace "#mount">><<type 100ms>> <h2>Loading...</h2> <</type>><</replace>><</timed>>
+ <<timed 3s>><<replace "#mount">><<type 100ms>> <h2>Loading...</h2> <</type>><</replace>><</timed>>
+  </div>
+</div >
+ <<timed 6s>><<set $prevpass to $passage>>
+            /* <<goto "loading">> */
+              <<goto $nextpass>>
+            <</timed>>
+
+:: sending [nobr]
+
+<div class="loading-container" id="mount2">
+  <div class="container" >
+    <div class="side left"></div>
+    <div class="side front"></div>
+    <div class="side right"></div>
+    <div class="side back"></div>
+    /* <div class="shadow"></div> */
+  </div>
+  <div class="loading-title-container" >
+  <div id="mount"></div>
+  <<audio "pyramidtransition_4" play>>
+ <<timed 0.1s>><<replace "#mount">><<type 100ms>> <h2>Sending...</h2> <</type>><</replace>><</timed>>
+ <<timed 3s>><<replace "#mount">><<type 100ms>> <h2>Sending...</h2> <</type>><</replace>><</timed>>
+
+
+  </div>
+</div >
+ <<timed 6s>><<set $prevpass to $passage>>
+            /* <<goto "loading">> */
+              <<goto $nextpass>>
+            <</timed>>
+
+:: unlock [nobr]
+
+<div class="triangle-container">
+  <div class="triangle-wrapper-upper">
+    <!--   <div class="triangle four up "></div> -->
+    <div id ="topTriangle" class="triangle four up fade-in4  "></div>
+  </div>
+  <div class="triangle-wrapper-lower">
+    <!--   <div class="triangle four up "></div> -->
+    <div class="triangle one up fade-in1"></div>
+    <div class="triangle two down fade-in2"></div>
+    <div class="triangle three up fade-in3"></div>
+  </div>
+</div>
+
+
+:: checkmodules
+<<if $session is 1>>
+  <<if $mod1 is true>>
+    <<addclass "#mod1 ""complete">>
+    <<append "#mod1" t8n>> <h3 class="complete">Complete</h3><</append>>
+  <</if>>
+  <<if $mod2 is true>>
+    <<addclass "#mod2" "complete">>
+      <<append "#mod2" t8n>> <h3 class="complete">Complete</h3><</append>>
+  <</if>>
+<</if>>
+<<if $session is 2>>
+  <<if $mod3 is true>>
+    <<addclass "#mod3" "complete">>
+      <<append "#mod3" t8n>> <h3 class="complete">Complete</h3><</append>>
+  <</if>>
+  <<if $mod4 is true>>
+    <<addclass "#mod4" "complete">>
+      <<append "#mod4" t8n>> <h3 class="complete">Complete</h3><</append>>
+  <</if>>
+<</if>>
+<<if $session is 3>>
+  <<if $mod5 is true>>
+    <<addclass "#mod5" "complete">>
+      <<append "#mod5" t8n>> <h3 class="complete">Complete</h3><</append>>
+  <</if>>
+  <<if $mod6 is true>>
+    <<addclass "#mod6" "complete">>
+      <<append "#mod6" t8n>> <h3 class="complete">Complete</h3><</append>>
+  <</if>>
+<</if>>
+<<if $session is 4>>
+  <<if $mod7 is true>>
+    <<addclass "#mod7" "complete">>
+      <<append "#mod7" t8n>> <h3 class="complete">Complete</h3><</append>>
+  <</if>>
+  <<if $mod8 is true>>
+    <<addclass "#mod8" "complete">>
+      <<append "#mod8" t8n>> <h3 class="complete">Complete</h3><</append>>
+  <</if>>
+  <<if $mod9 is true>>
+    <<addclass "#mod9" "complete">>
+      <<append "#mod9" t8n>> <h3 class="complete">Complete</h3><</append>>
+  <</if>>
+<</if>>
+<<if $session is 5>>
+  <<if $mod10 is true>>
+    <<addclass "#mod10" "complete">>
+      <<append "#mod10" t8n>> <h3 class="complete">Complete</h3><</append>>
+  <</if>>
+  <<if $mod11 is true>>
+    <<addclass "#mod11" "complete">>
+      <<append "#mod11" t8n>> <h3 class="complete">Complete</h3><</append>>
+  <</if>>
+  <<if $mod12 is true>>
+  <<addclass "#mod12" "complete">>
+    <<append "#mod12" t8n>> <h3 class="complete">Complete</h3><</append>>
+<</if>>
+<</if>>
+<<if $session is 6>>
+  <<if $mod13 is true>>
+    <<addclass "#mod13" "complete">>
+      <<append "#mod13" t8n>> <h3 class="complete">Complete</h3><</append>>
+  <</if>>
+  <<if $mod14 is true>>
+    <<addclass "#mod14" "complete">>
+      <<append "#mod14" t8n>> <h3 class="complete">Complete</h3><</append>>
+  <</if>>
+<</if>>
+<<if $session is 7>>
+  <<if $mod15 is true>>
+    <<addclass "#mod15" "complete">>
+      <<append "#mod15" t8n>> <h3 class="complete">Complete</h3><</append>>
+  <</if>>
+  <<if $mod16 is true>>
+    <<addclass "#mod16" "complete">>
+      <<append "#mod16" t8n>> <h3 class="complete">Complete</h3><</append>>
+  <</if>>
+<</if>>
+<<if $session is 8>>
+  <<if $mod17 is true>>
+    <<addclass "#mod17" "complete">>
+      <<append "#mod17" t8n>> <h3 class="complete">Complete</h3><</append>>
+  <</if>>
+<</if>>
+
+:: checkmodulenamelist [nobr]
+<<if $module is "Introduction">>
+  <<set $modulename to "">>
+<<elseif $module is "Session 1">>
+  <<set $modulename to "">>
+<<elseif $module is "Session 2">>
+  <<set $modulename to "">>
+<<elseif $module is "Session 3">>
+  <<set $modulename to "">>
+<<elseif $module is "Session 4">>
+  <<set $modulename to "">>
+<<elseif $module is "Session 5">>
+  <<set $modulename to "">>
+<<elseif $module is "Session 6">>
+  <<set $modulename to "">>
+<<elseif $module is "Module 1">>
+  <<set $modulename to "Extraction Economy Game">>
+<<elseif $module is "Module 2">>
+  <<set $modulename to "Context">>
+  <<elseif $module is "Introducing Kai">>
+  <<set $modulename to "">>
+<<elseif $module is "Module 3">>
+  <<set $modulename to "Codename">>
+<<elseif $module is "Module 4">>
+  <<set $modulename to "Heisting">>
+<<elseif $module is "Module 5">>
+  <<set $modulename to "Talents">>
+<<elseif $module is "Module 6">>
+  <<set $modulename to "Focus">>
+<<elseif $module is "Module 7">>
+  <<set $modulename to "Moding The System">>
+<<elseif $module is "Module 8">>
+  <<set $modulename to "Imagining Success">>
+<<elseif $module is "Module 9">>
+  <<set $modulename to "Comfort In Action">>
+<<elseif $module is "Module 10">>
+  <<set $modulename to "Sharing Intelligence/The ASK">>
+<<elseif $module is "Module 11">>
+  <<set $modulename to "Worthwhile/Winnable Actions">>
+<<elseif $module is "Module 12">>
+  <<set $modulename to "Planning A Gift">>
+<<elseif $module is "Module 13">>
+  <<set $modulename to "The Different Hats">>
+<<elseif $module is "Module 14">>
+  <<set $modulename to "Making A Gift">>
+<<elseif $module is "Module 15">>
+  <<set $modulename to "Aborting a Delivery	">>
+<<elseif $module is "Module 16">>
+  <<set $modulename to "Delivering a Gift">>
+<<elseif $module is "Module 17">>
+  <<set $modulename to "The Story of the Gifts">>
+<</if>>
+
+:: landingold [nobr]{"position":"450,50","size":"100,100"}
+<<set $passage to "landing">>
+<div class="wrapper box">
+
+  <main class="codeword landing">
+/* <img src="assets/img/triangles-08.png" class="hero"> */
+
+<<include "unlock">>
+<div >
+<h1 class="title larger-title">Welcome</h1>
+  <div class="codeword-title-wrapper"><h1 class="title">Enter </h1><h1 class="title">codeword</h1></div>
+   <p> Enter session codeword.</p>
+   
+  
+  
+    <div id="codewordWrapper" class="codeword-wrapper">
+    /% CODEWORD INPUT %/
+        <div class="code-input">
+        <<textbox "$codeword" "">>
+      </div>
+     <div class="btn-result-wrapper">
+        <<button "Enter">>  
+            </div>
+        /% STANDARDISE INPUT %/
+        <<set $codeword to $codeword.toUpperCase()>>
+        /% CODEWORD CORRECT %/
+        <<if $codeword isnot "" and $codeword is "BEGIN">>
+        <<addclass "#topTriangle" "unlock">>
+          <<audio "weirdnoise" play >>
+        <<audio "weirdnoise" play >>
+        <<replace "#coderesult">><h2 class="subtitle complete">Session 1</h2><</replace>>
+        <<timed 2s>><<set $prevpass to $passage>><<set $audio to true>>
+        <<set $nextpass to "1modulelist">><<goto "loading">><</timed>>
+        <</if>>
+        <<if $codeword isnot "" and $codeword is "KAI">>
+        <<addclass "#topTriangle" "unlock">>
+          <<audio "weirdnoise" play >>
+        <<audio "weirdnoise" play >>
+        <<replace "#coderesult">><h2 class="subtitle complete">Introducing Kai</h2><</replace>>
+        <<timed 2s>><<set $prevpass to $passage>><<set $audio to true>>
+        <<set $nextpass to "1mod2outrokaib">><<goto "loading">><</timed>>
+        <</if>>
+            <<if $codeword isnot "" and $codeword is "SMASH">>
+              <<addclass "#topTriangle" "unlock">>
+                <<audio "weirdnoise" play >>
+        <<replace "#coderesult">><h2 class="subtitle complete">Session 2</h2><</replace>>
+        <<timed 2s>><<set $prevpass to $passage>><<set $audio to true>>
+         <<set $nextpass to "2kaiIntro1">><<goto "loading">>
+       <</timed>>
+        <</if>>
+        <<if $codeword isnot "" and $codeword is "GLOBAL">>
+          <<addclass "#topTriangle" "unlock">>
+            <<audio "weirdnoise" play >>
+        <<replace "#coderesult">><h2 class="subtitle complete">Session 3</h2><</replace>>
+        <<timed 2s>><<set $prevpass to $passage>><<set $audio to true>>
+         <<set $nextpass to "3kaiIntro1">><<goto "loading">>
+        <</timed>>
+        <</if>>
+        <<if $codeword isnot "" and $codeword is "SYSTEM">>
+          <<addclass "#topTriangle" "unlock">>
+            <<audio "weirdnoise" play >>
+        <<replace "#coderesult">><h2 class="subtitle complete">Session 4</h2><</replace>>
+        <<timed 2s>><<set $prevpass to $passage>><<set $audio to true>>
+          <<set $nextpass to "4kaiIntro1">><<goto "loading">>
+        <</timed>>
+        <</if>>
+         <<if $codeword isnot "" and $codeword is "PLOT">>
+          <<addclass "#topTriangle" "unlock">>
+            <<audio "weirdnoise" play >>
+        <<replace "#coderesult">><h2 class="subtitle complete">Session 5</h2><</replace>>
+        <<timed 2s>><<set $prevpass to $passage>><<set $audio to true>>
+        <<set $nextpass to "5kaiIntro1">><<goto "loading">><</timed>>
+        <</if>>
+         <<if $codeword isnot "" and $codeword is "OUR">>
+           <<addclass "#topTriangle" "unlock">>
+             <<audio "weirdnoise" play >>
+        <<replace "#coderesult">><h2 class="subtitle complete">Session 6</h2><</replace>>
+        <<timed 2s>><<set $prevpass to $passage>><<set $audio to true>><<set $nextpass to "6kaiIntro1">><<goto "loading">><</timed>>
+        <</if>>
+         <<if $codeword isnot "" and $codeword is "SURVIVAL">>
+           <<addclass "#topTriangle" "unlock">>
+             <<audio "weirdnoise" play >>
+        <<replace "#coderesult">><h2 class="subtitle complete">Session 7</h2><</replace>>
+        <<timed 2s>><<set $prevpass to $passage>><<set $audio to true>><<set $nextpass to "7kaiIntro1">><<goto "loading">><</timed>>
+        <</if>>
+         <<if $codeword isnot "" and $codeword is "VIOLET">>
+           <<addclass "#topTriangle" "unlock">>
+             <<audio "weirdnoise" play >>
+        <<replace "#coderesult">><h2 class="subtitle complete">Session 8</h2><</replace>>
+        <<timed 2s>><<set $prevpass to $passage>><<set $audio to true>><<set $nextpass to "8kaiIntro1">><<goto "loading">><</timed>>
+        <</if>>
+          /% CODEWORD INCORRECT %/
+          /* <<if $codeword isnot "" and $codeword is not "ONE">>
+          <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
+          <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+          <</if>> */
+          <</button>> 
+            /% CODEWORD FEEDBACK %/
+            <div id="coderesult"></div>
+     </div>
+      </div>
+</div>
+  </main>
+    /* <<include "footercode">> */
+  </div>
+
+:: landing [nobr]
+<<set $passage to "landing">>
+<<set $audio to true>>
+ <<set $nextpass to "cardoptions">>
+<div class="wrapper box">
+
+  <main class="codeword landing">
+/* <img src="assets/img/triangles-08.png" class="hero"> */
+
+<<include "unlock">>
+<div >
+<h1 class="title larger-title">Welcome</h1>
+ <<button "Enter">>
+  <<goto $nextpass>>
+  <</button>>
+   
+</div>
+  </main>
+    /* <<include "footercode">> */
+  </div>
+
+:: cardoptions [nobr]
+<<set $passage to "cardoptions">><<audio ":all" stop>>
+
+
+<div class="wrapper box">
+  <main class="modules">
+  <h1 class="title">SESSIONS</h1>
+    /* <div class="codeword-title-wrapper"><h1 class="title">Enter </h1><h1 class="title">Codeword</h1></div> */
+      <div class="menu-wrapper module-list">
+    
+  <<include "session1card">>
+  <<include "session2card">>
+  <<include "session3card">>
+  <<include "session4card">>
+  <<include "session5card">>
+  <<include "session6card">>
+  
+  </div>
+ </main>
+  <<include "footerbox">></div>
+  <<done>><<include "checkmodules">><</done>>
+
+:: session1card [nobr]
+ <div class="menu-item flip-card" id="mod1"> 
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+      /* <img src="assets/img/session-placeholder.jpg" alt="module card" > */
+      <h2>Session 1</h2>
+      <h3>The Context</h3>
+      <span>To gain entry a codeword is needed, the letters in white on the box will help. </span>
+        <div id="codewordWrapper1" class="codeword-wrapper">
+      /% CODEWORD INPUT %/
+          <div class="code-input">
+          <<textbox "$codeword" "">>
+          </div>
+          <div class="btn-result-wrapper">
+          <<button "Enter">>  
+                </div>
+            /% STANDARDISE INPUT %/
+            <<set $codeword to $codeword.toUpperCase().trim()>>
+            /% CODEWORD CORRECT %/s
+            <<if $codeword isnot "" and $codeword is "LAND">>
+            <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+              <<audio "eeg_1" play>>
+            <<audio "eeg_1" play>>
+            <<timed 1s>>
+              <<addclass "#mod2" "disappear">>
+               <<addclass "#mod1" "twist">>
+             <</timed>>
+      
+            <<timed 2s>>
+                  <<set $prevpass to $passage>>
+               <<set $nextpass to "1modintro">>
+            <<goto "loading">>
+             <</timed>>
+            <</if>>
+              /% CODEWORD INCORRECT %/
+              <<if $codeword isnot "" and $codeword is not "LAND">>
+              <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
+              /* <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>> */
+              <</if>>
+          <</button>> 
+          /% CODEWORD FEEDBACK %/
+            <div class="coderesult" id="coderesult"></div>   
+      </div>
+        </div>
+      </div>
+      <div class="flip-card-back">
+        <img src="assets/img/mod1-rev.jpg" alt="module card" >
+      </div>
+    </div>
+  </div>  
+
+:: session2card [nobr]
+
+  <div class="menu-item flip-card" id="mod2"> 
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+      /* <img src="assets/img/session-placeholder.jpg" alt="module card" > */
+      <h2>Session 2</h2>
+      <h3>The Focus</h3>
+      <span>To gain entry, look through the binoculars to discover the codeword. </span>
+        <div id="codewordWrapper2" class="codeword-wrapper">
+      /% CODEWORD INPUT %/
+          <div class="code-input">
+          <<textbox "$codeword" "">>
+          </div>
+          <div class="btn-result-wrapper">
+          <<button "Enter">>  
+                </div>
+            /% STANDARDISE INPUT %/
+            <<set $codeword to $codeword.toUpperCase().trim()>>
+            /% CODEWORD CORRECT %/s
+            <<if $codeword isnot "" and $codeword is "HEIST">>
+            <<replace "#coderesult2">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+            <<audio "eeg_1" play>>
+            <<timed 0.5s>>
+              <<addclass "#mod1" "dissolve">>
+             <</timed>>
+             <<timed 1s>>
+              <<addclass "#mod1" "disappear">>
+             <</timed>>
+            <<timed 2s>>
+                <<addclass "#mod2" "twist">>
+             <</timed>>
+            <<timed 3s>>
+                  <<set $prevpass to $passage>>
+               <<set $nextpass to "2intro">>
+            <<goto "loading">>
+             <</timed>>
+            <</if>>
+              /% CODEWORD INCORRECT %/
+              <<if $codeword isnot "" and $codeword is not "HEIST">>
+              <<replace "#coderesult2">><h2 class="subtitle">Thats not right.</h2><</replace>>
+              <<timed 1.5s>><<replace "#coderesult2">><</replace>><</timed>>
+              <</if>>
+          <</button>> 
+          /% CODEWORD FEEDBACK %/
+            <div class="coderesult" id="coderesult2"></div>   
+      </div>
+        </div>
+      </div>
+      <div class="flip-card-back">
+        <img src="assets/img/mod2-rev.jpg" alt="module card" >
+      </div>
+    </div>
+  </div>
+
+:: session3card [nobr]
+
+   <div class="menu-item flip-card" id="mod3"> 
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+      /* <img src="assets/img/session-placeholder.jpg" alt="module card" > */
+        <h2>Session 3</h2>
+      <h3>The Ask</h3>
+      <span>To enter, reverse the white word. </span>
+        <div id="codewordWrapper1" class="codeword-wrapper">
+      /% CODEWORD INPUT %/
+          <div class="code-input">
+          <<textbox "$codeword" "">>
+          </div>
+          <div class="btn-result-wrapper">
+          <<button "Enter">>  
+                </div>
+            /% STANDARDISE INPUT %/
+            <<set $codeword to $codeword.toUpperCase().trim()>>
+            /% CODEWORD CORRECT %/s
+            <<if $codeword isnot "" and $codeword is "MOD">>
+            <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+              <<audio "eeg_1" play>>
+            <<timed 2s>>
+              <<addclass "#mod4" "disappear">>
+               <<addclass "#mod3" "twist">>
+             <</timed>>
+      
+            <<timed 6s>>
+                  <<set $prevpass to $passage>>
+               <<set $nextpass to "3intro">>
+            <<goto "loading">>
+             <</timed>>
+            <</if>>
+              /% CODEWORD INCORRECT %/
+              <<if $codeword isnot "" and $codeword is not "MOD">>
+              <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
+              /* <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>> */
+              <</if>>
+          <</button>> 
+          /% CODEWORD FEEDBACK %/
+            <div class="coderesult" id="coderesult"></div>   
+      </div>
+        </div>
+      </div>
+      <div class="flip-card-back">
+        <img src="assets/img/mod3-rev.jpg" alt="module card" >
+      </div>
+    </div>
+  </div>  
+  
+:: session4card [nobr]
+
+
+  <div class="menu-item flip-card" id="mod4"> 
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+      /* <img src="assets/img/session-placeholder.jpg" alt="module card" > */
+      <h2>Session 4</h2>
+      <h3>The Recipient</h3>
+      <span>Barcodes have numbers, but these could be letters. </span>
+        <div id="codewordWrapper2" class="codeword-wrapper">
+      /% CODEWORD INPUT %/
+          <div class="code-input">
+          <<textbox "$codeword" "">>
+          </div>
+          <div class="btn-result-wrapper">
+          <<button "Enter">>  
+                </div>
+            /% STANDARDISE INPUT %/
+            <<set $codeword to $codeword.toUpperCase().trim()>>
+            /% CODEWORD CORRECT %/s
+            <<if $codeword isnot "" and $codeword is "POWER">>
+            <<replace "#coderesult2">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+            <<audio "eeg_1" play>>
+            <<timed 0.5s>>
+              <<addclass "#mod3" "dissolve">>
+             <</timed>>
+             <<timed 1s>>
+              <<addclass "#mod3" "disappear">>
+             <</timed>>
+            <<timed 3s>>
+                <<addclass "#mod4" "twist">>
+             <</timed>>
+            <<timed 6s>>
+                  <<set $prevpass to $passage>>
+               <<set $nextpass to "2mod4intro1">>
+            <<goto "loading">>
+             <</timed>>
+            <</if>>
+              /% CODEWORD INCORRECT %/
+              <<if $codeword isnot "" and $codeword is not "POWER">>
+              <<replace "#coderesult2">><h2 class="subtitle">Thats not right.</h2><</replace>>
+              <<timed 1.5s>><<replace "#coderesult2">><</replace>><</timed>>
+              <</if>>
+          <</button>> 
+          /% CODEWORD FEEDBACK %/
+            <div class="coderesult" id="coderesult2"></div>   
+      </div>
+        </div>
+      </div>
+      <div class="flip-card-back">
+        <img src="assets/img/mod4-rev.jpg" alt="module card" >
+      </div>
+    </div>
+  </div>
+  
+:: session5card [nobr]
+
+  
+<div class="menu-item flip-card" id="mod5"> 
+  <div class="flip-card-inner">
+      <div class="flip-card-front">
+/* <img src="assets/img/session-placeholder.jpg" alt="module three"> */
+<h2>Session 5</h2>
+ <h3>The Plot</h3>
+ <span>The white arrows will find your codeword for this session. </span>
+  <div id="codewordWrapper1" class="codeword-wrapper">
+  /% CODEWORD INPUT %/
+      <div class="code-input">
+      <<textbox "$codeword" "">>
+    </div>
+   <div class="btn-result-wrapper">
+      <<button "Enter">>  
+          </div>
+      /% STANDARDISE INPUT %/
+      <<set $codeword to $codeword.toUpperCase().trim()>>
+      /% CODEWORD CORRECT %/
+  <<if $codeword isnot "" and $codeword is "GIFT">>
+<<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+  <<audio "eeg_1" play>>
+    <<timed 0.5s>>
+              <<addclass "#mod6" "dissolve">>
+             <</timed>>
+             <<timed 1s>>
+              <<addclass "#mod6" "disappear">>
+             <</timed>>
+            <<timed 3s>>
+                <<addclass "#mod5" "twist">>
+             <</timed>>
+            <<timed 6s>>
+          <<set $prevpass to $passage>>
+          <<set $nextpass to "3mod5intro1">>
+          <<goto "loading">>
+        <</timed>>
+<</if>>
+        /% CODEWORD INCORRECT %/
+        <<if $codeword isnot "" and $codeword is not "GIFT">>
+        <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+        <</if>><</button>> 
+          /% CODEWORD FEEDBACK %/
+          <div id="coderesult" class="coderesult"></div>
+   </div>
+    </div>
+      </div>
+         <div class="flip-card-back">
+        <img src="assets/img/mod5-rev.jpg" alt="module card" >
+      </div>
+    </div>
+   </div>
+
+:: session6card [nobr]
+  
+ <div class="menu-item flip-card" id="mod6"> 
+ <div class="flip-card-inner">
+      <div class="flip-card-front">
+ /* <img src="assets/img/session-placeholder.jpg" alt="module six"> */
+ <h2>Session 6</h2>
+  <h3>The Delivery</h3>
+  <span>The only word hanging totally upside down. </span>
+  <div id="codewordWrapper2" class="codeword-wrapper">
+  /% CODEWORD INPUT %/
+      <div class="code-input">
+      <<textbox "$codeword" "">>
+    </div>
+   <div class="btn-result-wrapper">
+      <<button "Enter">>  
+          </div>
+      /% STANDARDISE INPUT %/
+      <<set $codeword to $codeword.toUpperCase().trim()>>
+      /% CODEWORD CORRECT %/
+      <<if $codeword isnot "" and $codeword is "DELIVER">>
+      <<replace "#coderesult2">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+      <<audio "eeg_1" play>>
+
+   <<timed 0.5s>>
+              <<addclass "#mod5" "dissolve">>
+             <</timed>>
+             <<timed 1s>>
+              <<addclass "#mod5" "disappear">>
+             <</timed>>
+            <<timed 3s>>
+                <<addclass "#mod6" "twist">>
+             <</timed>>
+            <<timed 6s>>
+          <<set $prevpass to $passage>>
+          <<set $nextpass to "3mod6intro1">>
+          <<goto "loading">>
+        <</timed>>
+      <</if>>
+        /% CODEWORD INCORRECT %/
+        <<if $codeword isnot "" and $codeword is not "DELIVER">>
+        <<replace "#coderesult2">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult2">><</replace>><</timed>>
+        <</if>><</button>> 
+          /% CODEWORD FEEDBACK %/
+          <div id="coderesult2" class="coderesult"></div>
+   </div>
+    </div>
+      </div>
+
+    <div class="flip-card-back">
+        <img src="assets/img/mod6-rev.jpg" alt="module card" >
+      </div>
+    </div>
+  </div>
+
+:: 1modintro [nobr]
+<<set $prevpass to "landing">>
+<<set $passage to "1modintro">>
+<<set $nextpass to "1modintro2">>
+<<set $module to "Introduction">><<include "checkmodulenamelist">>
+/* TODO REPLACE  */
+<audio src="assets/audio/greenpeace2.0_1_introduction_1.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking ">
+ <div class="codeword-title-wrapper indent">
+
+ </div>
+      <div class="text-wrapper">
+  
+<p>Hello. </p>
+<p>Welcome to the Playful Activism Toolbox. </p>
+<p>Well done on finding the codeword to get started. </p>
+<p>You’ll need codewords as this project goes on. </p>
+<p>This is a little bit different from a normal project. </p>
+
+  <<timed 11.5s>><<set $prevpass to $passage>><<set $mod2 to true>><<goto "1modintro2">><</timed>>
+</div>
+  </main>
+     <<include "footerskip">>
+</div>
+
+:: 1modintro2 [nobr]
+<<set $prevpass to "1modintro">>
+<<set $passage to "1modintro2">>
+<<set $nextpass to "1mod1a">>
+<<set $module to "Introduction">><<include "checkmodulenamelist">>
+/* TODO REPLACE  */
+<audio src="assets/audio/greenpeace2.0_1_introduction_2.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking ">
+ <div class="codeword-title-wrapper indent">
+
+ </div>
+      <div class="text-wrapper">
+  
+<p>I’m Kai. </p>
+<p>I’m a Playful Activist. </p>
+<p>And this project is all about Playful Activism. </p>
+<p>Let’s start with playing a game.</p>
+
+  <<timed 9s>><<set $prevpass to $passage>><<goto "1mod1a">><</timed>>
+</div>
+  </main>
+     <<include "footerskip">>
+</div>
+
+:: 1mod1a [nobr]
+<<set $module to "Module 1">><<include "checkmodulenamelist">>
+<<set $prevpass to "1modintro2">>
+<<set $passage to "1mod1a">>
+<<set $nextpass to "1mod1b">>
+<div id="audio"><audio src="assets/audio/greenpeace2.0_2_mod1intro_1.mp3"  autoplay>Audio is not supported on your device</audio></div>
+<div class="wrapper">
+  <<include "header">>
+    <main  class="speaking">
+        <div class="text-wrapper">
+ <div id="mount">
+<p>This is the Extraction Economy Game. </p>
+<p>I’ll summarise, and then you can play. </p>
+<<timed 6s>>
+  <<append "#mount">>
+    <<replace "#audio">>
+    <audio src="assets/audio/greenpeace2.0_2_mod1intro_2.mp3"  autoplay id="audio">Audio is not supported on your device</audio>
+      <</replace>>
+    <h4>AIM OF THE GAME</h4>
+<ul>
+  <li>You will play as countries, every country has resources on their land.</li>
+  <li>You make money by extracting those resources from the land.</li>
+  <li>The goal is to end the game with the most money </li>
+  <li>Every round, you have a debt to pay to the Bank (your teacher!)</li>
+ <li> But, if you lose half of your resources you are out of the game.  </li>
+  
+</ul>
+<h4>ACTION COUNTERS:</h4>
+<ul>
+  <li>You have Action Counters.</li>
+  <li>Different countries have different numbers of Action Counters.</li>
+  <li>Action Counters can be used to Defend or Extract. </li>
+  <li>Using 1 Action Counter on Defence stops 1 Extraction attempt from another country. </li>
+</ul>
+
+   <br/>
+   <<button "Okay">>
+      <<goto $nextpass>>
+    <</button>> 
+    <</append>>
+    <</timed>>
+    
+    
+ </div>
+  </div>
+
+  </main>
+  <<include "footerskip">>
+</div>
+
+
+:: 1mod1b [nobr]
+<<set $module to "Module 1">><<include "checkmodulenamelist">>
+<<set $prevpass to "1mod1a">>
+<<set $passage to "1mod1b">>
+<<set $nextpass to "1mod1bintro">>
+ <audio src="assets/audio/greenpeace2.0_2_mod1intro_3.mp3"  autoplay id="audio">Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+    <main  class="speaking">
+        <div class="text-wrapper">
+ <div id="mount">
+ <h2>ROUNDS SUMMARY</h2>
+ <p>Rounds are split into 4 stages.  </p>
+
+<<timed 5s>>
+  <<append "#mount">>
+       <ul>
+        <li>
+          <h4>1 - DEBATE</h4>
+          <p>All countries have 1 minute to debate their moves.</p>
+        </li>
+         <li>
+          <h4>2 - DEFENCE</h4>
+          <p>Action Counters are placed on your board for Defence - but they must be covered so others can’t see what you have placed. </p>
+        </li>
+        <li>
+         <h4>3 - EXTRACTION</h4>
+          <p> Remaining Action Counters can then be used for Extraction.</p>
+          <ul>
+          <li> You can extract from your own country - without the risk of being blocked by Defences. </li>
+          <li>Or you can walk to the country you want to extract from with your Action Counters.</li>
+          </ul>
+    <p>When everyone is in place then reveal your counters to work out whether the extraction can take place. </p>
+    <ul> 
+    <li>If Defence Counters are equal to or more than Extraction Counters, the extraction is blocked. </li>
+    <li>If there are more Extraction Counters than Defence, extraction can take place. Extracting countries can cut one resource from the land. 
+      <ul>
+       <li>If multiple countries attempt extraction, then  
+countries must play Rock, Paper, Scissors to see who can extract.
+</li>
+      </ul>
+    </li>
+    
+     </ul>
+    <li>
+          <h4>4 - PAYMENT</h4>
+          <p> Take your resources to the bank to pay in and boost your score. </p>
+<p>Remember you have a debt to pay off every round. </p>
+<p>Clear the board of counters for the next round. </p>
+
+        </li>
+        /* </ul> */
+   <p>Got it?</p>
+   <<button "Play the game">>
+      <<replace "#mount">>
+     
+      <<audio "pyramidtransition_2" play>>
+      <p>Let’s play <h2 class="subtitle inline"> The Extraction Economy Game!</h2></p>
+     <<timed 4s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+    <</replace>>
+    <</button>> 
+    <</append>>
+    <</timed>>
+    
+    
+ </div>
+  </div>
+
+  </main>
+  <<include "footerskip">>
+</div>
+
+:: 1mod1bintro [nobr]
+<<set $prevpass to "1mod1a">>
+<<set $passage to "1mod1bintro">>
+<<set $nextpass to "1mod1br1">>
+<<set $seconds to 4>>
+<div id="audio"> <audio src="assets/audio/greenpeace2.0_S1_3_mod1game_1_debate.mp3"  autoplay id="audio">Audio is not supported on your device</audio></div>
+
+<<audio ":all" stop>>
+<<audio "60supported" play>>
+/* Debate & Defense  */
+<div class="wrapper box">
+  <<include "header">>
+<main class="game">
+        <h1 class="title">Round 1</h1>
+ <div class="game-wrapper">
+  	<div class="timer" id="timer">
+  	  <span id="countdown" class="countdown"><h3 class="">$seconds</h3></span>
+  	</div>
+   <div id="mount">
+    <h2 class="subtitle">Debate</h2>
+    <p>All countries have one minute to debate their moves.</p>
+    </div>
+    
+ </div >
+  </main>
+  <<include "footerskip">>
+</div>
+
+<<silently>>
+<<repeat 1s>>
+  <<set $seconds to $seconds - 1>>
+    <<if $seconds gt 0>>
+        <<replace "#countdown">><h3 >$seconds</h3><</replace>>
+     <<elseif $seconds is 0>>   
+      <<replace "#timer">><</replace>>
+      <<replace "#audio">>
+         <div id="audio"> <audio src="assets/audio/greenpeace2.0_S1_3_mod1game_1_defense.mp3"  autoplay id="audio">Audio is not supported on your device</audio></div><</replace>>
+      <<replace "#mount">>
+     
+          <h2 class="subtitle">Defence</h2>
+          <p>Place your Defence Action Counters on the board - keep them hidden.</p>
+           <div class="flex-col"><<button "Next">><<set $prevpass to $passage>><<goto $nextpass>><</button>></div>
+        <</replace>>
+        <<else>><<stop>>
+    <</if>>
+  <</repeat>>
+<</silently>>
+
+:: 1mod1br1 [nobr]
+<<set $prevpass to "1mod1bintro">>
+<<set $passage to "1mod1br1">>
+<<set $nextpass to "1mod1br2intro">>
+/* Extract & Payment */
+<<audio ":all" stop>><<audio "60supported" play>>
+<div id="audio"> <audio src="assets/audio/greenpeace2.0_S1_3_mod1game_1_extraction.mp3"  autoplay id="audio">Audio is not supported on your device</audio></div>
+<div class="wrapper box">
+  <<include "header">>
+<main class="game">
+        <h1 class="title">Round 1</h1>
+ <div class="game-wrapper">
+   <div id="mount" class="flex-col">
+ 
+      <h2 class="subtitle">Extraction</h2>
+
+    <p>Use your remaining Action Counters to extract resources. 
+Walk to the country you want to extract from. </p>
+<p>At least one member of your team should stay put at your country. </p>
+     <<button "Next">>
+       <<replace "#audio">>
+         <div id="audio"> <audio src="assets/audio/greenpeace2.0_S1_3_mod1game_1_payment.mp3"  autoplay id="audio">Audio is not supported on your device</audio></div><</replace>>
+    <<replace "#mount">>
+
+       <h2 class="subtitle">Payment</h2>
+       <p>Pay the bank with your extracted resources. </p>
+       <p>Clear your board for the next round. </p>
+       <<button "Move on">> 
+        <<set $prevpass to $passage>><<goto $nextpass>><</button>>
+    <</replace>>
+<</button>>
+  </div>
+   
+ </div >
+
+  </main>
+  <<include "footerskip">>
+</div>
+
+:: 1mod1br2intro [nobr]
+<<set $prevpass to "1mod1br1">>
+<<set $passage to "1mod1br2intro">>
+<<set $nextpass to "1mod1br2">><<set $seconds to 4>>
+<div id="audio"> <audio src="assets/audio/greenpeace2.0_S1_3_mod1game_1_debate.mp3"  autoplay id="audio">Audio is not supported on your device</audio></div>
+<<audio ":all" stop>>
+<<audio "60supported" play>>
+/* Debate & Defense  */
+<div class="wrapper box">
+  <<include "header">>
+<main class="game">
+        <h1 class="title">Round 2</h1>
+ <div class="game-wrapper">
+  	<div class="timer" id="timer">
+  	  <span id="countdown" class="countdown"><h3 class="">$seconds</h3></span>
+  	</div>
+   <div id="mount">
+    <h2 class="subtitle">Debate</h2>
+    <p>All countries have one minute to debate their moves.</p>
+    </div>
+    
+ </div >
+  </main>
+  <<include "footerskip">>
+</div>
+
+<<silently>>
+<<repeat 1s>>
+  <<set $seconds to $seconds - 1>>
+    <<if $seconds gt 0>>
+        <<replace "#countdown">><h3 >$seconds</h3><</replace>>
+     <<elseif $seconds is 0>>   
+      <<replace "#timer">><</replace>>
+      <<replace "#audio">>
+         <div id="audio"> <audio src="assets/audio/greenpeace2.0_S1_3_mod1game_1_defense.mp3"  autoplay id="audio">Audio is not supported on your device</audio></div><</replace>>
+      <<replace "#mount">>
+     
+          <h2 class="subtitle">Defence</h2>
+          <p>Place your Defence Action Counters on the board - keep them hidden.</p>
+           <div class="flex-col"><<button "Next">><<set $prevpass to $passage>><<goto $nextpass>><</button>></div>
+        <</replace>>
+        <<else>><<stop>>
+    <</if>>
+  <</repeat>>
+<</silently>>
+
+:: 1mod1br2 [nobr]
+<<set $prevpass to "1mod1br2intro">>
+<<set $passage to "1mod1br2">>
+<<set $nextpass to "1mod1br3intro">>
+/* Extract & Payment */
+
+<<audio ":all" stop>><<audio "60supported" play>>
+<div id="audio"> <audio src="assets/audio/greenpeace2.0_S1_3_mod1game_1_extraction.mp3"  autoplay id="audio">Audio is not supported on your device</audio></div>
+<div class="wrapper box">
+  <<include "header">>
+<main class="game">
+        <h1 class="title">Round 2</h1>
+ <div class="game-wrapper">
+   <div id="mount" class="flex-col">
+ 
+      <h2 class="subtitle">Extraction</h2>
+
+    <p>Use your remaining Action Counters to extract resources. 
+Walk to the country you want to extract from. </p>
+<p>At least one member of your team should stay put at your country. </p>
+     <<button "Next">>
+      <<replace "#audio">>
+         <div id="audio"> <audio src="assets/audio/greenpeace2.0_S1_3_mod1game_1_payment.mp3"  autoplay id="audio">Audio is not supported on your device</audio></div><</replace>>
+    <<replace "#mount">>
+       <h2 class="subtitle">Payment</h2>
+       <p>Pay the bank with your extracted resources. </p>
+       <p>Clear your board for the next round. </p>
+       <<button "Move on">> 
+        <<set $prevpass to $passage>><<goto $nextpass>><</button>>
+    <</replace>>
+<</button>>
+  </div>
+   
+ </div >
+
+  </main>
+  <<include "footerskip">>
+</div>
+
+:: 1mod1br3intro [nobr]
+<<set $prevpass to "1mod1br2">>
+<<set $passage to "1mod1br3intro">>
+<<set $nextpass to "1mod1br3">><<set $seconds to 4>>
+<<audio ":all" stop>>
+<<audio "60supported" play>>
+<div id="audio"> <audio src="assets/audio/greenpeace2.0_S1_3_mod1game_1_debate.mp3"  autoplay id="audio">Audio is not supported on your device</audio></div>
+/* Debate & Defense  */
+<div class="wrapper box">
+  <<include "header">>
+<main class="game">
+        <h1 class="title">Round 3</h1>
+ <div class="game-wrapper">
+  	<div class="timer" id="timer">
+  	  <span id="countdown" class="countdown"><h3 class="">$seconds</h3></span>
+  	</div>
+   <div id="mount">
+    <h2 class="subtitle">Debate</h2>
+    <p>All countries have one minute to debate their moves.</p>
+    </div>
+    
+ </div >
+  </main>
+  <<include "footerskip">>
+</div>
+
+<<silently>>
+<<repeat 1s>>
+  <<set $seconds to $seconds - 1>>
+    <<if $seconds gt 0>>
+        <<replace "#countdown">><h3 >$seconds</h3><</replace>>
+     <<elseif $seconds is 0>>   
+      <<replace "#timer">><</replace>>
+      <<replace "#audio">>
+         <div id="audio"> <audio src="assets/audio/greenpeace2.0_S1_3_mod1game_1_defense.mp3"  autoplay id="audio">Audio is not supported on your device</audio></div><</replace>>
+      <<replace "#mount">>
+     
+          <h2 class="subtitle">Defence</h2>
+          <p>Place your Defence Action Counters on the board - keep them hidden.</p>
+           <div class="flex-col"><<button "Next">><<set $prevpass to $passage>><<goto $nextpass>><</button>></div>
+        <</replace>>
+        <<else>><<stop>>
+    <</if>>
+  <</repeat>>
+<</silently>>
+
+:: 1mod1br3 [nobr]
+<<set $prevpass to "1mod1br3intro">>
+<<set $passage to "1mod1br3">>
+<<set $nextpass to "1mod1br4intro">>
+/* Extract & Payment */
+
+<<audio ":all" stop>><<audio "60supported" play>>
+<div id="audio"> <audio src="assets/audio/greenpeace2.0_S1_3_mod1game_1_extraction.mp3"  autoplay id="audio">Audio is not supported on your device</audio></div>
+<div class="wrapper box">
+  <<include "header">>
+<main class="game">
+        <h1 class="title">Round 3</h1>
+ <div class="game-wrapper">
+   <div id="mount" class="flex-col">
+ 
+      <h2 class="subtitle">Extraction</h2>
+
+    <p>Use your remaining Action Counters to extract resources. 
+Walk to the country you want to extract from. </p>
+<p>At least one member of your team should stay put at your country. </p>
+     <<button "Next">>
+      <<replace "#audio">>
+         <div id="audio"> <audio src="assets/audio/greenpeace2.0_S1_3_mod1game_1_payment.mp3"  autoplay id="audio">Audio is not supported on your device</audio></div><</replace>>
+    <<replace "#mount">>
+       <h2 class="subtitle">Payment</h2>
+       <p>Pay the bank with your extracted resources. </p>
+       <p>Clear your board for the next round. </p>
+       <<button "Move on">> 
+        <<set $prevpass to $passage>><<goto $nextpass>><</button>>
+    <</replace>>
+<</button>>
+  </div>
+   
+ </div >
+
+  </main>
+  <<include "footerskip">>
+</div>
+
+:: 1mod1br4intro [nobr]
+<<set $prevpass to "1mod1br3">>
+<<set $passage to "1mod1br4intro">>
+<<set $nextpass to "1mod1br4">><<set $seconds to 4>>
+<<audio ":all" stop>>
+<<audio "60supported" play>>
+<div id="audio"> <audio src="assets/audio/greenpeace2.0_S1_3_mod1game_1_debate.mp3"  autoplay id="audio">Audio is not supported on your device</audio></div>
+/* Debate & Defense  */
+<div class="wrapper box">
+  <<include "header">>
+<main class="game">
+        <h1 class="title">Round 4</h1>
+ <div class="game-wrapper">
+  	<div class="timer" id="timer">
+  	  <span id="countdown" class="countdown"><h3 class="">$seconds</h3></span>
+  	</div>
+   <div id="mount">
+    <h2 class="subtitle">Debate</h2>
+    <p>All countries have one minute to debate their moves.</p>
+    </div>
+    
+ </div >
+  </main>
+  <<include "footerskip">>
+</div>
+
+<<silently>>
+<<repeat 1s>>
+  <<set $seconds to $seconds - 1>>
+    <<if $seconds gt 0>>
+        <<replace "#countdown">><h3 >$seconds</h3><</replace>>
+     <<elseif $seconds is 0>>   
+      <<replace "#timer">><</replace>>
+      <<replace "#audio">>
+         <div id="audio"> <audio src="assets/audio/greenpeace2.0_S1_3_mod1game_1_defense.mp3"  autoplay id="audio">Audio is not supported on your device</audio></div><</replace>>
+      <<replace "#mount">>
+     
+          <h2 class="subtitle">Defence</h2>
+          <p>Place your Defence Action Counters on the board - keep them hidden.</p>
+           <div class="flex-col"><<button "Next">><<set $prevpass to $passage>><<goto $nextpass>><</button>></div>
+        <</replace>>
+        <<else>><<stop>>
+    <</if>>
+  <</repeat>>
+<</silently>>
+
+:: 1mod1br4 [nobr]
+<<set $prevpass to "1mod1br4intro">>
+<<set $passage to "1mod1br4">>
+<<set $nextpass to "1mod1outro">>
+/* Extract & Payment */
+
+<<audio ":all" stop>><<audio "60supported" play>>
+<div id="audio"> <audio src="assets/audio/greenpeace2.0_S1_3_mod1game_1_extraction.mp3"  autoplay id="audio">Audio is not supported on your device</audio></div>
+<div class="wrapper box">
+  <<include "header">>
+<main class="game">
+        <h1 class="title">Round 4</h1>
+ <div class="game-wrapper">
+   <div id="mount" class="flex-col">
+ 
+      <h2 class="subtitle">Extraction</h2>
+
+    <p>Use your remaining Action Counters to extract resources. 
+Walk to the country you want to extract from. </p>
+<p>At least one member of your team should stay put at your country. </p>
+     <<button "Next">>
+    <<replace "#audio">>
+         <div id="audio"> <audio src="assets/audio/greenpeace2.0_S1_3_mod1game_1_payment.mp3"  autoplay id="audio">Audio is not supported on your device</audio></div><</replace>>
+    <<replace "#mount">>
+
+       <h2 class="subtitle">Payment</h2>
+       <p>Pay the bank with your extracted resources. </p>
+       <p>Clear your board for the next round. </p>
+       <<button "Move on">> 
+        <<set $prevpass to $passage>><<goto $nextpass>><</button>>
+    <</replace>>
+<</button>>
+  </div>
+   
+ </div >
+
+  </main>
+  <<include "footerskip">>
+</div>
+
+:: 1mod1outro [nobr]
+<<set $prevpass to "1mod1br4">>
+<<set $passage to "1mod1outro">>
+<<set $nextpass to "1mod1outrob">>
+
+
+<audio src="assets/audio/greenpeace2.0_S1_3_mod1game_2.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking ">
+ <div class="codeword-title-wrapper indent">
+
+ </div>
+      <div class="text-wrapper">
+  
+<p>Teacher, time to tally up the scores and read out the results. </p>
+
+<p>Then, there are some questions you can ask the class in your Teacher Pack. </p>
+
+<<button "Next">> 
+        <<set $prevpass to $passage>><<goto $nextpass>><</button>>
+</div>
+  </main>
+     <<include "footerskip">>
+</div>
+
+
+:: 1mod1outrob [nobr]
+<<set $prevpass to "1mod1outro">>
+<<set $passage to "1mod1outrob">>
+<<set $nextpass to "1mod1outroc">>
+
+
+<audio src="assets/audio/greenpeace2.0_S1_4_mod1outro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking ">
+ <div class="codeword-title-wrapper indent">
+
+ </div>
+      <div class="text-wrapper">
+  
+<p>The Extraction Economy Game is about our flawed system.</p>
+<p>It shows how we rip resources from the ground. How we keep taking and taking, cutting up our map, so that soon there may be no land left.</p>
+
+
+  <<timed 12s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+</div>
+  </main>
+     <<include "footerskip">>
+</div>
+
+
+:: 1mod1outroc [nobr]
+<<set $prevpass to "1mod1outrob">>
+<<set $passage to "1mod1outroc">>
+<<set $nextpass to "1mod2intro">>
+<<set $module to "Module 1">><<include "checkmodulenamelist">>
+
+<audio src="assets/audio/greenpeace2.0_S1_4_mod1outro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking ">
+ <div class="codeword-title-wrapper indent">
+
+ </div>
+      <div class="text-wrapper">
+  
+<p>The game shows us how inequitable our system is.</p>
+<p>Different countries have different amounts of natural resources, but so often it comes down to technology, violence and power.</p>
+<p>Those who can take what they want , with no care for what comes next or what is left behind.</p>
+
+
+
+  <<timed 17s>><<set $prevpass to $passage>><<set $mod1 to true>><<goto $nextpass>><</timed>>
+</div>
+  </main>
+     <<include "footerskip">>
+</div>
+
+
+:: 1mod2intro [nobr]
+<<set $prevpass to "1mod1outroc">>
+<<set $passage to "1mod2intro">>
+<<set $nextpass to "1mod2intro2">>
+<<set $module to "Module 2">><<include "checkmodulenamelist">><audio src="assets/audio/greenpeace2.0_S1_5_mod2intro_1.mp3" autoplay>Audio is not supported on your device</audio>
+  <div class="wrapper">
+    <<include "header">>
+    <main  class="speaking">
+        <div class="text-wrapper">
+<p>Ok - let’s take a moment to check in on what we know. </p>
+<p>So by now, you probably know that I’m pre-recorded.</p>
+<p>I’m supporting you to make choices,</p>
+<p>But how you act is up to you. </p>
+
+
+    <<timed 12s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+   </div>
+    </main>
+         <<include "footerskip">>
+  </div>
+
+:: 1mod2intro2 [nobr]
+<<set $prevpass to "1mod2intro">>
+<<set $passage to "1mod2intro2">>
+<<set $nextpass to "1mod2intro3">>
+
+<audio src="assets/audio/greenpeace2.0_S1_5_mod2intro_2.mp3" autoplay>Audio is not supported on your device</audio>
+  <div class="wrapper">
+    <<include "header">>
+    <main  class="speaking">
+        <div class="text-wrapper">
+<p>You might know, this project is inspired by Greenpeace. </p>
+<p>You might not know who they are though. </p>
+<p>Greenpeace is a movement of people who are passionate about defending the natural world from destruction. </p>
+
+    <<timed 13s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+   </div>
+    </main>
+         <<include "footerskip">>
+  </div>
+
+:: 1mod2intro3 [nobr]
+<<set $prevpass to "1mod2intro2">>
+<<set $passage to "1mod2intro3">>
+<<set $nextpass to "1mod2a">>
+
+<audio src="assets/audio/greenpeace2.0_S1_5_mod2intro_3.mp3" autoplay>Audio is not supported on your device</audio>
+  <div class="wrapper">
+    <<include "header">>
+    <main  class="speaking">
+        <div class="text-wrapper">
+<p>I imagine you do know we’re here to talk about the Climate Emergency</p>
+<p>Let’s start by sharing what you know already. </p>
+<p>When you hear the words Climate Emergency, what is the first thing you think of? Teacher, over to you.</p> 
+
+
+    <<button "Next">> <<set $prevpass to $passage>><<goto $nextpass>><</button>>
+   </div>
+    </main>
+         <<include "footerskip">>
+  </div>
+
+:: 1mod2a [nobr]
+<<set $prevpass to "1mod2intro3">>
+<<set $passage to "1mod2a">>
+<<set $nextpass to "1mod2b">>
+<<include "checkmodulenamelist">>
+<audio src="assets/audio/greenpeace2.0_S1_6_mod2context_1.mp3" autoplay>Audio is not supported on your device</audio>
+  <div class="wrapper">
+    <<include "header">>
+    <main  class="speaking">
+        <div class="text-wrapper">
+<p>You might have mentioned a lot of things or hardly anything,</p>
+<p>Either is ok for now. </p>
+<p>We can see this emergency happening all around us. </p>
+<p>And history has taught us you don’t stand still in an emergency. </p>
+<p>You act. </p>
+
+
+    <<timed 13s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+   </div>
+    </main>
+         <<include "footerskip">>
+  </div>
+
+:: 1mod2b [nobr]
+<<set $prevpass to "1mod2a">>
+<<set $passage to "1mod2b">>
+<<set $nextpass to "1mod2c">>
+<audio src="assets/audio/greenpeace2.0_S1_6_mod2context_2.mp3" autoplay>Audio is not supported on your device</audio>
+  <div class="wrapper">
+    <<include "header">>
+    <main  class="speaking">
+        <div class="text-wrapper">
+<p>Before we think about action, we need to start with understanding how things are.</p>
+<p>And from the very beginning, we need to understand that the Climate Emergency is not isolated, it's not separate from other struggles, violence, or destruction. It is all interconnected.</p>
+
+
+    <<timed 17s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+   </div>
+    </main>
+         <<include "footerskip">>
+  </div>
+
+:: 1mod2c [nobr]
+<<set $prevpass to "1mod2b">>
+<<set $passage to "1mod2c">>
+<<set $nextpass to "1mod2d">>
+<audio src="assets/audio/greenpeace2.0_S1_6_mod2context_3.mp3" autoplay>Audio is not supported on your device</audio>
+  <div class="wrapper">
+    <<include "header">>
+    <main  class="speaking">
+        <div class="text-wrapper">
+<p>In a moment, you’re going to watch a video that Dr Mya-Rose Craig made for Greenpeace.</p>
+<p>Dr Mya-Rose Craig is a climate activist from the UK </p>
+<p>She’s great. </p>
+    <<timed 9s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+   </div>
+    </main>
+         <<include "footerskip">>
+  </div>
+
+:: 1mod2d [nobr]
+<<set $prevpass to "1mod2c">>
+<<set $passage to "1mod2d">>
+<<set $nextpass to "1mod2e">>
+<audio src="assets/audio/greenpeace2.0_S1_6_mod2context_4.mp3" autoplay>Audio is not supported on your device</audio>
+  <div class="wrapper">
+    <<include "header">>
+    <main  class="speaking">
+        <div class="text-wrapper">
+<p>Before the video: a content warning. </p>
+<p>This video is about racism and environmental destruction, and it's really honest</p>
+<p>You might find it hard to watch at points. </p>
+
+<<timed 10s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+   </div>
+    </main>
+<<include "footerskip">>
+  </div>
+
+:: 1mod2e [nobr]
+<<set $prevpass to "1mod2d">>
+<<set $passage to "1mod2e">>
+<<set $nextpass to "1mod2vid">>
+<audio src="assets/audio/greenpeace2.0_S1_6_mod2context_5.mp3" autoplay>Audio is not supported on your device</audio>
+  <div class="wrapper">
+    <<include "header">>
+    <main  class="speaking">
+        <div class="text-wrapper">
+<p>We’ll break it up and take it step by step, together. </p>
+<p>Teacher, please do speak to the class about what they might need whilst watching this video</p>
+<p>I'm going to hand over to Dr Mya-Rose Craig now – </p>
+
+<p> Click <<button "Play">><<set $prevpass to $passage>><<goto $nextpass>><</button>> when you are ready. </p>
+
+
+<<timed 10s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+   </div>
+    </main>
+<<include "footerskip">>
+  </div>
+
+
+
+:: 1mod2vid [nobr]
+<<set $prevpass to "1mod2e">>
+<<set $passage to "1mod2vid">>
+<<set $nextpass to "1mod2int1">>
+
+<div class="wrapper">
+  /* <<include "header">> */
+    <main  >
+        /* <div class="text-wrapper"> */
+        	<div id="video" role="video" aria-label="Mya Rose Craig video"><iframe src="https://player.vimeo.com/video/809481059?h=be62f22dd5&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:90%;" allowfullscreen title="Mya-Rose Vid 1"></iframe></div>
+    </main>
+     <<include "footervid">>
+     <<timed 200s >><<goto $nextpass>>
+     <</timed>>
+</div>
+
+:: 1mod2int1 [nobr]
+<<set $prevpass to "1mod2vid">>
+<<set $passage to "1mod2int1">>
+<<set $nextpass to "1mod2vid2">>
+<audio src="assets/audio/greenpeace2.0_S1_6_mod2context_7.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+      <div class="text-wrapper">
+<p>Ok, let’s hold it there. We’ve just heard a lot, let's take a moment to discuss</p>
+<p>Mya-Rose talked about how our nature and climate emergencies have roots in the British Empire and systemic racism.</p>
+<p>How do you think they’re connected? </p>
+
+
+<p>When ready click <<button "Move On">><<set $prevpass to $passage>><<goto $nextpass>><</button>></p>
+</div>
+
+  </main>
+     <<include "footer">>
+</div>
+
+:: 1mod2vid2 [nobr]
+<<set $prevpass to "1mod2int1">>
+<<set $passage to "1mod2vid2">>
+<<set $nextpass to "1mod2int2">>
+
+<div class="wrapper">
+
+    <main  >
+        /* <div class="text-wrapper"> */
+        	<div id="video" role="video" aria-label="Mya Rose Craig video"><iframe src="https://player.vimeo.com/video/809466454?h=1dc0529321&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:90%;" allowfullscreen title="Mya-Rose Vid 2"></iframe></div>
+    </main>
+    
+<<include "footervid">>
+     <<timed 191s >><<goto $nextpass>>
+     <</timed>>
+</div>
+
+:: 1mod2int2 [nobr]
+<<set $prevpass to "1mod2vid2">>
+<<set $passage to "1mod2int2">>
+<<set $nextpass to "1mod2vid3">>
+<audio src="assets/audio/greenpeace2.0_S1_6_mod2context_8.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+      <div class="text-wrapper">
+<p>Ok, let’s pause again. We’ve just heard about the drastic inequality of those who are living with the harshest impacts of the climate crisis yet causing the least pollution. </p>
+
+<p>How do you think this all links to us, in the UK? </p>
+
+
+<p>When ready click <<button "Move On">><<set $prevpass to $passage>><<goto $nextpass>><</button>></p>
+</div>
+
+  </main>
+     <<include "footer">>
+</div>
+
+
+:: 1mod2vid3 [nobr]
+<<set $prevpass to "1mod2int2">>
+<<set $passage to "1mod2vid3">>
+<<set $nextpass to "1mod2int3">>
+
+<div class="wrapper">
+  /* <<include "header">> */
+    <main  >
+        /* <div class="text-wrapper"> */
+        	<div id="video" role="video" aria-label="MOTT Training 6 video"><iframe src="https://player.vimeo.com/video/809466843?h=58b979fd6e&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:90%;" allowfullscreen title="Mya-Rose Vid 3"></iframe></div>
+    </main>
+<<include "footervid">>
+     <<timed 166s >><<goto $nextpass>>
+     <</timed>>
+</div>
+
+:: 1mod2int3 [nobr]
+<<set $prevpass to "1mod1vid3">>
+<<set $passage to "1mod2int3">>
+<<set $nextpass to "1mod2outro1">>
+<audio src="assets/audio/greenpeace2.0_S1_6_mod2context_9.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+      <div class="text-wrapper">
+<p>Thanks Mya-Rose. Before we move on, one final question to consider:</p>
+
+<p>What did you think about Mya-Rose’s thoughts on collective over individualistic action?</p>
+
+<<button "Move On">><<set $prevpass to $passage>><<goto $nextpass>><</button>>
+</div>
+
+  </main>
+     <<include "footer">>
+</div>
+
+
+:: 1mod2outro1 [nobr]
+<<set $prevpass to "1mod1vid3">>
+<<set $passage to "1mod2outro1">>
+<<set $nextpass to "1mod2outro2">>
+<audio src="assets/audio/greenpeace2.0_S1_7_mod2outro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+      <div class="text-wrapper" id="text">
+<p>You might have found that video hard to watch </p>
+<p>You might have been upset by what you saw. </p>
+<p>You might feel angry, numb, frustrated </p>
+<p>It might leave a feeling in your stomach that you don’t have the words for at the moment.</p>
+<p>You might not know how you feel yet. </p>
+<p>And that is ok. </p>
+
+ <<timed 16s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+</div>
+</main>
+     <<include "footerskip">>
+</div>
+
+:: 1mod2outro2 [nobr]
+<<set $prevpass to "1mod2outro1">>
+<<set $passage to "1mod2outro2">>
+<<set $nextpass to "1mod3intro">>
+<<set $module to "Module 2">><<include "checkmodulenamelist">>
+<audio src="assets/audio/greenpeace2.0_S1_7_mod2outro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+      <div class="text-wrapper" id="text">
+<p>This project is about taking action.</p>
+<p>It's about making change.</p>
+<p>We’re going to have to work together, as Mya-Rose said. </p>
+<p>Let’s do that - through a game.</p>
+
+ <<timed 11s>><<set $mod2 to true>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+</div>
+</main>
+     <<include "footerskip">>
+</div>
+
+:: 1mod3intro [nobr]
+<<set $prevpass to "1mod2outro2">>
+<<set $passage to "1mod3intro">>
+<<set $nextpass to "1mod3codename">>
+<<set $module to "Module 3">><<include "checkmodulenamelist">>
+<audio src="assets/audio/greenpeace2.0_S1_8_mod3intro.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+      <div class="text-wrapper" id="text">
+<p>You’re going to play a game that will discover the name your group will take on in this project.</p>
+<p>A shared identity. </p>
+<p>We’ll do this through finding and making connections. </p>
+<p>Teacher, over to you for <h2 class="subtitle inline">CODENAME</h2></p>
+
+ <<button "Next">><<set $prevpass to $passage>><<goto $nextpass>><</button>>
+</div>
+</main>
+     <<include "footerskip">>
+</div>
+
+:: 1mod3codename[nobr]
+<<set $prevpass to "1mod3intro">>
+<<set $passage to "1mod3codename">>
+<<set $nextpass to "1sessionoutro">>
+<<set $module to "Module 3">><<include "checkmodulenamelist">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+      <div class="text-wrapper" id="mount">
+  
+
+   <div class="enter-codename-container">
+     <div class="enter-codename-wrapper">
+     <h2 class="subtitle">Enter Codename:</h2>
+    
+         <<textbox "$codename" "">>
+             <<button "SEND">><<set $prevpass to $passage>>
+             <<set $nextpass to "1sessionoutro">><<goto "sending">><</button>>
+       
+      </div>
+   </div >
+
+ </div>
+ 
+
+  </main>
+     <<include "footer">>
+</div>
+
+
+
+:: 1sessionoutro [nobr]
+<<set $prevpass to "1mod3codename">>
+<<set $passage to "1sessionoutro">>
+<<set $nextpass to "cardoptions">>
+<<set $module to "Session 1">><<include "checkmodulenamelist">>
+/* TODO REPLACE  */
+<audio src="assets/audio/greenpeace2.0_S1_9_sessionoutro.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking ">
+ <div class="codeword-title-wrapper indent">
+
+ </div>
+      <div class="text-wrapper">
+  
+<p> Fantastic - this will be the identity of this group and your action. </p>
+<p>And that’s it for our first session. </p>
+
+<p>We’ve landed with the context of the climate emergency.</p>
+<p>And together, you are going to be taking action together, by creating your own piece of Playful Climate Activism it will be called...</p>
+
+   <h1 class="title"> Codename: $codename </h1>
+
+<p>Next session - we’ll talk about heisting!</p>
+
+
+  <<button "Finish">><<set $prevpass to $passage>><<set $mod3 to true>><<goto $nextpass>><</button>>
+
+  <<timed 35s>><<set $prevpass to $passage>><<set $mod3 to true>><<goto $nextpass>><</timed>>
+</div>
+  </main>
+     <<include "footerskip">>
+</div>
+
+
+
+/* SESSION 2 */
+
+
+
+
+:: 2intro [nobr]
+<<set $prevpass to "cardoptions">>
+<<set $passage to "2intro">>
+<<set $nextpass to "2intro2">>
+
+<<set $module to "Session 2">>
+<<include "checkmodulenamelist">>
+<audio src="assets/audio/greenpeace2.0_S2_1_sessionintro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+    /* <h1 class="title top">Hello - it's Kai again</h1> */
+  <main class="speaking">
+    <div class="text-wrapper">
+     <p>Welcome to Session 2</p>
+<p>Quick Recap</p>
+<p>I’m Kai. </p>
+<p>A Playful Activist. </p>
+<p>And I’m sharing with you how to be one.</p>
+
+<<timed 9s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+    </div>
+
+</main>
+<<include "footerskip">>
+</div>
+
+:: 2intro2 [nobr]
+<<set $prevpass to "2intro">>
+<<set $passage to "2intro2">>
+<<set $nextpass to "2mod4intro">>
+
+<<include "checkmodulenamelist">>
+<audio src="assets/audio/greenpeace2.0_S2_1_sessionintro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+    /* <h1 class="title top">Hello - it's Kai again</h1> */
+  <main class="speaking">
+    <div class="text-wrapper">
+<p>Last week we discovered an identity for our group, </p>
+<p>And that our piece of playful activism is going to be focused on the climate emergency. </p>
+<p>It’s a HUGE topic. </p>
+<p>Today, we will work out what to focus on. </p>
+<p>But first, let’s play a game. </p>
+<<timed 15s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+    </div>
+
+</main>
+<<include "footerskip">>
+</div>
+
+
+:: 2mod4intro [nobr]
+<<set $prevpass to "2intro">>
+<<set $passage to "2mod4intro">>
+<<set $nextpass to "2mod4intro2">>
+<<set $module to "Module 4">>
+<<include "checkmodulenamelist">>
+<audio src="assets/audio/greenpeace2.0_S2_2_mod4intro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+ <main class="speaking">
+    <div class="text-wrapper" id="twrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper">
+<p>Heisting. </p>
+<p>The Art of taking something for a reason. </p>
+<p>For this game you are going to need a Game Board</p>
+<h2 class="subtitle">The Heist Game Board</h2>
+
+<<button "Next">><<set $prevpass to $passage>><<goto $nextpass>><</button>>
+    </div>
+
+</main>
+<<include "footerskip">>
+</div>
+
+:: 2mod4intro2 [nobr]
+<<set $prevpass to "2mod4intro">>
+<<set $passage to "2mod4intro2">>
+<<set $nextpass to "2mod4intro3">>
+
+<audio src="assets/audio/greenpeace2.0_S2_2_mod4intro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+    /* <h1 class="title top">Hello - it's Kai again</h1> */
+  <main class="speaking">
+    <div class="text-wrapper">
+<p>In teams, you are going to plan a heist to retrieve an Artefact. </p>
+<p>Let’s load up the scenario. </p>
+
+<<timed 15s>><<set $prevpass to $passage>><<goto "loading">><</timed>>
+    </div>
+
+</main>
+<<include "footerskip">>
+</div>
+
+:: 2mod4intro3 [nobr]
+<<set $prevpass to "2mod4intro2">>
+<<set $passage to "2mod4intro3">>
+<<set $nextpass to "2mod4intro4">>
+
+<audio src="assets/audio/greenpeace2.0_S2_2_mod4intro_3.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper" id="twrapper">
+<h2 class="subtitle">The Museum Heist </h2>
+
+<<timed 3s>>
+  <<append "#twrapper">>
+    <p>Your <h2 class="subtitle inline">Target</h2> is the Museum of Things Not Actually Owned By Us</p>
+<p>The <h2 class="subtitle inline">Artefact</h2> you are retrieving is The Jewel of Lannopolis.</p>
+<p><h2 class="subtitle inline">Why?</h2> It was taken 327 years ago, and it’s really time it was returned to its home. </p>
+    <</append>>
+<</timed>>
+
+<<timed 18s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+    </div>
+
+</main>
+<<include "footerskip">>
+</div>
+
+:: 2mod4intro4 [nobr]
+<<set $prevpass to "2mod4intro3">>
+<<set $passage to "2mod4intro4">>
+<<set $nextpass to "2mod4intro5">>
+
+<audio src="assets/audio/greenpeace2.0_S2_2_mod4intro_4.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper" id="twrapper">
+<p>Teacher, place the  <h2 class="subtitle inline"> Target</h2>, the  <h2 class="subtitle inline"> Why</h2> & the  <h2 class="subtitle inline"> Artefact</h2> cards on <h2 class="subtitle inline">The Heist Board</h2>. </p>
+<<button "Done">><<set $prevpass to $passage>><<goto $nextpass>><</button>>
+    </div>
+
+</main>
+<<include "footerskip">>
+</div>
+
+:: 2mod4intro5 [nobr]
+<<set $prevpass to "2mod4intro4">>
+<<set $passage to "2mod4intro5">>
+<<set $nextpass to "2mod4intro6">>
+
+<audio src="assets/audio/greenpeace2.0_S2_2_mod4intro_5.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+ <main class="speaking">
+    <div class="text-wrapper" id="twrapper">
+<p>  Now, let’s see what challenges you’ll need to overcome in your Heist.</p> 
+<p>Shuffle and place 4 Heist Obstacle Cards on the Heist Board. </p>
+<p> Share what you have placed.</p>
+<<button "Done">><<set $prevpass to $passage>><<goto $nextpass>><</button>>
+    </div>
+
+</main>
+<<include "footerskip">>
+</div>
+
+:: 2mod4intro6 [nobr]
+<<set $prevpass to "2mod4intro5">>
+<<set $passage to "2mod4intro6">>
+<<set $nextpass to "2mod4outro">>
+<<set $module to "Module 4">><<include "checkmodulenamelist">>
+<audio src="assets/audio/greenpeace2.0_S2_2_mod4intro_6.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+ <main class="speaking">
+    <div class="text-wrapper" id="twrapper">
+
+<p>Great - the Museum Heist is set. </p>
+<p>In groups you will receive 3 Heister Cards. </p>
+<p>These Heisters are running this heist and have a particular set of skills. </p>
+<p>You want to use these skills to complete the Heist and retrieve the artefact</p>
+
+<p>A Heister can’t use a skill twice - but different skills from the same Heister can be used to overcome different obstacles.</p>
+
+<p>Good luck. </p>
+
+<<button "Completed">><<set $prevpass to $passage>><<goto $nextpass>><</button>>
+    </div>
+
+</main>
+<<include "footerskip">>
+</div>
+
+:: 2mod4outro [nobr]
+<<set $prevpass to "2mod4intro6">>
+<<set $passage to "2mod4outro">>
+<<set $nextpass to "2mod4outro2">>
+<<set $module to "Module 4">><<include "checkmodulenamelist">>
+<audio src="assets/audio/greenpeace2.0_S2_3_mod4outro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+ <main class="speaking">
+    <div class="text-wrapper" id="twrapper">
+
+<p>Heisting is a good place for us to begin as we unpack what a Playful Activist can do. </p>
+<p>We’ll come back to it again in other sessions. </p>
+
+
+<<timed 8s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+    </div>
+
+</main>
+<<include "footerskip">>
+</div>
+
+:: 2mod4outro2 [nobr]
+<<set $prevpass to "2mod4outro">>
+<<set $passage to "2mod4outro2">>
+<<set $nextpass to "2mod5intro">>
+<<set $module to "Module 4">><<include "checkmodulenamelist">>
+<audio src="assets/audio/greenpeace2.0_S2_3_mod4outro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+ <main class="speaking">
+    <div class="text-wrapper" id="twrapper">
+
+<p>For today, we’re deciding where we are going to give our attention. </p>
+<p>We’ll start by looking global. </p>
+<<timed 7s>><<set $mod4 to true>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+    </div>
+
+</main>
+<<include "footerskip">>
+</div>
+
+:: 2mod5intro [nobr]
+<<set $prevpass to "2mod4outro2">>
+<<set $passage to "2mod5intro">>
+<<set $nextpass to "2mod5outro">>
+<<set $module to "Module 5">><<include "checkmodulenamelist">>
+<audio src="assets/audio/greenpeace2.0_S2_2_mod4intro_5.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+ <main class="speaking">
+    <div class="text-wrapper" id="twrapper">
+
+<p>Teacher, we need 6 groups/let’s get into smaller groups. </p>
+<p>You’ll each receive a Global Card. </p>
+
+<p>Each Global Card has a human on it. </p>
+
+<p>A human who is trying to change their world. </p>
+
+<p>You are going to introduce this human, what they are trying to change and, most importantly, why to the rest of your group. </p>
+
+When finished, click <<button "Move On">><<set $prevpass to $passage>><<goto $nextpass>><</button>>
+    </div>
+
+</main>
+<<include "footerskip">>
+</div>
+
+:: 2mod5outro [nobr]
+<<set $prevpass to "2mod5intro">>
+<<set $passage to "2mod5outro">>
+<<set $nextpass to "2mod5outro2">>
+<<set $module to "Module 5">><<include "checkmodulenamelist">>
+<audio src="assets/audio/greenpeace2.0_S2_5_mod5outro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+ <main class="speaking">
+    <div class="text-wrapper" id="twrapper">
+
+<p>Playful Activists build plans using the models of others </p>
+<p>These stories give us a small insight into the activism that is happening all over the Earth.</p>
+<p>Then, through thinking about us, about how their stories relate to us here, and about what we want to change... </p>
+<p>We can find our focus. </p>
+
+  <<timed 17s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+
+    </div>
+
+</main>
+<<include "footerskip">>
+</div>
+
+:: 2mod5outro2 [nobr]
+<<set $prevpass to "2mod5outro">>
+<<set $passage to "2mod5outro2">>
+<<set $nextpass to "2mod6intro">>
+<<set $module to "Module 5">><<include "checkmodulenamelist">>
+<audio src="assets/audio/greenpeace2.0_S2_5_mod5outro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+ <main class="speaking">
+    <div class="text-wrapper" id="twrapper">
+
+<p>So, which of the global actions do you think connects most to you in your school? What do you think we should focus on here?  </p>
+<p>We’re going to take an old-fashioned vote. </p>
+<p>Teacher, can you hold the vote, and then select which one you have chosen. </p>
+<<link "AIR">> 
+  <<set $focus to "air">>
+  <<timed 0.6s>>
+    <<replace "#twrapper">>
+       <h1 class="title"> Accepted: $focus </h1>
+      <</replace>>
+  <</timed>>
+<<timed 3s>>
+  <<set $prevpass to $passage>><<goto $nextpass>>
+  <</timed>>
+<</link>>
+<<link "FOOD">> 
+  <<set $focus to "food">>
+  <<set $prevpass to $passage>><<goto $nextpass>>
+<</link>>
+<<link "NATURE">> 
+  <<set $focus to "nature">>
+  <<set $prevpass to $passage>><<goto $nextpass>>
+<</link>>
+<<link "WATER">> 
+  <<set $focus to "water">>
+  <<set $prevpass to $passage>><<goto $nextpass>>
+<</link>>
+    </div>
+
+</main>
+<<include "footerskip">>
+</div>
+<<set $mod5 to true>>
+
+:: 2mod6intro [nobr]
+<<set $prevpass to "2mod5outro2">>
+<<set $passage to "2mod6intro">>
+<<set $nextpass to "2sessionoutro">>
+<<set $module to "Module 6">><<include "checkmodulenamelist">>
+
+<audio src="" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+
+module 6
+    </div>
+
+</main>
+<<include "footerskip">>
+</div>
+
+:: 2sessionoutro [nobr]
+<<set $prevpass to "2mod3outro2">>
+<<set $passage to "2sessionoutro">>
+<<set $nextpass to "cardoptions">>
+<<set $mod3 to true>>
+<<set $module to "Session 2">><<include "checkmodulenamelist">>
+<audio src="assets/audio/greenpeace2.0_S2_7_sessionoutro.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+      <div class="text-wrapper">
+<p>And with that, we now know our way forward. </p>
+<p>I’d recommend you research the Focus you have chosen before the next session. Can you find examples of other activism about your focus? How does it appear in your local area? </p>
+
+<p>How can we understand what we actually want to change? </p>
+<p>We’ll do that next session</p>
+<p>How do we change the game? </p>
+
+
+ <<button "Finish">><<set $prevpass to $passage>><<set $mod6 to true>><<goto $nextpass>><</button>>
+</div>
+</main>
+     <<include "footerskip">>
+</div>
+
+
+/* SESSION 3 */
+
+:: 3intro [nobr]
+<<set $prevpass to "cardoptions">>
+<<set $passage to "3intro">>
+<<set $nextpass to "3intro2">>
+
+<<set $module to "Session 3">>
+<<include "checkmodulenamelist">>
+<audio src="assets/audio/greenpeace2.0_S3_1_sessionintro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper">
+<p>We are back for the third session of this project</p>
+<p>All about playful activism, with me, Kai. </p>
+
+<<timed 7s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+    </div>
+
+</main>
+<<include "footerskip">>
+</div>
+
+:: 3intro2 [nobr]
+<<set $prevpass to "3intro">>
+<<set $passage to "3intro2">>
+<<set $nextpass to "3mod7intro">>
+<<set $module to "Session 3">>
+<<include "checkmodulenamelist">>
+<audio src="assets/audio/greenpeace2.0_S3_1_sessionintro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper">
+<p>Last session you worked out your <h2 class="subtitle inline">Focus</h2>. </p>
+<p>This session we’ll work out what we actually want to change. </p>
+<p>What our <h2 class="subtitle inline">Ask</h2> will be. </p>
+<p>We’ll start with playing a game. </p>
+
+
+<<timed 12s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+    </div>
+
+</main>
+<<include "footerskip">>
+</div>
+
+:: 3mod7intro [nobr]
+<<set $prevpass to "3intro2">>
+<<set $passage to "3mod7intro">>
+<<set $nextpass to "3mod7">>
+<<set $module to "Module 7">>
+<<include "checkmodulenamelist">>
+<audio src="assets/audio/greenpeace2.0_S3_2_mod7intro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+ <main class="speaking">
+    <div class="text-wrapper" id="twrapper">
+
+
+<p>A game that requires you to reach a target,</p>
+<p>to overcome obstacles as players,</p>
+<p>to try  different tactics. </p>
+<p>The game is Grandma’s Footsteps.</p>
+
+<<button "Next">><<set $prevpass to $passage>><<goto $nextpass>><</button>>
+    </div>
+
+</main>
+<<include "footerskip">>
+</div>
+
+:: 3mod7 [nobr]
+<<set $prevpass to "3mod7intro">>
+<<set $passage to "3mod7">>
+<<set $nextpass to "3mod7outro">>
+<<set $module to "Module 7">>
+<<include "checkmodulenamelist">>
+<audio src="assets/audio/greenpeace2.0_S3_2_mod7intro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+ <main class="speaking">
+    <div class="text-wrapper" id="twrapper">
+
+
+<p>Teacher, there’s an instruction card to help you lead this. </p>
+
+ <p>When you've finished, click <<button "Move On">><<set $prevpass to $passage>><<goto $nextpass>><</button>> </p>
+
+
+    </div>
+
+</main>
+<<include "footerskip">>
+</div>
+
+:: 3mod7outro [nobr]
+<<set $prevpass to "3mod7">>
+<<set $passage to "3mod7outro">>
+<<set $nextpass to "3mod8intro">>
+<<set $module to "Module 7">>
+<<include "checkmodulenamelist">>
+<audio src="assets/audio/greenpeace2.0_S3_3_mod7outro.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+ <main class="speaking">
+    <div class="text-wrapper" id="twrapper">
+
+
+<p>When we mod games we learn that they can change,</p>
+<p>that things can be different. </p>
+<br/>
+<p>Games are systems. </p>
+<p>Systems with players, obstacles, power. </p>
+<p>And if we can modify these game systems,</p>
+<p>we can modify others too. </p>
+
+ <<timed 15s>><<set $prevpass to $passage>><<set $mod7 to true>><<goto $nextpass>><</timed>>
+    </div>
+
+</main>
+<<include "footerskip">>
+</div>
+
+:: 3mod8intro [nobr]
+<<set $prevpass to "3mod7outro">>
+<<set $passage to "3mod8intro">>
+<<set $nextpass to "3mod8intro2">>
+<<set $module to "Module 8">>
+<<include "checkmodulenamelist">>
+<audio src="assets/audio/greenpeace2.0_S3_4_mod8intro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+ <main class="speaking">
+    <div class="text-wrapper" id="twrapper">
+
+
+<p>So, what does it have to do with your Playful Activism?</p>
+<p>Playful Activists mod systems, to make that system reflect the change you want to see. </p> 
+<p>And for this project, you are the experts in the system you will mod.</p> 
+<p>As the system is your own school. </p>
+
+
+ <<timed 17s>><<set $prevpass to $passage>><<set $mod1 to true>><<goto $nextpass>><</timed>>
+    </div>
+
+</main>
+<<include "footerskip">>
+</div>
+
+:: 3mod8intro2 [nobr]
+<<set $prevpass to "3mod8intro">>
+<<set $passage to "3mod8intro2">>
+<<set $nextpass to "3mod8">>
+<<set $module to "Module 8">>
+<<include "checkmodulenamelist">>
+<audio src="assets/audio/greenpeace2.0_S3_4_mod8intro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+ <main class="speaking">
+    <div class="text-wrapper" id="twrapper">
+
+<p>In any system, we need to understand what is going on now for us to understand how we change it. </p>
+
+<p>Whatever Focus you chose - you are going to map your school system with that in mind. </p>
+
+<p>How is that Focus present in your school?</p>
+
+<p>Teacher, I’ll leave you to lead this. </p>
+
+ <<timed 17s>><<set $prevpass to $passage>><<set $mod1 to true>><<goto $nextpass>><</timed>>
+    </div>
+
+</main>
+<<include "footerskip">>
+</div>
+
+:: 3mod8 [nobr]
+<<set $prevpass to "3mod8intro2">>
+<<set $passage to "3mod8">>
+<<set $nextpass to "3mod8outro">>
+<<set $module to "Module 8">>
+<<include "checkmodulenamelist">>
+<audio src="assets/audio/greenpeace2.0_S3_5_theschoolsystem.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+ <main class="speaking">
+    <div class="text-wrapper" id="twrapper">
+<h2 class="subtitle">FOCUS MAPPING</h2>
+
+<p>SPACE: Where does the Focus exist in your school?</p>
+<p>PLAYERS: Who is involved with this Focus?</p>
+<p>OBSTACLE: What stops them changing the system?</p>
+<p>POWER: Who has the power to change it? </p>
+
+ <p>When done, click <<button "Move On">><<set $prevpass to $passage>><<goto $nextpass>><</button>> </p>
+
+    </div>
+
+</main>
+<<include "footerskip">>
+</div>
+
+:: 3mod8outro [nobr]
+<<set $prevpass to "3mod8">>
+<<set $passage to "3mod8outro">>
+<<set $nextpass to "3mod9intro">>
+<<set $module to "Module 8">>
+<<include "checkmodulenamelist">>
+<audio src="assets/audio/greenpeace2.0_S3_6_mod8outro.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+ <main class="speaking">
+    <div class="text-wrapper" id="twrapper">
+
+<p>When we map systems, we see power.</p>
+
+<p>And we need to see power, to make change </p>
+
+<p>When we see it all, it becomes like a row of dominoes. </p>
+
+<p>Or, one of those videos where you knock over a glass, which pours out water, which turns on a light, which toasts a marshmallow... you know. </p>
+
+
+ <<timed 15s>><<set $prevpass to $passage>><<set $mod8 to true>><<goto $nextpass>><</timed>>
+    </div>
+
+</main>
+<<include "footerskip">>
+</div>
+
+:: 3mod9intro [nobr]
+<<set $prevpass to "3intro2">>
+<<set $passage to "3mod9intro">>
+<<set $nextpass to "3mod9">>
+<<set $module to "Module 9">>
+<<include "checkmodulenamelist">>
+<audio src="assets/audio/greenpeace2.0_S3_7_mod9_1.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+ <main class="speaking">
+    <div class="text-wrapper" id="twrapper">
+
+<p>Now, let's understand the obstacles to the change. </p>
+
+<p>  You’ve written them down already, choose four as a whole group and write them on the <h2 class="subtitle inline">Obstacle Cards</h2> </p>
+
+ <p>When done, click <<button "Next">><<set $prevpass to $passage>><<goto $nextpass>><</button>> </p>
+    </div>
+
+</main>
+<<include "footerskip">>
+</div>
+
+:: 3mod9 [nobr]
+<<set $prevpass to "3mod9intro">>
+<<set $passage to "3mod9">>
+<<set $nextpass to "3mod10intro">>
+<<set $module to "Module 9">>
+<<include "checkmodulenamelist">>
+<div id="audio"><audio src="assets/audio/greenpeace2.0_S3_7_mod9_2.mp3" autoplay>Audio is not supported on your device</audio></div>
+<div class="wrapper">
+  <<include "header">>
+ <main class="speaking">
+    <div class="text-wrapper" id="twrapper">
+<p>In four groups - come up with ideas on how to overcome these obstacles. What could be changed? </p>
+
+ <<button "Next">>
+  <<timed 0.5s>>
+    <<replace "#audio">>
+      <audio src="assets/audio/greenpeace2.0_S3_7_mod9_3.mp3" autoplay>Audio is not supported on your device</audio>
+      <</replace>>
+    <<replace "#twrapper">>
+      <p>Teacher, hand out 1 <h2 class="subtitle inline">Change Card</h2> per group. Review your changes, and put forward one suggestion that could mod the system. </p>
+
+<p>Write it on the card. </p>
+
+ <p>When done, click <<button "Next">><<set $prevpass to $passage>><<goto $nextpass>><</button>> </p>
+
+      <</replace>>
+    <</timed>>
+ <</button>> 
+    </div>
+
+</main>
+<<include "footerskip">>
+</div>
+
+:: 3mod10intro [nobr]
+<<set $prevpass to "3mod9">>
+<<set $passage to "3mod10intro">>
+<<set $nextpass to "3mod10">>
+<<set $module to "Module 10">>
+<<include "checkmodulenamelist">>
+<audio src="assets/audio/greenpeace2.0_S3_8_mod10intro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+ <main class="speaking">
+    <div class="text-wrapper" id="twrapper">
+
+
+<p>Ok - you have four potential <h2 class="subtitle inline">Change Cards</h2>. </p>
+
+<p>You’re going to take the <h2 class="subtitle inline">Change Cards</h2> you’ve suggested and look at two things: </p>
+
+<p>First, you’ll look at how <h2 class="subtitle inline">Winnable</h2> the change  is - this is how easy it is to achieve </p>
+
+<p>Then, you’ll look at how <h2 class="subtitle inline">Worthwhile</h2> the change is - will it make a difference?</p>
+
+ <<timed 18s>><<set $prevpass to $passage>><<set $mod7 to true>><<goto $nextpass>><</timed>>
+    </div>
+
+</main>
+<<include "footerskip">>
+</div>
+
+:: 3mod10 [nobr]
+<<set $prevpass to "3mod10intro">>
+<<set $passage to "3mod10">>
+<<set $nextpass to "3sessionoutro">>
+<<set $module to "Module 10">>
+<<include "checkmodulenamelist">>
+<div id="audio"><audio src="assets/audio/greenpeace2.0_S3_9_mod10intro_2.mp3" autoplay>Audio is not supported on your device</audio></div>
+<div class="wrapper">
+  <<include "header">>
+ <main class="speaking">
+    <div class="text-wrapper" id="twrapper">
+
+<p>Teacher, take out the Worthwhile/Winnable Board and I’ll hand over to you. </p>
+
+<p>You’re going to turn your four Change Cards into 1 Ask Card. </p>
+
+ <p>When you have your Ask, click <<button "Done">><<set $prevpass to $passage>><<goto $nextpass>><</button>> </p>
+
+   
+    </div>
+
+</main>
+<<include "footerskip">>
+</div>
+
+
+:: 3sessionoutro [nobr]
+<<set $prevpass to "3mod10">>
+<<set $passage to "3sessionoutro">>
+<<set $nextpass to "3sessionoutro2">>
+<<set $module to "Session 3">><<include "checkmodulenamelist">>
+
+<audio src="" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking ">
+ <div class="codeword-title-wrapper indent">
+
+ </div>
+      <div class="text-wrapper">
+  
+<p>Today, you have discovered the change you want to make.</p>
+<p>You have imagined a possible future where things are different,</p>
+<p>despite knowing what the obstacles are. </p>
+
+
+  <<timed 10s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+</div>
+  </main>
+     <<include "footerskip">>
+</div>
+
+:: 3sessionoutro2 [nobr]
+<<set $prevpass to "3sessionoutro">>
+<<set $passage to "3sessionoutro2">>
+<<set $nextpass to "3sessionoutro3">>
+<<set $module to "Session 3">><<include "checkmodulenamelist">>
+<div id="audio"><audio src="assets/audio/greenpeace2.0_S3_10_sessionoutro_1.mp3" autoplay>Audio is not supported on your device</audio></div>
+
+<audio src="" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking ">
+ <div class="codeword-title-wrapper indent">
+
+ </div>
+      <div class="text-wrapper">
+  
+<p>We call this Stubborn Optimism. </p>
+<p>It was coined by Christiana Figueres - who negotiated the historic Paris Climate Agreement. </p>
+<p>Stubborn Optimism is essential for a Playful Activist.  </p>
+
+  <<timed 13s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+</div>
+  </main>
+     <<include "footerskip">>
+</div>
+
+
+:: 3sessionoutro3 [nobr]
+<<set $prevpass to "3sessionoutro2">>
+<<set $passage to "3sessionoutro3">>
+<<set $nextpass to "cardoptions">>
+<<set $module to "Session 3">><<include "checkmodulenamelist">>
+<div id="audio"><audio src="assets/audio/greenpeace2.0_S3_10_sessionoutro_2.mp3" autoplay>Audio is not supported on your device</audio></div>
+
+<audio src="" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking ">
+ <div class="codeword-title-wrapper indent">
+
+ </div>
+      <div class="text-wrapper">
+  
+<p>Now, you’ve thought about what you want, during the next session you’ll look at how you get it. </p>
+
+<<button "Finish">><<set $prevpass to $passage>><<set $mod10 to true>><<goto $nextpass>><</button>>
+
+  <<timed 30s>><<set $prevpass to $passage>><<set $mod10 to true>><<goto $nextpass>><</timed>>
+</div>
+  </main>
+     <<include "footerskip">>
+</div>
+
+
+:: 3kaiIntro2 [nobr]
+<<set $prevpass to "3kaiIntro1">>
+<<set $passage to "3kaiIntro2">>
+<<set $nextpass to "3modulelist">>
+
+<<include "checkmodulenamelist">>
+<audio src="assets/audio/gpce1.5_SESSION3_INTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
+
+<div class="wrapper">
+  <<include "header">>
+    /* <h1 class="title top">Hello - it's Kai again</h1> */
+  <main class="speaking">
+    <div class="text-wrapper" id="text">
+<p>Codename: Violet was run by a group of 8-10 year olds who Coney work with. 
+<br/><br/>We call them the Young Coneys, because, well it’s simple really, they work with Coney & they are young.
+<br/> 
+<br/>They make play about the stuff they are passionate about. They’re Playful Activists too.
+<br/><br/> In fact, they started all this Playful Activism stuff for us. Codename: Violet did.  </p>
+
+  <<timed 18s>>
+    <<replace "#text">>
+      <p>It all started with an email from Greenpeace to Coney. </p>
+<p>They had a campaign called Ditch Diesel</p>
+<p>About Air Pollution & Diesel cars</p>
+<p>And wanted to work with young people on it. </p>
+<p>The young people could design it themselves. </p>
+<p>It became Codename: Violet</p>
+<<timed 14s>>
+  <<append "#text">>
+<p>DONE.</p>
+<p>Enter the codeword for Module 5. </p>
+<</append>>
+<</timed>>
+ <<timed 19s>><<set $prevpass to $passage>><<goto "3modulelist">><</timed>>
+      <</replace>>
+  <</timed>>
+    </div>
+  
+</main>
+<<include "footerskip">>
+</div>
+
+
+:: 3modulelist [nobr]
+<<set $passage to "3modulelist">><<set $session to 3>>
+<<timed 0.1s>>
+  <<if $skip is true>>
+     <<audio "completionbloop_4" play>>
+    <<addclass "#codewordWrapper1" "disappear">>
+    <<addclass "#codewordWrapper2" "disappear">>
+      <<timed 5s>>
+        <<set $skip to false>>
+        <<goto $nextpass>>
+      <</timed>>
+        <<else>>
+    <<audio "modulelist_1" play>>
+  <</if>>
+<</timed>>
+<div class="wrapper box">
+  <main class="modules">
+  <h1 class="title">SESSION THREE</h1>
+  <div class="menu-wrapper module-list">
+<div class="menu-item flip-card" id="mod5"> 
+  <div class="flip-card-inner">
+      <div class="flip-card-front">
+<img src="assets/img/mod5.jpg" alt="module three">
+  <div id="codewordWrapper1" class="codeword-wrapper">
+  /% CODEWORD INPUT %/
+      <div class="code-input">
+      <<textbox "$codeword" "">>
+    </div>
+   <div class="btn-result-wrapper">
+      <<button "Enter">>  
+          </div>
+      /% STANDARDISE INPUT %/
+      <<set $codeword to $codeword.toUpperCase()>>
+      /% CODEWORD CORRECT %/
+  <<if $codeword isnot "" and $codeword is "SKILL">>
+<<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+  <<audio "eeg_1" play>>
+    <<timed 0.5s>>
+              <<addclass "#mod6" "dissolve">>
+             <</timed>>
+             <<timed 1s>>
+              <<addclass "#mod6" "disappear">>
+             <</timed>>
+            <<timed 3s>>
+                <<addclass "#mod5" "twist">>
+             <</timed>>
+            <<timed 6s>>
+          <<set $prevpass to $passage>>
+          <<set $nextpass to "3mod5intro1">>
+          <<goto "loading">>
+        <</timed>>
+<</if>>
+        /% CODEWORD INCORRECT %/
+        <<if $codeword isnot "" and $codeword is not "SKILL">>
+        <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+        <</if>><</button>> 
+          /% CODEWORD FEEDBACK %/
+          <div id="coderesult" class="coderesult"></div>
+   </div>
+    </div>
+      </div>
+         <div class="flip-card-back">
+        <img src="assets/img/mod5-rev.jpg" alt="module card" >
+      </div>
+    </div>
+   </div>
+ <div class="menu-item flip-card" id="mod6"> 
+ <div class="flip-card-inner">
+      <div class="flip-card-front">
+ <img src="assets/img/mod6.jpg" alt="module six">
+  <div id="codewordWrapper2" class="codeword-wrapper">
+  /% CODEWORD INPUT %/
+      <div class="code-input">
+      <<textbox "$codeword" "">>
+    </div>
+   <div class="btn-result-wrapper">
+      <<button "Enter">>  
+          </div>
+      /% STANDARDISE INPUT %/
+      <<set $codeword to $codeword.toUpperCase()>>
+      /% CODEWORD CORRECT %/
+      <<if $codeword isnot "" and $codeword is "FOCUS">>
+      <<replace "#coderesult2">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+      <<audio "eeg_1" play>>
+
+   <<timed 0.5s>>
+              <<addclass "#mod5" "dissolve">>
+             <</timed>>
+             <<timed 1s>>
+              <<addclass "#mod5" "disappear">>
+             <</timed>>
+            <<timed 3s>>
+                <<addclass "#mod6" "twist">>
+             <</timed>>
+            <<timed 6s>>
+          <<set $prevpass to $passage>>
+          <<set $nextpass to "3mod6intro1">>
+          <<goto "loading">>
+        <</timed>>
+      <</if>>
+        /% CODEWORD INCORRECT %/
+        <<if $codeword isnot "" and $codeword is not "FOCUS">>
+        <<replace "#coderesult2">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult2">><</replace>><</timed>>
+        <</if>><</button>> 
+          /% CODEWORD FEEDBACK %/
+          <div id="coderesult2" class="coderesult"></div>
+   </div>
+    </div>
+      </div>
+
+    <div class="flip-card-back">
+        <img src="assets/img/mod6-rev.jpg" alt="module card" >
+      </div>
+    </div>
+  </div>
+    </div>
+  </main>
+
+  <<include "footerbox">></div>
+  <<done>><<include "checkmodules">><</done>>
+
+
+
+
+
+:: 3mod5intro1 [nobr]
+<<set $prevpass to "3modulelist">>
+<<set $passage to "3mod5intro1">>
+<<set $nextpass to "3mod5a">>
+<<set $module to "Module 5">><<include "checkmodulenamelist">><audio src="assets/audio/gpce1.5_SESSION3_MOD5_intro.mp3" autoplay>Audio is not supported on your device</audio>
+  <div class="wrapper">
+    <<include "header">>
+    <main  class="speaking">
+        <div class="text-wrapper">
+<p>We began Codename: Violet by playing a game called Mundane Making Mastery to help us get to know one another and the different things we can make. </p>
+<p>Everyone has making skills. </p>
+<p>Skills that might be useful in our Playful Activism. </p>
+<p>It might be you are good at drawing. Maybe you are great at making spag bol, you can make great playlists for friends or maybe you are just good at making loud noises.</p>
+<p>And we’re going to play it here. </p>
+
+
+ <<timed 24s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+   </div>
+    </main>
+         <<include "footerskip">>
+  </div>
+
+
+:: 3mod5a [nobr]
+<<set $prevpass to "3mod5intro1">>
+<<set $passage to "3mod5a">>
+<<set $nextpass to "3mod5outro1">>
+<audio src="assets/audio/gpce1.5_SESSION3_MOD5_talents.mp3" autoplay>Audio is not supported on your device</audio>
+  <div class="wrapper">
+    <<include "header">>
+    <main  class="speaking">
+        <div class="text-wrapper">
+<p>Teacher, can you hand out the Activist Cards?</p>
+<p>We need 3 Making skills you think are useful as a Playful Activist. </p>
+<p>Whatever you think will be useful. </p>
+ <p>When you have finished <<button "Move On">><<set $prevpass to $passage>><<goto $nextpass>><</button>> </p>
+<p>Teacher you may want to pin them up so we can see all the skills in the room. </p>
+   </div>
+    </main>
+         <<include "footer">>
+  </div>
+
+
+
+
+
+:: 3mod5outro1 [nobr]
+<<set $prevpass to "3mod5a">>
+<<set $passage to "3mod5outro1">>
+<<set $nextpass to "3mod5outro2">>
+<audio src="assets/audio/gpce1.5_SESSION3_MOD5_outro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+      <div class="text-wrapper" id="text">
+<p>Excellent making skills to have in the room. </p>
+<p>
+  I say that, again not knowing for sure, as I’m not live. 
+  A pre-record. 
+</p>
+<p>I can share things, but you can’t share things back– it’s a bit of a shame really – but it doesn’t mean we’re not connected. </p>
+
+ <<timed 15s>>
+ <<set $prevpass to $passage>><<goto $nextpass>>
+ <</timed>>
+</div>
+</main>
+     <<include "footerskip">>
+</div>
+
+:: 3mod5outro2 [nobr]
+<<set $prevpass to "3mod5outro1">>
+<<set $passage to "3mod5outro2">>
+<<set $nextpass to "3modulelist">>
+<audio src="assets/audio/gpce1.5_SESSION3_MOD5_outro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+      <div class="text-wrapper">
+<p>  By understanding where we're all coming from, what we value, what mundane making mastery we have in the space, we build a collective. When we're all connected it's like a web, we're strong, and flexible, and we stop working as a set of individuals and we start to collaborate as a group. </p>
+<p>Playful Action is built on that – collaboration.  </p>
+<p>Keep the Activist Cards safe, we’ll need them later in the process. </p>
+<p>Enter the Module 6 Codeword now. </p>
+
+ <<timed 31s>><<set $prevpass to $passage>><<set $mod5 to true>><<goto $nextpass>><</timed>>
+</div>
+</main>
+     <<include "footerskip">>
+</div>
+
+
+:: 3mod6intro1 [nobr]
+<<set $prevpass to "3modulelist">>
+<<set $passage to "3mod6intro1">>
+<<set $nextpass to "3mod6intro2">><audio src="assets/audio/gpce1.5_SESSION3_MOD6_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $module to "Module 6">><<include "checkmodulenamelist">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper">
+<p>So, we now know who we are but what is our focus. We need to know what you are passionate about. </p>
+<p>The Young Coneys were working on Air Pollution –  It was given to them as a focus – but we’re going to let you choose yours. </p>
+
+
+  <<timed 17s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+</div>
+ </main>
+     <<include "footerskip">>
+</div>
+
+:: 3mod6intro2 [nobr]
+<<set $prevpass to "3mod6intro1">>
+<<set $passage to "3mod6intro2">>
+<<set $nextpass to "3mod6a">><audio src="assets/audio/gpce1.5_SESSION3_MOD6_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $module to "Module 6">><<include "checkmodulenamelist">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper">
+<p>Now for the biggest understatement ever to have left my lips </p>
+<p>The Climate Crisis is quite a large topic…</p>
+<p>Wow Kai understatement of the year </p>
+<p>And we can’t focus on all of it. </p>
+<p>Wow, Kai, 2 for 2</p>
+<p>Yes, it’s an understatement, </p>
+<p>yes, it’s ridiculous to say, but also, yes, it is true </p>
+<p>So, we need to find our path. </p>
+<p>The route we are going to go down as a group. </p>
+
+
+  <<timed 25s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+</div>
+ </main>
+     <<include "footerskip">>
+</div>
+
+
+:: 3mod6a [nobr]
+<<set $prevpass to "3mod6intro2">>
+<<set $passage to "3mod6a">>
+<<set $nextpass to "3mod6outro1">><audio src="assets/audio/gpce1.5_SESSION3_MOD6_focus.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper" id="mount">
+<p>So, we’re going to look global and meet 6 humans. </p>
+
+<p>Teacher, get the class into 6 groups and share out the Character Cards. </p>
+
+<p>In 6 groups, you will introduce us to these humans and why their passion should be ours here.</p>
+
+<p>All the information is on the cards.</p>
+
+ <p>When you have finished <<button "Move On">><<set $prevpass to $passage>><<goto $nextpass>><</button>> </p>
+
+</div>
+
+ </main>
+     <<include "footerskip">>
+</div>
+
+:: 3mod6outro1 [nobr]
+<<set $prevpass to "3mod6a">>
+<<set $passage to "3mod6outro1">>
+<<set $nextpass to "3mod6outro2">><audio src="assets/audio/gpce1.5_SESSION3_MOD6_outro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper" id="mount">
+<p>We build our plans using the models of others </p>
+<p>These stories give us a small insight into playful activism that is happening all over the Earth </p>
+<p>Then by thinking about us: about how their stories relate to us here, and about what we want to change </p>
+<p>We can find our focus. </p>
+
+
+  <<timed 18s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+
+</div>
+ </main>
+     <<include "footerskip">>
+</div>
+
+
+:: 3mod6outro2 [nobr]
+<<set $prevpass to "3mod6outro1">>
+<<set $passage to "3mod6outro2">>
+<<set $nextpass to "3sessionoutro1">><audio src="assets/audio/gpce1.5_SESSION3_MOD6_outro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<<audio "60supported" play>>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper" id="mount">
+
+<p>So, who do you think connects most to what is happening in this school? </p>
+<p>What theme do you feel passionate about? </p>
+<p>We’re going to take an old-fashioned vote. </p>
+<p>Teacher, can you hold the vote, and then select which theme you’ll focus on. </p>
+
+
+
+<<timed 12s>><<replace "#mount">>
+
+<div class="char-wrapper">
+<div class="char-item">
+<img src="assets/img/characters-26.jpg">
+<<button "Air Pollution">>
+  <<audio ":all" stop>>
+  <<audio "eeg_1" play>>
+  <<set $choice to "Air Pollution – inspired by Alejandro Daly">>
+  <<set $mod6audio to "air">>
+  <<timed 2s>><<set $prevpass to $passage>><<set $mod6 to true>><<goto $nextpass>><</timed>>
+<</button>>
+</div>
+<div class="char-item">
+<img src="assets/img/characters-36.jpg">
+<<button "Meat Consumption">>
+   <<audio ":all" stop>>
+  <<audio "eeg_1" play>>
+  <<set $choice to "Meat Consumption – inspired by Genesis Butler">>
+    <<set $mod6audio to "meat">>
+  <<timed 2s>><<set $prevpass to $passage>><<set $mod6 to true>><<goto $nextpass>><</timed>>
+<</button>>
+</div>
+<div class="char-item">
+<img src="assets/img/characters-27.jpg">
+<<button "Plastic Pollution">>
+   <<audio ":all" stop>>
+  <<audio "eeg_1" play>>
+  <<set $choice to "Plastic Pollution – inspired by Melati & Isabel Wijsen">>
+    <<set $mod6audio to "plastic">>
+  <<timed 2s>><<set $prevpass to $passage>><<set $mod6 to true>><<goto $nextpass>><</timed>>
+<</button>>
+</div>
+<div class="char-item">
+<img src="assets/img/characters-28.jpg">
+<<button "Sustainable Palm Oil">>
+   <<audio ":all" stop>>
+  <<audio "eeg_1" play>>
+  <<set $choice to "Sustainable Palm Oil – inspired by Salsabila Khairunnisa">>
+    <<set $mod6audio to "palmoil">>
+  <<timed 2s>><<set $prevpass to $passage>><<set $mod6 to true>><<goto $nextpass>><</timed>>
+<</button>>
+</div>
+<div class="char-item">
+<img src="assets/img/characters-30.jpg">
+<<button "Deforestation & Biodiversity">>
+   <<audio ":all" stop>>
+  <<audio "eeg_1" play>>
+  <<set $choice to "Deforestation & Biodiversity – inspired by Professor Wangari Maathai">>
+    <<set $mod6audio to "deforestation">>
+  <<timed 2s>><<set $prevpass to $passage>><<set $mod6 to true>><<goto $nextpass>><</timed>>
+<</button>>
+</div>
+<div class="char-item">
+<img src="assets/img/characters-29.jpg">
+<<button "Fast Fashion">>
+   <<audio ":all" stop>>
+  <<audio "eeg_1" play>>
+  <<set $choice to "Fast Fashion – inspired by Céline Semaan">>
+    <<set $mod6audio to "fastfashion">>
+  <<timed 2s>><<set $prevpass to $passage>><<set $mod6 to true>><<goto $nextpass>><</timed>>
+<</button>>
+</div>
+</div>
+<</replace>>
+<</timed>>
+</div>
+ </main>
+     <<include "footer">>
+</div>
+
+:: checkmod6audio[nobr]
+<<if $mod6audio is "air">>
+  <<replace "#img">>
+      <img src="assets/img/characters-26.jpg" autoplay>
+    <</replace>>
+  <<replace "#audio">>
+      <audio src="assets/audio/gpce1.5_SESSION3_outro_1_airpollution.mp3" autoplay>Audio is not supported on your device</audio>
+    <</replace>>
+<</if>>
+
+<<if $mod6audio is "meat">>
+  <<replace "#img">>
+      <img src="assets/img/characters-36.jpg" autoplay>
+    <</replace>>
+  <<replace "#audio">>
+      <audio src="assets/audio/gpce1.5_SESSION3_outro_1_meat.mp3" autoplay>Audio is not supported on your device</audio>
+    <</replace>>
+<</if>>
+
+<<if $mod6audio is "plastic">>
+<<replace "#img">>
+      <img src="assets/img/characters-27.jpg" autoplay>
+    <</replace>>
+  <<replace "#audio">>
+      <audio src="assets/audio/gpce1.5_SESSION3_outro_1_plastic.mp3" autoplay>Audio is not supported on your device</audio>
+    <</replace>>
+<</if>>
+
+<<if $mod6audio is "palmoil">>
+<<replace "#img">>
+      <img src="assets/img/characters-28.jpg" autoplay>
+    <</replace>>
+  <<replace "#audio">>
+      <audio src="assets/audio/gpce1.5_SESSION3_outro_1_palmoil.mp3" autoplay>Audio is not supported on your device</audio>
+    <</replace>>
+<</if>>
+
+<<if $mod6audio is "deforestation">>
+<<replace "#img">>
+      <img src="assets/img/characters-30.jpg" autoplay>
+    <</replace>>
+  <<replace "#audio">>
+      <audio src="assets/audio/gpce1.5_SESSION3_outro_1_deforestationbiodiversity.mp3" autoplay>Audio is not supported on your device</audio>
+    <</replace>>
+<</if>>
+
+<<if $mod6audio is "fastfashion">>
+  <<replace "#img">>
+      <img src="assets/img/characters-29.jpg" autoplay>
+    <</replace>>
+  <<replace "#audio">>
+      <audio src="assets/audio/gpce1.5_SESSION3_outro_1_fastfashion.mp3" autoplay>Audio is not supported on your device</audio>
+    <</replace>>
+<</if>>
+
+:: 3sessionoutro1old [nobr]
+<<set $prevpass to "3mod6outro2">>
+<<set $passage to "3sessionoutro1">>
+ <<set $nextpass to "3sessionoutro2">>
+<div id="audio"><audio src="assets/audio/SESSION3_OUTRO_1.mp3" autoplay>Audio is not supported on your device</audio></div>
+
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking chosen">
+  <div id="img" class="char-chosen-wrap"></div>
+    <div class="text-wrapper" id="mount">
+<p>We’ve seen humans from across the world taking action.  </p>
+<<timed 0.1s>>
+<<include "checkmod6audio">>
+  <<append "#mount">>
+    <p>You’ve picked to focus on $choice</p>
+   <p> This will be your focus for your activism. </p>
+    <<timed 15s>><<goto $nextpass>><</timed>>
+  <</append>>
+<</timed>>
+</div>
+  </main>
+     <<include "footer">>
+</div>
+
+:: 3sessionoutro2old [nobr]
+<<set $prevpass to "3sessionoutro1">>
+<<set $passage to "3sessionoutro2">>
+ <<set $nextpass to "3sessionoutro3">>
+<div id="audio"><audio src="assets/audio/gpce1.5_SESSION3_outro_2.mp3" autoplay>Audio is not supported on your device</audio></div>
+
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper" id="mount">
+<p>  Each of the activists found their focus. </p>
+<p>Then found their target.</p>
+<p>The system they were going to change.</p>
+<p>That’s why we are working with you – the experts on the target.  </p>
+<p>The target for your act is</p>
+<p>Here. </p>
+
+    <<timed 17s>>
+    <<replace "#mount">>
+      <p><h2 class="subtitle inline">This school. </h2></p>
+      <br/>
+      <br/>
+      <<timed 3s>>
+        <<append "#mount">>
+      <div><<button "Next">><<set $prevpass to $passage>><<set $mod6 to true>>
+      <<set $skip to true>><<goto "3modulelist">><</button>></div>
+      <</append>>
+      <</timed>>
+      <</replace>>
+      <</timed>>
+    
+
+</div>
+  </main>
+     <<include "footer">>
+</div>
+
+
+:: 3sessionoutro3old [nobr]
+<<set $prevpass to "3sessionoutro2">>
+<<set $passage to "3sessionoutro3">>
+ <<set $nextpass to "3sessionoutro4">>
+<div id="audio"><audio src="assets/audio/gpce1.5_SESSION3_outro_3.mp3" autoplay>Audio is not supported on your device</audio></div>
+
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper" id="mount">
+<p>Now you have your focus. </p>
+<p>
+  You might need to research a bit more about why it is a problem.
+  Teacher, there’s some great resources on Greenpeace’s website to help. 
+</p>
+<p>And we need to know how it is being played out here. </p>
+<p>Teacher, hand out the Recon Cards.</p>
+<p>These will help us know what is happening here. </p>
+
+
+    <<timed 21s>><<replace "#mount">>
+   <p>Time to close for today. </p>
+<p>But a code for you to dive deeper.</p>
+    <h2 class="subtitle inline">HOPEY. </h2>
+    <br/><br/>
+    <p>Take care. </p>
+    <</replace>>
+<</timed>>
+<<timed 29s>><<append "#mount">>
+<<button "Finish">><<audio "pyramidtransition_1" play >><<set $prevpass to $passage>><<goto "landing">><</button>>
+<</append>>
+<</timed>>
+    
+
+</div>
+  </main>
+     <<include "footer">>
+</div>
+
+
+/* SESSION 4  */
+
+
+:: 4kaiIntro1 [nobr]
+<<set $prevpass to "landing">>
+<<set $passage to "4kaiIntro1">>
+ <<set $nextpass to "4kaiIntro2">>
+<<set $module to "Introduction">><<include "checkmodulenamelist">>
+<audio src="assets/audio/gpce1.5_SESSION4_INTRO_1.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+    /* <h1 class="title top">Hello - it's Kai again</h1> */
+  <main class="speaking">
+ <h1 class="title ">Hello. </h1>
+    <div class="text-wrapper">
+
+<p>Hope you are enjoying the surprise of each of these compartments – and breaking up the pyramid! </p>
+<p>Here we are again ready to play.</p>
+<p>Working towards a Playful Action.</p> 
+<p>Inspired by Codename: Violet. </p>
+
+<<timed 14s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+    </div>
+  
+</main>
+<<include "footerskip">>
+</div>
+
+:: 4kaiIntro2 [nobr]
+<<set $prevpass to "4kaiIntro1">>
+<<set $passage to "4kaiIntro2">>
+ <<set $nextpass to "4modulelist">>
+<<set $module to "Introduction">><<include "checkmodulenamelist">>
+<audio src="assets/audio/gpce1.5_SESSION4_INTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+    /* <h1 class="title top">Hello - it's Kai again</h1> */
+  <main class="speaking">
+
+    <div class="text-wrapper">
+<p>
+  
+  So, you’ve chosen your focus. 
+</p>
+<p>In Violet we did a deep dive to look at who had power to do something about our focus. </p>
+<p>Breaking it down: </p>
+<p>Diesel Cars = Air Pollution</p>
+<p>And our target became those people who make Diesel Cars and make lots of money off them</p>
+<p>So, we targeted a Car Industry Gala Dinner where all the executives and leaders in the industry would be meeting. </p>
+<p>Power is what we’re looking at today </p>
+<p>First up, let’s build on those Recon Cards. </p>
+<p>Enter the codeword for Module 7 to unlock.</p>
+
+
+<<timed 37s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+    </div>
+  
+</main>
+<<include "footerskip">>
+</div>
+
+
+
+:: 4modulelist [nobr]
+<<set $passage to "4modulelist">><<set $session to 4>>
+<<timed 0.1s>>
+  <<if $skip is true>>
+     <<audio "completionbloop_4" play>>
+    <<addclass "#codewordWrapper1" "disappear">>
+    <<addclass "#codewordWrapper2" "disappear">>
+    <<addclass "#codewordWrapper3" "disappear">>
+      <<timed 5s>>
+        <<set $skip to false>>
+        <<goto $nextpass>>
+      <</timed>>
+ 
+    <<else>>
+    <<audio "modulelist_1" play>>
+     <</if>>
+<</timed>>
+<div class="wrapper box">
+  <main class="modules">
+  <h1 class="title">SESSION FOUR</h1>
+  <div class="menu-wrapper module-list">
+<div class="menu-item flip-card" id="mod7"> 
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+  <img src="assets/img/mod7.jpg" alt="module seven">
+   <div id="codewordWrapper1" class="codeword-wrapper">
+
+  /% CODEWORD INPUT %/
+      <div class="code-input">
+      <<textbox "$codeword" "">>
+    </div>
+   <div class="btn-result-wrapper">
+      <<button "Enter">>  
+          </div>
+      /% STANDARDISE INPUT %/
+      <<set $codeword to $codeword.toUpperCase()>>
+      /% CODEWORD CORRECT %/
+  <<if $codeword isnot "" and $codeword is "RECON">>
+<<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+  <<audio "eeg_1" play>>
+   <<timed 0.5s>>
+        <<addclass "#mod8" "dissolve">>
+        <<addclass "#mod9" "dissolve">>
+       <</timed>>
+  <<timed 2s>>
+        <<addclass "#mod8" "disappear">>
+        <<addclass "#mod9" "disappear">>
+         <<addclass "#mod7" "twist">>
+       <</timed>>
+      
+   <<timed 6s>>
+          <<set $prevpass to $passage>>
+          <<set $nextpass to "4mod7intro1">>
+          <<goto "loading">>
+        <</timed>>
+<</if>>
+        /% CODEWORD INCORRECT %/
+        <<if $codeword isnot "" and $codeword is not "RECON">>
+        <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+        <</if>><</button>> 
+          /% CODEWORD FEEDBACK %/
+          <div id="coderesult" class="coderesult"></div>
+   </div>
+    </div>
+</div>
+ <div class="flip-card-back">
+        <img src="assets/img/mod7-rev.jpg" alt="module card" >
+      </div>
+</div>
+</div>
+
+ <div class="menu-item flip-card" id="mod8"> 
+  <div class="flip-card-inner">
+      <div class="flip-card-front">
+ <img src="assets/img/mod8.jpg" alt="module eight">
+    <div id="codewordWrapper2" class="codeword-wrapper">
+  /% CODEWORD INPUT %/
+      <div class="code-input">
+      <<textbox "$codeword" "">>
+    </div>
+   <div class="btn-result-wrapper">
+      <<button "Enter">>  
+          </div>
+      /% STANDARDISE INPUT %/
+      <<set $codeword to $codeword.toUpperCase()>>
+      /% CODEWORD CORRECT %/
+      <<if $codeword isnot "" and $codeword is "SUCCESS">>
+      <<replace "#coderesult2">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+      <<audio "eeg_1" play>>
+     <<timed 0.5s>>
+              <<addclass "#mod7" "dissolve">>
+               <<addclass "#mod9" "dissolve">>
+             <</timed>>
+             <<timed 1s>>
+              <<addclass "#mod7" "disappear">>
+               <<addclass "#mod9" "disappear">>
+             <</timed>>
+            <<timed 3s>>
+                <<addclass "#mod8" "twist">>
+             <</timed>>
+            <<timed 6s>>
+          <<set $prevpass to $passage>>
+          <<set $nextpass to "4mod8intro1">>
+          <<goto "loading">>
+        <</timed>>
+      <</if>>
+        /% CODEWORD INCORRECT %/
+        <<if $codeword isnot "" and $codeword is not "SUCCESS">>
+        <<replace "#coderesult2">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult2">><</replace>><</timed>>
+        <</if>><</button>> 
+          /% CODEWORD FEEDBACK %/
+          <div id="coderesult2" class="coderesult"></div>
+   </div>
+    </div>
+      </div>
+      <div class="flip-card-back">
+        <img src="assets/img/mod8-rev.jpg" alt="module card" >
+      </div>
+    </div>
+  </div>
+<div class="menu-item flip-card" id="mod9"> 
+  <div class="flip-card-inner">
+      <div class="flip-card-front">
+<img src="assets/img/mod9.jpg" alt="module nine">
+      <div id="codewordWrapper3" class="codeword-wrapper">
+  /% CODEWORD INPUT %/
+      <div class="code-input">
+      <<textbox "$codeword" "">>
+    </div>
+   <div class="btn-result-wrapper">
+      <<button "Enter">>  
+          </div>
+      /% STANDARDISE INPUT %/
+      <<set $codeword to $codeword.toUpperCase()>>
+      /% CODEWORD CORRECT %/
+      <<if $codeword isnot "" and $codeword is "COMFORT">>
+      <<replace "#coderesult3">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+      <<audio "eeg_1" play>>
+      <<timed 0.5s>>
+              <<addclass "#mod7" "dissolve">>
+              <<addclass "#mod8" "dissolve">>
+             <</timed>>
+             <<timed 1s>>
+             <<addclass "#mod7" "disappear">>
+              <<addclass "#mod8" "disappear">>
+             <</timed>>
+            <<timed 3s>>
+                <<addclass "#mod9" "twist">>
+             <</timed>>
+            <<timed 6s>>
+          <<set $prevpass to $passage>>
+          <<set $nextpass to "4mod9intro1">>
+          <<goto "loading">>
+        <</timed>>
+      <</if>>
+        /% CODEWORD INCORRECT %/
+        <<if $codeword isnot "" and $codeword is not "COMFORT">>
+        <<replace "#coderesult3">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult3">><</replace>><</timed>>
+        <</if>><</button>> 
+          /% CODEWORD FEEDBACK %/
+          <div id="coderesult3" class="coderesult"></div>
+   </div>
+    </div>
+      </div>
+       <div class="flip-card-back">
+        <img src="assets/img/mod9-rev.jpg" alt="module card" >
+      </div>
+    </div>
+  </div>
+  </div>
+  </main>
+  <<include "footerbox">></div>
+  <<done>><<include "checkmodules">><</done>>
+
+
+:: 4mod7intro1 [nobr]
+<<set $prevpass to "4modulelist">>
+<<set $passage to "4mod7intro1">>
+<<set $nextpass to "4mod7intro2">>
+<audio src="assets/audio/gpce1.5_SESSION4_MOD7_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
+
+<<set $module to "Module 7">><<include "checkmodulenamelist">>
+  <div class="wrapper">
+    <<include "header">>
+    <main  class="speaking">
+        <div class="text-wrapper">
+<p>We’ve spoken about the system in play in the world</p>
+<p>And where power sits but now it’s time to focus on our target.</p> 
+<p>It’s time to work out who has power around us in this space. </p>
+<p>Once we understand power, we can make choices strategically about how we take action. </p>
+<p>As we are making our Playful Action at this school. </p>
+<p>So, we need to know what is happening here. </p>
+
+  <<timed 24s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+   </div>
+    </main>
+         <<include "footerskip">>
+  </div>
+
+
+:: 4mod7intro2 [nobr]
+<<set $prevpass to "4mod7intro1">>
+<<set $passage to "4mod7intro2">>
+<<set $nextpass to "4mod7b">>
+<audio src="assets/audio/gpce1.5_SESSION4_MOD7_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
+
+<<set $module to "Module 7">><<include "checkmodulenamelist">>
+  <div class="wrapper">
+    <<include "header">>
+    <main  class="speaking">
+        <div class="text-wrapper">
+<p>Teacher, time to break the class into 4 groups or suits. </p>
+<p>Clubs, Hearts, Diamonds & Spades. </p>
+
+<p>We’re going to map an open-world game. </p>
+<p>The open-world is your school. </p>
+<p>What is the game being played here? </p>
+<p>Hand the Mapping Resources out, and let’s Power Map.</p>
+<p>When you have the resources, I’ll explain more. </p>
+ <p>Click <<button "here">><<set $prevpass to $passage>><<goto "4mod7b">><</button>> when ready for the explanation.</p>
+
+   </div>
+    </main>
+         <<include "footerskip">>
+  </div>
+
+
+
+
+:: 4mod7b [nobr]
+<<set $prevpass to "4mod7intro2">>
+<<set $passage to "4mod7b">>
+<<set $nextpass to "4mod7outro1">>
+<audio src="assets/audio/gpce1.5_SESSION4_MOD7_mapping.mp3" autoplay>Audio is not supported on your device</audio>
+  <div class="wrapper">
+    <<include "header">>
+    <main  class="speaking">
+        <div class="text-wrapper">
+<p>You are mapping with an eye on the focus you’ve chosen.</p>
+<ul>
+  <li>– First you’ll draw a birdseye view of your school and the school system.</li> 
+ <li> – Then write down all the players in the system and their power.</li>
+  <li>– Rule Book next and the existing rules - linking to your focus.</li>
+ <li> – Then you have Power Cards - place them on your map.</li>
+ <li> – Lastly it’s Tactics & Objectives.</li>
+</ul>
+<p>Teacher, over to you.</p>
+<div id="mount"></div>
+<<timed 200s>>
+<<replace "#mount">>
+    <p>When done click <<button "Move On">><<set $prevpass to $passage>><<goto "4mod7outro1">><</button>> </p>
+    <</replace>>
+    <</timed>>
+   </div>
+    </main>
+         <<include "footerskip">>
+  </div>
+  
+
+
+:: 4mod7outro1 [nobr]
+<<set $prevpass to "4mod7b">>
+<<set $passage to "4mod7outro1">>
+<<set $nextpass to "4modulelist">>
+<audio src="assets/audio/gpce1.5_SESSION4_MOD7_outro.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+      <div class="text-wrapper">
+<p>So now we have a map of your school </p>
+
+<p>Of the places and spaces, and of the people too </p>
+
+<p>When we map people, we see power </p>
+
+<p>And we need to see power to make change </p>
+
+<p>It’s like a row of dominoes </p>
+
+<p>Or one of those videos where you knock over a glass, which pours out water, which turns on a light which toasts a marshmallow… you know </p>
+
+<p>When we can see power, and how its all connected, we know which domino to knock over </p>
+
+<p>Once the dominoes are falling, then things start to change </p>
+
+<p>Let’s look at the potential of that change...</p>
+
+<p>Enter the codeword for Module 8</p>
+
+  <<timed 36s>><<set $prevpass to $passage>><<set $mod7 to true>><<goto $nextpass>><</timed>>
+</div>
+</main>
+     <<include "footerskip">>
+</div>
+
+
+
+:: 4mod8intro1 [nobr]
+<<set $prevpass to "4modulelist">>
+<<set $passage to "4mod8intro1">>
+<<set $nextpass to "4mod8a">>
+<audio src="assets/audio/gpce1.5_SESSION4_MOD8_intro.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $module to "Module 8">><<include "checkmodulenamelist">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper">
+<p>Now we’ve reached the time for some dreaming </p>
+
+<p>To imagine what if? </p>
+
+<p>How would your school be different if you were successful? </p>
+
+<p>Teacher, I want you to list down all of the people + places that are linked to our focus.</p> 
+
+<p><<button "Next">><<set $prevpass to $passage>><<goto $nextpass>><</button>></p>
+
+</div>
+ </main>
+     <<include "footerskip">>
+</div>
+
+
+
+:: 4mod8a [nobr]
+<<set $prevpass to "4mod8intro2">>
+<<set $passage to "4mod8a">>
+<<set $nextpass to "4mod8outro1">>
+<audio src="assets/audio/gpce1.5_SESSION4_MOD8_imaginingsuccess.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper" id="mount">
+<p>Now you have the list, let’s discuss a simple question in small groups. ‘What if?’</p>
+
+<p>What if this was different. </p>
+<p>What if we didn’t need packaging...</p>
+<p>What if we didn’t eat meat everyday here...</p>
+<p>What if we had solar panels on every site...</p>
+<p>What if...</p>
+
+<<timed 17s>><<append "#mount">>
+<p>When done click <<button "Move On">><<set $prevpass to $passage>><<goto $nextpass>><</button>> </p>
+<</append>><</timed>>
+</div>
+ </main>
+     <<include "footerskip">>
+</div>
+
+
+:: 4mod8outro1 [nobr]
+<<set $prevpass to "4mod8a">>
+<<set $passage to "4mod8outro1">>
+<<set $nextpass to "4mod8outro2">>
+<audio src="assets/audio/gpce1.5_SESSION4_MOD8_outro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking inlineimg">
+    <div class="text-wrapper" id="mount">
+<p>What were the ‘What Ifs’ you imagined? </p>
+<p>What one do you think you want to hold onto? </p>
+<p>This ‘What If’ could become the Ask of our Action. </p>
+<p>What we want to happen. </p>
+<p>In your small groups I want you to take an ASK card and write that down. </p>
+
+ <<button "Done">><<set $prevpass to $passage>><<goto $nextpass>><</button>>
+</div>
+ </main>
+     <<include "footerskip">>
+</div>
+
+:: 4mod8outro2 [nobr]
+<<set $prevpass to "4mod8intro1">>
+<<set $passage to "4mod8outro2">>
+<<set $nextpass to "4modulelist">>
+<audio src="assets/audio/gpce1.5_SESSION4_MOD8_outro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper" id="mount">
+<p>Seeing success doesn’t make it happen, of course, there are many more steps to take, obstacles in the way... but no worries, obstacles are what makes a game good. </p>
+
+<p>
+  Last up in our exploration of power, we need to look at ourselves. 
+  
+</p>
+<p>Enter the Module 9 codeword below</p>
+
+
+ <<timed 19s>><<set $prevpass to $passage>><<set $mod8 to true>><<goto $nextpass>><</timed>>
+</div>
+ </main>
+     <<include "footerskip">>
+</div>
+
+
+:: 4mod9intro1 [nobr]
+<<set $prevpass to "4modulelist">>
+<<set $passage to "4mod9intro1">>
+<<set $nextpass to "4mod9intro2">>
+<audio src="assets/audio/gpce1.5_SESSION4_MOD9_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $module to "Module 9">><<include "checkmodulenamelist">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper">
+<p>There are lots of different types of power in this room. </p>
+<p>Your teacher has power over this space.  </p>
+<p>There is power with you as a group of activists, as people making change </p>
+<p>I have power too – quite a lot actually – I can say words without much interruption – I can talk about Roasting Potatoes with no concerns you’ll interrupt!  </p>
+
+  <<timed 20s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+</div>
+ </main>
+     <<include "footerskip">>
+</div>
+
+:: 4mod9intro2 [nobr]
+<<set $prevpass to "4mod9intro1">>
+<<set $passage to "4mod9intro2">>
+<<set $nextpass to "4mod9intro3">>
+<audio src="assets/audio/gpce1.5_SESSION4_MOD9_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $module to "Module 9">><<include "checkmodulenamelist">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper">
+<p>Each of you will have power over others </p>
+<p>But power is rarely something that is balanced </p>
+<p>People have power because of their job, because of money, because of the connections they have or because of the family they come from, because of how they’re gendered or how they’re racialised. </p>
+<p>Some of these can be unearned privileges, that others don’t have. For one person, something might be easy, while for someone else, it is very hard.</p>
+
+  <<timed 28s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+</div>
+ </main>
+     <<include "footerskip">>
+</div>
+
+:: 4mod9intro3 [nobr]
+<<set $prevpass to "4mod9intro2">>
+<<set $passage to "4mod9intro3">>
+<<set $nextpass to "4mod9a">>
+<audio src="assets/audio/gpce1.5_SESSION4_MOD9_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $module to "Module 9">><<include "checkmodulenamelist">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper">
+<p>The imbalance of power exists all over the world, and it exists in this very room too </p>
+<p>If we want to act together, we need to see that </p>
+<p>We have to do this for us to be able to work honestly and well together </p>
+<p>We’re going to find our Comfort in Action </p>
+
+  <<timed 18s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+</div>
+ </main>
+     <<include "footerskip">>
+</div>
+
+
+:: 4mod9a [nobr]
+<<set $prevpass to "4mod9intro3">>
+<<set $passage to "4mod9a">>
+<<set $nextpass to "4mod9outro1">>
+<audio src="assets/audio/gpce1.5_SESSION4_MOD9_comfortinaction.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $module to "Module 9">><<include "checkmodulenamelist">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper">
+<p>Teacher, the instructions are on the Module Card. </p>
+<p>Alongside, a Comfort Marker. </p>
+<p>Lucky you were given a potato in compartment 1 hey. </p>
+
+<p>Click when you are ready to <<button "Move on">><<set $prevpass to $passage>><<goto "4mod9outro1">><</button>></p>
+
+</div>
+ </main>
+     <<include "footerskip">>
+</div>
+
+:: 4mod9outro1 [nobr]
+<<set $prevpass to "4mod9a">>
+<<set $passage to "4mod9outro1">>
+<<set $nextpass to "4mod9outro2">>
+<audio src="assets/audio/gpce1.5_SESSION4_MOD9_outro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+      <div class="text-wrapper">
+<p>Comfort in Action is a layered thing. </p>
+<p>It’s about us and the roles we want to play. But it’s also about the systems that we’re part of. </p>
+<p>For some of us, there are environments, circumstances, systems that can be unsafe. </p>
+<p>As a biracial black woman, I don’t look like other climate protestors, and when I started being a playful activist, I found that hard.</p>  
+
+
+
+
+  <<timed 25s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+  </div>
+</main>
+     <<include "footerskip">>
+</div>
+
+:: 4mod9outro2 [nobr]
+<<set $prevpass to "4mod9outro1">>
+<<set $passage to "4mod9outro2">>
+<<set $nextpass to "4mod9outro3">>
+<audio src="assets/audio/gpce1.5_SESSION4_MOD9_outro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+      <div class="text-wrapper">
+<p>
+  I wondered where my space was, where I fit in and where I could play the part I wanted to. </p>
+  <p>But looking honestly at my comfort in action and sharing that comfort in action with others helped. It meant that I only had to take on the roles I felt comfortable with, and I didn’t feel any need to explain or justify where I was, or why I was there. </p>
+  <p>By discussing comfort in action, we made sure it was all out in the open. 
+</p>
+
+  <<timed 25s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+  </div>
+</main>
+     <<include "footerskip">>
+</div>
+
+:: 4mod9outro3 [nobr]
+<<set $prevpass to "4mod9outro2">>
+<<set $passage to "4mod9outro3">>
+<<set $nextpass to "4sessionoutro1">>
+<audio src="assets/audio/gpce1.5_SESSION4_MOD9_outro_3.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+      <div class="text-wrapper">
+<p>By understanding comfort in action for our whole team we're able to work as a collective. We can work together to make sure everything happens, that all roles are played, but that no one is put at risk, that all of us are comfortable.  </p>
+<p>I hope you all feel more comfortable thinking about where you are comfortable</p>
+
+  <<timed 21s>><<set $prevpass to $passage>><<set $mod9 to true>>
+      <<set $skip to true>><<goto "4modulelist">><</timed>>
+    </div>
+</main>
+     <<include "footerskip">>
+</div>
+
+
+
+:: 4sessionoutro1 [nobr]
+<<set $prevpass to "4mod9outro3">>
+<<set $passage to "4sessionoutro1">>
+<<set $nextpass to "landing">>
+<audio src="assets/audio/gpce1.5_SESSION4_OUTRO.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper" id="text">
+<p>So that’s it for today. </p>
+
+<p>Today has been all about looking. </p>
+<p>about looking around to see your school, and where power sits in it, </p>
+<p>about looking in to see where you feel comfortable in action </p>
+<p>and about looking to the future, to imagine what success looks like </p>
+
+<p>Now you’ve done the looking, it’s time to start doing.</p> 
+<p>Until next time… </p>
+
+<<timed 22s>>
+<<replace "#text">>
+<p>And in case that wasn’t quite enough </p>
+
+<p>There’s a final message for you </p>
+<p>Text  <h2 class="subtitle inline">POWER</h2> to  <h2 class="subtitle inline">07400179362</h2> to pick it up </p>
+<<button "Finish">><<audio "pyramidtransition_1" play >><<set $prevpass to $passage>><<goto $nextpass>><</button>>
+<</replace>>
+<</timed>>
+</div>
+  </main>
+     <<include "footerskip">>
+</div>
+
+
+/* SESSION 5 */
+
+
+:: 5kaiIntro1 [nobr]
+<<set $prevpass to "landing">>
+<<set $passage to "5kaiIntro1">>
+<<set $nextpass to "5modulelist">>
+<audio src="assets/audio/gpce1.5_SESSION5_INTRO.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $module to "Introduction">>
+<<include "checkmodulenamelist">>
+<div class="wrapper">
+  <<include "header">>
+
+  <main class="speaking">
+ <h1 class="title ">And, we're back!</h1>
+
+    <div class="text-wrapper">
+<p>It’s great to be in the room with you again.</p> 
+<p>Today we begin with plotting. </p>
+<p>You’re going to work out what your action will be.  </p>
+<p>When you are ready for Module 10, you know what to do. </p>
+
+ <<timed 14s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+    </div>
+</main>
+<<include "footerskip">>
+</div>
+
+
+
+
+
+
+:: 5modulelist [nobr]
+<<set $passage to "5modulelist">><<set $session to 5>>
+<<timed 0.1s>>
+  <<if $skip is true>>
+     <<audio "completionbloop_4" play>>
+    <<addclass "#codewordWrapper1" "disappear">>
+    <<addclass "#codewordWrapper2" "disappear">>
+    <<addclass "#codewordWrapper3" "disappear">>
+      <<timed 5s>>
+        <<set $skip to false>>
+        <<goto $nextpass>>
+      <</timed>>
+        <<else>>
+    <<audio "modulelist_1" play>>
+  <</if>>
+<</timed>>
+<div class="wrapper box">
+  <main class="modules">
+  <h1 class="title">SESSION FIVE</h1>
+  <div class="menu-wrapper module-list">
+<div class="menu-item flip-card" id="mod10"> 
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+  <img src="assets/img/mod10.jpg" alt="module ten">
+      <div id="codewordWrapper1" class="codeword-wrapper">
+ 
+  /% CODEWORD INPUT %/
+      <div class="code-input">
+      <<textbox "$codeword" "">>
+    </div>
+   <div class="btn-result-wrapper">
+      <<button "Enter">>  
+          </div>
+      /% STANDARDISE INPUT %/
+      <<set $codeword to $codeword.toUpperCase()>>
+      /% CODEWORD CORRECT %/
+  <<if $codeword isnot "" and $codeword is "ASK">>
+<<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+  <<audio "eeg_1" play>>
+ <<timed 2s>>
+  <<addclass "#mod11" "disappear">>
+  <<addclass "#mod12" "disappear">>
+    <<addclass "#mod10" "twist">>
+      <</timed>>
+    <<timed 6s>>
+  <<set $prevpass to $passage>>
+  <<set $nextpass to "5mod10intro1">>
+  <<goto "loading">>
+        <</timed>>
+<</if>>
+        /% CODEWORD INCORRECT %/
+        <<if $codeword isnot "" and $codeword is not "ASK">>
+        <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+        <</if>><</button>> 
+          /% CODEWORD FEEDBACK %/
+          <div id="coderesult" class="coderesult"></div>
+   </div>
+    </div>
+      </div>
+  <div class="flip-card-back">
+        <img src="assets/img/mod10-rev.jpg" alt="module card" >
+      </div>
+    </div>
+  </div> 
+ <div class="menu-item flip-card" id="mod11"> 
+  <div class="flip-card-inner">
+      <div class="flip-card-front">
+  <img src="assets/img/mod11.jpg" alt="module eleven">
+      <div id="codewordWrapper2" class="codeword-wrapper">
+  /% CODEWORD INPUT %/
+      <div class="code-input">
+      <<textbox "$codeword" "">>
+    </div>
+   <div class="btn-result-wrapper">
+      <<button "Enter">>  
+          </div>
+      /% STANDARDISE INPUT %/
+      <<set $codeword to $codeword.toUpperCase()>>
+      /% CODEWORD CORRECT %/
+      <<if $codeword isnot "" and $codeword is "ACTION">>
+      <<replace "#coderesult2">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+      <<audio "eeg_1" play>>
+          <<timed 0.5s>>
+              <<addclass "#mod10" "dissolve">>
+              <<addclass "#mod12" "dissolve">>
+             <</timed>>
+             <<timed 1s>>
+             <<addclass "#mod10" "disappear">>
+              <<addclass "#mod12" "disappear">>
+             <</timed>>
+            <<timed 3s>>
+                <<addclass "#mod11" "twist">>
+             <</timed>>
+            <<timed 6s>>
+          <<set $prevpass to $passage>>
+          <<set $nextpass to "5mod11intro1">>
+          <<goto "loading">>
+        <</timed>>
+      <</if>>
+        /% CODEWORD INCORRECT %/
+        <<if $codeword isnot "" and $codeword is not "ACTION">>
+        <<replace "#coderesult2">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult2">><</replace>><</timed>>
+        <</if>><</button>> 
+          /% CODEWORD FEEDBACK %/
+          <div id="coderesult2" class="coderesult"></div>
+   </div>
+    </div>
+      </div>
+<div class="flip-card-back">
+        <img src="assets/img/mod11-rev.jpg" alt="module card" >
+      </div>
+    </div>
+  </div>
+
+ <div class="menu-item flip-card" id="mod12"> 
+ <div class="flip-card-inner">
+      <div class="flip-card-front">
+  <img src="assets/img/mod12.jpg" alt="module twelve">
+      /* <h2 class="subtitle">Module 12</h2> */
+       <div id="codewordWrapper3" class="codeword-wrapper">
+  /% CODEWORD INPUT %/
+      <div class="code-input">
+      <<textbox "$codeword" "">>
+    </div>
+   <div class="btn-result-wrapper">
+      <<button "Enter">>  
+          </div>
+      /% STANDARDISE INPUT %/
+      <<set $codeword to $codeword.toUpperCase()>>
+      /% CODEWORD CORRECT %/
+      <<if $codeword isnot "" and $codeword is "GIFT">>
+      <<replace "#coderesult3">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+        <<audio "eeg_1" play>>
+              <<timed 0.5s>>
+              <<addclass "#mod10" "dissolve">>
+              <<addclass "#mod11" "dissolve">>
+             <</timed>>
+             <<timed 1s>>
+             <<addclass "#mod10" "disappear">>
+              <<addclass "#mod11" "disappear">>
+             <</timed>>
+            <<timed 3s>>
+                <<addclass "#mod12" "twist">>
+             <</timed>>
+            <<timed 6s>>
+          <<set $prevpass to $passage>>
+          <<set $nextpass to "5mod12intro1">>
+          <<goto "loading">>
+        <</timed>>
+      <</if>>
+        /% CODEWORD INCORRECT %/
+        <<if $codeword isnot "" and $codeword is not "GIFT">>
+        <<replace "#coderesult3">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult3">><</replace>><</timed>>
+        <</if>><</button>> 
+          /% CODEWORD FEEDBACK %/
+          <div id="coderesult3" class="coderesult"></div>
+   </div>
+    </div>
+      </div>
+<div class="flip-card-back">
+        <img src="assets/img/mod12-rev.jpg" alt="module card" >
+      </div>
+    </div>
+  </div>
+  </div>
+  </main>
+  <<include "footerbox">></div>
+  <<done>><<include "checkmodules">><</done>>
+
+
+:: 5mod10intro1 [nobr]
+<<set $prevpass to "5modulelist">>
+<<set $passage to "5mod10intro1">>
+<<set $nextpass to "5mod10intro2">>
+<<set $module to "Module 10">><<include "checkmodulenamelist">>
+<audio src="assets/audio/gpce1.5_SESSION5_MOD10_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
+  <div class="wrapper">
+    <<include "header">>
+    <main  class="speaking">
+        <div class="text-wrapper">
+<p>Now it’s time for you to choose your ask. </p>
+
+<p>You’re going to take the Asks you created already and look at two things: </p>
+<p>First, you’ll look at how winnable the ask is. </p>
+<p>This is how easy the ask is to achieve </p>
+<p>Then, you’ll look at how worthwhile the ask is. </p>
+<p>A worthwhile ask creates the change you want. </p>
+
+
+  <<timed 18s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+
+   </div>
+    </main>
+         <<include "footerskip">>
+  </div>
+
+:: 5mod10intro2 [nobr]
+<<set $prevpass to "5mod10intro1">>
+<<set $passage to "5mod10intro2">>
+<<set $nextpass to "5mod10intro3">>
+<<set $module to "Module 10">><<include "checkmodulenamelist">>
+<audio src="assets/audio/gpce1.5_SESSION5_MOD10_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
+  <div class="wrapper">
+    <<include "header">>
+    <main  class="speaking">
+        <div class="text-wrapper">
+<p>On Violet, it took us some time to find our Ask. </p>
+<p>To find that balance of worthwhile to winnable. </p>
+<p>Some of us wanted the ask to be ‘no more petrol’ </p>
+<p>It’s great - worthwhile, but not winnable </p>
+
+<p>Some of us wanted the ask to be ‘reduce diesel cars by 5%’ </p>
+<p>Winnable but not worthwhile </p>
+<p>Worthwhile asks are hard, and winnable asks are easy </p>
+<p>Finding one that’s both, that’s complicated </p>
+
+  <<timed 26s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+
+   </div>
+    </main>
+         <<include "footerskip">>
+  </div>
+
+:: 5mod10intro3 [nobr]
+<<set $prevpass to "5mod10intro2">>
+<<set $passage to "5mod10intro3">>
+<<set $nextpass to "5mod10a">>
+<<set $module to "Module 10">><<include "checkmodulenamelist">>
+<audio src="assets/audio/gpce1.5_SESSION5_MOD10_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
+  <div class="wrapper">
+    <<include "header">>
+    <main  class="speaking">
+        <div class="text-wrapper">
+<p>You can make a worthwhile / winnable graph to help you see how each ask is different, some will be more worthwhile, others will be more winnable  </p>
+
+<p>The challenge, if you can, is to find an ask that is both. </p>
+
+<p>You can use this graph to help you choose which ask you what to use</p>
+
+  <<timed 18s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+
+   </div>
+    </main>
+         <<include "footerskip">>
+  </div>
+
+
+:: 5mod10a [nobr]
+<<set $prevpass to "5mod10intro3">>
+<<set $passage to "5mod10a">>
+<<set $nextpass to "5mod10outro">>
+/* <audio src="assets/audio/gpce1.5_SESSION5_MOD10_intro_3.mp3" autoplay>Audio is not supported on your device</audio> */
+  <div class="wrapper">
+    <<include "header">>
+    <main  class="speaking">
+        <div class="text-wrapper hero">
+    <p>When you have </p> <h2 class="subtitle ">THE ASK</h2><p> click <<button "Next">><<set $prevpass to $passage>><<goto "5mod10outro1">><</button>> </p>
+   </div>
+    </main>
+         <<include "footer">>
+  </div>
+
+
+
+:: 5mod10outro1 [nobr]
+<<set $prevpass to "5mod10a">>
+<<set $passage to "5mod10outro1">>
+<<set $nextpass to "5modulelist">>
+<audio src="assets/audio/gpce1.5_SESSION5_MOD10_outro.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+      <div class="text-wrapper">
+<p>An excellent ask</p>
+
+<p>I can’t be sure of course</p>
+
+<p>I’m a pre-record after all</p>
+
+<p>But I do trust you</p>
+
+<p>When you are ready to move on to the Target, enter the codeword for Module 11.</p>
+
+<<timed 13s>><<set $prevpass to $passage>><<set $mod10 to true>><<goto $nextpass>><</timed>>
+</div>
+</main>
+     <<include "footerskip">>
+</div>
+
+:: 5mod11intro1 [nobr]
+<<set $prevpass to "5modulelist">>
+<<set $passage to "5mod11intro1">>
+<<set $nextpass to "5mod11a">>
+<audio src="assets/audio/gpce1.5_SESSION5_MOD11_intro.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $module to "Module 11">><<include "checkmodulenamelist">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper">
+<p>Now: your playful action. </p>
+<p>Your ask is what you’re asking for, the change you want to make. </p>
+<p>Your playful action is what you’re going to do. </p>
+<p>We need to work out who is best to ASK. </p>
+<p>Who can get us what we want? </p>
+<p>You can use worthwhile / winnable </p>
+<p>A winnable target will be easier for you to reach. </p>
+<p>And a worthwhile target will have the power to make the change you want.  </p>
+<p>Over to you Teacher. </p>
+
+  <<timed 28s>>
+   <<set $prevpass to $passage>><<goto $nextpass>>
+  <</timed>>
+</div>
+ </main>
+     <<include "footerskip">>
+</div>
+
+
+:: 5mod11a [nobr]
+<<set $prevpass to "5mod11intro1">>
+<<set $passage to "5mod11a">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper hero">
+   <p>When you have your </p><h2 class="subtitle ">TARGET</h2><p> click <<button "Ready">><<set $prevpass to $passage>><<goto "5mod11outro1">><</button>> </p>
+
+</div>
+ </main>
+     <<include "footerskip">>
+</div>
+
+:: 5mod11outro1 [nobr]
+<<set $prevpass to "5mod11a">>
+<<set $passage to "5mod11outro1">>
+<<set $nextpass to "5modulelist">>
+<audio src="assets/audio/gpce1.5_SESSION5_MOD11_outro.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper" id="mount">
+<p>Great, you have a target. </p>
+
+<p>Enter the next codeword for the final part of today’s session</p>
+
+
+<<timed 6s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+</div>
+ </main>
+     <<include "footerskip">>
+</div>
+
+
+:: 5mod12intro1 [nobr]
+<<set $prevpass to "5modulelist">>
+<<set $passage to "5mod12intro1">>
+<<set $nextpass to "5mod12intro2">>
+<audio src="assets/audio/gpce1.5_SESSION5_MOD12_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $module to "Module 12">><<include "checkmodulenamelist">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper" id="text">
+<p>Greenpeace & Coney have a sweet spot – the sweet spot is Gifting. </p>
+<p>Making something for the Target that will engage them – a Gift. </p>
+<p>A gift doesn’t mean we buy the target a Hat </p>
+<p>or some platform heeled shoes </p>
+<p>Gifting is a mindset</p>
+<p>Making something for someone that starts a conversation</p>
+<p>That invites them in </p>
+<p>Putting the Play in our Playful Activism. </p>
+<<timed 25s>>
+  <<replace "#text">>
+    <p>It sounds simple, but some people forget to think of who the gift is for, who they are connecting with and what they want to do with their gift.</p>
+
+  
+ <</replace>>
+ <</timed>>
+ <<timed 31s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+</div>
+ </main>
+     <<include "footerskip">>
+</div>
+
+:: 5mod12intro2 [nobr]
+<<set $prevpass to "5mod12intro1">>
+<<set $passage to "5mod12intro2">>
+<<set $nextpass to "5mod12intro3">>
+<audio src="assets/audio/gpce1.5_SESSION5_MOD12_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $module to "Module 12">><<include "checkmodulenamelist">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper">
+<p>First part involves building intelligence on the target or targets?  </p>
+<p>What do we know about them? </p>
+<p>What do they like? </p>
+<p>What could help us engage with them?</p>
+
+<p>This will help us design the Gift. </p>
+
+
+ <p>When done click <<button "Move On">><<set $prevpass to $passage>><<goto $nextpass>><</button>> </p>
+</div>
+ </main>
+     <<include "footerskip">>
+</div>
+
+:: 5mod12intro3 [nobr]
+<<set $prevpass to "5mod12intro2">>
+<<set $passage to "5mod12intro3">>
+<<set $nextpass to "5mod12intro4">>
+<audio src="assets/audio/gpce1.5_SESSION5_MOD12_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $module to "Module 12">><<include "checkmodulenamelist">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper">
+<p>In Violet, our target was the gala dinner guests, and our Ask was: ‘ditch diesel’: asking car companies to stop making diesel cars. </p>
+<p>To find our action, we looked at what we knew about the target. </p>
+<p>And designed a gift from us to them. </p>
+<p>Based on our Making Skills. </p>
+
+
+<<timed 17s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+</div>
+ </main>
+     <<include "footerskip">>
+</div>
+
+
+:: 5mod12intro4 [nobr]
+<<set $prevpass to "5mod12intro3">>
+<<set $passage to "5mod12intro4">>
+<<set $nextpass to "5mod12a">>
+<audio src="assets/audio/gpce1.5_SESSION5_MOD12_intro_4.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $module to "Module 12">><<include "checkmodulenamelist">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper">
+<p>The Young Coneys liked to make games.</p>
+<p>So, outside the gala dinner, our very junior doctors set up an emergency health station with lots of games. </p>
+
+<p>They operated on lungs impacted by air pollution </p>
+<p>They played operation </p>
+<p>They conducted emergency health checks </p>
+<p>It was about our focus, but playful. </p>
+<p>It was a Gift for our recipients. </p>
+<p>It was a piece of Playful Activism.</p>
+
+<p>So, if you have time, let’s get some ideas on a Gift that could reach our recipient, based on the skills we have in the room, which will Ask what we want to change at this school. </p>
+
+ <<button "Next">><<set $prevpass to $passage>><<goto $nextpass>><</button>>
+
+
+</div>
+ </main>
+     <<include "footerskip">>
+</div>
+
+:: 5mod12a [nobr]
+<<set $prevpass to "5mod12intro4">>
+<<set $passage to "5mod12a">>
+<<set $nextpass to "5mod12outro">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper hero">
+
+ <p>When you have</p>  <h2 class="subtitle ">THE GIFT</h2> <p> click <<button "Next">><<set $prevpass to $passage>><<goto $nextpass>><</button>> </p>
+
+</div>
+ </main>
+     <<include "footerskip">>
+</div>
+
+
+:: 5mod12outro [nobr]
+<<set $prevpass to "5mod12a">>
+<<set $passage to "5mod12outro">>
+<<set $nextpass to "5sessionoutro">>
+<audio src="assets/audio/gpce1.5_SESSION5_MOD12_outro.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper" id="mount">
+<p>The ask, the target, the action… </p>
+<p>It’s the toolkit of a playful activist </p>
+<p>And at the middle of it all is the gift: </p>
+<p>The start of a conversation, </p>
+<p>A new perspective, </p>
+<p>An invitation to play </p>
+
+<<timed 15s>><<set $prevpass to $passage>><<set $mod12 to true>>
+      <<set $skip to true>><<goto "5modulelist">><</timed>>
+
+</div>
+ </main>
+     <<include "footerskip">>
+</div>
+
+
+:: 5sessionoutro [nobr]
+<<set $prevpass to "5mod12outro">>
+<<set $passage to "5sessionoutro">>
+<<set $nextpass to "landing">>
+<audio src="assets/audio/gpce1.5_SESSION5_OUTRO.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper" id ="mount">
+<p>It’s been a day of choices – your ask, your action, your gift </p>
+<p>And now you know all these things </p>
+<p>We can start making… </p>
+<p>Well, not quite yet, next time. </p>
+<p>Come prepared </p>
+
+<<timed 12s>><<replace "#mount">>
+<p>You’ll need a codeword to get in </p>
+<p>Text  <h2 class="subtitle inline">ACTIONY</h2> to find it </p>
+<p>Until next time </p>
+
+<<button "Finish">><<audio "pyramidtransition_1" play >><<set $prevpass to $passage>><<goto $nextpass>><</button>>
+<</replace>><</timed>>
+</div>
+  </main>
+     <<include "footer">>
+</div>
+
+
+/* SESSION 6 */
+
+
+:: 6kaiIntro1 [nobr]
+<<set $prevpass to "landing">>
+<<set $passage to "6kaiIntro1">>
+<<set $nextpass to "6kaiIntro2">>
+<audio src="assets/audio/gpce1.5_SESSION6_INTRO_1.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $module to "Introduction">><<include "checkmodulenamelist">>
+<div class="wrapper">
+  <<include "header">>
+    /* <h1 class="title top">Hello - it's Kai again</h1> */
+  <main class="speaking">
+ <h1 class="title ">Hello. </h1>
+
+    <div class="text-wrapper">
+
+<p>Hello. </p>
+<p>Welcome back. </p>
+<p>Today is all about making </p>
+<p>Making can mean many different things. </p>
+<p>It might mean building something </p>
+<p>
+  But it also might mean writing something, rehearsing something, 
+  perhaps recording something, or assembling something, or even dismantling something
+</p>
+<p>It has to do with something. </p>
+
+  <<timed 21s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+
+    </div>
+
+</main>
+<<include "footerskip">>
+</div>
+
+:: 6kaiIntro2 [nobr]
+<<set $prevpass to "6kaiIntro1">>
+<<set $passage to "6kaiIntro2">>
+<<set $nextpass to "6modulelist">>
+<audio src="assets/audio/gpce1.5_SESSION6_INTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $module to "Introduction">><<include "checkmodulenamelist">>
+<div class="wrapper">
+  <<include "header">>
+
+  <main class="speaking">
+    <div class="text-wrapper">
+
+<p>It’ll all depend on what your action is, and the gift you’re giving </p>
+<p>For Violet we began making by writing. We wrote a script for those very junior doctors </p>
+<p>And then we rehearsed: we practised our roles, what we were going to say, how to have the conversations we wanted (and needed) to have </p>
+<p>Your making might look like this </p>
+<p>It might be something very different </p>
+<p>If I can make one suggestion though - </p>
+<p>It’s to hold onto the playful in playful activist </p>
+<p>What are you playing and who is getting to play? </p>
+<p>How is playfulness your attitude? </p>
+<p>Before you kick off though, it may help to find the Hat you’ll be wearing for this Action.</p>
+<p>Enter the codeword for Module 13. </p>
+
+  <<timed 44s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+
+    </div>
+
+</main>
+<<include "footerskip">>
+</div>
+
+
+:: 6modulelist [nobr]
+<<set $passage to "6modulelist">><<set $session to 6>>
+<<timed 0.1s>>
+  <<if $skip is true>>
+     <<audio "completionbloop_4" play>>
+    <<addclass "#codewordWrapper1" "disappear">>
+    <<addclass "#codewordWrapper2" "disappear">>
+      <<timed 5s>>
+        <<set $skip to false>>
+        <<goto $nextpass>>
+      <</timed>>
+      <<else>>
+    <<audio "modulelist_1" play>>
+  <</if>>
+<</timed>>
+<div class="wrapper box">
+  <main class="modules">
+  <h1 class="title">SESSION SIX</h1>
+  <div class="menu-wrapper module-list">
+<div class="menu-item flip-card" id="mod13"> 
+  <div class="flip-card-inner">
+      <div class="flip-card-front">
+  <img src="assets/img/mod13.jpg" alt="module thirteen">
+      /* <h2 class="subtitle">Module 13</h2> */
+       <div id="codewordWrapper1" class="codeword-wrapper">
+ 
+  /% CODEWORD INPUT %/
+      <div class="code-input">
+      <<textbox "$codeword" "">>
+    </div>
+   <div class="btn-result-wrapper">
+      <<button "Enter">>  
+          </div>
+      /% STANDARDISE INPUT %/
+      <<set $codeword to $codeword.toUpperCase()>>
+      /% CODEWORD CORRECT %/
+  <<if $codeword isnot "" and $codeword is "HATS">>
+<<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+  <<audio "eeg_1" play>>
+<<timed 2s>>
+              <<addclass "#mod14" "disappear">>
+               <<addclass "#mod13" "twist">>
+             <</timed>>
+      
+            <<timed 6s>>
+          <<set $prevpass to $passage>>
+          <<set $nextpass to "6mod13intro1">>
+          <<goto "loading">>
+        <</timed>>
+<</if>>
+        /% CODEWORD INCORRECT %/
+        <<if $codeword isnot "" and $codeword is not "HATS">>
+        <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+        <</if>><</button>> 
+          /% CODEWORD FEEDBACK %/
+          <div id="coderesult" class="coderesult"></div>
+   </div>
+    </div>
+      </div>
+  <div class="flip-card-back">
+        <img src="assets/img/mod13-rev.jpg" alt="module card" >
+      </div>
+    </div>
+  </div>  
+ <div class="menu-item flip-card" id="mod14"> 
+  <div class="flip-card-inner">
+      <div class="flip-card-front">
+  <img src="assets/img/mod14.jpg" alt="module fourteen">
+      /* <h2 class="subtitle">Module 14</h2> */
+<div id="codewordWrapper2" class="codeword-wrapper">
+  /% CODEWORD INPUT %/
+      <div class="code-input">
+      <<textbox "$codeword" "">>
+    </div>
+   <div class="btn-result-wrapper">
+      <<button "Enter">>  
+          </div>
+      /% STANDARDISE INPUT %/
+      <<set $codeword to $codeword.toUpperCase()>>
+      /% CODEWORD CORRECT %/
+      <<if $codeword isnot "" and $codeword is "MAKING">>
+      <<replace "#coderesult2">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+      <<audio "eeg_1" play>>
+
+     <<timed 0.5s>>
+              <<addclass "#mod13" "dissolve">>
+             <</timed>>
+             <<timed 1s>>
+              <<addclass "#mod13" "disappear">>
+             <</timed>>
+            <<timed 3s>>
+                <<addclass "#mod14" "twist">>
+             <</timed>>
+            <<timed 6s>>
+          <<set $prevpass to $passage>>
+          <<set $nextpass to "6mod14intro1">>
+          <<goto "loading">>
+        <</timed>>
+      <</if>>
+        /% CODEWORD INCORRECT %/
+        <<if $codeword isnot "" and $codeword is not "MAKING">>
+        <<replace "#coderesult2">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult2">><</replace>><</timed>>
+        <</if>><</button>> 
+          /% CODEWORD FEEDBACK %/
+          <div id="coderesult2" class="coderesult"></div>
+   </div>
+    </div>
+      </div>
+      <div class="flip-card-back">
+        <img src="assets/img/mod14-rev.jpg" alt="module card" >
+      </div>
+    </div>
+  </div>  
+  </div>
+  </main>
+  <<include "footerbox">></div>
+  <<done>><<include "checkmodules">><</done>>
+
+
+
+:: 6mod13intro1 [nobr]
+<<set $prevpass to "6modulelist">>
+<<set $passage to "6mod13intro1">>
+<<set $nextpass to "6mod13a">>
+<audio src="assets/audio/gpce1.5_SESSION6_MOD13_intro.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $module to "Module 13">><<include "checkmodulenamelist">>
+  <div class="wrapper">
+    <<include "header">>
+    <main  class="speaking">
+        <div class="text-wrapper">
+<p>As you start making </p>
+<p>You’ll see that within an action there are lots of roles to play – different hats to wear. </p>
+<p>Some people will be on the ground, delivering the gift to the recipient,</p> 
+<p>Others will be behind the scenes making sure everything goes to plan </p>
+<p>Some will be capturing the story of the gift </p>
+<p>And others checking in to make sure it’s been received well </p>
+<p>As you discuss </p>
+<p>Think back to your comfort in action </p>
+<p>Be aware of who wants to be on the ground </p>
+<p>Who wants to be behind the scenes? </p>
+<p>Where do people feel comfortable?</p>
+<p>Where do they feel safe? </p>
+<p>What role will you play in delivering this action together? </p>
+
+  <<timed 39s>>
+    <<set $prevpass to $passage>><<goto $nextpass>>
+  <</timed>>
+   </div>
+    </main>
+         <<include "footerskip">>
+  </div>
+
+
+:: 6mod13a [nobr]
+<<set $prevpass to "6mod14intro1">>
+<<set $passage to "6mod13a">>
+<<set $nextpass to "6mod13outro1">>
+
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking inlineimg">
+    <div class="text-wrapper">
+
+When finished click <<button "Move on">><<set $prevpass to $passage>><<set $prevpass to $passage>><<goto $nextpass>><</button>>
+</div>
+        <img src="assets/img/mod13-rev.jpg">
+ </main>
+     <<include "footer">>
+</div>
+
+
+:: 6mod13outro1 [nobr]
+<<set $prevpass to "6mod13a">>
+<<set $passage to "6mod13outro1">>
+<<set $nextpass to "6modulelist">>
+<audio src="assets/audio/gpce1.5_SESSION6_MOD13_outro.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+      <div class="text-wrapper">
+<p>There might be some roles that rise above the others </p>
+
+<p>The person who stands at the front of the protest </p>
+
+<p>The person who delivers the gift </p>
+
+<p>The person who says that one, important line </p>
+
+<p>Even if it feels as though some roles are more central </p>
+
+<p>That’s not how it is </p>
+
+<p>All these roles come together to make this action happen </p>
+
+<p>All of you come together to deliver this gift </p>
+
+<p>This is collective action </p>
+
+<p>Right, it’s time for making. </p>
+<p>You know the game, time for the Codeword. </p>
+
+ <<timed 33s>><<set $prevpass to $passage>><<set $mod13 to true>><<goto $nextpass>><</timed>>
+</div>
+</main>
+     <<include "footerskip">>
+</div>
+
+
+
+:: 6mod14intro1 [nobr]
+<<set $prevpass to "6modulelist">>
+<<set $passage to "6mod14intro1">>
+<<set $nextpass to "6mod14a">>
+<audio src="assets/audio/gpce1.5_SESSION6_MOD14_intro.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $module to "Module 14">><<include "checkmodulenamelist">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper" id="mount">
+<p>Now it’s time to get making </p>
+<p>So, roll up your sleeves </p>
+<p>Or don’t if you’re wearing a T-shirt </p>
+<p>And get stuck in. </p>
+<p>Over to you Teacher. </p>
+
+  <<timed 18s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+
+</div>
+ </main>
+     <<include "footerskip">>
+</div>
+
+:: 6mod14a [nobr]
+<<set $prevpass to "6mod14intro1">>
+<<set $passage to "6mod14a">>
+<<set $nextpass to "6sessionoutro1">>
+
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking inlineimg">
+    <div class="text-wrapper">
+
+When finished click <<button "Move on">><<set $prevpass to $passage>><<set $prevpass to $passage>><<set $mod14 to true>>
+      <<set $skip to true>><<goto "6modulelist">><</button>>
+</div>
+        <img src="assets/img/mod14-rev.jpg">
+ </main>
+     <<include "footer">>
+</div>
+
+
+:: 6sessionoutro1 [nobr]
+<<set $prevpass to "6mod14a">>
+<<set $passage to "6sessionoutro1">>
+<<set $nextpass to "landing">>
+<audio src="assets/audio/gpce1.5_SESSION6_OUTRO.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper">
+<p>And that’s it.</p>
+
+<p>Your gift is made: written, rehearsed, crafted, built </p>
+<p>Wrapped, and ready to be delivered… </p>
+<p>Or close at least! </p>
+<p>You might need a bit more making time. </p>
+
+<p>But we’ve reached the end of the session </p>
+<p>And we’re getting closer to the end of our time together too</p>
+<p>But that end will be a start of something else </p>
+<p>The start of your school being a different place, </p>
+<p>Different because of the change you have made </p>
+<p>But that’s next time! </p>
+<p>You’ll need that codeword to get in </p>
+<p>Text <h2 class="subtitle inline"> COLLECTIVE</h2> to find it </p>
+
+
+
+<<button "Finish">><<audio "pyramidtransition_1" play >><<set $prevpass to $passage>><<goto $nextpass>><</button>>
+</div>
+  </main>
+     <<include "footer">>
+</div>
+
+
+
+
+
+/* SESSION 7 */
+
+:: 7kaiIntro1 [nobr]
+<<set $prevpass to "landing">>
+<<set $passage to "7kaiIntro1">>
+<<set $nextpass to "7kaiIntro2">>
+<audio src="assets/audio/gpce1.5_SESSION7_INTRO_1.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $module to "Introduction">><<include "checkmodulenamelist">>
+<div class="wrapper">
+  <<include "header">>
+
+  <main class="speaking">
+ <h1 class="title ">Hello again. </h1>
+
+    <div class="text-wrapper">
+<p>We’ve dismantled a lot of this pyramid now. </p>
+<p>Today you’re going to deliver you gift to its recipient </p>
+<p>How are you feeling? </p>
+<p>Good? </p>
+<p>I imagine you’re all nodding </p>
+<p>I can’t see you (of course)</p> 
+<p>But I’ll assume you are </p>
+<p>Although, you might not feel good</p>
+<p>You might feel nervous, or cautious or unsure </p>
+<p>Or none of these things </p>
+<p>All of which is understandable </p>
+
+
+    <<timed 24s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+    </div>
+  
+</main>
+<<include "footerskip">>
+</div>
+
+:: 7kaiIntro2 [nobr]
+<<set $prevpass to "7kaiIntro1">>
+<<set $passage to "7kaiIntro2">>
+<<set $nextpass to "7modulelist">>
+<audio src="assets/audio/gpce1.5_SESSION7_INTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $module to "Introduction">><<include "checkmodulenamelist">>
+<div class="wrapper">
+  <<include "header">>
+    /* <h1 class="title top">Hello - it's Kai again</h1> */
+  <main class="speaking">
+    <div class="text-wrapper">
+<p>Actions often don’t go exactly as we imagined </p>
+<p>Your expectation might not end up being the reality </p>
+<p>And we can remember that there are many different forms of success </p>
+<p>Sometimes success is our action going exactly to plan </p>
+<p>This might be what happens to you today </p>
+<p>But sometimes success is something different </p>
+<p>So, let’s talk about that before the delivery</p>
+<p>Enter the code for Module 15</p>
+
+    <<timed 25s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+    </div>
+  
+</main>
+<<include "footerskip">>
+</div>
+
+
+
+:: 7modulelist [nobr]
+<<set $passage to "7modulelist">><<set $session to 7>>
+<<timed 0.1s>>
+  <<if $skip is true>>
+     <<audio "completionbloop_4" play>>
+    <<addclass "#codewordWrapper1" "disappear">>
+    <<addclass "#codewordWrapper2" "disappear">>
+      <<timed 5s>>
+        <<set $skip to false>>
+        <<goto $nextpass>>
+      <</timed>>
+        <<else>>
+    <<audio "modulelist_1" play>>
+  <</if>>
+<</timed>>
+<div class="wrapper box">
+  <main class="modules">
+  <h1 class="title">SESSION SEVEN</h1>
+  <div class="menu-wrapper module-list">
+<div class="menu-item flip-card" id="mod15"> 
+  <div class="flip-card-inner">
+      <div class="flip-card-front">
+  <img src="assets/img/mod15.jpg" alt="module fifteen">
+      /* <h2 class="subtitle">Module 15</h2> */
+       <div id="codewordWrapper1" class="codeword-wrapper">
+  /% CODEWORD INPUT %/
+      <div class="code-input">
+      <<textbox "$codeword" "">>
+    </div>
+   <div class="btn-result-wrapper">
+      <<button "Enter">>  
+          </div>
+      /% STANDARDISE INPUT %/
+      <<set $codeword to $codeword.toUpperCase()>>
+      /% CODEWORD CORRECT %/
+  <<if $codeword isnot "" and $codeword is "ABORT">>
+<<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+  <<audio "eeg_1" play>>
+<<timed 2s>>
+              <<addclass "#mod16" "disappear">>
+               <<addclass "#mod15" "twist">>
+             <</timed>>
+      
+            <<timed 6s>>
+          <<set $prevpass to $passage>>
+          <<set $nextpass to "7mod15intro1">>
+          <<goto "loading">>
+        <</timed>> 
+<</if>>
+        /% CODEWORD INCORRECT %/
+        <<if $codeword isnot "" and $codeword is not "ABORT">>
+        <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+        <</if>><</button>> 
+          /% CODEWORD FEEDBACK %/
+          <div id="coderesult" class="coderesult"></div>
+   </div>
+    </div>
+      </div>
+  <div class="flip-card-back">
+        <img src="assets/img/mod15-rev.jpg" alt="module card" >
+      </div>
+    </div>
+  </div>  
+
+ <div class="menu-item flip-card" id="mod16"> 
+   <div class="flip-card-inner">
+      <div class="flip-card-front">
+  <img src="assets/img/mod16.jpg" alt="module sixteen">
+      /* <h2 class="subtitle">Module 16</h2> */
+        <div id="codewordWrapper2" class="codeword-wrapper">
+  /% CODEWORD INPUT %/
+      <div class="code-input">
+      <<textbox "$codeword" "">>
+    </div>
+   <div class="btn-result-wrapper">
+      <<button "Enter">>  
+          </div>
+      /% STANDARDISE INPUT %/
+      <<set $codeword to $codeword.toUpperCase()>>
+      /% CODEWORD CORRECT %/
+      <<if $codeword isnot "" and $codeword is "DELIVERY">>
+      <<replace "#coderesult2">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+      <<audio "eeg_1" play>>
+    <<timed 0.5s>>
+              <<addclass "#mod15" "dissolve">>
+             <</timed>>
+             <<timed 1s>>
+              <<addclass "#mod15" "disappear">>
+             <</timed>>
+            <<timed 3s>>
+                <<addclass "#mod16" "twist">>
+             <</timed>>
+            <<timed 6s>>
+          <<set $prevpass to $passage>>
+          <<set $nextpass to "7mod16intro1">>
+          <<goto "loading">>
+        <</timed>>
+      <</if>>
+        /% CODEWORD INCORRECT %/
+        <<if $codeword isnot "" and $codeword is not "DELIVERY">>
+        <<replace "#coderesult2">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult2">><</replace>><</timed>>
+        <</if>><</button>> 
+          /% CODEWORD FEEDBACK %/
+          <div id="coderesult2" class="coderesult"></div>
+   </div>
+    </div>
+      </div>
+<div class="flip-card-back">
+        <img src="assets/img/mod16-rev.jpg" alt="module card" >
+      </div>
+    </div>
+  </div>  
+  </div>
+  </main>
+  <<include "footerbox">></div>
+  <<done>><<include "checkmodules">><</done>>
+
+
+
+
+:: 7mod15intro1 [nobr]
+<<set $prevpass to "7modulelist">>
+<<set $passage to "7mod15intro1">>
+<<set $nextpass to "7mod15intro2">>
+<audio src="assets/audio/gpce1.5_SESSION7_MOD15_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $module to "Module 15">><<include "checkmodulenamelist">>
+  <div class="wrapper">
+    <<include "header">>
+    <main  class="speaking">
+        <div class="text-wrapper">
+<p>You might have noticed that I haven’t finished the story of Violet. </p>
+<p>The thing is - Violet didn’t go to plan </p>
+<p>We were due to be stood outside the entrance to the dinner, on the uncovered street</p> 
+<p>And then the night of the gala we were met with torrential downpour </p>
+<p>We wanted to continue with our plan, but we were concerned about the stories that would be told: stories about children stood outside in the cold, stories of drenched junior doctors, stories about our lack of care </p>
+<p>Not stories about our action </p>
+
+ <<timed 33s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+   </div>
+    </main>
+         <<include "footerskip">>
+  </div>
+
+:: 7mod15intro2 [nobr]
+<<set $prevpass to "7mod15intro1">>
+<<set $passage to "7mod15intro2">>
+<<set $nextpass to "7mod15intro3">>
+<audio src="assets/audio/gpce1.5_SESSION7_MOD15_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $module to "Module 15">><<include "checkmodulenamelist">>
+  <div class="wrapper">
+    <<include "header">>
+    <main  class="speaking">
+        <div class="text-wrapper">
+<p>So, we had to make the call to delay and wait until the rain had stopped </p>
+<p>We still delivered our action, but only to a very small number of people, as they arrived later </p>
+<p>When it wasn’t pouring buckets </p>
+
+ <<timed 14s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+   </div>
+    </main>
+         <<include "footerskip">>
+  </div>
+
+:: 7mod15intro3 [nobr]
+<<set $prevpass to "7mod15intro2">>
+<<set $passage to "7mod15intro3">>
+<<set $nextpass to "7mod15a">>
+<audio src="assets/audio/gpce1.5_SESSION7_MOD15_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $module to "Module 15">><<include "checkmodulenamelist">>
+  <div class="wrapper">
+    <<include "header">>
+    <main  class="speaking">
+        <div class="text-wrapper">
+<p>This reminds me that success is sometimes not what you think </p>
+<p>For Violet, we thought that success would be speaking to everyone at that dinner.  </p>
+<p>But really, it’s the story. </p>
+<p>The story I’ve told you. </p>
+<p>It’s also a reminder that you can always change your plan. </p>
+<p>You always have the power to abort: </p>
+<p>to say – no, this isn’t right. </p>
+<p>To decide to change the action. </p>
+<p>To decide not to do the action at all.</p>
+
+ <<timed 26s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+   </div>
+    </main>
+         <<include "footerskip">>
+  </div>
+
+:: 7mod15a [nobr]
+<<set $prevpass to "7mod15intro3">>
+<<set $passage to "7mod15a">>
+<<set $nextpass to "7mod15outro1">>
+
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking inlineimg">
+    <div class="text-wrapper">
+
+When ready to move on click <<button "Here">><<set $prevpass to $passage>><<set $prevpass to $passage>><<set $mod15 to true>><<goto "7modulelist">><</button>>
+</div>
+        <img src="assets/img/mod15-rev.jpg">
+ </main>
+     <<include "footer">>
+</div>
+
+
+:: 7mod15outro1 [nobr]
+<<set $prevpass to "7mod15a">>
+<<set $passage to "7mod15outro1">>
+<<set $nextpass to "7modulelist">>
+<audio src="assets/audio/gpce1.5_SESSION7_MOD15_outro.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+      <div class="text-wrapper">
+<p>The power to abort is about honesty </p>
+
+<p>When you have discussed this you may have some bits to get ready or change, so when you are ready to deliver, enter the codeword. </p>
+
+  <<timed 11s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+</div>
+</main>
+     <<include "footerskip">>
+</div>
+
+
+:: 7mod16intro1 [nobr]
+<<set $prevpass to "7modulelist">>
+<<set $passage to "7mod16intro3">>
+<<set $nextpass to "complete">>
+<audio src="assets/audio/gpce1.5_SESSION7_MOD16_intro.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $module to "Module 16">><<include "checkmodulenamelist">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper ">
+<p>And so, we’re here </p>
+
+<p>It’s time for you to deliver your gift. </p>
+<p>This is your action, and you know what needs to happen next. </p>
+
+<p>I have a few final offers for you - </p>
+<p>Remember the context</p> 
+<p>Remember power </p>
+<p>Remember to play </p>
+
+<p>And good luck! </p>
+<p>When you have deilvered, enter the codeword <h2 class="subtitle inline">COMPLETE</h2></p>
+<div id="codewordWrapper" class="codeword-wrapper">
+  /% CODEWORD INPUT %/
+      <div class="code-input">
+      <<textbox "$codeword" "">>
+    </div>
+   <div class="btn-result-wrapper">
+      <<button "Enter">>  
+          </div>
+      /% STANDARDISE INPUT %/
+      <<set $codeword to $codeword.toUpperCase()>>
+      /% CODEWORD CORRECT %/
+      <<if $codeword isnot "" and $codeword is "COMPLETE">>
+      <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+        <<audio "eeg_1" play>>
+      <<timed 3s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+      <</if>>
+        /% CODEWORD INCORRECT %/
+        <<if $codeword isnot "" and $codeword is not "COMPLETE">>
+        <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+        <</if>><</button>> 
+          /% CODEWORD FEEDBACK %/
+          <div id="coderesult"></div>
+   </div>
+    </div>
+</div>
+ </main>
+     <<include "footer">>
+</div>
+
+:: complete [nobr]
+<<set $prevpass to "7mod16intro3">>
+<<set $passage to "complete">>
+<<set $nextpass to "7mod16outro1">>
+<div class="wrapper">
+  /* <<include "header">> */
+  <main class="speaking">
+    <div class="text-wrapper" id="mount">
+ <<audio "buildwithcul" play>>
+<div class="trianglepulse-wrapper">
+   <h1 class="title titlepulse">COMPLETE</h1>
+  <div id='container' class="trianglepulse-container">
+    <div class='trianglepulse'></div>
+    <div class='trianglepulse'></div>
+    <div class='trianglepulse'></div>
+    <div class='trianglepulse'></div>
+    <div class='trianglepulse'></div>
+  </div>
+</div>
+
+</div>
+<<timed 10s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+ </main>
+ 
+     /* <<include "footer">> */
+</div>
+
+
+
+:: 7mod16outro1 [nobr]
+<<set $prevpass to "7mod16intro1">>
+<<set $passage to "7mod16outro1">>
+<<set $nextpass to "7sessionoutro1">>
+<audio src="assets/audio/gpce1.5_SESSION7_MOD16_outro.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper" id="mount">
+<p>And so that’s it. </p>
+
+<p>Your gift has been given. </p>
+
+<p>Your action is completed. </p>
+
+<p>I don’t know what happened</p>
+
+<p>I’m pre-recorded, of course </p>
+
+<p>But I do know that whatever happened, </p>
+<p>And I mean whatever,</p> 
+<p>That what you did today, </p>
+<p>
+  And what you’ve done over the past few weeks is the start of something
+  
+</p>
+
+
+
+<<timed 18s>><<set $prevpass to $passage>><<set $mod16 to true>><<set $skip to true>><<goto "7modulelist">><</timed>>
+</div>
+ </main>
+     <<include "footerskip">>
+</div>
+
+
+:: 7sessionoutro1 [nobr]
+<<set $prevpass to "7mod16outro1">>
+<<set $passage to "7sessionoutro1">>
+<<set $nextpass to "7sessionoutro2">>
+<audio src="assets/audio/gpce1.5_SESSION7_OUTRO_1.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper">
+<p>Congratulations </p>
+<p>For all you’ve done today: </p>
+<p>For the impact that you’ll see, and for the impact you’ll never see.</p>
+<p>
+  On the way back from the Violet action, one of the Young Coneys, Amari, turned to me and she said something. She said: 
+  ‘I can’t believe we just did that’ 
+</p>
+<p>Her words have always stayed with me </p>
+<p>And over time I realised… this was an impact too </p>
+<p>The action was a gift to its recipient, but it was also a gift to some of the Young Coneys. </p>
+<p>And for every Amari who says something, there’s at least one other, who thinks but doesn’t speak </p>
+
+  <<timed 33s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+</div>
+  </main>
+     <<include "footer">>
+</div>
+
+:: 7sessionoutro2 [nobr]
+<<set $prevpass to "7sessionoutro1">>
+<<set $passage to "7sessionoutro2">>
+<<set $nextpass to "7sessionoutro3">>
+<audio src="assets/audio/gpce1.5_SESSION7_OUTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper">
+<p>I hope you can see the power of what you did today </p>
+<p>This is not the end, it’s just the beginning</p>
+<p>But not quite a farewell for us yet. </p>
+<p>It is from me, but you’ll receive a visitor next week. </p>
+<p>Toby will be with you again. </p>
+  <<timed 15s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+</div>
+  </main>
+     <<include "footer">>
+</div>
+
+
+
+:: 7sessionoutro3 [nobr]
+<<set $prevpass to "7sessionoutro2">>
+<<set $passage to "7sessionoutro3">>
+<<set $nextpass to "landing">>
+<audio src="assets/audio/gpce1.5_SESSION7_OUTRO_3.mp3" autoplay>Audio is not supported on your device</audio>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper">
+
+<p>You’ll need one final codeword </p>
+<p>Text  <h2 class="subtitle inline">SUCCESS</h2> to find it </p>
+<p>Thanks for listening to me. </p>
+<p>Thanks for playing. </p>
+
+<<button "Finish">><<audio "pyramidtransition_1" play >><<set $prevpass to $passage>><<goto $nextpass>><</button>>
+</div>
+  </main>
+     <<include "footer">>
+</div>
+
+
+
+/* SESSION 8 */
+
+:: 8kaiIntro1 [nobr]
+<<set $prevpass to "landing">>
+<<set $passage to "8kaiIntro1">>
+<<set $nextpass to "8modulelist">>
+<<set $module to "Introduction">><<include "checkmodulenamelist">>
+/* <audio src="assets/audio/SESSION8_finalcompartment_1.mp3" autoplay>Audio is not supported on your device</audio> */
+
+<div class="wrapper">
+  /* <<include "header">> */
+
+    <main  >
+        /* <div class="text-wrapper"> */
+       	<div id="video" role="video" aria-label=""><iframe src="https://player.vimeo.com/video/809464688?h=c6aec791bb&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:90%;" allowfullscreen title="greenpeace violet.mp4"></iframe></div>
+    </main>
+<<include "footervidend">>
+</div>
+
+
+
+
+
+
+:: 8modulelist [nobr]
+<<set $passage to "8modulelist">><<set $session to 8>>
+<<timed 0.1s>>
+  <<if $skip is true>>
+     <<audio "completionbloop_4" play>>
+    <<addclass "#codewordWrapper1" "disappear">>
+      <<timed 5s>>
+        <<set $skip to false>>
+        <<goto $nextpass>>
+      <</timed>>
+    <<else>>
+    <<audio "modulelist_1" play>>
+      <</if>>
+<</timed>>
+<div class="wrapper box">
+  <main class="modules">
+  <h1 class="title">SESSION EIGHT</h1>
+ 
+  <div class="menu-wrapper module-list">
+<div class="menu-item flip-card" id="mod17"> 
+<div class="flip-card-inner">
+      <div class="flip-card-front">
+  <img src="assets/img/mod17.jpg" alt="module seventeen">
+      /* <h2 class="subtitle">Module 17</h2> */
+      <div id="codewordWrapper1" class="codeword-wrapper">
+  /% CODEWORD INPUT %/
+      <div class="code-input">
+      <<textbox "$codeword" "">>
+    </div>
+   <div class="btn-result-wrapper">
+      <<button "Enter">>  
+          </div>
+      /% STANDARDISE INPUT %/
+      <<set $codeword to $codeword.toUpperCase()>>
+      /% CODEWORD CORRECT %/
+  <<if $codeword isnot "" and $codeword is "STORY">>
+<<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+  <<audio "eeg_1" play>>
+ <<timed 1s>>
+               <<addclass "#mod17" "twist">>
+             <</timed>>
+ <<timed 3s>>
+          <<set $prevpass to $passage>>
+          <<set $nextpass to "8mod17intro1">>
+          <<goto "loading">>
+        <</timed>>
+<</if>>
+        /% CODEWORD INCORRECT %/
+        <<if $codeword isnot "" and $codeword is not "STORY">>
+        <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+        <</if>><</button>> 
+          /% CODEWORD FEEDBACK %/
+          <div id="coderesult" class="coderesult"></div>
+   </div>
+    </div>
+      </div>
+      <div class="flip-card-back">
+        <img src="assets/img/mod17-rev.png" alt="module card" >
+      </div>
+    </div>
+  </div>  
+      </div>
+
+  </main>
+  <<include "footerbox">></div>
+  <<done>><<include "checkmodules">><</done>>
+
+
+
+:: 8mod17intro1 [nobr]
+<<set $prevpass to "8modulelist">>
+<<set $passage to "8mod17intro1">>
+<<set $nextpass to "8sessionoutro">>
+
+<<set $module to "Module 17">><<include "checkmodulenamelist">>
+  <div class="wrapper">
+    <<include "header">>
+    <main  class="speaking">
+        <div class="text-wrapper">
+<ul>
+<li>Why did you decide to do the action?  </li>
+<li>What name did you choose?</li>
+<li>What did you choose as the focus?</li>
+<li>What did you learn about your focus at this school?</li>
+</ul>
+
+<ul>
+<li>How was the gift made?</li>
+<li>Who was the gift for and what did you do to make the plan? </li>
+<li>Who made what and why?</li>
+<li>How did it come together?  </li>
+  
+</ul>
+<ul>
+<li>What happened with the delivery?</li>
+<li>What was the intended impact of the gift?</li>
+<li>How was it delivered? </li>
+<li>What happened next? </li>
+</ul>
+
+<br/><br/>
+ <<timed 12s>><p>When ready click <<button "Move On">><<set $prevpass to $passage>><<goto $nextpass>><</button>></p><</timed>>
+   </div>
+    </main>
+         <<include "footer">>
+  </div>
+
+
+
+
+:: 8sessionoutro [nobr]
+<<set $prevpass to "8mod17intro1">>
+<<set $passage to "8sessionoutro">>
+<<set $nextpass to "landing">>
+
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper">
+
+<p>Your final message: </p>
+
+<p>Send <h2 class="subtitle inline">START</h2> to get the message. </p>
+
+<p>Thank you and goodbye Playful Activists </p>
+
+
+<div class="logo-wrapper">
+  <img src="assets/img/coney-logo.jpg"/>
+  <img src="assets/img/Greenpeace_logo.svg.png"/>
+</div>
+<br/><br/>
+<<button "Finish">><<audio "pyramidtransition_1" play >><<set $prevpass to $passage>><<goto "landing">><</button>>
+</div>
+
+  </main>
+     <<include "footer">>
+</div>
