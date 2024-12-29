@@ -155,6 +155,19 @@ $(document.head).find('#style-ui-bar').remove();
     </div>
   </div></footer>
 
+:: footerback [nobr]{"position":"100,375","size":"100,100"}
+<footer>
+  <div class="nav-wrapper btns">
+ 
+    <div class="nav-item">
+      <<button "Back">><<goto $prevpass>><</button>>
+    </div>
+  </div>
+  <div class="nav-wrapper">
+  
+  </div></footer>
+
+
 :: footerskip [nobr]{"position":"100,375","size":"100,100"}
 <footer class="fixed">
   <div class="nav-wrapper btns">
@@ -1968,11 +1981,10 @@ Walk to the country you want to extract from. </p>
 <<include "checkmodulenamelist">>
 <audio src="assets/audio/greenpeace2.0_S2_2_mod4intro_1.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
+  <<include "header">>
  <main class="speaking">
     <div class="text-wrapper" id="twrapper">
-  <<include "header">>
-  <main class="speaking">
-    <div class="text-wrapper">
+
 <p>Heisting. </p>
 <p>The Art of taking something for a reason. </p>
 <p>For this game you are going to need a Game Board</p>
@@ -2125,7 +2137,7 @@ Walk to the country you want to extract from. </p>
 <<set $passage to "2mod4outro2">>
 <<set $nextpass to "2mod5intro">>
 <<set $module to "Module 4">><<include "checkmodulenamelist">>
-<audio src="assets/audio/greenpeace2.0_S2_3_mod4outro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/greenpeace2.0_S2_3_mod4outro_2.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
  <main class="speaking">
@@ -2145,7 +2157,7 @@ Walk to the country you want to extract from. </p>
 <<set $passage to "2mod5intro">>
 <<set $nextpass to "2mod5outro">>
 <<set $module to "Module 5">><<include "checkmodulenamelist">>
-<audio src="assets/audio/greenpeace2.0_S2_2_mod4intro_5.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/greenpeace2.0_S2_4_mod5intro_6groups.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
  <main class="speaking">
@@ -2195,6 +2207,7 @@ When finished, click <<button "Move On">><<set $prevpass to $passage>><<goto $ne
 <<set $prevpass to "2mod5outro">>
 <<set $passage to "2mod5outro2">>
 <<set $nextpass to "2mod6intro">>
+<<set $focusoption to "?">>
 <<set $module to "Module 5">><<include "checkmodulenamelist">>
 <audio src="assets/audio/greenpeace2.0_S2_5_mod5outro_2.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
@@ -2205,8 +2218,10 @@ When finished, click <<button "Move On">><<set $prevpass to $passage>><<goto $ne
 <p>So, which of the global actions do you think connects most to you in your school? What do you think we should focus on here?  </p>
 <p>We’re going to take an old-fashioned vote. </p>
 <p>Teacher, can you hold the vote, and then select which one you have chosen. </p>
+
 <<link "AIR">> 
-  <<set $focus to "air">>
+  <<set $focus to "Air">>
+  <<set $nextpass to "2mod6"+$focus+"options">>
   <<timed 0.6s>>
     <<replace "#twrapper">>
        <h1 class="title"> Accepted: $focus </h1>
@@ -2217,16 +2232,40 @@ When finished, click <<button "Move On">><<set $prevpass to $passage>><<goto $ne
   <</timed>>
 <</link>>
 <<link "FOOD">> 
-  <<set $focus to "food">>
+  <<set $focus to "Food">>
+   <<set $nextpass to "2mod6"+$focus+"options">>
+  <<timed 0.6s>>
+    <<replace "#twrapper">>
+       <h1 class="title"> Accepted: $focus </h1>
+      <</replace>>
+  <</timed>>
+<<timed 3s>>
   <<set $prevpass to $passage>><<goto $nextpass>>
+  <</timed>>
 <</link>>
 <<link "NATURE">> 
-  <<set $focus to "nature">>
+  <<set $focus to "Nature">>
+<<set $nextpass to "2mod6"+$focus+"options">>
+  <<timed 0.6s>>
+    <<replace "#twrapper">>
+       <h1 class="title"> Accepted: $focus </h1>
+      <</replace>>
+  <</timed>>
+<<timed 3s>>
   <<set $prevpass to $passage>><<goto $nextpass>>
+  <</timed>>
 <</link>>
 <<link "WATER">> 
-  <<set $focus to "water">>
+  <<set $focus to "Water">>
+  <<set $nextpass to "2mod6"+$focus+"options">>
+  <<timed 0.6s>>
+    <<replace "#twrapper">>
+       <h1 class="title"> Accepted: $focus </h1>
+      <</replace>>
+  <</timed>>
+<<timed 3s>>
   <<set $prevpass to $passage>><<goto $nextpass>>
+  <</timed>>
 <</link>>
     </div>
 
@@ -2246,14 +2285,773 @@ When finished, click <<button "Move On">><<set $prevpass to $passage>><<goto $ne
   <<include "header">>
 
 module 6
+$text
     </div>
 
 </main>
 <<include "footerskip">>
 </div>
 
+:: 2mod6Airoptions [nobr]
+<<set $prevpass to "2mod5outro2">>
+<<set $passage to "2mod6Airoptions">>
+<<set $nextpass to "">>
+
+<main class="subjectoptions">
+  <div class="subject-options-grid">
+  <div class="explain">
+  <p>Click on a focus to explore it further.</p>
+  <p>Decide as a group which one you want to choose.</p>
+  <p>You can also choose one we haven't suggested.</p>
+</div>
+<div class="focus-text">
+ <h3>Chosen focus: $focus</h3>
+ <h3>Option: $focusoption</h3>
+</div>
+    <div class="subject-option primary">
+    <h2>Air</h2>
+    </div>
+    <div class="subject-option secondary topright">
+    <<button "Green Spaces">>
+      <<goto "2mod6airoption-green">>
+    <</button>>
+    </div>
+     <div class="subject-option secondary lowright">
+       <<button "Transport">>
+        <<goto "2mod6airoption-transport">>
+    <</button>>
+    </div>
+     <div class="subject-option secondary lower">
+       <<button "Pick your own">>
+        <<goto "2mod6airoption-pick">>
+    <</button>>
+    </div>
+    <div class="subject-option secondary lowleft">
+   <<button "Waste">>
+  <<goto "2mod6airoption-waste">>
+    <</button>>
+    </div>
+     <div class="subject-option secondary topleft">
+       <<button "Health">>
+      <<goto "2mod6airoption-health">>
+    <</button>>
+    </div>
+  </div>
+
+</main>
+<<include "footerback">>
+
+
+  <<if $focusoption isnot "?">>
+      <<goto "chosenfocusoption">>
+    <</if>>
+
+
+:: chosenfocusoption [nobr]
+<<set $prevpass to "2mod5outro2">>
+<<set $passage to "chosenfocusoption">>
+<<set $nextpass to "2sessionoutro">>
+<<audio ":all" "stop">>
+    <<audio "completionbloop_4" "play">>
+<main class="chosenfocus">
+<p>You've chosen to focus on:</p>
+<h1>$focus</h1>
+<h2>$focusoption</h2>
+<div class="btn-container">
+  <<button "Confirm">>
+    <<goto $nextpass>>
+    <</button>>
+ 
+</div>
+</main>
+<footer>
+ 
+    <<button "Choose again">>
+      <<goto "2mod5outro2">>
+      <</button>>
+</footer>
+
+:: focus-option-btns [nobr]
+
+ <div class="btn-container">
+      <<button "Pick this">>
+        <<set $focus to $pagefocus>>
+        <<set $focusoption to $pagefocusoption>>
+        <<timed 0.5s>>
+          <<goto $prevpass>>
+          <</timed>>
+        <</button>>
+        <<button "Back">>
+          <<goto $prevpass>>
+        <</button>>
+    </div>
+
+:: 2mod6airoption-green [nobr]
+<<set $prevpass to "2mod6Airoptions">>
+<<set $passage to "2mod6airoption-green">>
+<<set $nextpass to "">>
+<<set $pagefocus to "Air">>
+<<set $pagefocusoption to "Green Space">>
+<main class="subject-option-page">
+  <div class="subject-option-page-grid">
+    <div class="subject-option-page-title"><h1>Air</h1></div>
+    <div class="subject-option-page-subtitle"><h2>Green Space </h2></div>
+    <div class="subject-option-page-img">
+      <img src="assets/img/green-space.jpg" alt="green space"/>
+    </div>
+  <div class="subject-option-page-text">
+    <p> The UK is one of the most urbanised countries in the world, with a staggering 84% of us living in towns and cities. Since the industrial revolution, our urban areas have expanded and sprawled. This process has largely happened at the expense of the natural world, with a loss of green space and increase in pollution.</p>
+
+ <p> However, up and down the country, local communities are bucking historical trends and starting to re-green their towns and cities. People are working together and finding ingenious ways to restore the natural world in urban environments.</p>
+
+  <p>Urban greening does more than just change the look of towns and cities – it transforms them into environments that actually benefit people and nature. Creating new green spaces combats air pollution, reduces flooding, provides new habitats for local wildlife, and brings communities together. It’s a crucial tool to fight against climate change and to improve standards of living in the UK.</p>
+
+    </div>
+
+    <<include "focus-option-btns">>
+</div>
+</main>
+
+:: 2mod6airoption-pick [nobr]
+<<set $prevpass to "2mod6Airoptions">>
+<<set $passage to "2mod6airoption-pick">>
+<<set $nextpass to "">>
+<<set $pagefocus to "Air">>
+<<set $pagefocusoption to "Your own option">>
+<main class="subject-option-page">
+  <div class="subject-option-page-grid">
+    <div class="subject-option-page-title"><h1>Air</h1></div>
+    <div class="subject-option-page-subtitle"><h2>Pick your own </h2></div>
+    <div class="subject-option-page-img">
+      <img src="assets/img/question.jpg" alt="question mark"/>
+    </div>
+  <div class="subject-option-page-text">
+    <p>You can choose to pick something else that would fit into this theme - there are always links. </p>
+<p>Whatever you choose, we recommend you research into the Focus you have chosen further, to help you with your Playful Activism. </p>
+
+
+    </div>
+
+    <<include "focus-option-btns">>
+</div>
+</main>
+
+:: 2mod6airoption-health [nobr]
+<<set $prevpass to "2mod6Airoptions">>
+<<set $passage to "2mod6airoption-health">>
+<<set $nextpass to "">>
+<<set $pagefocus to "Air">>
+<<set $pagefocusoption to "Health">>
+<main class="subject-option-page">
+  <div class="subject-option-page-grid">
+    <div class="subject-option-page-title"><h1>Air</h1></div>
+    <div class="subject-option-page-subtitle"><h2>Health </h2></div>
+    <div class="subject-option-page-img">
+      <img src="assets/img/health.jpg" alt="a young person in front of a brick wall"/>
+    </div>
+  <div class="subject-option-page-text">
+      <p>The health impacts of air pollution are profound, including respiratory problems, heart disease and shortened life expectancy. Children are especially affected by air pollution, which can stunt lung growth and cause health problems like asthma throughout their lives.</p>
+
+      <p>The death toll from air pollution globally is estimated to be nine million people per year. This is more than from smoking (eight million), and around seven times higher than people who die in road accidents (1.3 million) – and hundreds of times more than deaths from war and terrorism.</p>
+
+      <p>Researchers estimate that in the UK, nearly 50,000 adults die early because of health impacts from tiny particles in air pollution.</p>
+    </div>
+
+    <<include "focus-option-btns">>
+</div>
+</main>
+
+:: 2mod6airoption-waste [nobr]
+<<set $prevpass to "2mod6Airoptions">>
+<<set $passage to "2mod6airoption-waste">>
+<<set $nextpass to "">>
+<<set $pagefocus to "Air">>
+<<set $pagefocusoption to "Waste">>
+<main class="subject-option-page">
+  <div class="subject-option-page-grid">
+    <div class="subject-option-page-title"><h1>Air</h1></div>
+    <div class="subject-option-page-subtitle"><h2>Waste </h2></div>
+    <div class="subject-option-page-img">
+      <img src="assets/img/waste.jpg" alt="waste"/>
+    </div>
+  <div class="subject-option-page-text">
+      <p>The way we dispose of waste has an impact on our air. </p>
+
+<p>A rapidly increasing number of incinerators in the UK are being disproportionately built in low-income areas and neighbourhoods with high populations of people of colour</p>
+
+<p>People living near incinerators complain of noise, litter, increased vehicle traffic, smells and air pollution – although the available evidence on air pollution from incinerators suggests the problem is much less significant than around other industrial sites. </p>
+
+    </div>
+
+    <<include "focus-option-btns">>
+</div>
+</main>
+
+:: 2mod6airoption-transport [nobr]
+<<set $prevpass to "2mod6Airoptions">>
+<<set $passage to "2mod6airoption-transport">>
+<<set $nextpass to "">>
+<<set $pagefocus to "Air">>
+<<set $pagefocusoption to "Transport">>
+<main class="subject-option-page">
+  <div class="subject-option-page-grid">
+    <div class="subject-option-page-title"><h1>Air</h1></div>
+    <div class="subject-option-page-subtitle"><h2>Transport </h2></div>
+    <div class="subject-option-page-img">
+      <img src="assets/img/transport.jpg" alt="transport"/>
+    </div>
+  <div class="subject-option-page-text">
+<p>In the UK, cars and vans are the biggest source of greenhouse gas emissions, contributing to climate change. Burning fossil fuels for transport produces a variety of emissions which damage the planet, our health, or both.</p>
+
+<p>
+  By travelling in cleaner and greener ways, we can directly reduce both air pollution and carbon emissions – and therefore help protect the planet.
+  The negative health effects of air pollution are not felt equally. You may be exposed to higher levels of air pollution because of where you live – for example, if you live in a town or city, or near a busy road. The poorest communities often live in the most polluted areas,  and children,  older people  and people with health conditions are more at risk. 
+</p>
+
+    </div>
+
+    <<include "focus-option-btns">>
+</div>
+</main>
+
+:: 2mod6Foodoptions [nobr]
+<<set $prevpass to "2mod5outro2">>
+<<set $passage to "2mod6Foodoptions">>
+<<set $nextpass to "">>
+
+<main class="subjectoptions">
+  <div class="subject-options-grid">
+  <div class="explain">
+  <p>Click on a focus to explore it further.</p>
+  <p>Decide as a group which one you want to choose.</p>
+  <p>You can also choose one we haven't suggested.</p>
+</div>
+<div class="focus-text">
+ <h3>Chosen focus: $focus</h3>
+ <h3>Option: $focusoption</h3>
+</div>
+    <div class="subject-option primary">
+    <h2>Food</h2>
+    </div>
+    <div class="subject-option secondary topright">
+    <<button "Meat & Dairy">>
+      <<goto "2mod6foodoption-meat">>
+    <</button>>
+    </div>
+     <div class="subject-option secondary lowright">
+       <<button "Palm Oil">>
+        <<goto "2mod6foodoption-palm-oil">>
+    <</button>>
+    </div>
+     <div class="subject-option secondary lower">
+       <<button "Pick your own">>
+        <<goto "2mod6foodoption-pick">>
+    <</button>>
+    </div>
+    <div class="subject-option secondary lowleft">
+   <<button "Packaging">>
+  <<goto "2mod6foodoption-packaging">>
+    <</button>>
+    </div>
+     <div class="subject-option secondary topleft">
+       <<button "Waste">>
+      <<goto "2mod6foodoption-food-waste">>
+    <</button>>
+    </div>
+  </div>
+
+</main>
+<<include "footerback">>
+
+
+  <<if $focusoption isnot "?">>
+      <<goto "chosenfocusoption">>
+    <</if>>
+
+:: 2mod6foodoption-meat [nobr]
+<<set $prevpass to "2mod6Foodoptions">>
+<<set $passage to "2mod6airoption-meat">>
+<<set $nextpass to "">>
+<<set $pagefocus to "Food">>
+<<set $pagefocusoption to "Meat & Diary">>
+<main class="subject-option-page">
+  <div class="subject-option-page-grid">
+    <div class="subject-option-page-title"><h1>$pagefocus</h1></div>
+    <div class="subject-option-page-subtitle"><h2>$pagefocusoption</h2></div>
+    <div class="subject-option-page-img">
+      <img src="assets/img/meat-dairy.jpg" alt="transport"/>
+    </div>
+  <div class="subject-option-page-text">
+<p>Meat and dairy products have been a source of food for millennia. But modern industrial farming practices and the sheer number of animals involved is causing huge environmental damage, squeezing out wild animals and accelerating climate change.</p>
+<p>In the last few decades food companies have filled our shelves with meat, chocolate, cheese and eggs, which has resulted in an explosion of livestock numbers – especially cows, pigs and chickens. There are now so many that an estimated 60% of all mammals on the planet are livestock, while just 4% are wild (the other 36% is us humans!). Farmed poultry account for an incredible 70% of all birds.</p>
+<p>This rapid growth in meat and dairy production has been driven by profit-hungry companies and has led to drastic consequences for our planet. All these animals need a lot of food and vast areas of forests, grasslands and wetlands have been destroyed to feed livestock. Giant chunks of the Amazon rainforest and other South American forests and savannas have been replaced with fields of soya, wiping out the wildlife they support.</p>
+<p>This is a disaster for the climate. Agriculture and deforestation contribute a quarter of global greenhouse gas emissions, and animal farming is responsible for 60% of the emissions from agriculture. Converting forests and other landscapes into fields for animal feed releases greenhouse gases, and removes trees that help suck up and store carbon dioxide in the first place.</p>
+<p>
+  A better attitude towards meat and dairy means we’ll be healthier, the animals we farm will be healthier, and our planet will be healthier.
+  
+</p>
+    </div>
+     <<include "focus-option-btns">>
+</div>
+</main>
+
+:: 2mod6foodoption-palm-oil [nobr]
+<<set $prevpass to "2mod6Foodoptions">>
+<<set $passage to "2mod6airoption-palm-oil">>
+<<set $nextpass to "">>
+<<set $pagefocus to "Food">>
+<<set $pagefocusoption to "Palm Oil">>
+<main class="subject-option-page">
+  <div class="subject-option-page-grid">
+    <div class="subject-option-page-title"><h1>$pagefocus</h1></div>
+    <div class="subject-option-page-subtitle"><h2>$pagefocusoption</h2></div>
+    <div class="subject-option-page-img">
+      <img src="assets/img/palm-oil.jpg" alt="transport"/>
+    </div>
+  <div class="subject-option-page-text">
+<p>It’s hard to find anything on the shelves that doesn’t contain palm oil – it’s in about half of all supermarket products. But the palm oil industry is responsible for destroying Indonesia’s forests on an epic scale. This is accelerating climate change, and also forces people from their traditional lands and threatens orangutans with extinction. We need to change the industry and stop palm oil companies destroying forests.</p>
+
+<p>Palm oil is amazingly versatile, which is why it’s become so popular. It’s an ingredient in food like biscuits and chocolate, as well as shampoo and toothpaste. To meet the consumer demand, a huge industry has developed. Oil palms are grown in many tropical countries, although Indonesia is the largest producer in the world.</p>
+
+<p>This has all come at an enormous cost. The destruction of Indonesia’s forests is a global problem. Deforestation is a major contributor to climate change thanks to a double whammy effect: Clearing forests produces greenhouse gas emissions and, with fewer trees, less carbon dioxide is removed from the atmosphere.</p>
+
+    </div>
+     <<include "focus-option-btns">>
+</div>
+</main>
+
+:: 2mod6foodoption-packaging [nobr]
+<<set $prevpass to "2mod6Foodoptions">>
+<<set $passage to "2mod6airoption-packaging">>
+<<set $nextpass to "">>
+<<set $pagefocus to "Food">>
+<<set $pagefocusoption to "Packaging">>
+<main class="subject-option-page">
+  <div class="subject-option-page-grid">
+    <div class="subject-option-page-title"><h1>$pagefocus</h1></div>
+    <div class="subject-option-page-subtitle"><h2>$pagefocusoption</h2></div>
+    <div class="subject-option-page-img">
+      <img src="assets/img/packaging.jpg" alt="transport"/>
+    </div>
+  <div class="subject-option-page-text">
+<p>The UK produces more plastic waste per person than almost any other country in the world, even though many of us spend time carefully sorting our recycling.</p>
+
+<p>Plastic packaging is extremely wasteful and impacts the earth’s ecosystems, on which we depend. Due to poor product design and lack of political infrastructure, the majority of plastic waste is sent to landfills. </p>
+
+<p>Because plastic isn’t biodegradable, every piece of plastic ever made is still on this planet. Whether it breaks down into microplastics or not, plastic either dumped or washed into the oceans is consumed by marine animals.</p>
+
+    </div>
+     <<include "focus-option-btns">>
+</div>
+</main>
+
+:: 2mod6foodoption-food-waste [nobr]
+<<set $prevpass to "2mod6Foodoptions">>
+<<set $passage to "2mod6airoption-food-waste">>
+<<set $nextpass to "">>
+<<set $pagefocus to "Food">>
+<<set $pagefocusoption to "Waste">>
+<main class="subject-option-page">
+  <div class="subject-option-page-grid">
+    <div class="subject-option-page-title"><h1>$pagefocus</h1></div>
+    <div class="subject-option-page-subtitle"><h2>$pagefocusoption</h2></div>
+    <div class="subject-option-page-img">
+      <img src="assets/img/waste.jpg" alt="transport"/>
+    </div>
+  <div class="subject-option-page-text">
+<p>While there are many provisions in place to reduce food waste, the UK produces the highest amount of food waste in Europe.</p>
+<p>Over ⅓ of all food produced globally goes to waste.</p>
+<p>The UK throws away around 9.5 million tonnes of food waste in a single year – even though 8.4 million people in the UK are in food poverty.</p>
+<p> Billions of pounds are wasted each year when food is disposed of unnecessarily.
+</p>
+
+<p>
+  Food waste presents a significant problem due to its sheer volume of waste that is produced each year. The vast majority of food waste ends up in landfill sites – which are already overused. While many people do not view this as an issue as food items degrade naturally over time, it contributes heavily to global warming and the erosion of the OZ layer.
+  Furthermore, food wastage is problematic from both a moral and economic standpoint. To put it simply, food inequality is rife. We throw away millions of pounds worth of food each year – even though many people across the globe go without fresh produce and groceries.
+  
+</p>
+
+    </div>
+     <<include "focus-option-btns">>
+</div>
+</main>
+
+:: 2mod6foodoption-pick [nobr]
+<<set $prevpass to "2mod6Foodoptions">>
+<<set $passage to "2mod6foodroption-pick">>
+<<set $nextpass to "">>
+<<set $pagefocus to "Food">>
+<<set $pagefocusoption to "Your own option">>
+<main class="subject-option-page">
+  <div class="subject-option-page-grid">
+    <div class="subject-option-page-title"><h1>Food</h1></div>
+    <div class="subject-option-page-subtitle"><h2>Pick your own </h2></div>
+    <div class="subject-option-page-img">
+      <img src="assets/img/question.jpg" alt="question mark"/>
+    </div>
+  <div class="subject-option-page-text">
+    <p>You can choose to pick something else that would fit into this theme - there are always links. </p>
+<p>Whatever you choose, we recommend you research into the Focus you have chosen further, to help you with your Playful Activism. </p>
+
+
+    </div>
+
+    <<include "focus-option-btns">>
+</div>
+</main>
+
+
+:: 2mod6Natureoptions [nobr]
+<<set $prevpass to "2mod5outro2">>
+<<set $passage to "2mod6Natureoptions">>
+<<set $nextpass to "">>
+
+<main class="subjectoptions">
+  <div class="subject-options-grid">
+  <div class="explain">
+  <p>Click on a focus to explore it further.</p>
+  <p>Decide as a group which one you want to choose.</p>
+  <p>You can also choose one we haven't suggested.</p>
+</div>
+<div class="focus-text">
+ <h3>Chosen focus: $focus</h3>
+ <h3>Option: $focusoption</h3>
+</div>
+    <div class="subject-option primary">
+    <h2>Nature</h2>
+    </div>
+    <div class="subject-option secondary topright">
+    <<button "Deforestation">>
+      <<goto "2mod6natureoption-deforestation">>
+    <</button>>
+    </div>
+     <div class="subject-option secondary lowright">
+       <<button "Pollinators">>
+        <<goto "2mod6natureoption-pollinators">>
+    <</button>>
+    </div>
+     <div class="subject-option secondary lower">
+       <<button "Pick your own">>
+        <<goto "2mod6natureoption-pick">>
+    <</button>>
+    </div>
+    <div class="subject-option secondary lowleft">
+   <<button "Biodiversity">>
+  <<goto "2mod6natureoption-biodiversity">>
+    <</button>>
+    </div>
+     <div class="subject-option secondary topleft">
+       <<button "Consumerism">>
+      <<goto "2mod6natureoption-consumerism">>
+    <</button>>
+    </div>
+  </div>
+
+</main>
+<<include "footerback">>
+
+
+  <<if $focusoption isnot "?">>
+      <<goto "chosenfocusoption">>
+    <</if>>
+
+:: 2mod6natureoption-deforestation [nobr]
+<<set $prevpass to "2mod6Natureoptions">>
+<<set $passage to "2mod6natureoption-deforestation">>
+<<set $nextpass to "">>
+<<set $pagefocus to "Nature">>
+<<set $pagefocusoption to "Deforestation">>
+<main class="subject-option-page">
+  <div class="subject-option-page-grid">
+    <div class="subject-option-page-title"><h1>$pagefocus</h1></div>
+    <div class="subject-option-page-subtitle"><h2>$pagefocusoption</h2></div>
+    <div class="subject-option-page-img">
+      <img src="assets/img/deforestation.jpg" alt="transport"/>
+    </div>
+  <div class="subject-option-page-text">
+<p>Deforestation is the chopping down or removal of trees. It’s one of the biggest threats to wildlife, the natural world and the climate.</p>
+
+<p>Deforestation is devastating for people and animals that live in the world’s forests – such as the Amazon in South America, and forests in Indonesia and the Congo.</p>
+
+<p>Forests provide food, shelter, fuel, building materials, medicine and and hold a wealth of cultural and spiritual value for many of the people who call them home. </p>
+
+<p>Deforestation also has an impact on the climate as trees are incredibly helpful at removing carbon dioxide emissions from the atmosphere. Without the ability to remove carbon dioxide emissions from their atmosphere, the world faces runaway climate change. Trees and other plants store huge amounts of carbon, because they absorb carbon as they grow. When trees are cut down or burned (or both), any carbon stored is released into the atmosphere, worsening the climate emergency.</p>
+
+    </div>
+     <<include "focus-option-btns">>
+</div>
+</main>
+
+:: 2mod6natureoption-pollinators [nobr]
+<<set $prevpass to "2mod6Natureoptions">>
+<<set $passage to "2mod6natureoption-pollinators">>
+<<set $nextpass to "">>
+<<set $pagefocus to "Nature">>
+<<set $pagefocusoption to "Pollinators">>
+<main class="subject-option-page">
+  <div class="subject-option-page-grid">
+    <div class="subject-option-page-title"><h1>$pagefocus</h1></div>
+    <div class="subject-option-page-subtitle"><h2>$pagefocusoption</h2></div>
+    <div class="subject-option-page-img">
+      <img src="assets/img/pollinators.jpg" alt="pollinators"/>
+    </div>
+  <div class="subject-option-page-text">
+<p>We have pollinators to thank for every third mouthful we eat. Not only do they pollinate our food crops, but they’re also vital for the survival of other wild plants that support so much of our wildlife.</p>
+
+<p>Most of us tend to think of bees in relation to pollination, yet insect pollinators are an incredibly diverse group. Honeybees are mostly kept in managed hives, and are likely responsible for pollinating between 5-15% of the UK's insect-pollinated crops. That leaves 85-95% of the UK’s insect-pollinated crops relying on wild pollinators. Many species of bee, wasp, moth, butterfly, hoverfly, fly and beetle provide an essential service in the UK (and globally) pollinating £690 million worth of crops annually.</p>
+
+<p>We can directly link pollinator declines to changes in the way we farm. The intensification of agriculture has led to the destruction of habitat, and what is left is becoming increasingly fragmented. Further habitat loss is driven by urbanisation, and insect pollinators are also affected by the heavy use of pesticides and herbicides. </p>
+
+
+    </div>
+     <<include "focus-option-btns">>
+</div>
+</main>
+
+:: 2mod6natureoption-biodiversity [nobr]
+<<set $prevpass to "2mod6Natureoptions">>
+<<set $passage to "2mod6natureoption-biodiversity">>
+<<set $nextpass to "">>
+<<set $pagefocus to "Nature">>
+<<set $pagefocusoption to "Biodiversity">>
+<main class="subject-option-page">
+  <div class="subject-option-page-grid">
+    <div class="subject-option-page-title"><h1>$pagefocus</h1></div>
+    <div class="subject-option-page-subtitle"><h2>$pagefocusoption</h2></div>
+    <div class="subject-option-page-img">
+      <img src="assets/img/biodiversity.jpg" alt="transport"/>
+    </div>
+  <div class="subject-option-page-text">
+<p>The natural world is a vibrant kaleidoscope of life. This is what we refer to as ‘biodiversity’. It includes a web of around 8.7 million species, from tiny ocean plankton to land and sea mammals. It is a complex life support system that has been billions of years in the making. And each plant and animal contributes to this system in its own unique way.</p>
+<p>Yet biodiversity is in serious danger, now more than ever. Species are going extinct between 1,000 and 10,000 times faster than normally happens in nature. Global wildlife populations have dropped by an alarming 69% on average since 1970. Some experts now believe that we’re witnessing the sixth mass extinction event in Earth’s history. Biodiversity loss is happening as a result of human activity and climate change.</p>
+<p>We rely on biodiversity for food, energy, medicine, fresh water and soil purification, pest control, breaking down waste and many, many more processes. Without it, the environment couldn’t provide us with the things we need to survive.</p>
+
+    </div>
+     <<include "focus-option-btns">>
+</div>
+</main>
+
+:: 2mod6natureoption-consumerism [nobr]
+<<set $prevpass to "2mod6Natureoptions">>
+<<set $passage to "2mod6natureoption-consumerism">>
+<<set $nextpass to "">>
+<<set $pagefocus to "Nature">>
+<<set $pagefocusoption to "Consumerism">>
+<main class="subject-option-page">
+  <div class="subject-option-page-grid">
+    <div class="subject-option-page-title"><h1>$pagefocus</h1></div>
+    <div class="subject-option-page-subtitle"><h2>$pagefocusoption</h2></div>
+    <div class="subject-option-page-img">
+      <img src="assets/img/consumerism.jpg" alt="transport"/>
+    </div>
+  <div class="subject-option-page-text">
+<p>In an era dominated by consumerism, the hidden cost lies in the alarming decline of global biodiversity. Beyond the glossy packaging and convenience of modern products lies a profound impact on the planet's ecosystems. Deforestation, pollution, and overexploitation are direct consequences of our insatiable consumption patterns, pushing numerous species to the brink of extinction.</p>
+<p>The loss of biodiversity not only threatens charismatic species but disrupts entire ecosystems, affecting vital services like pollination, water purification, and disease control. As consumers, our choices ripple through supply chains, influencing land-use decisions and exacerbating habitat destruction.</p>
+<p>Urgent action is needed to shift towards sustainable practices, embracing eco-friendly alternatives, and supporting conservation efforts.</p>
+    </div>
+     <<include "focus-option-btns">>
+</div>
+</main>
+
+
+:: 2mod6natureoption-pick [nobr]
+<<set $prevpass to "2mod6Natureoptions">>
+<<set $passage to "2mod6natureroption-pick">>
+<<set $nextpass to "">>
+<<set $pagefocus to "Nature">>
+<<set $pagefocusoption to "Your own option">>
+<main class="subject-option-page">
+  <div class="subject-option-page-grid">
+    <div class="subject-option-page-title"><h1>Nature</h1></div>
+    <div class="subject-option-page-subtitle"><h2>Pick your own </h2></div>
+    <div class="subject-option-page-img">
+      <img src="assets/img/question.jpg" alt="question mark"/>
+    </div>
+  <div class="subject-option-page-text">
+    <p>You can choose to pick something else that would fit into this theme - there are always links. </p>
+<p>Whatever you choose, we recommend you research into the Focus you have chosen further, to help you with your Playful Activism. </p>
+
+
+    </div>
+
+    <<include "focus-option-btns">>
+</div>
+</main>
+
+:: 2mod6Wateroptions [nobr]
+<<set $prevpass to "2mod5outro2">>
+<<set $passage to "2mod6Wateroptions">>
+<<set $nextpass to "">>
+
+<main class="subjectoptions">
+  <div class="subject-options-grid">
+  <div class="explain">
+  <p>Click on a focus to explore it further.</p>
+  <p>Decide as a group which one you want to choose.</p>
+  <p>You can also choose one we haven't suggested.</p>
+</div>
+<div class="focus-text">
+ <h3>Chosen focus: $focus</h3>
+ <h3>Option: $focusoption</h3>
+</div>
+    <div class="subject-option primary">
+    <h2>Water</h2>
+    </div>
+    <div class="subject-option secondary topright">
+    <<button "Floods">>
+      <<goto "2mod6wateroption-floods">>
+    <</button>>
+    </div>
+     <div class="subject-option secondary lowright">
+       <<button "Plastic">>
+        <<goto "2mod6wateroption-plastic">>
+    <</button>>
+    </div>
+     <div class="subject-option secondary lower">
+       <<button "Pick your own">>
+        <<goto "2mod6wateroption-pick">>
+    <</button>>
+    </div>
+    <div class="subject-option secondary lowleft">
+   <<button "Ocean Health">>
+  <<goto "2mod6wateroption-ocean-health">>
+    <</button>>
+    </div>
+     <div class="subject-option secondary topleft">
+       <<button "Fast Fashion">>
+      <<goto "2mod6wateroption-fast-fashion">>
+    <</button>>
+    </div>
+  </div>
+
+</main>
+<<include "footerback">>
+
+
+  <<if $focusoption isnot "?">>
+      <<goto "chosenfocusoption">>
+    <</if>>
+
+:: 2mod6wateroption-floods [nobr]
+<<set $prevpass to "2mod6Wateroptions">>
+<<set $passage to "2mod6wateroption-floods">>
+<<set $nextpass to "">>
+<<set $pagefocus to "Water">>
+<<set $pagefocusoption to "Floods">>
+<main class="subject-option-page">
+  <div class="subject-option-page-grid">
+    <div class="subject-option-page-title"><h1>$pagefocus</h1></div>
+    <div class="subject-option-page-subtitle"><h2>$pagefocusoption</h2></div>
+    <div class="subject-option-page-img">
+      <img src="assets/img/floods.jpg" alt=""/>
+    </div>
+  <div class="subject-option-page-text">
+<p>Flooding is one of the most important climate change challenges facing the UK, and people affected by flooding are more likely to experience adverse health outcomes including long-term impacts on mental health and wellbeing.</p>
+<p>The planet is warming at an unprecedented rate. As a result, sea levels have risen faster over the past 100 years than they have for at least 3,000 years, and the frequency and intensity of heavy precipitation events has increased.</p>
+<p>The UK’s resilience to flooding has been impacted by degrading the environment. By draining peat bogs, removing hedgerows, destroying salt marshes, concreting green spaces and building on flood plains, we've undermined the ability of the natural environment to cope.</p>
+
+    </div>
+     <<include "focus-option-btns">>
+</div>
+</main>
+
+:: 2mod6wateroption-plastic [nobr]
+<<set $prevpass to "2mod6Wateroptions">>
+<<set $passage to "2mod6wateroption-plastic">>
+<<set $nextpass to "">>
+<<set $pagefocus to "Water">>
+<<set $pagefocusoption to "Plastic">>
+<main class="subject-option-page">
+  <div class="subject-option-page-grid">
+    <div class="subject-option-page-title"><h1>$pagefocus</h1></div>
+    <div class="subject-option-page-subtitle"><h2>$pagefocusoption</h2></div>
+    <div class="subject-option-page-img">
+      <img src="assets/img/plastic.jpg" alt="plastic"/>
+    </div>
+  <div class="subject-option-page-text">
+<p>Most of the plastic pollution in the ocean starts out on land. It mainly comes from household and commercial waste, which blows from waste bins and landfill sites into rivers or sewers, then flows out into the sea.</p>
+<p>Plastic pollution in the ocean also comes from our clothes. Tiny “microplastics” escape down the drain when we run synthetic clothing through the washing machine. An average load of laundry might release around 700,000 microplastic fibres, less then a millimetre in length, into the water. These are too small to be filtered and so they end up collecting on riverbeds or washing out to sea.</p>
+<p>Around 20% of plastic in the ocean comes from human activities at sea – mostly fishing. In 2019, a Greenpeace report found that each year, 640,000 tonnes of “ghost gear” – abandoned, lost or discarded fishing equipment – enters the ocean and is left there. That’s 50,000 double-decker buses worth of plastic every year.</p>
+
+    </div>
+     <<include "focus-option-btns">>
+</div>
+</main>
+
+:: 2mod6wateroption-ocean-health [nobr]
+<<set $prevpass to "2mod6Wateroptions">>
+<<set $passage to "2mod6wateroption-ocean-health">>
+<<set $nextpass to "">>
+<<set $pagefocus to "Water">>
+<<set $pagefocusoption to "Ocean Health">>
+<main class="subject-option-page">
+  <div class="subject-option-page-grid">
+    <div class="subject-option-page-title"><h1>$pagefocus</h1></div>
+    <div class="subject-option-page-subtitle"><h2>$pagefocusoption</h2></div>
+    <div class="subject-option-page-img">
+      <img src="assets/img/ocean-health.jpg" alt="ocean health"/>
+    </div>
+  <div class="subject-option-page-text">
+<p>Our planet is 70% oceans and seas, but only a tiny fraction is currently protected.</p>
+<p>Industrial fishing methods have been so ruthless, many fish species are on the point of collapse. Marine environments are devastated by oil spills while deep-sea mining threatens fragile life in the depths. Many pollutants inevitably make their way into the ocean – we’ve only just woken up to the problems of plastic pollution on marine life.</p>
+
+<p>As well as struggling with these problems, oceans are being hit hard by climate change. As our planet warms, they’ve absorbed a lot of the excess heat but this means the oceans themselves are warming. Sea water has also taken in extra carbon dioxide from the atmosphere which is making the water more acidic. Both of these changes are hitting marine life hard.</p>
+
+<p>It’s clear we urgently need to do much more to protect our oceans. Creating ocean sanctuaries – like national parks at sea – is essential. These would keep out threats from industrial fishing, drilling and mining, giving marine life a chance to recover. Protected areas won’t keep out pollution or climate change, but they will give marine life the space to cope with these pressures.</p>
+
+
+    </div>
+     <<include "focus-option-btns">>
+</div>
+</main>
+
+:: 2mod6wateroption-fast-fashion [nobr]
+<<set $prevpass to "2mod6Wateroptions">>
+<<set $passage to "2mod6wateroption-fast-fashion">>
+<<set $nextpass to "">>
+<<set $pagefocus to "Water">>
+<<set $pagefocusoption to "Fast Fashion">>
+<main class="subject-option-page">
+  <div class="subject-option-page-grid">
+    <div class="subject-option-page-title"><h1>$pagefocus</h1></div>
+    <div class="subject-option-page-subtitle"><h2>$pagefocusoption</h2></div>
+    <div class="subject-option-page-img">
+      <img src="assets/img/fast-fashion.jpg" alt="fast fashion"/>
+    </div>
+  <div class="subject-option-page-text">
+<p>Overconsumption of water and water pollution are two of the most concerning forms of environmental harm that fast fashion imposes on the environment. </p>
+
+<p>The fashion industry is the second biggest consumer of water after agriculture, followed by the energy, meat, beverage, construction, mining, and car industries. </p>
+    </div>
+     <<include "focus-option-btns">>
+</div>
+</main>
+:: 2mod6wateroption-pick [nobr]
+<<set $prevpass to "2mod6Wateroptions">>
+<<set $passage to "2mod6waterroption-pick">>
+<<set $nextpass to "">>
+<<set $pagefocus to "Water">>
+<<set $pagefocusoption to "Your own option">>
+<main class="subject-option-page">
+  <div class="subject-option-page-grid">
+    <div class="subject-option-page-title"><h1>Water</h1></div>
+    <div class="subject-option-page-subtitle"><h2>Pick your own </h2></div>
+    <div class="subject-option-page-img">
+      <img src="assets/img/question.jpg" alt="question mark"/>
+    </div>
+  <div class="subject-option-page-text">
+    <p>You can choose to pick something else that would fit into this theme - there are always links. </p>
+<p>Whatever you choose, we recommend you research into the Focus you have chosen further, to help you with your Playful Activism. </p>
+
+
+    </div>
+
+    <<include "focus-option-btns">>
+</div>
+</main>
+
 :: 2sessionoutro [nobr]
-<<set $prevpass to "2mod3outro2">>
+<<set $prevpass to "chosenfocusoption">>
 <<set $passage to "2sessionoutro">>
 <<set $nextpass to "cardoptions">>
 <<set $mod3 to true>>

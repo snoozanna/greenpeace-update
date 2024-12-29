@@ -1158,3 +1158,175 @@ triangleCon {
 .logo-wrapper > img {
   max-width: 20rem;
 }
+
+/* SUBJECT OPTIONS  */
+
+main.subjectoptions, main.subject-option-page{
+  height: 90vh;
+
+}
+
+.subject-options-grid{
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 1fr 1fr;
+  grid-template-areas: 
+      "focus explain explain"
+    "topleft primary topright"
+    "lowleft lower lowright";
+  gap: 3rem;
+}
+
+.subject-option{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid white 2px;
+}
+
+.subject-option > h2{
+  margin-bottom: 0;
+}
+
+.subject-option > button{
+  width: 100%;
+    height: 100%;
+    border: 0;
+    font-family: var(--headings);
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.subject-option.primary{
+grid-area: primary;
+background-color: darkslateblue;
+}
+.subject-option.primary > h2{
+  font-size: 5rem;
+}
+.subject-options-grid > .explain{
+  grid-area: explain;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.subject-options-grid > .focus{
+  grid-area: focus;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.subject-options-grid > .explain > p {
+  margin-block-end: 0;
+}
+
+.subject-option.secondary{
+  margin: 1.5rem;
+}
+
+.subject-option.secondary.topleft{
+  grid-area: topleft;
+
+}
+
+.subject-option.secondary.lowleft{
+  grid-area: lowleft;
+}
+
+.subject-option.secondary.lower{
+  grid-area: lower;
+}
+
+.subject-option.secondary.lowright{
+  grid-area: lowright;
+  }
+
+.subject-option.secondary.topright{
+  grid-area: topright;
+  }
+
+/* SUBJECT OPTION PAGE  */
+
+.subject-option-page-grid{
+  height: 100%;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr 2fr 1fr;
+  grid-template-areas:
+      "subtitle . title"
+      "text text img"
+      "text text buttons";
+  gap: 3rem;
+  max-width: 1080px;
+  margin: auto;
+}
+
+.subject-option-page-grid > .subject-option-page-img{
+  grid-area: img;
+}
+
+.subject-option-page-grid > .subject-option-page-title{
+  grid-area: title;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+}
+
+.subject-option-page-grid > .subject-option-page-title > h1{
+  text-align: end;
+  font-size: 7rem;
+  margin-block-end: 0;
+}
+
+.subject-option-page-grid > .subject-option-page-subtitle{
+  grid-area: subtitle;
+  display: flex;
+    align-items: end;
+}
+
+.subject-option-page-grid > .subject-option-page-subtitle > h2{
+  text-align: start;
+  font-size: 4.5rem;
+  margin-block-end: 0;
+}
+
+.subject-option-page-grid > .subject-option-page-text{
+  grid-area: text;
+}
+
+.subject-option-page-grid > .btn-container{
+  grid-area: buttons;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* CHOSEN FOCUS  */
+main.chosenfocus{
+  height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+main.chosenfocus >  h1{
+  font-size: 7rem;
+  margin-block-end: 0;
+}
+
+main.chosenfocus >  h2{
+  font-size: 5rem;
+  margin-block-end: 0;
+}
+
+.flex-row{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
