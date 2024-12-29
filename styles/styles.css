@@ -1,16 +1,19 @@
 /* CONSTANTS  */
 
 :root {
-  --violet: #8000ff;
-  --purple: #7440a7;
+
+  --purple: #311546;
+  --yellow: #ccac63;
   --orange: #84372b;
   --greenbright: #4caf50;
-  --green: #57b1a9;
+  --green:#59a997;
   --pink: #912657;
   --grey: rgba(129, 129, 129, 0.65);
   --color: #00b4ff;
   --speed: 5;
   --headings: "Jura", sans-serif;
+  --titles: "Saira Stencil One", serif;
+  --subtitles: "Allerta Stencil", serif;
 }
 
 /* GET RID OF TWINE STYLES */
@@ -75,17 +78,14 @@ body {
   /* overflow: hidden; */
   /* overflow: scroll; */
   background: var(--purple);
-  /* background: rgb(186, 0, 255);
-  background: linear-gradient(
-    -39deg,
-    rgba(186, 0, 255, 0.9962578781512605) 11%,
-    rgba(128, 0, 255, 1) 100%
-  ); */
-  /* padding: 1.5rem */
-  /* display:flex; */
-  /* flex-direction: column; */
-  /* border: 1px solid black; */
-  /* margin: 5rem; */
+  background-image: url("../assets/img/backgrounds-32.png");
+  background-size: cover;
+}
+
+body.green{
+  background: var(--green);
+  background-image: url("../assets/img/backgrounds-31.png");
+  color: black;
 }
 
 header {
@@ -122,15 +122,30 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: var(--headings);
+  /* font-family: var(--headings); */
+  font-family: var(--titles);
+  text-transform: uppercase;
+}
+
+h1{
+  font-size: 4.5rem;
+}
+
+h2{
+  font-size: 3rem;
+}
+
+h3{
+  font-size: 2.5rem;
 }
 
 h1.title,
 h2.subtitle {
-  background: black;
+  background: var(--purple);
   width: fit-content;
   padding: 0 1rem;
   transform: rotate(-4deg);
+  color: white;
   /* margin-left: -10rem; */
 }
 
@@ -1329,4 +1344,35 @@ main.chosenfocus >  h2{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* CARD OPTIONS  */
+.menu-wrapper.card-options-list{
+  gap: 2rem;
+}
+
+.menu-wrapper.card-options-list > .link-image{
+  max-width: 30%;
+}
+
+/* CARD OPTION PAGE */
+
+main.card-option-page{
+min-height: 90vh;
+display:flex;
+justify-content: center;
+align-items: center;
+}
+
+main.card-option-page > .option-item{
+  display:flex;
+  align-items: center;
+}
+
+main.card-option-page > .option-item > .img-container{
+  max-width: 45%;
+}
+
+.option-item > .info-container > h3{
+  max-width: 60%;
 }

@@ -15,6 +15,7 @@ Greenpeace X Coney Update
 :: Story Stylesheet [stylesheet]
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Saira+Stencil+One&display=swap');
 @import url("./styles/generics.css");
 @import url("./styles/styles.css");
 
@@ -563,21 +564,44 @@ $(document.head).find('#style-ui-bar').remove();
   </div>
 
 :: cardoptions [nobr]
-<<set $passage to "cardoptions">><<audio ":all" stop>>
-
+<<set $passage to "cardoptions">>
+<<audio ":all" stop>>
+<<addclass "body" "green">>
 
 <div class="wrapper box">
   <main class="modules">
   <h1 class="title">SESSIONS</h1>
     /* <div class="codeword-title-wrapper"><h1 class="title">Enter </h1><h1 class="title">Codeword</h1></div> */
-      <div class="menu-wrapper module-list">
-    
-  <<include "session1card">>
-  <<include "session2card">>
+      <div class="menu-wrapper card-options-list">
+
+  <<link[img[assets/img/session1.png]]>> 
+   <<goto "session1card">>
+  <</link>> 
+
+   <<link[img[assets/img/session2.png]]>> 
+   <<goto "session2card">>
+  <</link>> 
+
+    <<link[img[assets/img/session3.png]]>> 
+    <<goto "session3card">>
+  <</link>> 
+
+    <<link[img[assets/img/session4.png]]>> 
+    <<goto "session4card">>
+  <</link>> 
+
+    <<link[img[assets/img/session5.png]]>> 
+    <<goto "session5card">>
+  <</link>> 
+   <<link[img[assets/img/session8.png]]>> 
+   <<goto "session8card">>
+  <</link>> 
+ 
+  /* <<include "session2card">>
   <<include "session3card">>
   <<include "session4card">>
   <<include "session5card">>
-  <<include "session8card">>
+  <<include "session8card">> */
   
   </div>
  </main>
@@ -585,24 +609,41 @@ $(document.head).find('#style-ui-bar').remove();
   <<done>><<include "checkmodules">><</done>>
 
 :: session1card [nobr]
- <div class="menu-item flip-card" id="mod1"> 
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-      /* <img src="assets/img/session-placeholder.jpg" alt="module card" > */
-      <h2>Session 1</h2>
-      <h3>The Context</h3>
-      <span>To gain entry a codeword is needed, the letters in white on the box will help. </span>
+<<set $prevpass to "cardoptions">>
+<<set $passage to "session1card">>
+<<addclass "body" "green">>
+<div class="wrapper box">
+  <main class="card-option-page">
+ <div class="option-item" id="mod1"> 
+      <div class="img-container"><img src="assets/img/session1.png" alt="session 1" ></div>
+      <div class="info-container">
+        <h2>Session 1</h2>
+        <h3>The Context</h3>
+  <div id="mount"/>
+    <<include "session1codeword">>
+      </div>
+   
+  </div>
+ </main>
+  <<include "footerbox">>
+</div>
+
+:: session1codeword [nobr]
+<h3>To gain entry a codeword is needed, the letters in white on the box will help. </h3>
+    <br/>
         <div id="codewordWrapper1" class="codeword-wrapper">
       /% CODEWORD INPUT %/
+  
           <div class="code-input">
           <<textbox "$codeword" "">>
           </div>
           <div class="btn-result-wrapper">
           <<button "Enter">>  
+    
                 </div>
             /% STANDARDISE INPUT %/
             <<set $codeword to $codeword.toUpperCase().trim()>>
-            /% CODEWORD CORRECT %/s
+            /% CODEWORD CORRECT %/
             <<if $codeword isnot "" and $codeword is "LAND">>
             <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
               <<audio "eeg_1" play>>
@@ -619,31 +660,40 @@ $(document.head).find('#style-ui-bar').remove();
              <</timed>>
             <</if>>
               /% CODEWORD INCORRECT %/
-              <<if $codeword isnot "" and $codeword is not "LAND">>
+              <<if $codeword isnot "" and $codeword isnot "LAND">>
               <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
-              /* <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>> */
+              <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
               <</if>>
           <</button>> 
           /% CODEWORD FEEDBACK %/
             <div class="coderesult" id="coderesult"></div>   
       </div>
-        </div>
-      </div>
-      <div class="flip-card-back">
-        <img src="assets/img/mod1-rev.jpg" alt="module card" >
-      </div>
-    </div>
-  </div>  
+
 
 :: session2card [nobr]
+<<set $prevpass to "cardoptions">>
+<<set $passage to "session2card">>
+<<addclass "body" "green">>
+<div class="wrapper box">
+  <main class="card-option-page">
+ <div class="option-item" id="mod1"> 
+      <div class="img-container"><img src="assets/img/session2.png" alt="session 1" ></div>
+      <div class="info-container">
+        <h2>Session 2</h2>
+        <h3>The Focus</h3>
+  <div id="mount"/>
+    <<include "session2codeword">>
+      </div>
+   
+  </div>
+ </main>
+  <<include "footerbox">>
+</div>
 
-  <div class="menu-item flip-card" id="mod2"> 
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-      /* <img src="assets/img/session-placeholder.jpg" alt="module card" > */
-      <h2>Session 2</h2>
-      <h3>The Focus</h3>
-      <span>To gain entry, look through the binoculars to discover the codeword. </span>
+:: session2codeword [nobr]
+
+ 
+      <h3>To gain entry, look through the binoculars to discover the codeword. </h3>
         <div id="codewordWrapper2" class="codeword-wrapper">
       /% CODEWORD INPUT %/
           <div class="code-input">
@@ -674,7 +724,7 @@ $(document.head).find('#style-ui-bar').remove();
              <</timed>>
             <</if>>
               /% CODEWORD INCORRECT %/
-              <<if $codeword isnot "" and $codeword is not "HEIST">>
+              <<if $codeword isnot "" and $codeword isnot "HEIST">>
               <<replace "#coderesult2">><h2 class="subtitle">Thats not right.</h2><</replace>>
               <<timed 1.5s>><<replace "#coderesult2">><</replace>><</timed>>
               <</if>>
@@ -682,23 +732,29 @@ $(document.head).find('#style-ui-bar').remove();
           /% CODEWORD FEEDBACK %/
             <div class="coderesult" id="coderesult2"></div>   
       </div>
-        </div>
-      </div>
-      <div class="flip-card-back">
-        <img src="assets/img/mod2-rev.jpg" alt="module card" >
-      </div>
-    </div>
-  </div>
-
+  
 :: session3card [nobr]
-
-   <div class="menu-item flip-card" id="mod3"> 
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-      /* <img src="assets/img/session-placeholder.jpg" alt="module card" > */
+<<set $prevpass to "cardoptions">>
+<<set $passage to "session3card">>
+<<addclass "body" "green">>
+<div class="wrapper box">
+  <main class="card-option-page">
+ <div class="option-item" id="mod1"> 
+      <div class="img-container"><img src="assets/img/session3.png" alt="session 3" ></div>
+      <div class="info-container">
         <h2>Session 3</h2>
-      <h3>The Ask</h3>
-      <span>To enter, reverse the white word. </span>
+        <h3>The Ask</h3>
+  <div id="mount"/>
+    <<include "session3codeword">>
+      </div>
+   
+  </div>
+ </main>
+  <<include "footerbox">>
+</div>
+
+:: session3codeword [nobr]
+      <h3>To enter, reverse the white word. </h3>
         <div id="codewordWrapper1" class="codeword-wrapper">
       /% CODEWORD INPUT %/
           <div class="code-input">
@@ -725,7 +781,7 @@ $(document.head).find('#style-ui-bar').remove();
              <</timed>>
             <</if>>
               /% CODEWORD INCORRECT %/
-              <<if $codeword isnot "" and $codeword is not "MOD">>
+              <<if $codeword isnot "" and $codeword isnot "MOD">>
               <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
               /* <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>> */
               <</if>>
@@ -733,24 +789,28 @@ $(document.head).find('#style-ui-bar').remove();
           /% CODEWORD FEEDBACK %/
             <div class="coderesult" id="coderesult"></div>   
       </div>
-        </div>
-      </div>
-      <div class="flip-card-back">
-        <img src="assets/img/mod3-rev.jpg" alt="module card" >
-      </div>
-    </div>
-  </div>  
-  
+    
 :: session4card [nobr]
-
-
-  <div class="menu-item flip-card" id="mod4"> 
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-      /* <img src="assets/img/session-placeholder.jpg" alt="module card" > */
-      <h2>Session 4</h2>
-      <h3>The Recipient</h3>
-      <span>Barcodes have numbers, but these could be letters. </span>
+<<set $prevpass to "cardoptions">>
+<<set $passage to "session4card">>
+<<addclass "body" "green">>
+<div class="wrapper box">
+  <main class="card-option-page">
+ <div class="option-item" id="mod1"> 
+      <div class="img-container"><img src="assets/img/session4.png" alt="session 4" ></div>
+      <div class="info-container">
+        <h2>Session 4</h2>
+        <h3>The Recipient</h3>
+  <div id="mount"/>
+    <<include "session4codeword">>
+      </div>
+   
+  </div>
+ </main>
+  <<include "footerbox">>
+</div>
+:: session4codeword [nobr]
+      <h3>Barcodes have numbers, but these could be letters. </h3>
         <div id="codewordWrapper2" class="codeword-wrapper">
       /% CODEWORD INPUT %/
           <div class="code-input">
@@ -781,7 +841,7 @@ $(document.head).find('#style-ui-bar').remove();
              <</timed>>
             <</if>>
               /% CODEWORD INCORRECT %/
-              <<if $codeword isnot "" and $codeword is not "POWER">>
+              <<if $codeword isnot "" and $codeword isnot "POWER">>
               <<replace "#coderesult2">><h2 class="subtitle">Thats not right.</h2><</replace>>
               <<timed 1.5s>><<replace "#coderesult2">><</replace>><</timed>>
               <</if>>
@@ -789,24 +849,30 @@ $(document.head).find('#style-ui-bar').remove();
           /% CODEWORD FEEDBACK %/
             <div class="coderesult" id="coderesult2"></div>   
       </div>
-        </div>
-      </div>
-      <div class="flip-card-back">
-        <img src="assets/img/mod4-rev.jpg" alt="module card" >
-      </div>
-    </div>
-  </div>
-  
-:: session5card [nobr]
+   
 
-  
-<div class="menu-item flip-card" id="mod5"> 
-  <div class="flip-card-inner">
-      <div class="flip-card-front">
-/* <img src="assets/img/session-placeholder.jpg" alt="module three"> */
-<h2>Session 5</h2>
- <h3>The Plot</h3>
- <span>The white arrows will find your codeword for this session. </span>
+:: session5card [nobr]
+<<set $prevpass to "cardoptions">>
+<<set $passage to "session5card">>
+<<addclass "body" "green">>
+<div class="wrapper box">
+  <main class="card-option-page">
+ <div class="option-item" id="mod1"> 
+      <div class="img-container"><img src="assets/img/session5.png" alt="session 5" ></div>
+      <div class="info-container">
+   
+    <<include "session5codeword">>
+      </div>
+   
+  </div>
+ </main>
+  <<include "footerbox">>
+</div>
+
+:: session5codeword [nobr]
+
+
+ <h3>The white arrows will find your codeword for this session. </h3>
   <div id="codewordWrapper1" class="codeword-wrapper">
   /% CODEWORD INPUT %/
       <div class="code-input">
@@ -837,30 +903,37 @@ $(document.head).find('#style-ui-bar').remove();
         <</timed>>
 <</if>>
         /% CODEWORD INCORRECT %/
-        <<if $codeword isnot "" and $codeword is not "GIFT">>
+        <<if $codeword isnot "" and $codeword isnot "GIFT">>
         <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
         <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
         <</if>><</button>> 
           /% CODEWORD FEEDBACK %/
           <div id="coderesult" class="coderesult"></div>
    </div>
-    </div>
-      </div>
-         <div class="flip-card-back">
-        <img src="assets/img/mod5-rev.jpg" alt="module card" >
-      </div>
-    </div>
-   </div>
-
 :: session8card [nobr]
-  
- <div class="menu-item flip-card" id="mod6"> 
- <div class="flip-card-inner">
-      <div class="flip-card-front">
- /* <img src="assets/img/session-placeholder.jpg" alt="module six"> */
- <h2>Session 8</h2>
-  <h3>The Delivery</h3>
-  <span>The only word hanging totally upside down. </span>
+<<set $prevpass to "cardoptions">>
+<<set $passage to "session8card">>
+<<addclass "body" "green">>
+<div class="wrapper box">
+  <main class="card-option-page">
+ <div class="option-item" id="mod1"> 
+      <div class="img-container"><img src="assets/img/session8.png" alt="session 8" ></div>
+      <div class="info-container">
+        <h2>Session 8</h2>
+        <h3>The Delivery</h3>
+  <div id="mount"/>
+    <<include "session8codeword">>
+      </div>
+   
+  </div>
+ </main>
+  <<include "footerbox">>
+</div>
+
+
+:: session8codeword [nobr]
+
+  <h3>The only word hanging totally upside down. </h3>
   <div id="codewordWrapper2" class="codeword-wrapper">
   /% CODEWORD INPUT %/
       <div class="code-input">
@@ -892,21 +965,14 @@ $(document.head).find('#style-ui-bar').remove();
         <</timed>>
       <</if>>
         /% CODEWORD INCORRECT %/
-        <<if $codeword isnot "" and $codeword is not "DELIVER">>
+        <<if $codeword isnot "" and $codeword isnot "DELIVER">>
         <<replace "#coderesult2">><h2 class="subtitle">Thats not right.</h2><</replace>>
         <<timed 1.5s>><<replace "#coderesult2">><</replace>><</timed>>
         <</if>><</button>> 
           /% CODEWORD FEEDBACK %/
           <div id="coderesult2" class="coderesult"></div>
    </div>
-    </div>
-      </div>
-
-    <div class="flip-card-back">
-        <img src="assets/img/mod6-rev.jpg" alt="module card" >
-      </div>
-    </div>
-  </div>
+  
 
 :: 1modintro [nobr]
 <<set $prevpass to "landing">>

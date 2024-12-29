@@ -106,6 +106,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 	</div>
 	<!-- UUID://3ADB110E-9ADA-4B6F-B0B9-1FA69E09EEC3// --><tw-storydata name="Greenpeace X Coney Update" startnode="16" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="3ADB110E-9ADA-4B6F-B0B9-1FA69E09EEC3" zoom="0.6" format="SugarCube" format-version="2.37.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Saira+Stencil+One&display=swap');
 @import url("./styles/generics.css");
 @import url("./styles/styles.css");</style><script role="script" id="twine-user-script" type="text/twine-javascript">$('#ui-bar').remove();
 $(document.head).find('#style-ui-bar').remove();
@@ -582,43 +583,80 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;/div&gt;
   &lt;/main&gt;
     /* &lt;&lt;include &quot;footercode&quot;&gt;&gt; */
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="cardoptions" tags="nobr" position="850,225" size="100,100">&lt;&lt;set $passage to &quot;cardoptions&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
-
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="cardoptions" tags="nobr" position="850,225" size="100,100">&lt;&lt;set $passage to &quot;cardoptions&quot;&gt;&gt;
+&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
+&lt;&lt;addclass &quot;body&quot; &quot;green&quot;&gt;&gt;
 
 &lt;div class=&quot;wrapper box&quot;&gt;
   &lt;main class=&quot;modules&quot;&gt;
   &lt;h1 class=&quot;title&quot;&gt;SESSIONS&lt;/h1&gt;
     /* &lt;div class=&quot;codeword-title-wrapper&quot;&gt;&lt;h1 class=&quot;title&quot;&gt;Enter &lt;/h1&gt;&lt;h1 class=&quot;title&quot;&gt;Codeword&lt;/h1&gt;&lt;/div&gt; */
-      &lt;div class=&quot;menu-wrapper module-list&quot;&gt;
-    
-  &lt;&lt;include &quot;session1card&quot;&gt;&gt;
-  &lt;&lt;include &quot;session2card&quot;&gt;&gt;
+      &lt;div class=&quot;menu-wrapper card-options-list&quot;&gt;
+
+  &lt;&lt;link[img[assets/img/session1.png]]&gt;&gt; 
+   &lt;&lt;goto &quot;session1card&quot;&gt;&gt;
+  &lt;&lt;/link&gt;&gt; 
+
+   &lt;&lt;link[img[assets/img/session2.png]]&gt;&gt; 
+   &lt;&lt;goto &quot;session2card&quot;&gt;&gt;
+  &lt;&lt;/link&gt;&gt; 
+
+    &lt;&lt;link[img[assets/img/session3.png]]&gt;&gt; 
+    &lt;&lt;goto &quot;session3card&quot;&gt;&gt;
+  &lt;&lt;/link&gt;&gt; 
+
+    &lt;&lt;link[img[assets/img/session4.png]]&gt;&gt; 
+    &lt;&lt;goto &quot;session4card&quot;&gt;&gt;
+  &lt;&lt;/link&gt;&gt; 
+
+    &lt;&lt;link[img[assets/img/session5.png]]&gt;&gt; 
+    &lt;&lt;goto &quot;session5card&quot;&gt;&gt;
+  &lt;&lt;/link&gt;&gt; 
+   &lt;&lt;link[img[assets/img/session8.png]]&gt;&gt; 
+   &lt;&lt;goto &quot;session8card&quot;&gt;&gt;
+  &lt;&lt;/link&gt;&gt; 
+ 
+  /* &lt;&lt;include &quot;session2card&quot;&gt;&gt;
   &lt;&lt;include &quot;session3card&quot;&gt;&gt;
   &lt;&lt;include &quot;session4card&quot;&gt;&gt;
   &lt;&lt;include &quot;session5card&quot;&gt;&gt;
-  &lt;&lt;include &quot;session8card&quot;&gt;&gt;
+  &lt;&lt;include &quot;session8card&quot;&gt;&gt; */
   
   &lt;/div&gt;
  &lt;/main&gt;
   &lt;&lt;include &quot;footerbox&quot;&gt;&gt;&lt;/div&gt;
-  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="session1card" tags="nobr" position="975,225" size="100,100">&lt;div class=&quot;menu-item flip-card&quot; id=&quot;mod1&quot;&gt; 
-    &lt;div class=&quot;flip-card-inner&quot;&gt;
-      &lt;div class=&quot;flip-card-front&quot;&gt;
-      /* &lt;img src=&quot;assets/img/session-placeholder.jpg&quot; alt=&quot;module card&quot; &gt; */
-      &lt;h2&gt;Session 1&lt;/h2&gt;
-      &lt;h3&gt;The Context&lt;/h3&gt;
-      &lt;span&gt;To gain entry a codeword is needed, the letters in white on the box will help. &lt;/span&gt;
+  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="session1card" tags="nobr" position="975,225" size="100,100">&lt;&lt;set $prevpass to &quot;cardoptions&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;session1card&quot;&gt;&gt;
+&lt;&lt;addclass &quot;body&quot; &quot;green&quot;&gt;&gt;
+&lt;div class=&quot;wrapper box&quot;&gt;
+  &lt;main class=&quot;card-option-page&quot;&gt;
+ &lt;div class=&quot;option-item&quot; id=&quot;mod1&quot;&gt; 
+      &lt;div class=&quot;img-container&quot;&gt;&lt;img src=&quot;assets/img/session1.png&quot; alt=&quot;session 1&quot; &gt;&lt;/div&gt;
+      &lt;div class=&quot;info-container&quot;&gt;
+        &lt;h2&gt;Session 1&lt;/h2&gt;
+        &lt;h3&gt;The Context&lt;/h3&gt;
+  &lt;div id=&quot;mount&quot;/&gt;
+    &lt;&lt;include &quot;session1codeword&quot;&gt;&gt;
+      &lt;/div&gt;
+   
+  &lt;/div&gt;
+ &lt;/main&gt;
+  &lt;&lt;include &quot;footerbox&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="session1codeword" tags="nobr" position="1100,225" size="100,100">&lt;h3&gt;To gain entry a codeword is needed, the letters in white on the box will help. &lt;/h3&gt;
+    &lt;br/&gt;
         &lt;div id=&quot;codewordWrapper1&quot; class=&quot;codeword-wrapper&quot;&gt;
       /% CODEWORD INPUT %/
+  
           &lt;div class=&quot;code-input&quot;&gt;
           &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
           &lt;/div&gt;
           &lt;div class=&quot;btn-result-wrapper&quot;&gt;
           &lt;&lt;button &quot;Enter&quot;&gt;&gt;  
+    
                 &lt;/div&gt;
             /% STANDARDISE INPUT %/
             &lt;&lt;set $codeword to $codeword.toUpperCase().trim()&gt;&gt;
-            /% CODEWORD CORRECT %/s
+            /% CODEWORD CORRECT %/
             &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;LAND&quot;&gt;&gt;
             &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
               &lt;&lt;audio &quot;eeg_1&quot; play&gt;&gt;
@@ -635,27 +673,31 @@ $(document.head).find('#style-ui-bar').remove();
              &lt;&lt;/timed&gt;&gt;
             &lt;&lt;/if&gt;&gt;
               /% CODEWORD INCORRECT %/
-              &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;LAND&quot;&gt;&gt;
+              &lt;&lt;if $codeword isnot &quot;&quot; and $codeword isnot &quot;LAND&quot;&gt;&gt;
               &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-              /* &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt; */
+              &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
               &lt;&lt;/if&gt;&gt;
           &lt;&lt;/button&gt;&gt; 
           /% CODEWORD FEEDBACK %/
             &lt;div class=&quot;coderesult&quot; id=&quot;coderesult&quot;&gt;&lt;/div&gt;   
+      &lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="session2card" tags="nobr" position="1225,225" size="100,100">&lt;&lt;set $prevpass to &quot;cardoptions&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;session2card&quot;&gt;&gt;
+&lt;&lt;addclass &quot;body&quot; &quot;green&quot;&gt;&gt;
+&lt;div class=&quot;wrapper box&quot;&gt;
+  &lt;main class=&quot;card-option-page&quot;&gt;
+ &lt;div class=&quot;option-item&quot; id=&quot;mod1&quot;&gt; 
+      &lt;div class=&quot;img-container&quot;&gt;&lt;img src=&quot;assets/img/session2.png&quot; alt=&quot;session 1&quot; &gt;&lt;/div&gt;
+      &lt;div class=&quot;info-container&quot;&gt;
+        &lt;h2&gt;Session 2&lt;/h2&gt;
+        &lt;h3&gt;The Focus&lt;/h3&gt;
+  &lt;div id=&quot;mount&quot;/&gt;
+    &lt;&lt;include &quot;session2codeword&quot;&gt;&gt;
       &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;flip-card-back&quot;&gt;
-        &lt;img src=&quot;assets/img/mod1-rev.jpg&quot; alt=&quot;module card&quot; &gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="session2card" tags="nobr" position="1100,225" size="100,100">&lt;div class=&quot;menu-item flip-card&quot; id=&quot;mod2&quot;&gt; 
-    &lt;div class=&quot;flip-card-inner&quot;&gt;
-      &lt;div class=&quot;flip-card-front&quot;&gt;
-      /* &lt;img src=&quot;assets/img/session-placeholder.jpg&quot; alt=&quot;module card&quot; &gt; */
-      &lt;h2&gt;Session 2&lt;/h2&gt;
-      &lt;h3&gt;The Focus&lt;/h3&gt;
-      &lt;span&gt;To gain entry, look through the binoculars to discover the codeword. &lt;/span&gt;
+   
+  &lt;/div&gt;
+ &lt;/main&gt;
+  &lt;&lt;include &quot;footerbox&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="21" name="session2codeword" tags="nobr" position="100,350" size="100,100">&lt;h3&gt;To gain entry, look through the binoculars to discover the codeword. &lt;/h3&gt;
         &lt;div id=&quot;codewordWrapper2&quot; class=&quot;codeword-wrapper&quot;&gt;
       /% CODEWORD INPUT %/
           &lt;div class=&quot;code-input&quot;&gt;
@@ -686,27 +728,31 @@ $(document.head).find('#style-ui-bar').remove();
              &lt;&lt;/timed&gt;&gt;
             &lt;&lt;/if&gt;&gt;
               /% CODEWORD INCORRECT %/
-              &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;HEIST&quot;&gt;&gt;
+              &lt;&lt;if $codeword isnot &quot;&quot; and $codeword isnot &quot;HEIST&quot;&gt;&gt;
               &lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
               &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
               &lt;&lt;/if&gt;&gt;
           &lt;&lt;/button&gt;&gt; 
           /% CODEWORD FEEDBACK %/
             &lt;div class=&quot;coderesult&quot; id=&quot;coderesult2&quot;&gt;&lt;/div&gt;   
-      &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;flip-card-back&quot;&gt;
-        &lt;img src=&quot;assets/img/mod2-rev.jpg&quot; alt=&quot;module card&quot; &gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="session3card" tags="nobr" position="1225,225" size="100,100">&lt;div class=&quot;menu-item flip-card&quot; id=&quot;mod3&quot;&gt; 
-    &lt;div class=&quot;flip-card-inner&quot;&gt;
-      &lt;div class=&quot;flip-card-front&quot;&gt;
-      /* &lt;img src=&quot;assets/img/session-placeholder.jpg&quot; alt=&quot;module card&quot; &gt; */
+      &lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="session3card" tags="nobr" position="225,350" size="100,100">&lt;&lt;set $prevpass to &quot;cardoptions&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;session3card&quot;&gt;&gt;
+&lt;&lt;addclass &quot;body&quot; &quot;green&quot;&gt;&gt;
+&lt;div class=&quot;wrapper box&quot;&gt;
+  &lt;main class=&quot;card-option-page&quot;&gt;
+ &lt;div class=&quot;option-item&quot; id=&quot;mod1&quot;&gt; 
+      &lt;div class=&quot;img-container&quot;&gt;&lt;img src=&quot;assets/img/session3.png&quot; alt=&quot;session 3&quot; &gt;&lt;/div&gt;
+      &lt;div class=&quot;info-container&quot;&gt;
         &lt;h2&gt;Session 3&lt;/h2&gt;
-      &lt;h3&gt;The Ask&lt;/h3&gt;
-      &lt;span&gt;To enter, reverse the white word. &lt;/span&gt;
+        &lt;h3&gt;The Ask&lt;/h3&gt;
+  &lt;div id=&quot;mount&quot;/&gt;
+    &lt;&lt;include &quot;session3codeword&quot;&gt;&gt;
+      &lt;/div&gt;
+   
+  &lt;/div&gt;
+ &lt;/main&gt;
+  &lt;&lt;include &quot;footerbox&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="session3codeword" tags="nobr" position="350,350" size="100,100">&lt;h3&gt;To enter, reverse the white word. &lt;/h3&gt;
         &lt;div id=&quot;codewordWrapper1&quot; class=&quot;codeword-wrapper&quot;&gt;
       /% CODEWORD INPUT %/
           &lt;div class=&quot;code-input&quot;&gt;
@@ -733,27 +779,31 @@ $(document.head).find('#style-ui-bar').remove();
              &lt;&lt;/timed&gt;&gt;
             &lt;&lt;/if&gt;&gt;
               /% CODEWORD INCORRECT %/
-              &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;MOD&quot;&gt;&gt;
+              &lt;&lt;if $codeword isnot &quot;&quot; and $codeword isnot &quot;MOD&quot;&gt;&gt;
               &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
               /* &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt; */
               &lt;&lt;/if&gt;&gt;
           &lt;&lt;/button&gt;&gt; 
           /% CODEWORD FEEDBACK %/
             &lt;div class=&quot;coderesult&quot; id=&quot;coderesult&quot;&gt;&lt;/div&gt;   
+      &lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="session4card" tags="nobr" position="475,350" size="100,100">&lt;&lt;set $prevpass to &quot;cardoptions&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;session4card&quot;&gt;&gt;
+&lt;&lt;addclass &quot;body&quot; &quot;green&quot;&gt;&gt;
+&lt;div class=&quot;wrapper box&quot;&gt;
+  &lt;main class=&quot;card-option-page&quot;&gt;
+ &lt;div class=&quot;option-item&quot; id=&quot;mod1&quot;&gt; 
+      &lt;div class=&quot;img-container&quot;&gt;&lt;img src=&quot;assets/img/session4.png&quot; alt=&quot;session 4&quot; &gt;&lt;/div&gt;
+      &lt;div class=&quot;info-container&quot;&gt;
+        &lt;h2&gt;Session 4&lt;/h2&gt;
+        &lt;h3&gt;The Recipient&lt;/h3&gt;
+  &lt;div id=&quot;mount&quot;/&gt;
+    &lt;&lt;include &quot;session4codeword&quot;&gt;&gt;
       &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;flip-card-back&quot;&gt;
-        &lt;img src=&quot;assets/img/mod3-rev.jpg&quot; alt=&quot;module card&quot; &gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="21" name="session4card" tags="nobr" position="100,350" size="100,100">&lt;div class=&quot;menu-item flip-card&quot; id=&quot;mod4&quot;&gt; 
-    &lt;div class=&quot;flip-card-inner&quot;&gt;
-      &lt;div class=&quot;flip-card-front&quot;&gt;
-      /* &lt;img src=&quot;assets/img/session-placeholder.jpg&quot; alt=&quot;module card&quot; &gt; */
-      &lt;h2&gt;Session 4&lt;/h2&gt;
-      &lt;h3&gt;The Recipient&lt;/h3&gt;
-      &lt;span&gt;Barcodes have numbers, but these could be letters. &lt;/span&gt;
+   
+  &lt;/div&gt;
+ &lt;/main&gt;
+  &lt;&lt;include &quot;footerbox&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="session4codeword" tags="nobr" position="600,350" size="100,100">&lt;h3&gt;Barcodes have numbers, but these could be letters. &lt;/h3&gt;
         &lt;div id=&quot;codewordWrapper2&quot; class=&quot;codeword-wrapper&quot;&gt;
       /% CODEWORD INPUT %/
           &lt;div class=&quot;code-input&quot;&gt;
@@ -784,27 +834,29 @@ $(document.head).find('#style-ui-bar').remove();
              &lt;&lt;/timed&gt;&gt;
             &lt;&lt;/if&gt;&gt;
               /% CODEWORD INCORRECT %/
-              &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;POWER&quot;&gt;&gt;
+              &lt;&lt;if $codeword isnot &quot;&quot; and $codeword isnot &quot;POWER&quot;&gt;&gt;
               &lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
               &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
               &lt;&lt;/if&gt;&gt;
           &lt;&lt;/button&gt;&gt; 
           /% CODEWORD FEEDBACK %/
             &lt;div class=&quot;coderesult&quot; id=&quot;coderesult2&quot;&gt;&lt;/div&gt;   
+      &lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="session5card" tags="nobr" position="725,350" size="100,100">&lt;&lt;set $prevpass to &quot;cardoptions&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;session5card&quot;&gt;&gt;
+&lt;&lt;addclass &quot;body&quot; &quot;green&quot;&gt;&gt;
+&lt;div class=&quot;wrapper box&quot;&gt;
+  &lt;main class=&quot;card-option-page&quot;&gt;
+ &lt;div class=&quot;option-item&quot; id=&quot;mod1&quot;&gt; 
+      &lt;div class=&quot;img-container&quot;&gt;&lt;img src=&quot;assets/img/session5.png&quot; alt=&quot;session 5&quot; &gt;&lt;/div&gt;
+      &lt;div class=&quot;info-container&quot;&gt;
+   
+    &lt;&lt;include &quot;session5codeword&quot;&gt;&gt;
       &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;flip-card-back&quot;&gt;
-        &lt;img src=&quot;assets/img/mod4-rev.jpg&quot; alt=&quot;module card&quot; &gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="session5card" tags="nobr" position="225,350" size="100,100">&lt;div class=&quot;menu-item flip-card&quot; id=&quot;mod5&quot;&gt; 
-  &lt;div class=&quot;flip-card-inner&quot;&gt;
-      &lt;div class=&quot;flip-card-front&quot;&gt;
-/* &lt;img src=&quot;assets/img/session-placeholder.jpg&quot; alt=&quot;module three&quot;&gt; */
-&lt;h2&gt;Session 5&lt;/h2&gt;
- &lt;h3&gt;The Plot&lt;/h3&gt;
- &lt;span&gt;The white arrows will find your codeword for this session. &lt;/span&gt;
+   
+  &lt;/div&gt;
+ &lt;/main&gt;
+  &lt;&lt;include &quot;footerbox&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="27" name="session5codeword" tags="nobr" position="850,350" size="100,100">&lt;h3&gt;The white arrows will find your codeword for this session. &lt;/h3&gt;
   &lt;div id=&quot;codewordWrapper1&quot; class=&quot;codeword-wrapper&quot;&gt;
   /% CODEWORD INPUT %/
       &lt;div class=&quot;code-input&quot;&gt;
@@ -835,26 +887,30 @@ $(document.head).find('#style-ui-bar').remove();
         &lt;&lt;/timed&gt;&gt;
 &lt;&lt;/if&gt;&gt;
         /% CODEWORD INCORRECT %/
-        &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;GIFT&quot;&gt;&gt;
+        &lt;&lt;if $codeword isnot &quot;&quot; and $codeword isnot &quot;GIFT&quot;&gt;&gt;
         &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
         &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
         &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
           /% CODEWORD FEEDBACK %/
           &lt;div id=&quot;coderesult&quot; class=&quot;coderesult&quot;&gt;&lt;/div&gt;
-   &lt;/div&gt;
-    &lt;/div&gt;
+   &lt;/div&gt;</tw-passagedata><tw-passagedata pid="28" name="session8card" tags="nobr" position="975,350" size="100,100">&lt;&lt;set $prevpass to &quot;cardoptions&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;session8card&quot;&gt;&gt;
+&lt;&lt;addclass &quot;body&quot; &quot;green&quot;&gt;&gt;
+&lt;div class=&quot;wrapper box&quot;&gt;
+  &lt;main class=&quot;card-option-page&quot;&gt;
+ &lt;div class=&quot;option-item&quot; id=&quot;mod1&quot;&gt; 
+      &lt;div class=&quot;img-container&quot;&gt;&lt;img src=&quot;assets/img/session8.png&quot; alt=&quot;session 8&quot; &gt;&lt;/div&gt;
+      &lt;div class=&quot;info-container&quot;&gt;
+        &lt;h2&gt;Session 8&lt;/h2&gt;
+        &lt;h3&gt;The Delivery&lt;/h3&gt;
+  &lt;div id=&quot;mount&quot;/&gt;
+    &lt;&lt;include &quot;session8codeword&quot;&gt;&gt;
       &lt;/div&gt;
-         &lt;div class=&quot;flip-card-back&quot;&gt;
-        &lt;img src=&quot;assets/img/mod5-rev.jpg&quot; alt=&quot;module card&quot; &gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-   &lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="session8card" tags="nobr" position="350,350" size="100,100">&lt;div class=&quot;menu-item flip-card&quot; id=&quot;mod6&quot;&gt; 
- &lt;div class=&quot;flip-card-inner&quot;&gt;
-      &lt;div class=&quot;flip-card-front&quot;&gt;
- /* &lt;img src=&quot;assets/img/session-placeholder.jpg&quot; alt=&quot;module six&quot;&gt; */
- &lt;h2&gt;Session 8&lt;/h2&gt;
-  &lt;h3&gt;The Delivery&lt;/h3&gt;
-  &lt;span&gt;The only word hanging totally upside down. &lt;/span&gt;
+   
+  &lt;/div&gt;
+ &lt;/main&gt;
+  &lt;&lt;include &quot;footerbox&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="29" name="session8codeword" tags="nobr" position="1100,350" size="100,100">&lt;h3&gt;The only word hanging totally upside down. &lt;/h3&gt;
   &lt;div id=&quot;codewordWrapper2&quot; class=&quot;codeword-wrapper&quot;&gt;
   /% CODEWORD INPUT %/
       &lt;div class=&quot;code-input&quot;&gt;
@@ -886,21 +942,13 @@ $(document.head).find('#style-ui-bar').remove();
         &lt;&lt;/timed&gt;&gt;
       &lt;&lt;/if&gt;&gt;
         /% CODEWORD INCORRECT %/
-        &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;DELIVER&quot;&gt;&gt;
+        &lt;&lt;if $codeword isnot &quot;&quot; and $codeword isnot &quot;DELIVER&quot;&gt;&gt;
         &lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
         &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
         &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
           /% CODEWORD FEEDBACK %/
           &lt;div id=&quot;coderesult2&quot; class=&quot;coderesult&quot;&gt;&lt;/div&gt;
-   &lt;/div&gt;
-    &lt;/div&gt;
-      &lt;/div&gt;
-
-    &lt;div class=&quot;flip-card-back&quot;&gt;
-        &lt;img src=&quot;assets/img/mod6-rev.jpg&quot; alt=&quot;module card&quot; &gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="1modintro" tags="nobr" position="475,350" size="100,100">&lt;&lt;set $prevpass to &quot;landing&quot;&gt;&gt;
+   &lt;/div&gt;</tw-passagedata><tw-passagedata pid="30" name="1modintro" tags="nobr" position="1225,350" size="100,100">&lt;&lt;set $prevpass to &quot;landing&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;1modintro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;1modintro2&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -924,7 +972,7 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="1modintro2" tags="nobr" position="600,350" size="100,100">&lt;&lt;set $prevpass to &quot;1modintro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="1modintro2" tags="nobr" position="100,475" size="100,100">&lt;&lt;set $prevpass to &quot;1modintro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;1modintro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;1mod1a&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -947,7 +995,7 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="1mod1a" tags="nobr" position="725,350" size="100,100">&lt;&lt;set $module to &quot;Module 1&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="1mod1a" tags="nobr" position="225,475" size="100,100">&lt;&lt;set $module to &quot;Module 1&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
 &lt;&lt;set $prevpass to &quot;1modintro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;1mod1a&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;1mod1b&quot;&gt;&gt;
@@ -994,7 +1042,7 @@ $(document.head).find('#style-ui-bar').remove();
 
   &lt;/main&gt;
   &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="27" name="1mod1b" tags="nobr" position="850,350" size="100,100">&lt;&lt;set $module to &quot;Module 1&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="1mod1b" tags="nobr" position="350,475" size="100,100">&lt;&lt;set $module to &quot;Module 1&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
 &lt;&lt;set $prevpass to &quot;1mod1a&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;1mod1b&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;1mod1bintro&quot;&gt;&gt;
@@ -1063,7 +1111,7 @@ countries must play Rock, Paper, Scissors to see who can extract.
 
   &lt;/main&gt;
   &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="28" name="1mod1bintro" tags="nobr" position="975,350" size="100,100">&lt;&lt;set $prevpass to &quot;1mod1a&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="34" name="1mod1bintro" tags="nobr" position="475,475" size="100,100">&lt;&lt;set $prevpass to &quot;1mod1a&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;1mod1bintro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;1mod1br1&quot;&gt;&gt;
 &lt;&lt;set $seconds to 4&gt;&gt;
@@ -1108,7 +1156,7 @@ countries must play Rock, Paper, Scissors to see who can extract.
         &lt;&lt;else&gt;&gt;&lt;&lt;stop&gt;&gt;
     &lt;&lt;/if&gt;&gt;
   &lt;&lt;/repeat&gt;&gt;
-&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="1mod1br1" tags="nobr" position="1100,350" size="100,100">&lt;&lt;set $prevpass to &quot;1mod1bintro&quot;&gt;&gt;
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="1mod1br1" tags="nobr" position="600,475" size="100,100">&lt;&lt;set $prevpass to &quot;1mod1bintro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;1mod1br1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;1mod1br2intro&quot;&gt;&gt;
 /* Extract &amp; Payment */
@@ -1144,7 +1192,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
 
   &lt;/main&gt;
   &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="30" name="1mod1br2intro" tags="nobr" position="1225,350" size="100,100">&lt;&lt;set $prevpass to &quot;1mod1br1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="36" name="1mod1br2intro" tags="nobr" position="725,475" size="100,100">&lt;&lt;set $prevpass to &quot;1mod1br1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;1mod1br2intro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;1mod1br2&quot;&gt;&gt;&lt;&lt;set $seconds to 4&gt;&gt;
 &lt;div id=&quot;audio&quot;&gt; &lt;audio src=&quot;assets/audio/greenpeace2.0_S1_3_mod1game_1_debate.mp3&quot;  autoplay id=&quot;audio&quot;&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
@@ -1187,7 +1235,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
         &lt;&lt;else&gt;&gt;&lt;&lt;stop&gt;&gt;
     &lt;&lt;/if&gt;&gt;
   &lt;&lt;/repeat&gt;&gt;
-&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="31" name="1mod1br2" tags="nobr" position="100,475" size="100,100">&lt;&lt;set $prevpass to &quot;1mod1br2intro&quot;&gt;&gt;
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="1mod1br2" tags="nobr" position="850,475" size="100,100">&lt;&lt;set $prevpass to &quot;1mod1br2intro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;1mod1br2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;1mod1br3intro&quot;&gt;&gt;
 /* Extract &amp; Payment */
@@ -1223,7 +1271,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
 
   &lt;/main&gt;
   &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="1mod1br3intro" tags="nobr" position="225,475" size="100,100">&lt;&lt;set $prevpass to &quot;1mod1br2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="1mod1br3intro" tags="nobr" position="975,475" size="100,100">&lt;&lt;set $prevpass to &quot;1mod1br2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;1mod1br3intro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;1mod1br3&quot;&gt;&gt;&lt;&lt;set $seconds to 4&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
@@ -1266,7 +1314,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
         &lt;&lt;else&gt;&gt;&lt;&lt;stop&gt;&gt;
     &lt;&lt;/if&gt;&gt;
   &lt;&lt;/repeat&gt;&gt;
-&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="33" name="1mod1br3" tags="nobr" position="350,475" size="100,100">&lt;&lt;set $prevpass to &quot;1mod1br3intro&quot;&gt;&gt;
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="39" name="1mod1br3" tags="nobr" position="1100,475" size="100,100">&lt;&lt;set $prevpass to &quot;1mod1br3intro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;1mod1br3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;1mod1br4intro&quot;&gt;&gt;
 /* Extract &amp; Payment */
@@ -1302,7 +1350,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
 
   &lt;/main&gt;
   &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="34" name="1mod1br4intro" tags="nobr" position="475,475" size="100,100">&lt;&lt;set $prevpass to &quot;1mod1br3&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="40" name="1mod1br4intro" tags="nobr" position="1225,475" size="100,100">&lt;&lt;set $prevpass to &quot;1mod1br3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;1mod1br4intro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;1mod1br4&quot;&gt;&gt;&lt;&lt;set $seconds to 4&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
@@ -1345,7 +1393,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
         &lt;&lt;else&gt;&gt;&lt;&lt;stop&gt;&gt;
     &lt;&lt;/if&gt;&gt;
   &lt;&lt;/repeat&gt;&gt;
-&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="1mod1br4" tags="nobr" position="600,475" size="100,100">&lt;&lt;set $prevpass to &quot;1mod1br4intro&quot;&gt;&gt;
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="1mod1br4" tags="nobr" position="100,600" size="100,100">&lt;&lt;set $prevpass to &quot;1mod1br4intro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;1mod1br4&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;1mod1outro&quot;&gt;&gt;
 /* Extract &amp; Payment */
@@ -1382,7 +1430,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
 
   &lt;/main&gt;
   &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="36" name="1mod1outro" tags="nobr" position="725,475" size="100,100">&lt;&lt;set $prevpass to &quot;1mod1br4&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="1mod1outro" tags="nobr" position="225,600" size="100,100">&lt;&lt;set $prevpass to &quot;1mod1br4&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;1mod1outro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;1mod1outrob&quot;&gt;&gt;
 
@@ -1405,7 +1453,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="1mod1outrob" tags="nobr" position="850,475" size="100,100">&lt;&lt;set $prevpass to &quot;1mod1outro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="43" name="1mod1outrob" tags="nobr" position="350,600" size="100,100">&lt;&lt;set $prevpass to &quot;1mod1outro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;1mod1outrob&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;1mod1outroc&quot;&gt;&gt;
 
@@ -1427,7 +1475,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="1mod1outroc" tags="nobr" position="975,475" size="100,100">&lt;&lt;set $prevpass to &quot;1mod1outrob&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="44" name="1mod1outroc" tags="nobr" position="475,600" size="100,100">&lt;&lt;set $prevpass to &quot;1mod1outrob&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;1mod1outroc&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;1mod2intro&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 1&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -1451,7 +1499,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="39" name="1mod2intro" tags="nobr" position="1100,475" size="100,100">&lt;&lt;set $prevpass to &quot;1mod1outroc&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="45" name="1mod2intro" tags="nobr" position="600,600" size="100,100">&lt;&lt;set $prevpass to &quot;1mod1outroc&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;1mod2intro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;1mod2intro2&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 2&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;&lt;audio src=&quot;assets/audio/greenpeace2.0_S1_5_mod2intro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -1469,7 +1517,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="40" name="1mod2intro2" tags="nobr" position="1225,475" size="100,100">&lt;&lt;set $prevpass to &quot;1mod2intro&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="46" name="1mod2intro2" tags="nobr" position="725,600" size="100,100">&lt;&lt;set $prevpass to &quot;1mod2intro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;1mod2intro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;1mod2intro3&quot;&gt;&gt;
 
@@ -1486,7 +1534,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="41" name="1mod2intro3" tags="nobr" position="100,600" size="100,100">&lt;&lt;set $prevpass to &quot;1mod2intro2&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="1mod2intro3" tags="nobr" position="850,600" size="100,100">&lt;&lt;set $prevpass to &quot;1mod2intro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;1mod2intro3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;1mod2a&quot;&gt;&gt;
 
@@ -1504,7 +1552,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="1mod2a" tags="nobr" position="225,600" size="100,100">&lt;&lt;set $prevpass to &quot;1mod2intro3&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="48" name="1mod2a" tags="nobr" position="975,600" size="100,100">&lt;&lt;set $prevpass to &quot;1mod2intro3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;1mod2a&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;1mod2b&quot;&gt;&gt;
 &lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -1524,7 +1572,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="43" name="1mod2b" tags="nobr" position="350,600" size="100,100">&lt;&lt;set $prevpass to &quot;1mod2a&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="49" name="1mod2b" tags="nobr" position="1100,600" size="100,100">&lt;&lt;set $prevpass to &quot;1mod2a&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;1mod2b&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;1mod2c&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/greenpeace2.0_S1_6_mod2context_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -1540,7 +1588,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="44" name="1mod2c" tags="nobr" position="475,600" size="100,100">&lt;&lt;set $prevpass to &quot;1mod2b&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="50" name="1mod2c" tags="nobr" position="1225,600" size="100,100">&lt;&lt;set $prevpass to &quot;1mod2b&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;1mod2c&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;1mod2d&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/greenpeace2.0_S1_6_mod2context_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -1555,7 +1603,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="45" name="1mod2d" tags="nobr" position="600,600" size="100,100">&lt;&lt;set $prevpass to &quot;1mod2c&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="51" name="1mod2d" tags="nobr" position="100,725" size="100,100">&lt;&lt;set $prevpass to &quot;1mod2c&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;1mod2d&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;1mod2e&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/greenpeace2.0_S1_6_mod2context_4.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -1571,7 +1619,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
    &lt;/div&gt;
     &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="46" name="1mod2e" tags="nobr" position="725,600" size="100,100">&lt;&lt;set $prevpass to &quot;1mod2d&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="52" name="1mod2e" tags="nobr" position="225,725" size="100,100">&lt;&lt;set $prevpass to &quot;1mod2d&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;1mod2e&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;1mod2vid&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/greenpeace2.0_S1_6_mod2context_5.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -1590,7 +1638,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
    &lt;/div&gt;
     &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="1mod2vid" tags="nobr" position="850,600" size="100,100">&lt;&lt;set $prevpass to &quot;1mod2e&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="53" name="1mod2vid" tags="nobr" position="350,725" size="100,100">&lt;&lt;set $prevpass to &quot;1mod2e&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;1mod2vid&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;1mod2int1&quot;&gt;&gt;
 
@@ -1603,7 +1651,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
      &lt;&lt;include &quot;footervid&quot;&gt;&gt;
      &lt;&lt;timed 200s &gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;
      &lt;&lt;/timed&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="48" name="1mod2int1" tags="nobr" position="975,600" size="100,100">&lt;&lt;set $prevpass to &quot;1mod2vid&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="54" name="1mod2int1" tags="nobr" position="475,725" size="100,100">&lt;&lt;set $prevpass to &quot;1mod2vid&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;1mod2int1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;1mod2vid2&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/greenpeace2.0_S1_6_mod2context_7.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -1621,7 +1669,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
 
   &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="49" name="1mod2vid2" tags="nobr" position="1100,600" size="100,100">&lt;&lt;set $prevpass to &quot;1mod2int1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="1mod2vid2" tags="nobr" position="600,725" size="100,100">&lt;&lt;set $prevpass to &quot;1mod2int1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;1mod2vid2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;1mod2int2&quot;&gt;&gt;
 
@@ -1635,7 +1683,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
 &lt;&lt;include &quot;footervid&quot;&gt;&gt;
      &lt;&lt;timed 191s &gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;
      &lt;&lt;/timed&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="50" name="1mod2int2" tags="nobr" position="1225,600" size="100,100">&lt;&lt;set $prevpass to &quot;1mod2vid2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="56" name="1mod2int2" tags="nobr" position="725,725" size="100,100">&lt;&lt;set $prevpass to &quot;1mod2vid2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;1mod2int2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;1mod2vid3&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/greenpeace2.0_S1_6_mod2context_8.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -1653,7 +1701,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
 
   &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="51" name="1mod2vid3" tags="nobr" position="100,725" size="100,100">&lt;&lt;set $prevpass to &quot;1mod2int2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="1mod2vid3" tags="nobr" position="850,725" size="100,100">&lt;&lt;set $prevpass to &quot;1mod2int2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;1mod2vid3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;1mod2int3&quot;&gt;&gt;
 
@@ -1666,7 +1714,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
 &lt;&lt;include &quot;footervid&quot;&gt;&gt;
      &lt;&lt;timed 166s &gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;
      &lt;&lt;/timed&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="52" name="1mod2int3" tags="nobr" position="225,725" size="100,100">&lt;&lt;set $prevpass to &quot;1mod1vid3&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="58" name="1mod2int3" tags="nobr" position="975,725" size="100,100">&lt;&lt;set $prevpass to &quot;1mod1vid3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;1mod2int3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;1mod2outro1&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/greenpeace2.0_S1_6_mod2context_9.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -1683,7 +1731,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
 
   &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="53" name="1mod2outro1" tags="nobr" position="350,725" size="100,100">&lt;&lt;set $prevpass to &quot;1mod1vid3&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="1mod2outro1" tags="nobr" position="1100,725" size="100,100">&lt;&lt;set $prevpass to &quot;1mod1vid3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;1mod2outro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;1mod2outro2&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/greenpeace2.0_S1_7_mod2outro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -1702,7 +1750,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
 &lt;/div&gt;
 &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="54" name="1mod2outro2" tags="nobr" position="475,725" size="100,100">&lt;&lt;set $prevpass to &quot;1mod2outro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="60" name="1mod2outro2" tags="nobr" position="1225,725" size="100,100">&lt;&lt;set $prevpass to &quot;1mod2outro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;1mod2outro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;1mod3intro&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 2&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -1720,7 +1768,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
 &lt;/div&gt;
 &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="1mod3intro" tags="nobr" position="600,725" size="100,100">&lt;&lt;set $prevpass to &quot;1mod2outro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="61" name="1mod3intro" tags="nobr" position="100,850" size="100,100">&lt;&lt;set $prevpass to &quot;1mod2outro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;1mod3intro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;1mod3codename&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 3&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -1738,7 +1786,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
 &lt;/div&gt;
 &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="56" name="1mod3codename" tags="nobr" position="725,725" size="100,100">&lt;&lt;set $prevpass to &quot;1mod3intro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="62" name="1mod3codename" tags="nobr" position="225,850" size="100,100">&lt;&lt;set $prevpass to &quot;1mod3intro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;1mod3codename&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;1sessionoutro&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 3&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -1764,7 +1812,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
 
   &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="1sessionoutro" tags="nobr" position="850,725" size="100,100">&lt;&lt;set $prevpass to &quot;1mod3codename&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="1sessionoutro" tags="nobr" position="350,850" size="100,100">&lt;&lt;set $prevpass to &quot;1mod3codename&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;1sessionoutro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;cardoptions&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Session 1&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -1799,7 +1847,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
 
 
 
-/* SESSION 2 */</tw-passagedata><tw-passagedata pid="58" name="2intro" tags="nobr" position="975,725" size="100,100">&lt;&lt;set $prevpass to &quot;cardoptions&quot;&gt;&gt;
+/* SESSION 2 */</tw-passagedata><tw-passagedata pid="64" name="2intro" tags="nobr" position="475,850" size="100,100">&lt;&lt;set $prevpass to &quot;cardoptions&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2intro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;2intro2&quot;&gt;&gt;
 
@@ -1822,7 +1870,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="2intro2" tags="nobr" position="1100,725" size="100,100">&lt;&lt;set $prevpass to &quot;2intro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="2intro2" tags="nobr" position="600,850" size="100,100">&lt;&lt;set $prevpass to &quot;2intro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2intro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;2mod4intro&quot;&gt;&gt;
 
@@ -1843,7 +1891,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="60" name="2mod4intro" tags="nobr" position="1225,725" size="100,100">&lt;&lt;set $prevpass to &quot;2intro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="66" name="2mod4intro" tags="nobr" position="725,850" size="100,100">&lt;&lt;set $prevpass to &quot;2intro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2mod4intro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;2mod4intro2&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 4&quot;&gt;&gt;
@@ -1864,7 +1912,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="61" name="2mod4intro2" tags="nobr" position="100,850" size="100,100">&lt;&lt;set $prevpass to &quot;2mod4intro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="67" name="2mod4intro2" tags="nobr" position="850,850" size="100,100">&lt;&lt;set $prevpass to &quot;2mod4intro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2mod4intro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;2mod4intro3&quot;&gt;&gt;
 
@@ -1882,7 +1930,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="62" name="2mod4intro3" tags="nobr" position="225,850" size="100,100">&lt;&lt;set $prevpass to &quot;2mod4intro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="68" name="2mod4intro3" tags="nobr" position="975,850" size="100,100">&lt;&lt;set $prevpass to &quot;2mod4intro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2mod4intro3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;2mod4intro4&quot;&gt;&gt;
 
@@ -1906,7 +1954,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="2mod4intro4" tags="nobr" position="350,850" size="100,100">&lt;&lt;set $prevpass to &quot;2mod4intro3&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="69" name="2mod4intro4" tags="nobr" position="1100,850" size="100,100">&lt;&lt;set $prevpass to &quot;2mod4intro3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2mod4intro4&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;2mod4intro5&quot;&gt;&gt;
 
@@ -1921,7 +1969,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="64" name="2mod4intro5" tags="nobr" position="475,850" size="100,100">&lt;&lt;set $prevpass to &quot;2mod4intro4&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="70" name="2mod4intro5" tags="nobr" position="1225,850" size="100,100">&lt;&lt;set $prevpass to &quot;2mod4intro4&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2mod4intro5&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;2mod4intro6&quot;&gt;&gt;
 
@@ -1938,7 +1986,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="2mod4intro6" tags="nobr" position="600,850" size="100,100">&lt;&lt;set $prevpass to &quot;2mod4intro5&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="71" name="2mod4intro6" tags="nobr" position="100,975" size="100,100">&lt;&lt;set $prevpass to &quot;2mod4intro5&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2mod4intro6&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;2mod4outro&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 4&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -1962,7 +2010,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="66" name="2mod4outro" tags="nobr" position="725,850" size="100,100">&lt;&lt;set $prevpass to &quot;2mod4intro6&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="72" name="2mod4outro" tags="nobr" position="225,975" size="100,100">&lt;&lt;set $prevpass to &quot;2mod4intro6&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2mod4outro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;2mod4outro2&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 4&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -1981,7 +2029,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="67" name="2mod4outro2" tags="nobr" position="850,850" size="100,100">&lt;&lt;set $prevpass to &quot;2mod4outro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="73" name="2mod4outro2" tags="nobr" position="350,975" size="100,100">&lt;&lt;set $prevpass to &quot;2mod4outro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2mod4outro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;2mod5intro&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 4&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -1998,7 +2046,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="68" name="2mod5intro" tags="nobr" position="975,850" size="100,100">&lt;&lt;set $prevpass to &quot;2mod4outro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="74" name="2mod5intro" tags="nobr" position="475,975" size="100,100">&lt;&lt;set $prevpass to &quot;2mod4outro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2mod5intro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;2mod5outro&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 5&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -2022,7 +2070,7 @@ When finished, click &lt;&lt;button &quot;Move On&quot;&gt;&gt;&lt;&lt;set $prev
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="69" name="2mod5outro" tags="nobr" position="1100,850" size="100,100">&lt;&lt;set $prevpass to &quot;2mod5intro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="75" name="2mod5outro" tags="nobr" position="600,975" size="100,100">&lt;&lt;set $prevpass to &quot;2mod5intro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2mod5outro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;2mod5outro2&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 5&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -2043,7 +2091,7 @@ When finished, click &lt;&lt;button &quot;Move On&quot;&gt;&gt;&lt;&lt;set $prev
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="70" name="2mod5outro2" tags="nobr" position="1225,850" size="100,100">&lt;&lt;set $prevpass to &quot;2mod5outro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="76" name="2mod5outro2" tags="nobr" position="725,975" size="100,100">&lt;&lt;set $prevpass to &quot;2mod5outro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2mod5outro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;2mod6intro&quot;&gt;&gt;
 &lt;&lt;set $focusoption to &quot;?&quot;&gt;&gt;
@@ -2111,7 +2159,7 @@ When finished, click &lt;&lt;button &quot;Move On&quot;&gt;&gt;&lt;&lt;set $prev
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
 &lt;/div&gt;
-&lt;&lt;set $mod5 to true&gt;&gt;</tw-passagedata><tw-passagedata pid="71" name="2mod6intro" tags="nobr" position="100,975" size="100,100">&lt;&lt;set $prevpass to &quot;2mod5outro2&quot;&gt;&gt;
+&lt;&lt;set $mod5 to true&gt;&gt;</tw-passagedata><tw-passagedata pid="77" name="2mod6intro" tags="nobr" position="850,975" size="100,100">&lt;&lt;set $prevpass to &quot;2mod5outro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2mod6intro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;2sessionoutro&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 6&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -2126,7 +2174,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="72" name="2mod6Airoptions" tags="nobr" position="225,975" size="100,100">&lt;&lt;set $prevpass to &quot;2mod5outro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="78" name="2mod6Airoptions" tags="nobr" position="975,975" size="100,100">&lt;&lt;set $prevpass to &quot;2mod5outro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2mod6Airoptions&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;&quot;&gt;&gt;
 
@@ -2177,7 +2225,7 @@ $text
 
   &lt;&lt;if $focusoption isnot &quot;?&quot;&gt;&gt;
       &lt;&lt;goto &quot;chosenfocusoption&quot;&gt;&gt;
-    &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="73" name="chosenfocusoption" tags="nobr" position="350,975" size="100,100">&lt;&lt;set $prevpass to &quot;2mod5outro2&quot;&gt;&gt;
+    &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="79" name="chosenfocusoption" tags="nobr" position="1100,975" size="100,100">&lt;&lt;set $prevpass to &quot;2mod5outro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;chosenfocusoption&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;2sessionoutro&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; &quot;stop&quot;&gt;&gt;
@@ -2198,7 +2246,7 @@ $text
     &lt;&lt;button &quot;Choose again&quot;&gt;&gt;
       &lt;&lt;goto &quot;2mod5outro2&quot;&gt;&gt;
       &lt;&lt;/button&gt;&gt;
-&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="74" name="focus-option-btns" tags="nobr" position="475,975" size="100,100">&lt;div class=&quot;btn-container&quot;&gt;
+&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="80" name="focus-option-btns" tags="nobr" position="1225,975" size="100,100">&lt;div class=&quot;btn-container&quot;&gt;
       &lt;&lt;button &quot;Pick this&quot;&gt;&gt;
         &lt;&lt;set $focus to $pagefocus&gt;&gt;
         &lt;&lt;set $focusoption to $pagefocusoption&gt;&gt;
@@ -2209,7 +2257,7 @@ $text
         &lt;&lt;button &quot;Back&quot;&gt;&gt;
           &lt;&lt;goto $prevpass&gt;&gt;
         &lt;&lt;/button&gt;&gt;
-    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="75" name="2mod6airoption-green" tags="nobr" position="600,975" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Airoptions&quot;&gt;&gt;
+    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="81" name="2mod6airoption-green" tags="nobr" position="100,1100" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Airoptions&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2mod6airoption-green&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;&quot;&gt;&gt;
 &lt;&lt;set $pagefocus to &quot;Air&quot;&gt;&gt;
@@ -2232,7 +2280,7 @@ $text
 
     &lt;&lt;include &quot;focus-option-btns&quot;&gt;&gt;
 &lt;/div&gt;
-&lt;/main&gt;</tw-passagedata><tw-passagedata pid="76" name="2mod6airoption-pick" tags="nobr" position="725,975" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Airoptions&quot;&gt;&gt;
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="82" name="2mod6airoption-pick" tags="nobr" position="225,1100" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Airoptions&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2mod6airoption-pick&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;&quot;&gt;&gt;
 &lt;&lt;set $pagefocus to &quot;Air&quot;&gt;&gt;
@@ -2253,7 +2301,7 @@ $text
 
     &lt;&lt;include &quot;focus-option-btns&quot;&gt;&gt;
 &lt;/div&gt;
-&lt;/main&gt;</tw-passagedata><tw-passagedata pid="77" name="2mod6airoption-health" tags="nobr" position="850,975" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Airoptions&quot;&gt;&gt;
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="83" name="2mod6airoption-health" tags="nobr" position="350,1100" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Airoptions&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2mod6airoption-health&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;&quot;&gt;&gt;
 &lt;&lt;set $pagefocus to &quot;Air&quot;&gt;&gt;
@@ -2275,7 +2323,7 @@ $text
 
     &lt;&lt;include &quot;focus-option-btns&quot;&gt;&gt;
 &lt;/div&gt;
-&lt;/main&gt;</tw-passagedata><tw-passagedata pid="78" name="2mod6airoption-waste" tags="nobr" position="975,975" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Airoptions&quot;&gt;&gt;
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="84" name="2mod6airoption-waste" tags="nobr" position="475,1100" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Airoptions&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2mod6airoption-waste&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;&quot;&gt;&gt;
 &lt;&lt;set $pagefocus to &quot;Air&quot;&gt;&gt;
@@ -2298,7 +2346,7 @@ $text
 
     &lt;&lt;include &quot;focus-option-btns&quot;&gt;&gt;
 &lt;/div&gt;
-&lt;/main&gt;</tw-passagedata><tw-passagedata pid="79" name="2mod6airoption-transport" tags="nobr" position="1100,975" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Airoptions&quot;&gt;&gt;
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="85" name="2mod6airoption-transport" tags="nobr" position="600,1100" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Airoptions&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2mod6airoption-transport&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;&quot;&gt;&gt;
 &lt;&lt;set $pagefocus to &quot;Air&quot;&gt;&gt;
@@ -2322,7 +2370,7 @@ $text
 
     &lt;&lt;include &quot;focus-option-btns&quot;&gt;&gt;
 &lt;/div&gt;
-&lt;/main&gt;</tw-passagedata><tw-passagedata pid="80" name="2mod6Foodoptions" tags="nobr" position="1225,975" size="100,100">&lt;&lt;set $prevpass to &quot;2mod5outro2&quot;&gt;&gt;
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="86" name="2mod6Foodoptions" tags="nobr" position="725,1100" size="100,100">&lt;&lt;set $prevpass to &quot;2mod5outro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2mod6Foodoptions&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;&quot;&gt;&gt;
 
@@ -2373,7 +2421,7 @@ $text
 
   &lt;&lt;if $focusoption isnot &quot;?&quot;&gt;&gt;
       &lt;&lt;goto &quot;chosenfocusoption&quot;&gt;&gt;
-    &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="81" name="2mod6foodoption-meat" tags="nobr" position="100,1100" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Foodoptions&quot;&gt;&gt;
+    &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="87" name="2mod6foodoption-meat" tags="nobr" position="850,1100" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Foodoptions&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2mod6airoption-meat&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;&quot;&gt;&gt;
 &lt;&lt;set $pagefocus to &quot;Food&quot;&gt;&gt;
@@ -2397,7 +2445,7 @@ $text
     &lt;/div&gt;
      &lt;&lt;include &quot;focus-option-btns&quot;&gt;&gt;
 &lt;/div&gt;
-&lt;/main&gt;</tw-passagedata><tw-passagedata pid="82" name="2mod6foodoption-palm-oil" tags="nobr" position="225,1100" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Foodoptions&quot;&gt;&gt;
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="88" name="2mod6foodoption-palm-oil" tags="nobr" position="975,1100" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Foodoptions&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2mod6airoption-palm-oil&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;&quot;&gt;&gt;
 &lt;&lt;set $pagefocus to &quot;Food&quot;&gt;&gt;
@@ -2419,7 +2467,7 @@ $text
     &lt;/div&gt;
      &lt;&lt;include &quot;focus-option-btns&quot;&gt;&gt;
 &lt;/div&gt;
-&lt;/main&gt;</tw-passagedata><tw-passagedata pid="83" name="2mod6foodoption-packaging" tags="nobr" position="350,1100" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Foodoptions&quot;&gt;&gt;
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="89" name="2mod6foodoption-packaging" tags="nobr" position="1100,1100" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Foodoptions&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2mod6airoption-packaging&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;&quot;&gt;&gt;
 &lt;&lt;set $pagefocus to &quot;Food&quot;&gt;&gt;
@@ -2441,7 +2489,7 @@ $text
     &lt;/div&gt;
      &lt;&lt;include &quot;focus-option-btns&quot;&gt;&gt;
 &lt;/div&gt;
-&lt;/main&gt;</tw-passagedata><tw-passagedata pid="84" name="2mod6foodoption-food-waste" tags="nobr" position="475,1100" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Foodoptions&quot;&gt;&gt;
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="90" name="2mod6foodoption-food-waste" tags="nobr" position="1225,1100" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Foodoptions&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2mod6airoption-food-waste&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;&quot;&gt;&gt;
 &lt;&lt;set $pagefocus to &quot;Food&quot;&gt;&gt;
@@ -2469,7 +2517,7 @@ $text
     &lt;/div&gt;
      &lt;&lt;include &quot;focus-option-btns&quot;&gt;&gt;
 &lt;/div&gt;
-&lt;/main&gt;</tw-passagedata><tw-passagedata pid="85" name="2mod6foodoption-pick" tags="nobr" position="600,1100" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Foodoptions&quot;&gt;&gt;
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="91" name="2mod6foodoption-pick" tags="nobr" position="100,1225" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Foodoptions&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2mod6foodroption-pick&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;&quot;&gt;&gt;
 &lt;&lt;set $pagefocus to &quot;Food&quot;&gt;&gt;
@@ -2490,7 +2538,7 @@ $text
 
     &lt;&lt;include &quot;focus-option-btns&quot;&gt;&gt;
 &lt;/div&gt;
-&lt;/main&gt;</tw-passagedata><tw-passagedata pid="86" name="2mod6Natureoptions" tags="nobr" position="725,1100" size="100,100">&lt;&lt;set $prevpass to &quot;2mod5outro2&quot;&gt;&gt;
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="92" name="2mod6Natureoptions" tags="nobr" position="225,1225" size="100,100">&lt;&lt;set $prevpass to &quot;2mod5outro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2mod6Natureoptions&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;&quot;&gt;&gt;
 
@@ -2541,7 +2589,7 @@ $text
 
   &lt;&lt;if $focusoption isnot &quot;?&quot;&gt;&gt;
       &lt;&lt;goto &quot;chosenfocusoption&quot;&gt;&gt;
-    &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="87" name="2mod6natureoption-deforestation" tags="nobr" position="850,1100" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Natureoptions&quot;&gt;&gt;
+    &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="93" name="2mod6natureoption-deforestation" tags="nobr" position="350,1225" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Natureoptions&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2mod6natureoption-deforestation&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;&quot;&gt;&gt;
 &lt;&lt;set $pagefocus to &quot;Nature&quot;&gt;&gt;
@@ -2565,7 +2613,7 @@ $text
     &lt;/div&gt;
      &lt;&lt;include &quot;focus-option-btns&quot;&gt;&gt;
 &lt;/div&gt;
-&lt;/main&gt;</tw-passagedata><tw-passagedata pid="88" name="2mod6natureoption-pollinators" tags="nobr" position="975,1100" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Natureoptions&quot;&gt;&gt;
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="94" name="2mod6natureoption-pollinators" tags="nobr" position="475,1225" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Natureoptions&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2mod6natureoption-pollinators&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;&quot;&gt;&gt;
 &lt;&lt;set $pagefocus to &quot;Nature&quot;&gt;&gt;
@@ -2588,7 +2636,7 @@ $text
     &lt;/div&gt;
      &lt;&lt;include &quot;focus-option-btns&quot;&gt;&gt;
 &lt;/div&gt;
-&lt;/main&gt;</tw-passagedata><tw-passagedata pid="89" name="2mod6natureoption-biodiversity" tags="nobr" position="1100,1100" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Natureoptions&quot;&gt;&gt;
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="95" name="2mod6natureoption-biodiversity" tags="nobr" position="600,1225" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Natureoptions&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2mod6natureoption-biodiversity&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;&quot;&gt;&gt;
 &lt;&lt;set $pagefocus to &quot;Nature&quot;&gt;&gt;
@@ -2608,7 +2656,7 @@ $text
     &lt;/div&gt;
      &lt;&lt;include &quot;focus-option-btns&quot;&gt;&gt;
 &lt;/div&gt;
-&lt;/main&gt;</tw-passagedata><tw-passagedata pid="90" name="2mod6natureoption-consumerism" tags="nobr" position="1225,1100" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Natureoptions&quot;&gt;&gt;
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="96" name="2mod6natureoption-consumerism" tags="nobr" position="725,1225" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Natureoptions&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2mod6natureoption-consumerism&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;&quot;&gt;&gt;
 &lt;&lt;set $pagefocus to &quot;Nature&quot;&gt;&gt;
@@ -2627,7 +2675,7 @@ $text
     &lt;/div&gt;
      &lt;&lt;include &quot;focus-option-btns&quot;&gt;&gt;
 &lt;/div&gt;
-&lt;/main&gt;</tw-passagedata><tw-passagedata pid="91" name="2mod6natureoption-pick" tags="nobr" position="100,1225" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Natureoptions&quot;&gt;&gt;
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="97" name="2mod6natureoption-pick" tags="nobr" position="850,1225" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Natureoptions&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2mod6natureroption-pick&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;&quot;&gt;&gt;
 &lt;&lt;set $pagefocus to &quot;Nature&quot;&gt;&gt;
@@ -2648,7 +2696,7 @@ $text
 
     &lt;&lt;include &quot;focus-option-btns&quot;&gt;&gt;
 &lt;/div&gt;
-&lt;/main&gt;</tw-passagedata><tw-passagedata pid="92" name="2mod6Wateroptions" tags="nobr" position="225,1225" size="100,100">&lt;&lt;set $prevpass to &quot;2mod5outro2&quot;&gt;&gt;
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="98" name="2mod6Wateroptions" tags="nobr" position="975,1225" size="100,100">&lt;&lt;set $prevpass to &quot;2mod5outro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2mod6Wateroptions&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;&quot;&gt;&gt;
 
@@ -2699,7 +2747,7 @@ $text
 
   &lt;&lt;if $focusoption isnot &quot;?&quot;&gt;&gt;
       &lt;&lt;goto &quot;chosenfocusoption&quot;&gt;&gt;
-    &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="93" name="2mod6wateroption-floods" tags="nobr" position="350,1225" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Wateroptions&quot;&gt;&gt;
+    &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="99" name="2mod6wateroption-floods" tags="nobr" position="1100,1225" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Wateroptions&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2mod6wateroption-floods&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;&quot;&gt;&gt;
 &lt;&lt;set $pagefocus to &quot;Water&quot;&gt;&gt;
@@ -2719,7 +2767,7 @@ $text
     &lt;/div&gt;
      &lt;&lt;include &quot;focus-option-btns&quot;&gt;&gt;
 &lt;/div&gt;
-&lt;/main&gt;</tw-passagedata><tw-passagedata pid="94" name="2mod6wateroption-plastic" tags="nobr" position="475,1225" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Wateroptions&quot;&gt;&gt;
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="100" name="2mod6wateroption-plastic" tags="nobr" position="1225,1225" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Wateroptions&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2mod6wateroption-plastic&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;&quot;&gt;&gt;
 &lt;&lt;set $pagefocus to &quot;Water&quot;&gt;&gt;
@@ -2739,7 +2787,7 @@ $text
     &lt;/div&gt;
      &lt;&lt;include &quot;focus-option-btns&quot;&gt;&gt;
 &lt;/div&gt;
-&lt;/main&gt;</tw-passagedata><tw-passagedata pid="95" name="2mod6wateroption-ocean-health" tags="nobr" position="600,1225" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Wateroptions&quot;&gt;&gt;
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="101" name="2mod6wateroption-ocean-health" tags="nobr" position="100,1350" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Wateroptions&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2mod6wateroption-ocean-health&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;&quot;&gt;&gt;
 &lt;&lt;set $pagefocus to &quot;Water&quot;&gt;&gt;
@@ -2763,7 +2811,7 @@ $text
     &lt;/div&gt;
      &lt;&lt;include &quot;focus-option-btns&quot;&gt;&gt;
 &lt;/div&gt;
-&lt;/main&gt;</tw-passagedata><tw-passagedata pid="96" name="2mod6wateroption-fast-fashion" tags="nobr" position="725,1225" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Wateroptions&quot;&gt;&gt;
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="102" name="2mod6wateroption-fast-fashion" tags="nobr" position="225,1350" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Wateroptions&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2mod6wateroption-fast-fashion&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;&quot;&gt;&gt;
 &lt;&lt;set $pagefocus to &quot;Water&quot;&gt;&gt;
@@ -2782,7 +2830,7 @@ $text
     &lt;/div&gt;
      &lt;&lt;include &quot;focus-option-btns&quot;&gt;&gt;
 &lt;/div&gt;
-&lt;/main&gt;</tw-passagedata><tw-passagedata pid="97" name="2mod6wateroption-pick" tags="nobr" position="850,1225" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Wateroptions&quot;&gt;&gt;
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="103" name="2mod6wateroption-pick" tags="nobr" position="350,1350" size="100,100">&lt;&lt;set $prevpass to &quot;2mod6Wateroptions&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2mod6waterroption-pick&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;&quot;&gt;&gt;
 &lt;&lt;set $pagefocus to &quot;Water&quot;&gt;&gt;
@@ -2803,7 +2851,7 @@ $text
 
     &lt;&lt;include &quot;focus-option-btns&quot;&gt;&gt;
 &lt;/div&gt;
-&lt;/main&gt;</tw-passagedata><tw-passagedata pid="98" name="2sessionoutro" tags="nobr" position="975,1225" size="100,100">&lt;&lt;set $prevpass to &quot;chosenfocusoption&quot;&gt;&gt;
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="104" name="2sessionoutro" tags="nobr" position="475,1350" size="100,100">&lt;&lt;set $prevpass to &quot;chosenfocusoption&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2sessionoutro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;cardoptions&quot;&gt;&gt;
 &lt;&lt;set $mod3 to true&gt;&gt;
@@ -2828,7 +2876,7 @@ $text
 &lt;/div&gt;
 
 
-/* SESSION 3 */</tw-passagedata><tw-passagedata pid="99" name="3intro" tags="nobr" position="1100,1225" size="100,100">&lt;&lt;set $prevpass to &quot;cardoptions&quot;&gt;&gt;
+/* SESSION 3 */</tw-passagedata><tw-passagedata pid="105" name="3intro" tags="nobr" position="600,1350" size="100,100">&lt;&lt;set $prevpass to &quot;cardoptions&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3intro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;3intro2&quot;&gt;&gt;
 
@@ -2847,7 +2895,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="100" name="3intro2" tags="nobr" position="1225,1225" size="100,100">&lt;&lt;set $prevpass to &quot;3intro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="106" name="3intro2" tags="nobr" position="725,1350" size="100,100">&lt;&lt;set $prevpass to &quot;3intro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3intro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;3mod7intro&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Session 3&quot;&gt;&gt;
@@ -2868,7 +2916,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="101" name="3mod7intro" tags="nobr" position="100,1350" size="100,100">&lt;&lt;set $prevpass to &quot;3intro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="107" name="3mod7intro" tags="nobr" position="850,1350" size="100,100">&lt;&lt;set $prevpass to &quot;3intro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3mod7intro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;3mod7&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 7&quot;&gt;&gt;
@@ -2890,7 +2938,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="102" name="3mod7" tags="nobr" position="225,1350" size="100,100">&lt;&lt;set $prevpass to &quot;3mod7intro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="108" name="3mod7" tags="nobr" position="975,1350" size="100,100">&lt;&lt;set $prevpass to &quot;3mod7intro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3mod7&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;3mod7outro&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 7&quot;&gt;&gt;
@@ -2911,7 +2959,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="103" name="3mod7outro" tags="nobr" position="350,1350" size="100,100">&lt;&lt;set $prevpass to &quot;3mod7&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="109" name="3mod7outro" tags="nobr" position="1100,1350" size="100,100">&lt;&lt;set $prevpass to &quot;3mod7&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3mod7outro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;3mod8intro&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 7&quot;&gt;&gt;
@@ -2936,7 +2984,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="104" name="3mod8intro" tags="nobr" position="475,1350" size="100,100">&lt;&lt;set $prevpass to &quot;3mod7outro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="110" name="3mod8intro" tags="nobr" position="1225,1350" size="100,100">&lt;&lt;set $prevpass to &quot;3mod7outro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3mod8intro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;3mod8intro2&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 8&quot;&gt;&gt;
@@ -2959,7 +3007,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="105" name="3mod8intro2" tags="nobr" position="600,1350" size="100,100">&lt;&lt;set $prevpass to &quot;3mod8intro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="111" name="3mod8intro2" tags="nobr" position="100,1475" size="100,100">&lt;&lt;set $prevpass to &quot;3mod8intro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3mod8intro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;3mod8&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 8&quot;&gt;&gt;
@@ -2983,7 +3031,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="106" name="3mod8" tags="nobr" position="725,1350" size="100,100">&lt;&lt;set $prevpass to &quot;3mod8intro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="112" name="3mod8" tags="nobr" position="225,1475" size="100,100">&lt;&lt;set $prevpass to &quot;3mod8intro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3mod8&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;3mod8outro&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 8&quot;&gt;&gt;
@@ -3006,7 +3054,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="107" name="3mod8outro" tags="nobr" position="850,1350" size="100,100">&lt;&lt;set $prevpass to &quot;3mod8&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="113" name="3mod8outro" tags="nobr" position="350,1475" size="100,100">&lt;&lt;set $prevpass to &quot;3mod8&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3mod8outro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;3mod9intro&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 8&quot;&gt;&gt;
@@ -3031,7 +3079,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="108" name="3mod9intro" tags="nobr" position="975,1350" size="100,100">&lt;&lt;set $prevpass to &quot;3intro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="114" name="3mod9intro" tags="nobr" position="475,1475" size="100,100">&lt;&lt;set $prevpass to &quot;3intro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3mod9intro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;3mod9&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 9&quot;&gt;&gt;
@@ -3051,7 +3099,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="109" name="3mod9" tags="nobr" position="1100,1350" size="100,100">&lt;&lt;set $prevpass to &quot;3mod9intro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="115" name="3mod9" tags="nobr" position="600,1475" size="100,100">&lt;&lt;set $prevpass to &quot;3mod9intro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3mod9&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;3mod10intro&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 9&quot;&gt;&gt;
@@ -3082,7 +3130,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="110" name="3mod10intro" tags="nobr" position="1225,1350" size="100,100">&lt;&lt;set $prevpass to &quot;3mod9&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="116" name="3mod10intro" tags="nobr" position="725,1475" size="100,100">&lt;&lt;set $prevpass to &quot;3mod9&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3mod10intro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;3mod10&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 10&quot;&gt;&gt;
@@ -3107,7 +3155,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="111" name="3mod10" tags="nobr" position="100,1475" size="100,100">&lt;&lt;set $prevpass to &quot;3mod10intro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="117" name="3mod10" tags="nobr" position="850,1475" size="100,100">&lt;&lt;set $prevpass to &quot;3mod10intro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3mod10&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;3sessionoutro&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 10&quot;&gt;&gt;
@@ -3129,7 +3177,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="112" name="3sessionoutro" tags="nobr" position="225,1475" size="100,100">&lt;&lt;set $prevpass to &quot;3mod10&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="118" name="3sessionoutro" tags="nobr" position="975,1475" size="100,100">&lt;&lt;set $prevpass to &quot;3mod10&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3sessionoutro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;3sessionoutro2&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Session 3&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -3152,7 +3200,7 @@ $text
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="113" name="3sessionoutro2" tags="nobr" position="350,1475" size="100,100">&lt;&lt;set $prevpass to &quot;3sessionoutro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="119" name="3sessionoutro2" tags="nobr" position="1100,1475" size="100,100">&lt;&lt;set $prevpass to &quot;3sessionoutro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3sessionoutro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;3sessionoutro3&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Session 3&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -3175,7 +3223,7 @@ $text
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="114" name="3sessionoutro3" tags="nobr" position="475,1475" size="100,100">&lt;&lt;set $prevpass to &quot;3sessionoutro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="120" name="3sessionoutro3" tags="nobr" position="1225,1475" size="100,100">&lt;&lt;set $prevpass to &quot;3sessionoutro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3sessionoutro3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;cardoptions&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Session 3&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -3201,7 +3249,7 @@ $text
 &lt;/div&gt;
 
 
-/* SESSION 4  */</tw-passagedata><tw-passagedata pid="115" name="4intro" tags="nobr" position="600,1475" size="100,100">&lt;&lt;set $prevpass to &quot;cardoptions&quot;&gt;&gt;
+/* SESSION 4  */</tw-passagedata><tw-passagedata pid="121" name="4intro" tags="nobr" position="100,1600" size="100,100">&lt;&lt;set $prevpass to &quot;cardoptions&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4intro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4intro2&quot;&gt;&gt;
 
@@ -3222,7 +3270,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="116" name="4intro2" tags="nobr" position="725,1475" size="100,100">&lt;&lt;set $prevpass to &quot;4intro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="122" name="4intro2" tags="nobr" position="225,1600" size="100,100">&lt;&lt;set $prevpass to &quot;4intro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4intro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod11outro&quot;&gt;&gt;
 
@@ -3243,7 +3291,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="117" name="4mod11outro" tags="nobr" position="850,1475" size="100,100">&lt;&lt;set $prevpass to &quot;4intro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="123" name="4mod11outro" tags="nobr" position="350,1600" size="100,100">&lt;&lt;set $prevpass to &quot;4intro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod11outro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod12intro&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 11&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -3264,7 +3312,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="118" name="4mod12intro" tags="nobr" position="975,1475" size="100,100">&lt;&lt;set $prevpass to &quot;4mod11outro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="124" name="4mod12intro" tags="nobr" position="475,1600" size="100,100">&lt;&lt;set $prevpass to &quot;4mod11outro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod12intro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod12&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 12&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -3284,7 +3332,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="119" name="4mod12" tags="nobr" position="1100,1475" size="100,100">&lt;&lt;set $prevpass to &quot;4mod12intro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="125" name="4mod12" tags="nobr" position="600,1600" size="100,100">&lt;&lt;set $prevpass to &quot;4mod12intro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod12&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod12outro&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 12&quot;&gt;&gt;
@@ -3308,7 +3356,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="120" name="4mod12outro" tags="nobr" position="1225,1475" size="100,100">&lt;&lt;set $prevpass to &quot;4mod12&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="126" name="4mod12outro" tags="nobr" position="725,1600" size="100,100">&lt;&lt;set $prevpass to &quot;4mod12&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod12outro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod13intro&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 12&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -3326,7 +3374,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="121" name="4mod13intro" tags="nobr" position="100,1600" size="100,100">&lt;&lt;set $prevpass to &quot;4mod12outro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="127" name="4mod13intro" tags="nobr" position="850,1600" size="100,100">&lt;&lt;set $prevpass to &quot;4mod12outro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod13intro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod13intro2&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 13&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -3346,7 +3394,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="122" name="4mod13intro2" tags="nobr" position="225,1600" size="100,100">&lt;&lt;set $prevpass to &quot;4mod13intro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="128" name="4mod13intro2" tags="nobr" position="975,1600" size="100,100">&lt;&lt;set $prevpass to &quot;4mod13intro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod13intro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod13&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 13&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -3368,7 +3416,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="123" name="4mod13" tags="nobr" position="350,1600" size="100,100">&lt;&lt;set $prevpass to &quot;4mod13intro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="129" name="4mod13" tags="nobr" position="1100,1600" size="100,100">&lt;&lt;set $prevpass to &quot;4mod13intro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod13&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod13outro&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 13&quot;&gt;&gt;
@@ -3395,7 +3443,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="124" name="4mod13outro" tags="nobr" position="475,1600" size="100,100">&lt;&lt;set $prevpass to &quot;4mod13&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="130" name="4mod13outro" tags="nobr" position="1225,1600" size="100,100">&lt;&lt;set $prevpass to &quot;4mod13&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod13outro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod14intro&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 13&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -3414,7 +3462,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="125" name="4mod14intro" tags="nobr" position="600,1600" size="100,100">&lt;&lt;set $prevpass to &quot;4mod14outro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="131" name="4mod14intro" tags="nobr" position="100,1725" size="100,100">&lt;&lt;set $prevpass to &quot;4mod14outro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod14intro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod14intro2&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 14&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -3431,7 +3479,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="126" name="4mod14intro2" tags="nobr" position="725,1600" size="100,100">&lt;&lt;set $prevpass to &quot;4mod14intro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="132" name="4mod14intro2" tags="nobr" position="225,1725" size="100,100">&lt;&lt;set $prevpass to &quot;4mod14intro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod14intro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod14intro3&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 14&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -3450,7 +3498,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="127" name="4mod14intro3" tags="nobr" position="850,1600" size="100,100">&lt;&lt;set $prevpass to &quot;4mod14intro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="133" name="4mod14intro3" tags="nobr" position="350,1725" size="100,100">&lt;&lt;set $prevpass to &quot;4mod14intro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod14intro3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod14intro4&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 14&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -3469,7 +3517,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="128" name="4mod14intro4" tags="nobr" position="975,1600" size="100,100">&lt;&lt;set $prevpass to &quot;4mod14intro3&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="134" name="4mod14intro4" tags="nobr" position="475,1725" size="100,100">&lt;&lt;set $prevpass to &quot;4mod14intro3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod14intro4&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod14&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 14&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -3487,7 +3535,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="129" name="4mod14" tags="nobr" position="1100,1600" size="100,100">&lt;&lt;set $prevpass to &quot;4mod14intro4&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="135" name="4mod14" tags="nobr" position="600,1725" size="100,100">&lt;&lt;set $prevpass to &quot;4mod14intro4&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod14&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod14outro&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 14&quot;&gt;&gt;
@@ -3512,7 +3560,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="130" name="4mod14outro" tags="nobr" position="1225,1600" size="100,100">&lt;&lt;set $prevpass to &quot;4mod14&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="136" name="4mod14outro" tags="nobr" position="725,1725" size="100,100">&lt;&lt;set $prevpass to &quot;4mod14&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod14outro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4sessionoutro&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 14&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -3532,7 +3580,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="131" name="4sessionoutro" tags="nobr" position="100,1725" size="100,100">&lt;&lt;set $prevpass to &quot;4mod14outro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="137" name="4sessionoutro" tags="nobr" position="850,1725" size="100,100">&lt;&lt;set $prevpass to &quot;4mod14outro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4sessionoutro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;cardoptions&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Session 4&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -3559,7 +3607,7 @@ $text
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="132" name="5intro" tags="nobr" position="225,1725" size="100,100">&lt;&lt;set $prevpass to &quot;cardoptions&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="138" name="5intro" tags="nobr" position="975,1725" size="100,100">&lt;&lt;set $prevpass to &quot;cardoptions&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5intro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5modgame&quot;&gt;&gt;
 
@@ -3581,7 +3629,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="133" name="5modgame" tags="nobr" position="350,1725" size="100,100">&lt;&lt;set $prevpass to &quot;5intro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="139" name="5modgame" tags="nobr" position="1100,1725" size="100,100">&lt;&lt;set $prevpass to &quot;5intro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5modgame&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5mod15intro&quot;&gt;&gt;
 
@@ -3607,7 +3655,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="134" name="5mod15intro" tags="nobr" position="475,1725" size="100,100">&lt;&lt;set $prevpass to &quot;4mod12outro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="140" name="5mod15intro" tags="nobr" position="1225,1725" size="100,100">&lt;&lt;set $prevpass to &quot;4mod12outro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod15intro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5mod15intro2&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 15&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -3627,7 +3675,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="135" name="5mod15intro2" tags="nobr" position="600,1725" size="100,100">&lt;&lt;set $prevpass to &quot;5mod15intro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="141" name="5mod15intro2" tags="nobr" position="100,1850" size="100,100">&lt;&lt;set $prevpass to &quot;5mod15intro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod15intro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5mod15outro&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 15&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -3649,7 +3697,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="136" name="5mod15outro" tags="nobr" position="725,1725" size="100,100">&lt;&lt;set $prevpass to &quot;5mod15intro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="142" name="5mod15outro" tags="nobr" position="225,1850" size="100,100">&lt;&lt;set $prevpass to &quot;5mod15intro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod15outro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5mod16intro&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 15&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -3668,7 +3716,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="137" name="5mod16intro" tags="nobr" position="850,1725" size="100,100">&lt;&lt;set $prevpass to &quot;5mod16outro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="143" name="5mod16intro" tags="nobr" position="350,1850" size="100,100">&lt;&lt;set $prevpass to &quot;5mod16outro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod16intro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5mod16intro2&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 16&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -3689,7 +3737,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="138" name="5mod16intro2" tags="nobr" position="975,1725" size="100,100">&lt;&lt;set $prevpass to &quot;5mod16intro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="144" name="5mod16intro2" tags="nobr" position="475,1850" size="100,100">&lt;&lt;set $prevpass to &quot;5mod16intro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod16intro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5mod16intro3&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 16&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -3709,7 +3757,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="139" name="5mod16intro3" tags="nobr" position="1100,1725" size="100,100">&lt;&lt;set $prevpass to &quot;5mod16intro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="145" name="5mod16intro3" tags="nobr" position="600,1850" size="100,100">&lt;&lt;set $prevpass to &quot;5mod16intro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod16intro3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5mod16&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 16&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -3728,7 +3776,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="140" name="5mod16" tags="nobr" position="1225,1725" size="100,100">&lt;&lt;set $prevpass to &quot;5mod16intro3&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="146" name="5mod16" tags="nobr" position="725,1850" size="100,100">&lt;&lt;set $prevpass to &quot;5mod16intro3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod16&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5mod16outro&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 16&quot;&gt;&gt;
@@ -3748,7 +3796,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="141" name="5mod16outro" tags="nobr" position="100,1850" size="100,100">&lt;&lt;set $prevpass to &quot;5mod16&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="147" name="5mod16outro" tags="nobr" position="850,1850" size="100,100">&lt;&lt;set $prevpass to &quot;5mod16&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod16outro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5mod17intro&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 16&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -3767,7 +3815,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="142" name="5mod17intro" tags="nobr" position="225,1850" size="100,100">&lt;&lt;set $prevpass to &quot;5mod17outro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="148" name="5mod17intro" tags="nobr" position="975,1850" size="100,100">&lt;&lt;set $prevpass to &quot;5mod17outro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod17intro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5mod17intro2&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 17&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -3787,7 +3835,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="143" name="5mod17intro2" tags="nobr" position="350,1850" size="100,100">&lt;&lt;set $prevpass to &quot;5mod17intro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="149" name="5mod17intro2" tags="nobr" position="1100,1850" size="100,100">&lt;&lt;set $prevpass to &quot;5mod17intro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod17intro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5mod17intro3&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 17&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -3803,7 +3851,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="144" name="5mod17intro3" tags="nobr" position="475,1850" size="100,100">&lt;&lt;set $prevpass to &quot;5mod17intro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="150" name="5mod17intro3" tags="nobr" position="1225,1850" size="100,100">&lt;&lt;set $prevpass to &quot;5mod17intro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod17intro3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5mod17intro4&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 17&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -3822,7 +3870,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="145" name="5mod17intro4" tags="nobr" position="600,1850" size="100,100">&lt;&lt;set $prevpass to &quot;5mod17intro3&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="151" name="5mod17intro4" tags="nobr" position="100,1975" size="100,100">&lt;&lt;set $prevpass to &quot;5mod17intro3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod17intro4&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5mod17intro5&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 17&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -3842,7 +3890,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="146" name="5mod17intro5" tags="nobr" position="725,1850" size="100,100">&lt;&lt;set $prevpass to &quot;5mod17intro4&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="152" name="5mod17intro5" tags="nobr" position="225,1975" size="100,100">&lt;&lt;set $prevpass to &quot;5mod17intro4&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod17intro5&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5mod17intro6&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 17&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -3862,7 +3910,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="147" name="5mod17intro6" tags="nobr" position="850,1850" size="100,100">&lt;&lt;set $prevpass to &quot;5mod17intro5&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="153" name="5mod17intro6" tags="nobr" position="350,1975" size="100,100">&lt;&lt;set $prevpass to &quot;5mod17intro5&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod17intro6&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5mod17&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 17&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -3882,7 +3930,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="148" name="5mod17" tags="nobr" position="975,1850" size="100,100">&lt;&lt;set $prevpass to &quot;5mod17intro6&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="154" name="5mod17" tags="nobr" position="475,1975" size="100,100">&lt;&lt;set $prevpass to &quot;5mod17intro6&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod17&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5mod17outro&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 17&quot;&gt;&gt;
@@ -3904,7 +3952,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="149" name="5mod17b" tags="nobr" position="1100,1850" size="100,100">&lt;&lt;set $prevpass to &quot;5mod17intro6&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="155" name="5mod17b" tags="nobr" position="600,1975" size="100,100">&lt;&lt;set $prevpass to &quot;5mod17intro6&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod17&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5mod17outro&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 17&quot;&gt;&gt;
@@ -3926,7 +3974,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="150" name="5mod17c" tags="nobr" position="1225,1850" size="100,100">&lt;&lt;set $prevpass to &quot;5mod17intro6&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="156" name="5mod17c" tags="nobr" position="725,1975" size="100,100">&lt;&lt;set $prevpass to &quot;5mod17intro6&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod17c&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5mod17outro&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 17&quot;&gt;&gt;
@@ -3947,7 +3995,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="151" name="5mod17outro" tags="nobr" position="100,1975" size="100,100">&lt;&lt;set $prevpass to &quot;5mod17c&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="157" name="5mod17outro" tags="nobr" position="850,1975" size="100,100">&lt;&lt;set $prevpass to &quot;5mod17c&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod17outro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5mod17outro2&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 17&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -3966,7 +4014,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="152" name="5mod17outro2" tags="nobr" position="225,1975" size="100,100">&lt;&lt;set $prevpass to &quot;5mod17outro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="158" name="5mod17outro2" tags="nobr" position="975,1975" size="100,100">&lt;&lt;set $prevpass to &quot;5mod17outro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod17outro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5mod18intro&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 17&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -3986,7 +4034,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="153" name="5mod18intro" tags="nobr" position="350,1975" size="100,100">&lt;&lt;set $prevpass to &quot;5mod18outro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="159" name="5mod18intro" tags="nobr" position="1100,1975" size="100,100">&lt;&lt;set $prevpass to &quot;5mod18outro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod18intro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5mod18&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 18&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -4004,7 +4052,7 @@ $text
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="154" name="5mod18" tags="nobr" position="475,1975" size="100,100">&lt;&lt;set $prevpass to &quot;5mod18intro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="160" name="5mod18" tags="nobr" position="1225,1975" size="100,100">&lt;&lt;set $prevpass to &quot;5mod18intro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod18&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5mod18b&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 18&quot;&gt;&gt;
@@ -4029,7 +4077,7 @@ HEISTING BOARD
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="155" name="5mod18b" tags="nobr" position="600,1975" size="100,100">&lt;&lt;set $prevpass to &quot;5mod18&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="161" name="5mod18b" tags="nobr" position="100,2100" size="100,100">&lt;&lt;set $prevpass to &quot;5mod18&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod18b&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5mod18outro&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 18&quot;&gt;&gt;
@@ -4053,7 +4101,7 @@ HEISTING BOARD
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="156" name="5mod18outro" tags="nobr" position="725,1975" size="100,100">&lt;&lt;set $prevpass to &quot;5mod18&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="162" name="5mod18outro" tags="nobr" position="225,2100" size="100,100">&lt;&lt;set $prevpass to &quot;5mod18&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod18outro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5sessionoutro&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 18&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -4073,7 +4121,7 @@ HEISTING BOARD
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="157" name="5sessionoutro" tags="nobr" position="850,1975" size="100,100">&lt;&lt;set $prevpass to &quot;5mod18outro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="163" name="5sessionoutro" tags="nobr" position="350,2100" size="100,100">&lt;&lt;set $prevpass to &quot;5mod18outro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5sessionoutro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5sessionoutro2&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Session 5&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -4098,7 +4146,7 @@ HEISTING BOARD
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="158" name="5sessionoutro2" tags="nobr" position="975,1975" size="100,100">&lt;&lt;set $prevpass to &quot;5sessionoutro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="164" name="5sessionoutro2" tags="nobr" position="475,2100" size="100,100">&lt;&lt;set $prevpass to &quot;5sessionoutro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5sessionoutro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5sessionoutro3&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Session 5&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -4120,7 +4168,7 @@ HEISTING BOARD
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="159" name="5sessionoutro3" tags="nobr" position="1100,1975" size="100,100">&lt;&lt;set $prevpass to &quot;5sessionoutro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="165" name="5sessionoutro3" tags="nobr" position="600,2100" size="100,100">&lt;&lt;set $prevpass to &quot;5sessionoutro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5sessionoutro3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;cardoptions&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Session 5&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -4144,7 +4192,7 @@ HEISTING BOARD
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="160" name="8intro1" tags="nobr" position="1225,1975" size="100,100">&lt;&lt;set $prevpass to &quot;cardoptions&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="166" name="8intro1" tags="nobr" position="725,2100" size="100,100">&lt;&lt;set $prevpass to &quot;cardoptions&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8intro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8intro2&quot;&gt;&gt;
 
@@ -4162,7 +4210,7 @@ HEISTING BOARD
     &lt;/div&gt;
   &lt;/main&gt;
   &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="161" name="8intro2" tags="nobr" position="100,2100" size="100,100">&lt;&lt;set $prevpass to &quot;8intro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="167" name="8intro2" tags="nobr" position="850,2100" size="100,100">&lt;&lt;set $prevpass to &quot;8intro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8intro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8intro3&quot;&gt;&gt;
 
@@ -4180,7 +4228,7 @@ HEISTING BOARD
     &lt;/div&gt;
   &lt;/main&gt;
   &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="162" name="8intro3" tags="nobr" position="225,2100" size="100,100">&lt;&lt;set $prevpass to &quot;8intro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="168" name="8intro3" tags="nobr" position="975,2100" size="100,100">&lt;&lt;set $prevpass to &quot;8intro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8intro3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8intro4&quot;&gt;&gt;
 
@@ -4201,7 +4249,7 @@ HEISTING BOARD
     &lt;/div&gt;
   &lt;/main&gt;
   &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="163" name="8intro4" tags="nobr" position="350,2100" size="100,100">&lt;&lt;set $prevpass to &quot;8intro3&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="169" name="8intro4" tags="nobr" position="1100,2100" size="100,100">&lt;&lt;set $prevpass to &quot;8intro3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8intro4&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8intro5&quot;&gt;&gt;
 
@@ -4219,7 +4267,7 @@ HEISTING BOARD
     &lt;/div&gt;
   &lt;/main&gt;
   &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="164" name="8intro5" tags="nobr" position="475,2100" size="100,100">&lt;&lt;set $prevpass to &quot;8intro4&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="170" name="8intro5" tags="nobr" position="1225,2100" size="100,100">&lt;&lt;set $prevpass to &quot;8intro4&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8intro5&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8intro8&quot;&gt;&gt;
 
@@ -4238,7 +4286,7 @@ HEISTING BOARD
     &lt;/div&gt;
   &lt;/main&gt;
   &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="165" name="8intro8" tags="nobr" position="600,2100" size="100,100">&lt;&lt;set $prevpass to &quot;8intro5&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="171" name="8intro8" tags="nobr" position="100,2225" size="100,100">&lt;&lt;set $prevpass to &quot;8intro5&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8intro8&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8intro7&quot;&gt;&gt;
 
@@ -4256,7 +4304,7 @@ HEISTING BOARD
     &lt;/div&gt;
   &lt;/main&gt;
   &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="166" name="8intro7" tags="nobr" position="725,2100" size="100,100">&lt;&lt;set $prevpass to &quot;8intro8&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="172" name="8intro7" tags="nobr" position="225,2225" size="100,100">&lt;&lt;set $prevpass to &quot;8intro8&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8intro7&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Session 8&quot;&gt;&gt;
@@ -4279,7 +4327,7 @@ HEISTING BOARD
     &lt;/div&gt;
   &lt;/main&gt;
   &lt;&lt;include &quot;footerbox&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="167" name="8mod20introyes" tags="nobr" position="850,2100" size="100,100">&lt;&lt;set $prevpass to &quot;8intro7&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="173" name="8mod20introyes" tags="nobr" position="350,2225" size="100,100">&lt;&lt;set $prevpass to &quot;8intro7&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8mod20introyes&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8mod20introyes2&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 20&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -4299,7 +4347,7 @@ HEISTING BOARD
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="168" name="8mod20introyes2" tags="nobr" position="975,2100" size="100,100">&lt;&lt;set $prevpass to &quot;8mod20introyes&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="174" name="8mod20introyes2" tags="nobr" position="475,2225" size="100,100">&lt;&lt;set $prevpass to &quot;8mod20introyes&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8mod20introyes2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8mod21intro&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 20&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -4319,7 +4367,7 @@ HEISTING BOARD
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="169" name="8mod20introno" tags="nobr" position="1100,2100" size="100,100">&lt;&lt;set $prevpass to &quot;8intro7&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="175" name="8mod20introno" tags="nobr" position="600,2225" size="100,100">&lt;&lt;set $prevpass to &quot;8intro7&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8mod20introno&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8mod20introno2&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 20&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -4339,7 +4387,7 @@ HEISTING BOARD
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="170" name="8mod20introno2" tags="nobr" position="1225,2100" size="100,100">&lt;&lt;set $prevpass to &quot;8mod20introno&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="176" name="8mod20introno2" tags="nobr" position="725,2225" size="100,100">&lt;&lt;set $prevpass to &quot;8mod20introno&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8mod20introno2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8mod20introno3&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 20&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -4360,7 +4408,7 @@ HEISTING BOARD
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="171" name="8mod20introno3" tags="nobr" position="100,2225" size="100,100">&lt;&lt;set $prevpass to &quot;8mod20introno2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="177" name="8mod20introno3" tags="nobr" position="850,2225" size="100,100">&lt;&lt;set $prevpass to &quot;8mod20introno2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8mod20introno3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8mod21outro&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 20&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -4377,7 +4425,7 @@ HEISTING BOARD
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="172" name="8mod21intro" tags="nobr" position="225,2225" size="100,100">&lt;&lt;set $prevpass to &quot;8intro7&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="178" name="8mod21intro" tags="nobr" position="975,2225" size="100,100">&lt;&lt;set $prevpass to &quot;8intro7&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8mod21intro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8mod21intro2&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 21&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -4398,7 +4446,7 @@ HEISTING BOARD
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="173" name="8mod21intro2" tags="nobr" position="350,2225" size="100,100">&lt;&lt;set $prevpass to &quot;8mod21intro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="179" name="8mod21intro2" tags="nobr" position="1100,2225" size="100,100">&lt;&lt;set $prevpass to &quot;8mod21intro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8mod21intro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8mod21intro3&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 21&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -4419,7 +4467,7 @@ HEISTING BOARD
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="174" name="8mod21intro3" tags="nobr" position="475,2225" size="100,100">&lt;&lt;set $prevpass to &quot;8mod21intro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="180" name="8mod21intro3" tags="nobr" position="1225,2225" size="100,100">&lt;&lt;set $prevpass to &quot;8mod21intro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8mod21intro3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8mod21outro&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 21&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -4437,7 +4485,7 @@ HEISTING BOARD
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="175" name="8mod21outro" tags="nobr" position="600,2225" size="100,100">&lt;&lt;set $prevpass to &quot;8mod21intro3&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="181" name="8mod21outro" tags="nobr" position="100,2350" size="100,100">&lt;&lt;set $prevpass to &quot;8mod21intro3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8mod21outro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8sessionoutro&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 21&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -4466,7 +4514,7 @@ HEISTING BOARD
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="176" name="8sessionoutro" tags="nobr" position="725,2225" size="100,100">&lt;&lt;set $prevpass to &quot;8mod21outro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="182" name="8sessionoutro" tags="nobr" position="225,2350" size="100,100">&lt;&lt;set $prevpass to &quot;8mod21outro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8sessionoutro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8sessionoutro2&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Session 8&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -4489,7 +4537,7 @@ HEISTING BOARD
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="177" name="8sessionoutro2" tags="nobr" position="850,2225" size="100,100">&lt;&lt;set $prevpass to &quot;8sessionoutro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="183" name="8sessionoutro2" tags="nobr" position="350,2350" size="100,100">&lt;&lt;set $prevpass to &quot;8sessionoutro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8sessionoutro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8sessionoutro3&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Session 8&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -4512,7 +4560,7 @@ HEISTING BOARD
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="178" name="8sessionoutro3" tags="nobr" position="975,2225" size="100,100">&lt;&lt;set $prevpass to &quot;8sessionoutro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="184" name="8sessionoutro3" tags="nobr" position="475,2350" size="100,100">&lt;&lt;set $prevpass to &quot;8sessionoutro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8sessionoutro3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8sessionoutro4&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Session 8&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -4535,7 +4583,7 @@ HEISTING BOARD
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="179" name="8sessionoutro4" tags="nobr" position="1100,2225" size="100,100">&lt;&lt;set $prevpass to &quot;8sessionoutro3&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="185" name="8sessionoutro4" tags="nobr" position="600,2350" size="100,100">&lt;&lt;set $prevpass to &quot;8sessionoutro3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8sessionoutro4&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;cardoptions&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Session 8&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -4559,7 +4607,7 @@ HEISTING BOARD
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="180" name="3kaiIntro2" tags="nobr" position="1225,2225" size="100,100">&lt;&lt;set $prevpass to &quot;3kaiIntro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="186" name="3kaiIntro2" tags="nobr" position="725,2350" size="100,100">&lt;&lt;set $prevpass to &quot;3kaiIntro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3kaiIntro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;3modulelist&quot;&gt;&gt;
 
@@ -4598,7 +4646,7 @@ HEISTING BOARD
   
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="181" name="3modulelist" tags="nobr" position="100,2350" size="100,100">&lt;&lt;set $passage to &quot;3modulelist&quot;&gt;&gt;&lt;&lt;set $session to 3&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="187" name="3modulelist" tags="nobr" position="850,2350" size="100,100">&lt;&lt;set $passage to &quot;3modulelist&quot;&gt;&gt;&lt;&lt;set $session to 3&gt;&gt;
 &lt;&lt;timed 0.1s&gt;&gt;
   &lt;&lt;if $skip is true&gt;&gt;
      &lt;&lt;audio &quot;completionbloop_4&quot; play&gt;&gt;
@@ -4718,7 +4766,7 @@ HEISTING BOARD
   &lt;/main&gt;
 
   &lt;&lt;include &quot;footerbox&quot;&gt;&gt;&lt;/div&gt;
-  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="182" name="3mod5intro1" tags="nobr" position="225,2350" size="100,100">&lt;&lt;set $prevpass to &quot;3modulelist&quot;&gt;&gt;
+  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="188" name="3mod5intro1" tags="nobr" position="975,2350" size="100,100">&lt;&lt;set $prevpass to &quot;3modulelist&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3mod5intro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;3mod5a&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 5&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;&lt;audio src=&quot;assets/audio/gpce1.5_SESSION3_MOD5_intro.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -4737,7 +4785,7 @@ HEISTING BOARD
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="183" name="3mod5a" tags="nobr" position="350,2350" size="100,100">&lt;&lt;set $prevpass to &quot;3mod5intro1&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="189" name="3mod5a" tags="nobr" position="1100,2350" size="100,100">&lt;&lt;set $prevpass to &quot;3mod5intro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3mod5a&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;3mod5outro1&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION3_MOD5_talents.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -4753,7 +4801,7 @@ HEISTING BOARD
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footer&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="184" name="3mod5outro1" tags="nobr" position="475,2350" size="100,100">&lt;&lt;set $prevpass to &quot;3mod5a&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="190" name="3mod5outro1" tags="nobr" position="1225,2350" size="100,100">&lt;&lt;set $prevpass to &quot;3mod5a&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3mod5outro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;3mod5outro2&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION3_MOD5_outro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -4774,7 +4822,7 @@ HEISTING BOARD
 &lt;/div&gt;
 &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="185" name="3mod5outro2" tags="nobr" position="600,2350" size="100,100">&lt;&lt;set $prevpass to &quot;3mod5outro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="191" name="3mod5outro2" tags="nobr" position="100,2475" size="100,100">&lt;&lt;set $prevpass to &quot;3mod5outro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3mod5outro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;3modulelist&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION3_MOD5_outro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -4791,7 +4839,7 @@ HEISTING BOARD
 &lt;/div&gt;
 &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="186" name="3mod6intro1" tags="nobr" position="725,2350" size="100,100">&lt;&lt;set $prevpass to &quot;3modulelist&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="192" name="3mod6intro1" tags="nobr" position="225,2475" size="100,100">&lt;&lt;set $prevpass to &quot;3modulelist&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3mod6intro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;3mod6intro2&quot;&gt;&gt;&lt;audio src=&quot;assets/audio/gpce1.5_SESSION3_MOD6_intro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;&lt;set $module to &quot;Module 6&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -4807,7 +4855,7 @@ HEISTING BOARD
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="187" name="3mod6intro2" tags="nobr" position="850,2350" size="100,100">&lt;&lt;set $prevpass to &quot;3mod6intro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="193" name="3mod6intro2" tags="nobr" position="350,2475" size="100,100">&lt;&lt;set $prevpass to &quot;3mod6intro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3mod6intro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;3mod6a&quot;&gt;&gt;&lt;audio src=&quot;assets/audio/gpce1.5_SESSION3_MOD6_intro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;&lt;set $module to &quot;Module 6&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -4830,7 +4878,7 @@ HEISTING BOARD
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="188" name="3mod6a" tags="nobr" position="975,2350" size="100,100">&lt;&lt;set $prevpass to &quot;3mod6intro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="194" name="3mod6a" tags="nobr" position="475,2475" size="100,100">&lt;&lt;set $prevpass to &quot;3mod6intro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3mod6a&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;3mod6outro1&quot;&gt;&gt;&lt;audio src=&quot;assets/audio/gpce1.5_SESSION3_MOD6_focus.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
@@ -4851,7 +4899,7 @@ HEISTING BOARD
 
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="189" name="3mod6outro1" tags="nobr" position="1100,2350" size="100,100">&lt;&lt;set $prevpass to &quot;3mod6a&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="195" name="3mod6outro1" tags="nobr" position="600,2475" size="100,100">&lt;&lt;set $prevpass to &quot;3mod6a&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3mod6outro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;3mod6outro2&quot;&gt;&gt;&lt;audio src=&quot;assets/audio/gpce1.5_SESSION3_MOD6_outro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
@@ -4869,7 +4917,7 @@ HEISTING BOARD
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="190" name="3mod6outro2" tags="nobr" position="1225,2350" size="100,100">&lt;&lt;set $prevpass to &quot;3mod6outro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="196" name="3mod6outro2" tags="nobr" position="725,2475" size="100,100">&lt;&lt;set $prevpass to &quot;3mod6outro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3mod6outro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;3sessionoutro1&quot;&gt;&gt;&lt;audio src=&quot;assets/audio/gpce1.5_SESSION3_MOD6_outro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;&lt;audio &quot;60supported&quot; play&gt;&gt;
@@ -4954,7 +5002,7 @@ HEISTING BOARD
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="191" name="checkmod6audio" tags="nobr" position="100,2475" size="100,100">&lt;&lt;if $mod6audio is &quot;air&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="197" name="checkmod6audio" tags="nobr" position="850,2475" size="100,100">&lt;&lt;if $mod6audio is &quot;air&quot;&gt;&gt;
   &lt;&lt;replace &quot;#img&quot;&gt;&gt;
       &lt;img src=&quot;assets/img/characters-26.jpg&quot; autoplay&gt;
     &lt;&lt;/replace&gt;&gt;
@@ -5006,7 +5054,7 @@ HEISTING BOARD
   &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
       &lt;audio src=&quot;assets/audio/gpce1.5_SESSION3_outro_1_fastfashion.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
     &lt;&lt;/replace&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="192" name="3sessionoutro1old" tags="nobr" position="225,2475" size="100,100">&lt;&lt;set $prevpass to &quot;3mod6outro2&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="198" name="3sessionoutro1old" tags="nobr" position="975,2475" size="100,100">&lt;&lt;set $prevpass to &quot;3mod6outro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3sessionoutro1&quot;&gt;&gt;
  &lt;&lt;set $nextpass to &quot;3sessionoutro2&quot;&gt;&gt;
 &lt;div id=&quot;audio&quot;&gt;&lt;audio src=&quot;assets/audio/SESSION3_OUTRO_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
@@ -5028,7 +5076,7 @@ HEISTING BOARD
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="193" name="3sessionoutro2old" tags="nobr" position="350,2475" size="100,100">&lt;&lt;set $prevpass to &quot;3sessionoutro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="199" name="3sessionoutro2old" tags="nobr" position="1100,2475" size="100,100">&lt;&lt;set $prevpass to &quot;3sessionoutro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3sessionoutro2&quot;&gt;&gt;
  &lt;&lt;set $nextpass to &quot;3sessionoutro3&quot;&gt;&gt;
 &lt;div id=&quot;audio&quot;&gt;&lt;audio src=&quot;assets/audio/gpce1.5_SESSION3_outro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
@@ -5062,7 +5110,7 @@ HEISTING BOARD
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="194" name="3sessionoutro3old" tags="nobr" position="475,2475" size="100,100">&lt;&lt;set $prevpass to &quot;3sessionoutro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="200" name="3sessionoutro3old" tags="nobr" position="1225,2475" size="100,100">&lt;&lt;set $prevpass to &quot;3sessionoutro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3sessionoutro3&quot;&gt;&gt;
  &lt;&lt;set $nextpass to &quot;3sessionoutro4&quot;&gt;&gt;
 &lt;div id=&quot;audio&quot;&gt;&lt;audio src=&quot;assets/audio/gpce1.5_SESSION3_outro_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
@@ -5101,7 +5149,7 @@ HEISTING BOARD
 &lt;/div&gt;
 
 
-/* SESSION 4  */</tw-passagedata><tw-passagedata pid="195" name="4kaiIntro1" tags="nobr" position="600,2475" size="100,100">&lt;&lt;set $prevpass to &quot;landing&quot;&gt;&gt;
+/* SESSION 4  */</tw-passagedata><tw-passagedata pid="201" name="4kaiIntro1" tags="nobr" position="100,2600" size="100,100">&lt;&lt;set $prevpass to &quot;landing&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4kaiIntro1&quot;&gt;&gt;
  &lt;&lt;set $nextpass to &quot;4kaiIntro2&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -5123,7 +5171,7 @@ HEISTING BOARD
   
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="196" name="4kaiIntro2" tags="nobr" position="725,2475" size="100,100">&lt;&lt;set $prevpass to &quot;4kaiIntro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="202" name="4kaiIntro2" tags="nobr" position="225,2600" size="100,100">&lt;&lt;set $prevpass to &quot;4kaiIntro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4kaiIntro2&quot;&gt;&gt;
  &lt;&lt;set $nextpass to &quot;4modulelist&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -5153,7 +5201,7 @@ HEISTING BOARD
   
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="197" name="4modulelist" tags="nobr" position="850,2475" size="100,100">&lt;&lt;set $passage to &quot;4modulelist&quot;&gt;&gt;&lt;&lt;set $session to 4&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="203" name="4modulelist" tags="nobr" position="350,2600" size="100,100">&lt;&lt;set $passage to &quot;4modulelist&quot;&gt;&gt;&lt;&lt;set $session to 4&gt;&gt;
 &lt;&lt;timed 0.1s&gt;&gt;
   &lt;&lt;if $skip is true&gt;&gt;
      &lt;&lt;audio &quot;completionbloop_4&quot; play&gt;&gt;
@@ -5327,7 +5375,7 @@ HEISTING BOARD
   &lt;/div&gt;
   &lt;/main&gt;
   &lt;&lt;include &quot;footerbox&quot;&gt;&gt;&lt;/div&gt;
-  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="198" name="4mod7intro1" tags="nobr" position="975,2475" size="100,100">&lt;&lt;set $prevpass to &quot;4modulelist&quot;&gt;&gt;
+  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="204" name="4mod7intro1" tags="nobr" position="475,2600" size="100,100">&lt;&lt;set $prevpass to &quot;4modulelist&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod7intro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod7intro2&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION4_MOD7_intro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -5348,7 +5396,7 @@ HEISTING BOARD
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="199" name="4mod7intro2" tags="nobr" position="1100,2475" size="100,100">&lt;&lt;set $prevpass to &quot;4mod7intro1&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="205" name="4mod7intro2" tags="nobr" position="600,2600" size="100,100">&lt;&lt;set $prevpass to &quot;4mod7intro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod7intro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod7b&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION4_MOD7_intro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -5371,7 +5419,7 @@ HEISTING BOARD
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="200" name="4mod7b" tags="nobr" position="1225,2475" size="100,100">&lt;&lt;set $prevpass to &quot;4mod7intro2&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="206" name="4mod7b" tags="nobr" position="725,2600" size="100,100">&lt;&lt;set $prevpass to &quot;4mod7intro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod7b&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod7outro1&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION4_MOD7_mapping.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -5397,7 +5445,7 @@ HEISTING BOARD
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="201" name="4mod7outro1" tags="nobr" position="100,2600" size="100,100">&lt;&lt;set $prevpass to &quot;4mod7b&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="207" name="4mod7outro1" tags="nobr" position="850,2600" size="100,100">&lt;&lt;set $prevpass to &quot;4mod7b&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod7outro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4modulelist&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION4_MOD7_outro.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -5429,7 +5477,7 @@ HEISTING BOARD
 &lt;/div&gt;
 &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="202" name="4mod8intro1" tags="nobr" position="225,2600" size="100,100">&lt;&lt;set $prevpass to &quot;4modulelist&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="208" name="4mod8intro1" tags="nobr" position="975,2600" size="100,100">&lt;&lt;set $prevpass to &quot;4modulelist&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod8intro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod8a&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION4_MOD8_intro.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -5451,7 +5499,7 @@ HEISTING BOARD
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="203" name="4mod8a" tags="nobr" position="350,2600" size="100,100">&lt;&lt;set $prevpass to &quot;4mod8intro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="209" name="4mod8a" tags="nobr" position="1100,2600" size="100,100">&lt;&lt;set $prevpass to &quot;4mod8intro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod8a&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod8outro1&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION4_MOD8_imaginingsuccess.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -5473,7 +5521,7 @@ HEISTING BOARD
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="204" name="4mod8outro1" tags="nobr" position="475,2600" size="100,100">&lt;&lt;set $prevpass to &quot;4mod8a&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="210" name="4mod8outro1" tags="nobr" position="1225,2600" size="100,100">&lt;&lt;set $prevpass to &quot;4mod8a&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod8outro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod8outro2&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION4_MOD8_outro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -5491,7 +5539,7 @@ HEISTING BOARD
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="205" name="4mod8outro2" tags="nobr" position="600,2600" size="100,100">&lt;&lt;set $prevpass to &quot;4mod8intro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="211" name="4mod8outro2" tags="nobr" position="100,2725" size="100,100">&lt;&lt;set $prevpass to &quot;4mod8intro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod8outro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4modulelist&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION4_MOD8_outro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -5512,7 +5560,7 @@ HEISTING BOARD
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="206" name="4mod9intro1" tags="nobr" position="725,2600" size="100,100">&lt;&lt;set $prevpass to &quot;4modulelist&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="212" name="4mod9intro1" tags="nobr" position="225,2725" size="100,100">&lt;&lt;set $prevpass to &quot;4modulelist&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod9intro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod9intro2&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION4_MOD9_intro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -5530,7 +5578,7 @@ HEISTING BOARD
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="207" name="4mod9intro2" tags="nobr" position="850,2600" size="100,100">&lt;&lt;set $prevpass to &quot;4mod9intro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="213" name="4mod9intro2" tags="nobr" position="350,2725" size="100,100">&lt;&lt;set $prevpass to &quot;4mod9intro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod9intro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod9intro3&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION4_MOD9_intro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -5548,7 +5596,7 @@ HEISTING BOARD
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="208" name="4mod9intro3" tags="nobr" position="975,2600" size="100,100">&lt;&lt;set $prevpass to &quot;4mod9intro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="214" name="4mod9intro3" tags="nobr" position="475,2725" size="100,100">&lt;&lt;set $prevpass to &quot;4mod9intro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod9intro3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod9a&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION4_MOD9_intro_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -5566,7 +5614,7 @@ HEISTING BOARD
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="209" name="4mod9a" tags="nobr" position="1100,2600" size="100,100">&lt;&lt;set $prevpass to &quot;4mod9intro3&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="215" name="4mod9a" tags="nobr" position="600,2725" size="100,100">&lt;&lt;set $prevpass to &quot;4mod9intro3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod9a&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod9outro1&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION4_MOD9_comfortinaction.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -5584,7 +5632,7 @@ HEISTING BOARD
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="210" name="4mod9outro1" tags="nobr" position="1225,2600" size="100,100">&lt;&lt;set $prevpass to &quot;4mod9a&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="216" name="4mod9outro1" tags="nobr" position="725,2725" size="100,100">&lt;&lt;set $prevpass to &quot;4mod9a&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod9outro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod9outro2&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION4_MOD9_outro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -5604,7 +5652,7 @@ HEISTING BOARD
   &lt;/div&gt;
 &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="211" name="4mod9outro2" tags="nobr" position="100,2725" size="100,100">&lt;&lt;set $prevpass to &quot;4mod9outro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="217" name="4mod9outro2" tags="nobr" position="850,2725" size="100,100">&lt;&lt;set $prevpass to &quot;4mod9outro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod9outro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod9outro3&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION4_MOD9_outro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -5622,7 +5670,7 @@ HEISTING BOARD
   &lt;/div&gt;
 &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="212" name="4mod9outro3" tags="nobr" position="225,2725" size="100,100">&lt;&lt;set $prevpass to &quot;4mod9outro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="218" name="4mod9outro3" tags="nobr" position="975,2725" size="100,100">&lt;&lt;set $prevpass to &quot;4mod9outro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod9outro3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4sessionoutro1&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION4_MOD9_outro_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -5638,7 +5686,7 @@ HEISTING BOARD
     &lt;/div&gt;
 &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="213" name="4sessionoutro1" tags="nobr" position="350,2725" size="100,100">&lt;&lt;set $prevpass to &quot;4mod9outro3&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="219" name="4sessionoutro1" tags="nobr" position="1100,2725" size="100,100">&lt;&lt;set $prevpass to &quot;4mod9outro3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4sessionoutro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;landing&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION4_OUTRO.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -5671,7 +5719,7 @@ HEISTING BOARD
 &lt;/div&gt;
 
 
-/* SESSION 5 */</tw-passagedata><tw-passagedata pid="214" name="5kaiIntro1" tags="nobr" position="475,2725" size="100,100">&lt;&lt;set $prevpass to &quot;landing&quot;&gt;&gt;
+/* SESSION 5 */</tw-passagedata><tw-passagedata pid="220" name="5kaiIntro1" tags="nobr" position="1225,2725" size="100,100">&lt;&lt;set $prevpass to &quot;landing&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5kaiIntro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5modulelist&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION5_INTRO.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -5693,7 +5741,7 @@ HEISTING BOARD
     &lt;/div&gt;
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="215" name="5modulelist" tags="nobr" position="600,2725" size="100,100">&lt;&lt;set $passage to &quot;5modulelist&quot;&gt;&gt;&lt;&lt;set $session to 5&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="221" name="5modulelist" tags="nobr" position="100,2850" size="100,100">&lt;&lt;set $passage to &quot;5modulelist&quot;&gt;&gt;&lt;&lt;set $session to 5&gt;&gt;
 &lt;&lt;timed 0.1s&gt;&gt;
   &lt;&lt;if $skip is true&gt;&gt;
      &lt;&lt;audio &quot;completionbloop_4&quot; play&gt;&gt;
@@ -5862,7 +5910,7 @@ HEISTING BOARD
   &lt;/div&gt;
   &lt;/main&gt;
   &lt;&lt;include &quot;footerbox&quot;&gt;&gt;&lt;/div&gt;
-  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="216" name="5mod10intro1" tags="nobr" position="725,2725" size="100,100">&lt;&lt;set $prevpass to &quot;5modulelist&quot;&gt;&gt;
+  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="222" name="5mod10intro1" tags="nobr" position="225,2850" size="100,100">&lt;&lt;set $prevpass to &quot;5modulelist&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod10intro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5mod10intro2&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 10&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -5885,7 +5933,7 @@ HEISTING BOARD
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="217" name="5mod10intro2" tags="nobr" position="850,2725" size="100,100">&lt;&lt;set $prevpass to &quot;5mod10intro1&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="223" name="5mod10intro2" tags="nobr" position="350,2850" size="100,100">&lt;&lt;set $prevpass to &quot;5mod10intro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod10intro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5mod10intro3&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 10&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -5909,7 +5957,7 @@ HEISTING BOARD
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="218" name="5mod10intro3" tags="nobr" position="975,2725" size="100,100">&lt;&lt;set $prevpass to &quot;5mod10intro2&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="224" name="5mod10intro3" tags="nobr" position="475,2850" size="100,100">&lt;&lt;set $prevpass to &quot;5mod10intro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod10intro3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5mod10a&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 10&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -5929,7 +5977,7 @@ HEISTING BOARD
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="219" name="5mod10a" tags="nobr" position="1100,2725" size="100,100">&lt;&lt;set $prevpass to &quot;5mod10intro3&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="225" name="5mod10a" tags="nobr" position="600,2850" size="100,100">&lt;&lt;set $prevpass to &quot;5mod10intro3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod10a&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5mod10outro&quot;&gt;&gt;
 /* &lt;audio src=&quot;assets/audio/gpce1.5_SESSION5_MOD10_intro_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt; */
@@ -5941,7 +5989,7 @@ HEISTING BOARD
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footer&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="220" name="5mod10outro1" tags="nobr" position="1225,2725" size="100,100">&lt;&lt;set $prevpass to &quot;5mod10a&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="226" name="5mod10outro1" tags="nobr" position="725,2850" size="100,100">&lt;&lt;set $prevpass to &quot;5mod10a&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod10outro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5modulelist&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION5_MOD10_outro.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -5963,7 +6011,7 @@ HEISTING BOARD
 &lt;/div&gt;
 &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="221" name="5mod11intro1" tags="nobr" position="100,2850" size="100,100">&lt;&lt;set $prevpass to &quot;5modulelist&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="227" name="5mod11intro1" tags="nobr" position="850,2850" size="100,100">&lt;&lt;set $prevpass to &quot;5modulelist&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod11intro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5mod11a&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION5_MOD11_intro.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -5988,7 +6036,7 @@ HEISTING BOARD
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="222" name="5mod11a" tags="nobr" position="225,2850" size="100,100">&lt;&lt;set $prevpass to &quot;5mod11intro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="228" name="5mod11a" tags="nobr" position="975,2850" size="100,100">&lt;&lt;set $prevpass to &quot;5mod11intro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod11a&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
@@ -5999,7 +6047,7 @@ HEISTING BOARD
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="223" name="5mod11outro1" tags="nobr" position="350,2850" size="100,100">&lt;&lt;set $prevpass to &quot;5mod11a&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="229" name="5mod11outro1" tags="nobr" position="1100,2850" size="100,100">&lt;&lt;set $prevpass to &quot;5mod11a&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod11outro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5modulelist&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION5_MOD11_outro.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -6016,7 +6064,7 @@ HEISTING BOARD
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="224" name="5mod12intro1" tags="nobr" position="475,2850" size="100,100">&lt;&lt;set $prevpass to &quot;5modulelist&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="230" name="5mod12intro1" tags="nobr" position="1225,2850" size="100,100">&lt;&lt;set $prevpass to &quot;5modulelist&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod12intro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5mod12intro2&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION5_MOD12_intro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -6044,7 +6092,7 @@ HEISTING BOARD
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="225" name="5mod12intro2" tags="nobr" position="600,2850" size="100,100">&lt;&lt;set $prevpass to &quot;5mod12intro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="231" name="5mod12intro2" tags="nobr" position="100,2975" size="100,100">&lt;&lt;set $prevpass to &quot;5mod12intro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod12intro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5mod12intro3&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION5_MOD12_intro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -6065,7 +6113,7 @@ HEISTING BOARD
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="226" name="5mod12intro3" tags="nobr" position="725,2850" size="100,100">&lt;&lt;set $prevpass to &quot;5mod12intro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="232" name="5mod12intro3" tags="nobr" position="225,2975" size="100,100">&lt;&lt;set $prevpass to &quot;5mod12intro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod12intro3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5mod12intro4&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION5_MOD12_intro_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -6084,7 +6132,7 @@ HEISTING BOARD
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="227" name="5mod12intro4" tags="nobr" position="850,2850" size="100,100">&lt;&lt;set $prevpass to &quot;5mod12intro3&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="233" name="5mod12intro4" tags="nobr" position="350,2975" size="100,100">&lt;&lt;set $prevpass to &quot;5mod12intro3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod12intro4&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5mod12a&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION5_MOD12_intro_4.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -6111,7 +6159,7 @@ HEISTING BOARD
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="228" name="5mod12a" tags="nobr" position="975,2850" size="100,100">&lt;&lt;set $prevpass to &quot;5mod12intro4&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="234" name="5mod12a" tags="nobr" position="475,2975" size="100,100">&lt;&lt;set $prevpass to &quot;5mod12intro4&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod12a&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5mod12outro&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
@@ -6124,7 +6172,7 @@ HEISTING BOARD
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="229" name="5mod12outro" tags="nobr" position="1100,2850" size="100,100">&lt;&lt;set $prevpass to &quot;5mod12a&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="235" name="5mod12outro" tags="nobr" position="600,2975" size="100,100">&lt;&lt;set $prevpass to &quot;5mod12a&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod12outro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5sessionoutro&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION5_MOD12_outro.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -6145,7 +6193,7 @@ HEISTING BOARD
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="230" name="5sessionoutroold" tags="nobr" position="1225,2850" size="100,100">&lt;&lt;set $prevpass to &quot;5mod12outro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="236" name="5sessionoutroold" tags="nobr" position="725,2975" size="100,100">&lt;&lt;set $prevpass to &quot;5mod12outro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5sessionoutro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;landing&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION5_OUTRO.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -6172,7 +6220,7 @@ HEISTING BOARD
 &lt;/div&gt;
 
 
-/* SESSION 6 */</tw-passagedata><tw-passagedata pid="231" name="6kaiIntro1" tags="nobr" position="100,2975" size="100,100">&lt;&lt;set $prevpass to &quot;landing&quot;&gt;&gt;
+/* SESSION 6 */</tw-passagedata><tw-passagedata pid="237" name="6kaiIntro1" tags="nobr" position="850,2975" size="100,100">&lt;&lt;set $prevpass to &quot;landing&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;6kaiIntro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;6kaiIntro2&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION6_INTRO_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -6202,7 +6250,7 @@ HEISTING BOARD
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="232" name="6kaiIntro2" tags="nobr" position="225,2975" size="100,100">&lt;&lt;set $prevpass to &quot;6kaiIntro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="238" name="6kaiIntro2" tags="nobr" position="975,2975" size="100,100">&lt;&lt;set $prevpass to &quot;6kaiIntro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;6kaiIntro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;6modulelist&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION6_INTRO_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -6231,7 +6279,7 @@ HEISTING BOARD
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="233" name="6modulelist" tags="nobr" position="350,2975" size="100,100">&lt;&lt;set $passage to &quot;6modulelist&quot;&gt;&gt;&lt;&lt;set $session to 6&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="239" name="6modulelist" tags="nobr" position="1100,2975" size="100,100">&lt;&lt;set $passage to &quot;6modulelist&quot;&gt;&gt;&lt;&lt;set $session to 6&gt;&gt;
 &lt;&lt;timed 0.1s&gt;&gt;
   &lt;&lt;if $skip is true&gt;&gt;
      &lt;&lt;audio &quot;completionbloop_4&quot; play&gt;&gt;
@@ -6348,7 +6396,7 @@ HEISTING BOARD
   &lt;/div&gt;
   &lt;/main&gt;
   &lt;&lt;include &quot;footerbox&quot;&gt;&gt;&lt;/div&gt;
-  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="234" name="6mod13intro1" tags="nobr" position="475,2975" size="100,100">&lt;&lt;set $prevpass to &quot;6modulelist&quot;&gt;&gt;
+  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="240" name="6mod13intro1" tags="nobr" position="1225,2975" size="100,100">&lt;&lt;set $prevpass to &quot;6modulelist&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;6mod13intro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;6mod13a&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION6_MOD13_intro.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -6377,7 +6425,7 @@ HEISTING BOARD
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="235" name="6mod13a" tags="nobr" position="600,2975" size="100,100">&lt;&lt;set $prevpass to &quot;6mod14intro1&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="241" name="6mod13a" tags="nobr" position="100,3100" size="100,100">&lt;&lt;set $prevpass to &quot;6mod14intro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;6mod13a&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;6mod13outro1&quot;&gt;&gt;
 
@@ -6391,7 +6439,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
         &lt;img src=&quot;assets/img/mod13-rev.jpg&quot;&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="236" name="6mod13outro1" tags="nobr" position="725,2975" size="100,100">&lt;&lt;set $prevpass to &quot;6mod13a&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="242" name="6mod13outro1" tags="nobr" position="225,3100" size="100,100">&lt;&lt;set $prevpass to &quot;6mod13a&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;6mod13outro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;6modulelist&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION6_MOD13_outro.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -6424,7 +6472,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
 &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="237" name="6mod14intro1" tags="nobr" position="850,2975" size="100,100">&lt;&lt;set $prevpass to &quot;6modulelist&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="243" name="6mod14intro1" tags="nobr" position="350,3100" size="100,100">&lt;&lt;set $prevpass to &quot;6modulelist&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;6mod14intro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;6mod14a&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION6_MOD14_intro.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -6444,7 +6492,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="238" name="6mod14a" tags="nobr" position="975,2975" size="100,100">&lt;&lt;set $prevpass to &quot;6mod14intro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="244" name="6mod14a" tags="nobr" position="475,3100" size="100,100">&lt;&lt;set $prevpass to &quot;6mod14intro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;6mod14a&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;6sessionoutro1&quot;&gt;&gt;
 
@@ -6459,7 +6507,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
         &lt;img src=&quot;assets/img/mod14-rev.jpg&quot;&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="239" name="6sessionoutro1" tags="nobr" position="1100,2975" size="100,100">&lt;&lt;set $prevpass to &quot;6mod14a&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="245" name="6sessionoutro1" tags="nobr" position="600,3100" size="100,100">&lt;&lt;set $prevpass to &quot;6mod14a&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;6sessionoutro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;landing&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION6_OUTRO.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -6495,7 +6543,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 
 
 
-/* SESSION 7 */</tw-passagedata><tw-passagedata pid="240" name="7kaiIntro1" tags="nobr" position="1225,2975" size="100,100">&lt;&lt;set $prevpass to &quot;landing&quot;&gt;&gt;
+/* SESSION 7 */</tw-passagedata><tw-passagedata pid="246" name="7kaiIntro1" tags="nobr" position="725,3100" size="100,100">&lt;&lt;set $prevpass to &quot;landing&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;7kaiIntro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;7kaiIntro2&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION7_INTRO_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -6525,7 +6573,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
   
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="241" name="7kaiIntro2" tags="nobr" position="100,3100" size="100,100">&lt;&lt;set $prevpass to &quot;7kaiIntro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="247" name="7kaiIntro2" tags="nobr" position="850,3100" size="100,100">&lt;&lt;set $prevpass to &quot;7kaiIntro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;7kaiIntro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;7modulelist&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION7_INTRO_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -6549,7 +6597,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
   
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="242" name="7modulelist" tags="nobr" position="225,3100" size="100,100">&lt;&lt;set $passage to &quot;7modulelist&quot;&gt;&gt;&lt;&lt;set $session to 7&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="248" name="7modulelist" tags="nobr" position="975,3100" size="100,100">&lt;&lt;set $passage to &quot;7modulelist&quot;&gt;&gt;&lt;&lt;set $session to 7&gt;&gt;
 &lt;&lt;timed 0.1s&gt;&gt;
   &lt;&lt;if $skip is true&gt;&gt;
      &lt;&lt;audio &quot;completionbloop_4&quot; play&gt;&gt;
@@ -6665,7 +6713,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
   &lt;/div&gt;
   &lt;/main&gt;
   &lt;&lt;include &quot;footerbox&quot;&gt;&gt;&lt;/div&gt;
-  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="243" name="7mod15intro1" tags="nobr" position="350,3100" size="100,100">&lt;&lt;set $prevpass to &quot;7modulelist&quot;&gt;&gt;
+  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="249" name="7mod15intro1" tags="nobr" position="1100,3100" size="100,100">&lt;&lt;set $prevpass to &quot;7modulelist&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;7mod15intro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;7mod15intro2&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION7_MOD15_intro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -6685,7 +6733,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="244" name="7mod15intro2" tags="nobr" position="475,3100" size="100,100">&lt;&lt;set $prevpass to &quot;7mod15intro1&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="250" name="7mod15intro2" tags="nobr" position="1225,3100" size="100,100">&lt;&lt;set $prevpass to &quot;7mod15intro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;7mod15intro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;7mod15intro3&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION7_MOD15_intro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -6702,7 +6750,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="245" name="7mod15intro3" tags="nobr" position="600,3100" size="100,100">&lt;&lt;set $prevpass to &quot;7mod15intro2&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="251" name="7mod15intro3" tags="nobr" position="100,3225" size="100,100">&lt;&lt;set $prevpass to &quot;7mod15intro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;7mod15intro3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;7mod15a&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION7_MOD15_intro_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -6725,7 +6773,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="246" name="7mod15a" tags="nobr" position="725,3100" size="100,100">&lt;&lt;set $prevpass to &quot;7mod15intro3&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="252" name="7mod15a" tags="nobr" position="225,3225" size="100,100">&lt;&lt;set $prevpass to &quot;7mod15intro3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;7mod15a&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;7mod15outro1&quot;&gt;&gt;
 
@@ -6739,7 +6787,7 @@ When ready to move on click &lt;&lt;button &quot;Here&quot;&gt;&gt;&lt;&lt;set $
         &lt;img src=&quot;assets/img/mod15-rev.jpg&quot;&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="247" name="7mod15outro1" tags="nobr" position="850,3100" size="100,100">&lt;&lt;set $prevpass to &quot;7mod15a&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="253" name="7mod15outro1" tags="nobr" position="350,3225" size="100,100">&lt;&lt;set $prevpass to &quot;7mod15a&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;7mod15outro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;7modulelist&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION7_MOD15_outro.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -6755,7 +6803,7 @@ When ready to move on click &lt;&lt;button &quot;Here&quot;&gt;&gt;&lt;&lt;set $
 &lt;/div&gt;
 &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="248" name="7mod16intro1" tags="nobr" position="975,3100" size="100,100">&lt;&lt;set $prevpass to &quot;7modulelist&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="254" name="7mod16intro1" tags="nobr" position="475,3225" size="100,100">&lt;&lt;set $prevpass to &quot;7modulelist&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;7mod16intro3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;complete&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION7_MOD16_intro.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -6804,7 +6852,7 @@ When ready to move on click &lt;&lt;button &quot;Here&quot;&gt;&gt;&lt;&lt;set $
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="249" name="complete" tags="nobr" position="1100,3100" size="100,100">&lt;&lt;set $prevpass to &quot;7mod16intro3&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="255" name="complete" tags="nobr" position="600,3225" size="100,100">&lt;&lt;set $prevpass to &quot;7mod16intro3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;complete&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;7mod16outro1&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
@@ -6828,7 +6876,7 @@ When ready to move on click &lt;&lt;button &quot;Here&quot;&gt;&gt;&lt;&lt;set $
  &lt;/main&gt;
  
      /* &lt;&lt;include &quot;footer&quot;&gt;&gt; */
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="250" name="7mod16outro1" tags="nobr" position="1225,3100" size="100,100">&lt;&lt;set $prevpass to &quot;7mod16intro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="256" name="7mod16outro1" tags="nobr" position="725,3225" size="100,100">&lt;&lt;set $prevpass to &quot;7mod16intro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;7mod16outro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;7sessionoutro1&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION7_MOD16_outro.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -6860,7 +6908,7 @@ When ready to move on click &lt;&lt;button &quot;Here&quot;&gt;&gt;&lt;&lt;set $
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="251" name="7sessionoutro1" tags="nobr" position="100,3225" size="100,100">&lt;&lt;set $prevpass to &quot;7mod16outro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="257" name="7sessionoutro1" tags="nobr" position="850,3225" size="100,100">&lt;&lt;set $prevpass to &quot;7mod16outro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;7sessionoutro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;7sessionoutro2&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION7_OUTRO_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -6884,7 +6932,7 @@ When ready to move on click &lt;&lt;button &quot;Here&quot;&gt;&gt;&lt;&lt;set $
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="252" name="7sessionoutro2" tags="nobr" position="225,3225" size="100,100">&lt;&lt;set $prevpass to &quot;7sessionoutro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="258" name="7sessionoutro2" tags="nobr" position="975,3225" size="100,100">&lt;&lt;set $prevpass to &quot;7sessionoutro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;7sessionoutro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;7sessionoutro3&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION7_OUTRO_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -6901,7 +6949,7 @@ When ready to move on click &lt;&lt;button &quot;Here&quot;&gt;&gt;&lt;&lt;set $
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="253" name="7sessionoutro3" tags="nobr" position="350,3225" size="100,100">&lt;&lt;set $prevpass to &quot;7sessionoutro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="259" name="7sessionoutro3" tags="nobr" position="1100,3225" size="100,100">&lt;&lt;set $prevpass to &quot;7sessionoutro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;7sessionoutro3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;landing&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/gpce1.5_SESSION7_OUTRO_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -6923,7 +6971,7 @@ When ready to move on click &lt;&lt;button &quot;Here&quot;&gt;&gt;&lt;&lt;set $
 
 
 
-/* SESSION 8 */</tw-passagedata><tw-passagedata pid="254" name="8kaiIntro1" tags="nobr" position="475,3225" size="100,100">&lt;&lt;set $prevpass to &quot;landing&quot;&gt;&gt;
+/* SESSION 8 */</tw-passagedata><tw-passagedata pid="260" name="8kaiIntro1" tags="nobr" position="1225,3225" size="100,100">&lt;&lt;set $prevpass to &quot;landing&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8kaiIntro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8modulelist&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -6937,7 +6985,7 @@ When ready to move on click &lt;&lt;button &quot;Here&quot;&gt;&gt;&lt;&lt;set $
        	&lt;div id=&quot;video&quot; role=&quot;video&quot; aria-label=&quot;&quot;&gt;&lt;iframe src=&quot;https://player.vimeo.com/video/809464688?h=c6aec791bb&amp;amp;badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:90%;&quot; allowfullscreen title=&quot;greenpeace violet.mp4&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
     &lt;/main&gt;
 &lt;&lt;include &quot;footervidend&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="255" name="8modulelist" tags="nobr" position="600,3225" size="100,100">&lt;&lt;set $passage to &quot;8modulelist&quot;&gt;&gt;&lt;&lt;set $session to 8&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="261" name="8modulelist" tags="nobr" position="100,3350" size="100,100">&lt;&lt;set $passage to &quot;8modulelist&quot;&gt;&gt;&lt;&lt;set $session to 8&gt;&gt;
 &lt;&lt;timed 0.1s&gt;&gt;
   &lt;&lt;if $skip is true&gt;&gt;
      &lt;&lt;audio &quot;completionbloop_4&quot; play&gt;&gt;
@@ -7002,7 +7050,7 @@ When ready to move on click &lt;&lt;button &quot;Here&quot;&gt;&gt;&lt;&lt;set $
 
   &lt;/main&gt;
   &lt;&lt;include &quot;footerbox&quot;&gt;&gt;&lt;/div&gt;
-  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="256" name="8mod17intro1" tags="nobr" position="725,3225" size="100,100">&lt;&lt;set $prevpass to &quot;8modulelist&quot;&gt;&gt;
+  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="262" name="8mod17intro1" tags="nobr" position="225,3350" size="100,100">&lt;&lt;set $prevpass to &quot;8modulelist&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8mod17intro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8sessionoutro&quot;&gt;&gt;
 
@@ -7037,7 +7085,7 @@ When ready to move on click &lt;&lt;button &quot;Here&quot;&gt;&gt;&lt;&lt;set $
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footer&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="257" name="8sessionoutroold" tags="nobr" position="850,3225" size="100,100">&lt;&lt;set $prevpass to &quot;8mod17intro1&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="263" name="8sessionoutroold" tags="nobr" position="350,3350" size="100,100">&lt;&lt;set $prevpass to &quot;8mod17intro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8sessionoutro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;landing&quot;&gt;&gt;
 
