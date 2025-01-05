@@ -2262,7 +2262,6 @@ When finished, click <<button "Move On">><<set $prevpass to $passage>><<goto $ne
     
       <</replace>>
     <<append "#twrapper">>
-      $module
           <p> That’s great - you’ve chosen a theme. </p>
 <p>But the themes were quite broad right? </p>
 <p>There’s a lot to unpick.</p>
@@ -2400,7 +2399,7 @@ $text
  <h3 class="subtitle">Option: $focusoption</h3>
 </div>
     <div class="subject-option primary">
-    <h2>Air</h2>
+    <img src="assets/img/air.png" src="air"/>
     </div>
     <div class="subject-option secondary topright">
     <<button "Green Spaces">>
@@ -2488,7 +2487,15 @@ $text
     <div class="subject-option-page-title"><h1>Air</h1></div>
     <div class="subject-option-page-subtitle"><h2>Green Space </h2></div>
     <div class="subject-option-page-img">
-      <img src="assets/img/green-space.jpg" alt="green space"/>
+       <iframe 
+  width="560" 
+  height="315" 
+  src="https://www.youtube.com/embed/71ZXdczvtTo" 
+  title="YouTube video player" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  allowfullscreen>
+</iframe>
     </div>
   <div class="subject-option-page-text">
     <p> The UK is one of the most urbanised countries in the world, with a staggering 84% of us living in towns and cities. Since the industrial revolution, our urban areas have expanded and sprawled. This process has largely happened at the expense of the natural world, with a loss of green space and increase in pollution.</p>
@@ -2538,7 +2545,15 @@ $text
     <div class="subject-option-page-title"><h1>Air</h1></div>
     <div class="subject-option-page-subtitle"><h2>Health </h2></div>
     <div class="subject-option-page-img">
-      <img src="assets/img/health.jpg" alt="a young person in front of a brick wall"/>
+    <iframe 
+  width="560" 
+  height="315" 
+  src="https://www.youtube.com/embed/mVKcT63G2Mc" 
+  title="YouTube video player" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  allowfullscreen>
+</iframe>
     </div>
   <div class="subject-option-page-text">
       <p>The health impacts of air pollution are profound, including respiratory problems, heart disease and shortened life expectancy. Children are especially affected by air pollution, which can stunt lung growth and cause health problems like asthma throughout their lives.</p>
@@ -2563,7 +2578,12 @@ $text
     <div class="subject-option-page-title"><h1>Air</h1></div>
     <div class="subject-option-page-subtitle"><h2>Waste </h2></div>
     <div class="subject-option-page-img">
-      <img src="assets/img/waste.jpg" alt="waste"/>
+     <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DCtUzOoAj-d/" data-instgrm-version="14" style="max-width:540px; width:100%; margin: 0 auto;">
+  <div style="padding:16px;"> 
+    <a href="https://www.instagram.com/p/DCtUzOoAj-d/" style="color:#000; font-weight:700;" target="_blank">View this post on Instagram</a>
+  </div>
+</blockquote>
+<script async src="//www.instagram.com/embed.js"></script>
     </div>
   <div class="subject-option-page-text">
       <p>The way we dispose of waste has an impact on our air. </p>
@@ -2589,7 +2609,15 @@ $text
     <div class="subject-option-page-title"><h1>Air</h1></div>
     <div class="subject-option-page-subtitle"><h2>Transport </h2></div>
     <div class="subject-option-page-img">
-      <img src="assets/img/transport.jpg" alt="transport"/>
+      <iframe 
+  width="560" 
+  height="315" 
+  src="https://www.youtube.com/embed/3PxaPC2cOFE" 
+  title="YouTube video player" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  allowfullscreen>
+</iframe>
     </div>
   <div class="subject-option-page-text">
 <p>In the UK, cars and vans are the biggest source of greenhouse gas emissions, contributing to climate change. Burning fossil fuels for transport produces a variety of emissions which damage the planet, our health, or both.</p>
@@ -2622,7 +2650,7 @@ $text
  <h3 class="subtitle">Option: $focusoption</h3>
 </div>
     <div class="subject-option primary">
-    <h2>Food</h2>
+ <img src="assets/img/food.png" src="food"/>
     </div>
     <div class="subject-option secondary topright">
     <<button "Meat & Dairy">>
@@ -2670,7 +2698,15 @@ $text
     <div class="subject-option-page-title"><h1>$pagefocus</h1></div>
     <div class="subject-option-page-subtitle"><h2>$pagefocusoption</h2></div>
     <div class="subject-option-page-img">
-      <img src="assets/img/meat-dairy.jpg" alt="transport"/>
+     <iframe 
+  width="560" 
+  height="315" 
+  src="https://www.youtube.com/embed/vrb60HLQ3jQ" 
+  title="YouTube video player" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  allowfullscreen>
+</iframe>
     </div>
   <div class="subject-option-page-text">
 <p>Meat and dairy products have been a source of food for millennia. But modern industrial farming practices and the sheer number of animals involved is causing huge environmental damage, squeezing out wild animals and accelerating climate change.</p>
@@ -2697,7 +2733,15 @@ $text
     <div class="subject-option-page-title"><h1>$pagefocus</h1></div>
     <div class="subject-option-page-subtitle"><h2>$pagefocusoption</h2></div>
     <div class="subject-option-page-img">
-      <img src="assets/img/palm-oil.jpg" alt="transport"/>
+      <iframe 
+  width="560" 
+  height="315" 
+  src="https://www.youtube.com/embed/omJ-raz3BkA" 
+  title="YouTube video player" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  allowfullscreen>
+</iframe>
     </div>
   <div class="subject-option-page-text">
 <p>It’s hard to find anything on the shelves that doesn’t contain palm oil – it’s in about half of all supermarket products. But the palm oil industry is responsible for destroying Indonesia’s forests on an epic scale. This is accelerating climate change, and also forces people from their traditional lands and threatens orangutans with extinction. We need to change the industry and stop palm oil companies destroying forests.</p>
@@ -2722,7 +2766,15 @@ $text
     <div class="subject-option-page-title"><h1>$pagefocus</h1></div>
     <div class="subject-option-page-subtitle"><h2>$pagefocusoption</h2></div>
     <div class="subject-option-page-img">
-      <img src="assets/img/packaging.jpg" alt="transport"/>
+     <iframe 
+  width="560" 
+  height="315" 
+  src="https://www.youtube.com/embed/Jis3uenOzU4" 
+  title="YouTube video player" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  allowfullscreen>
+</iframe>
     </div>
   <div class="subject-option-page-text">
 <p>The UK produces more plastic waste per person than almost any other country in the world, even though many of us spend time carefully sorting our recycling.</p>
@@ -2747,7 +2799,15 @@ $text
     <div class="subject-option-page-title"><h1>$pagefocus</h1></div>
     <div class="subject-option-page-subtitle"><h2>$pagefocusoption</h2></div>
     <div class="subject-option-page-img">
-      <img src="assets/img/waste.jpg" alt="transport"/>
+        <iframe 
+  width="560" 
+  height="315" 
+  src="https://www.youtube.com/embed/ccR2zK6yn8o" 
+  title="YouTube video player" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  allowfullscreen>
+</iframe>
     </div>
   <div class="subject-option-page-text">
 <p>While there are many provisions in place to reduce food waste, the UK produces the highest amount of food waste in Europe.</p>
@@ -2809,7 +2869,7 @@ $text
  <h3 class="subtitle">Option: $focusoption</h3>
 </div>
     <div class="subject-option primary">
-    <h2>Nature</h2>
+   <img src="assets/img/nature.png" src="nature"/>
     </div>
     <div class="subject-option secondary topright">
     <<button "Deforestation">>
@@ -2857,7 +2917,15 @@ $text
     <div class="subject-option-page-title"><h1>$pagefocus</h1></div>
     <div class="subject-option-page-subtitle"><h2>$pagefocusoption</h2></div>
     <div class="subject-option-page-img">
-      <img src="assets/img/deforestation.jpg" alt="transport"/>
+     <iframe 
+  width="560" 
+  height="315" 
+  src="https://www.youtube.com/embed/vJnnrpSDWPI" 
+  title="YouTube video player" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  allowfullscreen>
+</iframe>
     </div>
   <div class="subject-option-page-text">
 <p>Deforestation is the chopping down or removal of trees. It’s one of the biggest threats to wildlife, the natural world and the climate.</p>
@@ -2884,7 +2952,15 @@ $text
     <div class="subject-option-page-title"><h1>$pagefocus</h1></div>
     <div class="subject-option-page-subtitle"><h2>$pagefocusoption</h2></div>
     <div class="subject-option-page-img">
-      <img src="assets/img/pollinators.jpg" alt="pollinators"/>
+     <iframe 
+  width="560" 
+  height="315" 
+  src="https://www.youtube.com/embed/sS851Y2Xrg8" 
+  title="YouTube video player" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  allowfullscreen>
+</iframe>
     </div>
   <div class="subject-option-page-text">
 <p>We have pollinators to thank for every third mouthful we eat. Not only do they pollinate our food crops, but they’re also vital for the survival of other wild plants that support so much of our wildlife.</p>
@@ -2910,7 +2986,15 @@ $text
     <div class="subject-option-page-title"><h1>$pagefocus</h1></div>
     <div class="subject-option-page-subtitle"><h2>$pagefocusoption</h2></div>
     <div class="subject-option-page-img">
-      <img src="assets/img/biodiversity.jpg" alt="transport"/>
+ <iframe 
+  width="560" 
+  height="315" 
+  src="https://www.youtube.com/embed/7VD8gfv8p4k" 
+  title="YouTube video player" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  allowfullscreen>
+</iframe>
     </div>
   <div class="subject-option-page-text">
 <p>The natural world is a vibrant kaleidoscope of life. This is what we refer to as ‘biodiversity’. It includes a web of around 8.7 million species, from tiny ocean plankton to land and sea mammals. It is a complex life support system that has been billions of years in the making. And each plant and animal contributes to this system in its own unique way.</p>
@@ -2933,7 +3017,15 @@ $text
     <div class="subject-option-page-title"><h1>$pagefocus</h1></div>
     <div class="subject-option-page-subtitle"><h2>$pagefocusoption</h2></div>
     <div class="subject-option-page-img">
-      <img src="assets/img/consumerism.jpg" alt="transport"/>
+ <iframe 
+  width="560" 
+  height="315" 
+  src="https://www.youtube.com/embed/x0ckvo2Z5BU" 
+  title="YouTube video player" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  allowfullscreen>
+</iframe>
     </div>
   <div class="subject-option-page-text">
 <p>In an era dominated by consumerism, the hidden cost lies in the alarming decline of global biodiversity. Beyond the glossy packaging and convenience of modern products lies a profound impact on the planet's ecosystems. Deforestation, pollution, and overexploitation are direct consequences of our insatiable consumption patterns, pushing numerous species to the brink of extinction.</p>
@@ -2986,7 +3078,7 @@ $text
  <h3 class="subtitle">Option: $focusoption</h3>
 </div>
     <div class="subject-option primary">
-    <h2>Water</h2>
+  <img src="assets/img/nature.png" src="nature"/>
     </div>
     <div class="subject-option secondary topright">
     <<button "Floods">>
@@ -3034,7 +3126,15 @@ $text
     <div class="subject-option-page-title"><h1>$pagefocus</h1></div>
     <div class="subject-option-page-subtitle"><h2>$pagefocusoption</h2></div>
     <div class="subject-option-page-img">
-      <img src="assets/img/floods.jpg" alt=""/>
+     <iframe 
+  width="560" 
+  height="315" 
+  src="https://www.youtube.com/embed/Pc5VQJ13Yp4" 
+  title="YouTube video player" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  allowfullscreen>
+</iframe>
     </div>
   <div class="subject-option-page-text">
 <p>Flooding is one of the most important climate change challenges facing the UK, and people affected by flooding are more likely to experience adverse health outcomes including long-term impacts on mental health and wellbeing.</p>
@@ -3057,7 +3157,15 @@ $text
     <div class="subject-option-page-title"><h1>$pagefocus</h1></div>
     <div class="subject-option-page-subtitle"><h2>$pagefocusoption</h2></div>
     <div class="subject-option-page-img">
-      <img src="assets/img/plastic.jpg" alt="plastic"/>
+   <iframe 
+  width="560" 
+  height="315" 
+  src="https://www.youtube.com/embed/Our5CZz5qoU" 
+  title="YouTube video player" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  allowfullscreen>
+</iframe>
     </div>
   <div class="subject-option-page-text">
 <p>Most of the plastic pollution in the ocean starts out on land. It mainly comes from household and commercial waste, which blows from waste bins and landfill sites into rivers or sewers, then flows out into the sea.</p>
@@ -3080,7 +3188,15 @@ $text
     <div class="subject-option-page-title"><h1>$pagefocus</h1></div>
     <div class="subject-option-page-subtitle"><h2>$pagefocusoption</h2></div>
     <div class="subject-option-page-img">
-      <img src="assets/img/ocean-health.jpg" alt="ocean health"/>
+<iframe 
+  width="560" 
+  height="315" 
+  src="https://www.youtube.com/embed/EQKf1hoHQfQ" 
+  title="YouTube video player" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  allowfullscreen>
+</iframe>
     </div>
   <div class="subject-option-page-text">
 <p>Our planet is 70% oceans and seas, but only a tiny fraction is currently protected.</p>
@@ -3107,7 +3223,15 @@ $text
     <div class="subject-option-page-title"><h1>$pagefocus</h1></div>
     <div class="subject-option-page-subtitle"><h2>$pagefocusoption</h2></div>
     <div class="subject-option-page-img">
-      <img src="assets/img/fast-fashion.jpg" alt="fast fashion"/>
+    <iframe 
+  width="560" 
+  height="315" 
+  src="https://www.youtube.com/embed/anxQSEYe_xw" 
+  title="YouTube video player" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  allowfullscreen>
+</iframe>
     </div>
   <div class="subject-option-page-text">
 <p>Overconsumption of water and water pollution are two of the most concerning forms of environmental harm that fast fashion imposes on the environment. </p>
@@ -4581,7 +4705,11 @@ $text
 <p>Teacher, place the cards on your <span class="simple">Heist Board</span>. </p>
 <p>Here’s where the cards go.</p>
 
-ADD THE HEISTING BOARD
+<br/>
+<div class="inline-img-wrapper">
+<img src="assets/img/reverse-heist.jpg" alt="The Reverse Heist Game Board"/>
+</div>
+<br/><br/>
 <<button "Done">><<set $prevpass to $passage>><<goto $nextpass>><</button>>
 
    
