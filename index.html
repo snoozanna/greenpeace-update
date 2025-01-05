@@ -440,21 +440,21 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;&lt;elseif $module is &quot;Module 4&quot;&gt;&gt;
   &lt;&lt;set $modulename to &quot;Heisting&quot;&gt;&gt;
 &lt;&lt;elseif $module is &quot;Module 5&quot;&gt;&gt;
-  &lt;&lt;set $modulename to &quot;Focus&quot;&gt;&gt;
+  &lt;&lt;set $modulename to &quot;Global&quot;&gt;&gt;
 &lt;&lt;elseif $module is &quot;Module 6&quot;&gt;&gt;
-  &lt;&lt;set $modulename to &quot;Focus Focus&quot;&gt;&gt;
+  &lt;&lt;set $modulename to &quot;Focus&quot;&gt;&gt;
 &lt;&lt;elseif $module is &quot;Module 7&quot;&gt;&gt;
   &lt;&lt;set $modulename to &quot;Moding The System&quot;&gt;&gt;
 &lt;&lt;elseif $module is &quot;Module 8&quot;&gt;&gt;
-  &lt;&lt;set $modulename to &quot;Imagining Success&quot;&gt;&gt;
+  &lt;&lt;set $modulename to &quot;The School System&quot;&gt;&gt;
 &lt;&lt;elseif $module is &quot;Module 9&quot;&gt;&gt;
-  &lt;&lt;set $modulename to &quot;Comfort In Action&quot;&gt;&gt;
+  &lt;&lt;set $modulename to &quot;School Obstacles&quot;&gt;&gt;
 &lt;&lt;elseif $module is &quot;Module 10&quot;&gt;&gt;
-  &lt;&lt;set $modulename to &quot;Sharing Intelligence/The ASK&quot;&gt;&gt;
+  &lt;&lt;set $modulename to &quot;The Ask&quot;&gt;&gt;
 &lt;&lt;elseif $module is &quot;Module 11&quot;&gt;&gt;
   &lt;&lt;set $modulename to &quot;Gifting Grandma&quot;&gt;&gt;
 &lt;&lt;elseif $module is &quot;Module 12&quot;&gt;&gt;
-  &lt;&lt;set $modulename to &quot;The Target - Worthwhile/Winnable&quot;&gt;&gt;
+  &lt;&lt;set $modulename to &quot;The Target&quot;&gt;&gt;
 &lt;&lt;elseif $module is &quot;Module 13&quot;&gt;&gt;
   &lt;&lt;set $modulename to &quot;The Recon&quot;&gt;&gt;
 &lt;&lt;elseif $module is &quot;Module 14&quot;&gt;&gt;
@@ -466,14 +466,14 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;&lt;elseif $module is &quot;Module 17&quot;&gt;&gt;
   &lt;&lt;set $modulename to &quot;Toolkit&quot;&gt;&gt;
 &lt;&lt;elseif $module is &quot;Module 18&quot;&gt;&gt;
-  &lt;&lt;set $modulename to &quot;Our Plan&quot;&gt;&gt;
+  &lt;&lt;set $modulename to &quot;Planning&quot;&gt;&gt;
 &lt;&lt;elseif $module is &quot;Module 20&quot;&gt;&gt;
   &lt;&lt;set $modulename to &quot;Delivery&quot;&gt;&gt;
 &lt;&lt;elseif $module is &quot;Module 21&quot;&gt;&gt;
   &lt;&lt;set $modulename to &quot;Debrief&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="landing" tags="nobr" position="725,225" size="100,100">&lt;&lt;set $passage to &quot;landing&quot;&gt;&gt;
 &lt;&lt;set $audio to true&gt;&gt;
- &lt;&lt;set $nextpass to &quot;cardoptions&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;cardoptions&quot;&gt;&gt;
 &lt;div class=&quot;wrapper box&quot;&gt;
 &lt;main class=&quot;codeword landing&quot;&gt;
   &lt;div class=&quot;logo-wrapper landing&quot;&gt;
@@ -495,8 +495,6 @@ $(document.head).find('#style-ui-bar').remove();
 
 &lt;div class=&quot;wrapper box&quot;&gt;
   &lt;main class=&quot;modules&quot;&gt;
-  /* &lt;h1 class=&quot;title&quot;&gt;SESSIONS&lt;/h1&gt; */
-    /* &lt;div class=&quot;codeword-title-wrapper&quot;&gt;&lt;h1 class=&quot;title&quot;&gt;Enter &lt;/h1&gt;&lt;h1 class=&quot;title&quot;&gt;Codeword&lt;/h1&gt;&lt;/div&gt; */
       &lt;div class=&quot;menu-wrapper card-options-list&quot;&gt;
 
   &lt;&lt;link[img[assets/img/session1.png]]&gt;&gt; 
@@ -522,11 +520,7 @@ $(document.head).find('#style-ui-bar').remove();
    &lt;&lt;goto &quot;session6card&quot;&gt;&gt;
   &lt;&lt;/link&gt;&gt; 
  
-  /* &lt;&lt;include &quot;session2card&quot;&gt;&gt;
-  &lt;&lt;include &quot;session3card&quot;&gt;&gt;
-  &lt;&lt;include &quot;session4card&quot;&gt;&gt;
-  &lt;&lt;include &quot;session5card&quot;&gt;&gt;
-  &lt;&lt;include &quot;session6card&quot;&gt;&gt; */
+
   
   &lt;/div&gt;
  &lt;/main&gt;
@@ -903,8 +897,12 @@ $(document.head).find('#style-ui-bar').remove();
  &lt;div id=&quot;mount&quot;&gt;
 &lt;p&gt;This is the Extraction Economy Game. &lt;/p&gt;
 &lt;p&gt;I’ll summarise, and then you can play. &lt;/p&gt;
-&lt;&lt;timed 6s&gt;&gt;
-  &lt;&lt;append &quot;#mount&quot;&gt;&gt;
+
+&lt;br/&gt;
+&lt;p&gt;&lt;i&gt;Teacher, hand out the resources and then press next.&lt;/i&gt;&lt;/p&gt;
+&lt;&lt;button &quot;Next&quot;&gt;&gt;
+
+  &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
     &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
     &lt;audio src=&quot;assets/audio/greenpeace2.0_2_mod1intro_2.mp3&quot;  autoplay id=&quot;audio&quot;&gt;Audio is not supported on your device&lt;/audio&gt;
       &lt;&lt;/replace&gt;&gt;
@@ -917,6 +915,7 @@ $(document.head).find('#style-ui-bar').remove();
  &lt;li&gt; But, if you lose half of your resources you are out of the game.  &lt;/li&gt;
   
 &lt;/ul&gt;
+
 &lt;h4&gt;ACTION COUNTERS:&lt;/h4&gt;
 &lt;ul&gt;
   &lt;li&gt;You have Action Counters.&lt;/li&gt;
@@ -929,8 +928,10 @@ $(document.head).find('#style-ui-bar').remove();
    &lt;&lt;button &quot;Okay&quot;&gt;&gt;
       &lt;&lt;goto $nextpass&gt;&gt;
     &lt;&lt;/button&gt;&gt; 
-    &lt;&lt;/append&gt;&gt;
-    &lt;&lt;/timed&gt;&gt;
+    &lt;&lt;/replace&gt;&gt;
+
+  &lt;&lt;/button&gt;&gt;
+
     
     
  &lt;/div&gt;
@@ -1038,7 +1039,7 @@ countries must play Rock, Paper, Scissors to see who can extract.
      &lt;&lt;elseif $seconds is 0&gt;&gt;   
       &lt;&lt;replace &quot;#timer&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
       &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
-         &lt;div id=&quot;audio&quot;&gt; &lt;audio src=&quot;assets/audio/greenpeace2.0_S1_3_mod1game_1_defense.mp3&quot;  autoplay id=&quot;audio&quot;&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;&lt;&lt;/replace&gt;&gt;
+         &lt;div id=&quot;audio&quot;&gt; &lt;audio src=&quot;assets/audio/greenpeace2.0_S1_3_mod1game_1_defence.mp3&quot;  autoplay id=&quot;audio&quot;&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;&lt;&lt;/replace&gt;&gt;
       &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
      
           &lt;h2 class=&quot;subtitle&quot;&gt;Defence&lt;/h2&gt;
@@ -1117,7 +1118,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
      &lt;&lt;elseif $seconds is 0&gt;&gt;   
       &lt;&lt;replace &quot;#timer&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
       &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
-         &lt;div id=&quot;audio&quot;&gt; &lt;audio src=&quot;assets/audio/greenpeace2.0_S1_3_mod1game_1_defense.mp3&quot;  autoplay id=&quot;audio&quot;&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;&lt;&lt;/replace&gt;&gt;
+         &lt;div id=&quot;audio&quot;&gt; &lt;audio src=&quot;assets/audio/greenpeace2.0_S1_3_mod1game_1_defence.mp3&quot;  autoplay id=&quot;audio&quot;&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;&lt;&lt;/replace&gt;&gt;
       &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
      
           &lt;h2 class=&quot;subtitle&quot;&gt;Defence&lt;/h2&gt;
@@ -1196,7 +1197,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
      &lt;&lt;elseif $seconds is 0&gt;&gt;   
       &lt;&lt;replace &quot;#timer&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
       &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
-         &lt;div id=&quot;audio&quot;&gt; &lt;audio src=&quot;assets/audio/greenpeace2.0_S1_3_mod1game_1_defense.mp3&quot;  autoplay id=&quot;audio&quot;&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;&lt;&lt;/replace&gt;&gt;
+         &lt;div id=&quot;audio&quot;&gt; &lt;audio src=&quot;assets/audio/greenpeace2.0_S1_3_mod1game_1_defence.mp3&quot;  autoplay id=&quot;audio&quot;&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;&lt;&lt;/replace&gt;&gt;
       &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
      
           &lt;h2 class=&quot;subtitle&quot;&gt;Defence&lt;/h2&gt;
@@ -1275,7 +1276,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
      &lt;&lt;elseif $seconds is 0&gt;&gt;   
       &lt;&lt;replace &quot;#timer&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
       &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
-         &lt;div id=&quot;audio&quot;&gt; &lt;audio src=&quot;assets/audio/greenpeace2.0_S1_3_mod1game_1_defense.mp3&quot;  autoplay id=&quot;audio&quot;&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;&lt;&lt;/replace&gt;&gt;
+         &lt;div id=&quot;audio&quot;&gt; &lt;audio src=&quot;assets/audio/greenpeace2.0_S1_3_mod1game_1_defence.mp3&quot;  autoplay id=&quot;audio&quot;&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;&lt;&lt;/replace&gt;&gt;
       &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
      
           &lt;h2 class=&quot;subtitle&quot;&gt;Defence&lt;/h2&gt;
@@ -1386,8 +1387,8 @@ Walk to the country you want to extract from. &lt;/p&gt;
 &lt;p&gt;Those who can take what they want , with no care for what comes next or what is left behind.&lt;/p&gt;
 
 
+&lt;&lt;button &quot;Next&quot;&gt;&gt; &lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod1 to true&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
 
-  &lt;&lt;timed 17s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod1 to true&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
@@ -1440,6 +1441,8 @@ Walk to the country you want to extract from. &lt;/p&gt;
 &lt;p&gt;Let’s start by sharing what you know already. &lt;/p&gt;
 &lt;p&gt;When you hear the words Climate Emergency, what is the first thing you think of? Teacher, over to you.&lt;/p&gt; 
 
+&lt;br/&gt;&lt;br/&gt;
+&lt;p&gt;&lt;i&gt;When ready to move on click below.&lt;/i&gt;&lt;/p&gt;
 
     &lt;&lt;button &quot;Next&quot;&gt;&gt; &lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
    &lt;/div&gt;
@@ -1527,7 +1530,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
 &lt;p&gt; Click &lt;&lt;button &quot;Play&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; when you are ready. &lt;/p&gt;
 
 
-&lt;&lt;timed 10s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 14s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
    &lt;/div&gt;
     &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
@@ -1557,7 +1560,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
 &lt;p&gt;How do you think they’re connected? &lt;/p&gt;
 
 
-&lt;p&gt;When ready click &lt;&lt;button &quot;Move On&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/p&gt;
+&lt;p&gt;When you&#39;re ready click &lt;&lt;button &quot;Move On&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/p&gt;
 &lt;/div&gt;
 
   &lt;/main&gt;
@@ -1574,7 +1577,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
     &lt;/main&gt;
     
 &lt;&lt;include &quot;footervid&quot;&gt;&gt;
-     &lt;&lt;timed 191s &gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;
+     &lt;&lt;timed 188s &gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;
      &lt;&lt;/timed&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="56" name="1mod2int2" tags="nobr" position="725,725" size="100,100">&lt;&lt;set $prevpass to &quot;1mod2vid2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;1mod2int2&quot;&gt;&gt;
@@ -1589,7 +1592,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
 &lt;p&gt;How do you think this all links to us, in the UK? &lt;/p&gt;
 
 
-&lt;p&gt;When ready click &lt;&lt;button &quot;Move On&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;&lt;button &quot;Move On&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/p&gt;
 &lt;/div&gt;
 
   &lt;/main&gt;
@@ -1707,7 +1710,7 @@ Walk to the country you want to extract from. &lt;/p&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="1sessionoutro" tags="nobr" position="350,850" size="100,100">&lt;&lt;set $prevpass to &quot;1mod3codename&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;1sessionoutro&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;cardoptions&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;landing&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Session 1&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
 /* TODO REPLACE  */
 &lt;audio src=&quot;assets/audio/greenpeace2.0_S1_9_sessionoutro.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -1800,6 +1803,10 @@ Walk to the country you want to extract from. &lt;/p&gt;
 &lt;p&gt;For this game you are going to need a Game Board&lt;/p&gt;
 &lt;span class=&quot;simple&quot;&gt;The Heist Game Board&lt;/span&gt;
 &lt;br/&gt;&lt;br/&gt;
+&lt;div class=&quot;inline-img-wrapper&quot;&gt;
+&lt;img src=&quot;assets/img/heist.jpg&quot; alt=&quot;The Heist Game Board&quot;/&gt;
+&lt;/div&gt;
+&lt;br/&gt;&lt;br/&gt;
 &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
     &lt;/div&gt;
 
@@ -1857,6 +1864,11 @@ Walk to the country you want to extract from. &lt;/p&gt;
   &lt;main class=&quot;speaking&quot;&gt;
     &lt;div class=&quot;text-wrapper&quot; id=&quot;twrapper&quot;&gt;
 &lt;p&gt;Teacher, place the  &lt;span class=&quot;simple&quot;&gt; Target&lt;/span&gt;, the  &lt;span class=&quot;simple&quot;&gt; Why&lt;/span&gt; &amp; the  &lt;span class=&quot;simple&quot;&gt; Artefact&lt;/span&gt; cards on &lt;span class=&quot;white simple&quot;&gt;The Heist Board&lt;/span&gt;. &lt;/p&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;div class=&quot;inline-img-wrapper&quot;&gt;
+&lt;img src=&quot;assets/img/heist1.jpg&quot; alt=&quot;The Heist Game Board&quot;/&gt;
+&lt;/div&gt;
+&lt;br/&gt;&lt;br/&gt;
 &lt;&lt;button &quot;Done&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
     &lt;/div&gt;
 
@@ -1874,6 +1886,11 @@ Walk to the country you want to extract from. &lt;/p&gt;
 &lt;p&gt;  Now, let’s see what challenges you’ll need to overcome in your &lt;span class=&quot;white simple&quot;&gt;Heist&lt;/span&gt;.&lt;/p&gt; 
 &lt;p&gt;Shuffle and place &lt;span class=&quot;white simple&quot;&gt;4 Heist Obstacle Cards&lt;/span&gt; on the &lt;span class=&quot;white simple&quot;&gt;Heist Board&lt;/span&gt;. &lt;/p&gt;
 &lt;p&gt; Share what you have placed.&lt;/p&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;div class=&quot;inline-img-wrapper&quot;&gt;
+&lt;img src=&quot;assets/img/heist2.jpg&quot; alt=&quot;The Heist Game Board&quot;/&gt;
+&lt;/div&gt;
+&lt;br/&gt;&lt;br/&gt;
 &lt;&lt;button &quot;Done&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
     &lt;/div&gt;
 
@@ -1895,8 +1912,17 @@ Walk to the country you want to extract from. &lt;/p&gt;
 &lt;p&gt;You want to use these skills to complete the Heist and retrieve the artefact&lt;/p&gt;
 
 &lt;p&gt;A &lt;span class=&quot;white simple&quot;&gt;Heister&lt;/span&gt; can’t use a skill twice - but different skills from the same &lt;span class=&quot;white simple&quot;&gt;Heister&lt;/span&gt; can be used to overcome different obstacles.&lt;/p&gt;
-
 &lt;p&gt;Good luck. &lt;/p&gt;
+&lt;br/&gt;&lt;br/&gt;
+
+&lt;div class=&quot;inline-img-wrapper&quot;&gt;
+&lt;img src=&quot;assets/img/heist3.jpg&quot; alt=&quot;The Heist Game Board&quot;/&gt;
+&lt;/div&gt;
+&lt;br/&gt;&lt;br/&gt;
+
+&lt;p&gt;&lt;i&gt;Plan your heists and share back. &lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;&lt;i&gt;When done click below.&lt;/i&gt;&lt;/p&gt;
+
 
 &lt;&lt;button &quot;Completed&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
     &lt;/div&gt;
@@ -1943,13 +1969,16 @@ Walk to the country you want to extract from. &lt;/p&gt;
 &lt;&lt;set $passage to &quot;2mod5intro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;2mod5outro&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 5&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/greenpeace2.0_S2_4_mod5intro_6groups.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;audio src=&quot;assets/audio/greenpeace2.0_S2_4_mod5intro_smallergroups.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
- &lt;main class=&quot;speaking&quot;&gt;
+ &lt;main class=&quot;speaking inlineimg&quot;&gt;
+ &lt;div class=&quot;side-img&quot;&gt;
+&lt;div class=&quot;side-img-wrapper&quot;&gt;&lt;img src=&quot;assets/img/global.jpg&quot; alt=&quot;Global Card&quot;/&gt;&lt;/div&gt;
+ &lt;/div&gt;
     &lt;div class=&quot;text-wrapper&quot; id=&quot;twrapper&quot;&gt;
 
-&lt;p&gt;Teacher, we need 6 groups/let’s get into smaller groups. &lt;/p&gt;
+&lt;p&gt;Teacher, let’s get into smaller groups. &lt;/p&gt;
 &lt;p&gt;You’ll each receive a &lt;span class=&quot;white simple&quot;&gt;Global Card&lt;/span&gt;. &lt;/p&gt;
 
 &lt;p&gt;Each &lt;span class=&quot;white simple&quot;&gt;Global Card&lt;/span&gt; has a human on it. &lt;/p&gt;
@@ -1989,9 +2018,9 @@ When finished, click &lt;&lt;button &quot;Move On&quot;&gt;&gt;&lt;&lt;set $prev
 &lt;&lt;set $nextpass to &quot;2mod6intro&quot;&gt;&gt;
 &lt;&lt;set $focusoption to &quot;?&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 5&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/greenpeace2.0_S2_5_mod5outro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;div id=&quot;audio&quot;&gt;&lt;audio src=&quot;assets/audio/greenpeace2.0_S2_5_mod5outro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
+  &lt;div id=&quot;headerwrapper&quot;&gt;&lt;&lt;include &quot;header&quot;&gt;&gt;&lt;/div&gt;
  &lt;main class=&quot;speaking choices&quot;&gt;
     &lt;div class=&quot;text-wrapper&quot; id=&quot;twrapper&quot;&gt;
 
@@ -2000,18 +2029,46 @@ When finished, click &lt;&lt;button &quot;Move On&quot;&gt;&gt;&lt;&lt;set $prev
 &lt;p&gt;Teacher, can you hold the vote, and then select which one you have chosen. &lt;/p&gt;
 
 &lt;&lt;link &quot;AIR&quot;&gt;&gt; 
+  &lt;&lt;set $module to &quot;Module 6&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
+  &lt;&lt;replace &quot;#headerwrapper&quot;&gt;&gt;&lt;&lt;include &quot;header&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
   &lt;&lt;set $focus to &quot;Air&quot;&gt;&gt;
   &lt;&lt;set $nextpass to &quot;2mod6&quot;+$focus+&quot;options&quot;&gt;&gt;
-  &lt;&lt;timed 0.6s&gt;&gt;
+  &lt;&lt;timed 0.2s&gt;&gt;
     &lt;&lt;replace &quot;#twrapper&quot;&gt;&gt;
-       &lt;h1 class=&quot;subtitle&quot;&gt; Loading: $focus &lt;/h1&gt;
+       &lt;h1 class=&quot;subtitle&quot;&gt; Chosen theme: $focus &lt;/h1&gt;
       &lt;&lt;/replace&gt;&gt;
   &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 3s&gt;&gt;
-  &lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;
-  &lt;&lt;/timed&gt;&gt;
+  &lt;&lt;timed 0.8s&gt;&gt;
+    &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
+      &lt;audio src=&quot;assets/audio/greenpeace2.0_S2_6_mod6intro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+    
+      &lt;&lt;/replace&gt;&gt;
+    &lt;&lt;append &quot;#twrapper&quot;&gt;&gt;
+          &lt;p&gt; That’s great - you’ve chosen a theme. &lt;/p&gt;
+&lt;p&gt;But the themes were quite broad right? &lt;/p&gt;
+&lt;p&gt;There’s a lot to unpick.&lt;/p&gt;
+&lt;p&gt;Let’s explode what you have chosen, to get even closer to what you want to change. &lt;/p&gt;  
+&lt;&lt;/append&gt;&gt;
+    &lt;&lt;/timed&gt;&gt;
+    &lt;&lt;timed 13s&gt;&gt;
+ &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
+      &lt;audio src=&quot;assets/audio/greenpeace2.0_S2_6_mod6intro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+      &lt;&lt;/replace&gt;&gt;
+    &lt;&lt;replace &quot;#twrapper&quot;&gt;&gt;
+&lt;p&gt;This will help you determine what your action is about.&lt;/p&gt;
+&lt;p&gt;When you know what that is, you’ll write it on your Focus Card. &lt;/p&gt;
+&lt;p&gt;There are 5 directions you could go - 4 we have offered, and 1 open to you if you have other ideas.&lt;/p&gt;
+&lt;p&gt;Pick what you think is most appropriate for you.&lt;/p&gt;
+&lt;&lt;button &quot;Next&quot;&gt;&gt;
+    &lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;
+  &lt;&lt;/button&gt;&gt;
+  &lt;&lt;/replace&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+
 &lt;&lt;/link&gt;&gt;
 &lt;&lt;link &quot;FOOD&quot;&gt;&gt; 
+   &lt;&lt;set $module to &quot;Module 6&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
+   &lt;&lt;replace &quot;#headerwrapper&quot;&gt;&gt;&lt;&lt;include &quot;header&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
   &lt;&lt;set $focus to &quot;Food&quot;&gt;&gt;
    &lt;&lt;set $nextpass to &quot;2mod6&quot;+$focus+&quot;options&quot;&gt;&gt;
   &lt;&lt;timed 0.6s&gt;&gt;
@@ -2019,11 +2076,37 @@ When finished, click &lt;&lt;button &quot;Move On&quot;&gt;&gt;&lt;&lt;set $prev
        &lt;h1 class=&quot;subtitle&quot;&gt; Loading: $focus &lt;/h1&gt;
       &lt;&lt;/replace&gt;&gt;
   &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 3s&gt;&gt;
-  &lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;
-  &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 0.8s&gt;&gt;
+    &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
+      &lt;audio src=&quot;assets/audio/greenpeace2.0_S2_6_mod6intro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+    
+      &lt;&lt;/replace&gt;&gt;
+    &lt;&lt;append &quot;#twrapper&quot;&gt;&gt;
+      $module
+          &lt;p&gt; That’s great - you’ve chosen a theme. &lt;/p&gt;
+&lt;p&gt;But the themes were quite broad right? &lt;/p&gt;
+&lt;p&gt;There’s a lot to unpick.&lt;/p&gt;
+&lt;p&gt;Let’s explode what you have chosen, to get even closer to what you want to change. &lt;/p&gt;  
+&lt;&lt;/append&gt;&gt;
+    &lt;&lt;/timed&gt;&gt;
+    &lt;&lt;timed 13s&gt;&gt;
+ &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
+      &lt;audio src=&quot;assets/audio/greenpeace2.0_S2_6_mod6intro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+      &lt;&lt;/replace&gt;&gt;
+    &lt;&lt;replace &quot;#twrapper&quot;&gt;&gt;
+&lt;p&gt;This will help you determine what your action is about.&lt;/p&gt;
+&lt;p&gt;When you know what that is, you’ll write it on your Focus Card. &lt;/p&gt;
+&lt;p&gt;There are 5 directions you could go - 4 we have offered, and 1 open to you if you have other ideas.&lt;/p&gt;
+&lt;p&gt;Pick what you think is most appropriate for you.&lt;/p&gt;
+&lt;&lt;button &quot;Next&quot;&gt;&gt;
+    &lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;
+  &lt;&lt;/button&gt;&gt;
+  &lt;&lt;/replace&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
 &lt;&lt;/link&gt;&gt;
 &lt;&lt;link &quot;NATURE&quot;&gt;&gt; 
+   &lt;&lt;set $module to &quot;Module 6&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
+   &lt;&lt;replace &quot;#headerwrapper&quot;&gt;&gt;&lt;&lt;include &quot;header&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
   &lt;&lt;set $focus to &quot;Nature&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;2mod6&quot;+$focus+&quot;options&quot;&gt;&gt;
   &lt;&lt;timed 0.6s&gt;&gt;
@@ -2031,11 +2114,36 @@ When finished, click &lt;&lt;button &quot;Move On&quot;&gt;&gt;&lt;&lt;set $prev
        &lt;h1 class=&quot;subtitle&quot;&gt; Loading: $focus &lt;/h1&gt;
       &lt;&lt;/replace&gt;&gt;
   &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 3s&gt;&gt;
-  &lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;
-  &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 0.8s&gt;&gt;
+    &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
+      &lt;audio src=&quot;assets/audio/greenpeace2.0_S2_6_mod6intro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+    
+      &lt;&lt;/replace&gt;&gt;
+    &lt;&lt;append &quot;#twrapper&quot;&gt;&gt;
+          &lt;p&gt; That’s great - you’ve chosen a theme. &lt;/p&gt;
+&lt;p&gt;But the themes were quite broad right? &lt;/p&gt;
+&lt;p&gt;There’s a lot to unpick.&lt;/p&gt;
+&lt;p&gt;Let’s explode what you have chosen, to get even closer to what you want to change. &lt;/p&gt;  
+&lt;&lt;/append&gt;&gt;
+    &lt;&lt;/timed&gt;&gt;
+    &lt;&lt;timed 13s&gt;&gt;
+ &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
+      &lt;audio src=&quot;assets/audio/greenpeace2.0_S2_6_mod6intro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+      &lt;&lt;/replace&gt;&gt;
+    &lt;&lt;replace &quot;#twrapper&quot;&gt;&gt;
+&lt;p&gt;This will help you determine what your action is about.&lt;/p&gt;
+&lt;p&gt;When you know what that is, you’ll write it on your Focus Card. &lt;/p&gt;
+&lt;p&gt;There are 5 directions you could go - 4 we have offered, and 1 open to you if you have other ideas.&lt;/p&gt;
+&lt;p&gt;Pick what you think is most appropriate for you.&lt;/p&gt;
+&lt;&lt;button &quot;Next&quot;&gt;&gt;
+    &lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;
+  &lt;&lt;/button&gt;&gt;
+  &lt;&lt;/replace&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
 &lt;&lt;/link&gt;&gt;
 &lt;&lt;link &quot;WATER&quot;&gt;&gt; 
+   &lt;&lt;set $module to &quot;Module 6&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
+   &lt;&lt;replace &quot;#headerwrapper&quot;&gt;&gt;&lt;&lt;include &quot;header&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
   &lt;&lt;set $focus to &quot;Water&quot;&gt;&gt;
   &lt;&lt;set $nextpass to &quot;2mod6&quot;+$focus+&quot;options&quot;&gt;&gt;
   &lt;&lt;timed 0.6s&gt;&gt;
@@ -2043,14 +2151,37 @@ When finished, click &lt;&lt;button &quot;Move On&quot;&gt;&gt;&lt;&lt;set $prev
        &lt;h1 class=&quot;subtitle&quot;&gt; Loading: $focus &lt;/h1&gt;
       &lt;&lt;/replace&gt;&gt;
   &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 3s&gt;&gt;
-  &lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;
-  &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 0.8s&gt;&gt;
+    &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
+      &lt;audio src=&quot;assets/audio/greenpeace2.0_S2_6_mod6intro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+    
+      &lt;&lt;/replace&gt;&gt;
+    &lt;&lt;append &quot;#twrapper&quot;&gt;&gt;
+          &lt;p&gt; That’s great - you’ve chosen a theme. &lt;/p&gt;
+&lt;p&gt;But the themes were quite broad right? &lt;/p&gt;
+&lt;p&gt;There’s a lot to unpick.&lt;/p&gt;
+&lt;p&gt;Let’s explode what you have chosen, to get even closer to what you want to change. &lt;/p&gt;  
+&lt;&lt;/append&gt;&gt;
+    &lt;&lt;/timed&gt;&gt;
+    &lt;&lt;timed 13s&gt;&gt;
+ &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
+      &lt;audio src=&quot;assets/audio/greenpeace2.0_S2_6_mod6intro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+      &lt;&lt;/replace&gt;&gt;
+    &lt;&lt;replace &quot;#twrapper&quot;&gt;&gt;
+&lt;p&gt;This will help you determine what your action is about.&lt;/p&gt;
+&lt;p&gt;When you know what that is, you’ll write it on your Focus Card. &lt;/p&gt;
+&lt;p&gt;There are 5 directions you could go - 4 we have offered, and 1 open to you if you have other ideas.&lt;/p&gt;
+&lt;p&gt;Pick what you think is most appropriate for you.&lt;/p&gt;
+&lt;&lt;button &quot;Next&quot;&gt;&gt;
+    &lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;
+  &lt;&lt;/button&gt;&gt;
+  &lt;&lt;/replace&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
 &lt;&lt;/link&gt;&gt;
     &lt;/div&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footerskip&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;
 &lt;/div&gt;
 &lt;&lt;set $mod5 to true&gt;&gt;</tw-passagedata><tw-passagedata pid="77" name="2mod6intro" tags="nobr" position="850,975" size="100,100">&lt;&lt;set $prevpass to &quot;2mod5outro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2mod6intro&quot;&gt;&gt;
@@ -2746,7 +2877,7 @@ $text
 &lt;/div&gt;
 &lt;/main&gt;</tw-passagedata><tw-passagedata pid="104" name="2sessionoutro" tags="nobr" position="475,1350" size="100,100">&lt;&lt;set $prevpass to &quot;chosenfocusoption&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2sessionoutro&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;cardoptions&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;landing&quot;&gt;&gt;
 &lt;&lt;set $mod3 to true&gt;&gt;
 &lt;&lt;set $module to &quot;Session 2&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/greenpeace2.0_S2_7_sessionoutro.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -2919,7 +3050,7 @@ $text
 
 &lt;p&gt;Teacher, I’ll leave you to lead this. &lt;/p&gt;
 
- &lt;&lt;timed 17s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod1 to true&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+ &lt;&lt;timed 19s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod1 to true&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
     &lt;/div&gt;
 
 &lt;/main&gt;
@@ -2929,7 +3060,7 @@ $text
 &lt;&lt;set $nextpass to &quot;3mod8outro&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 8&quot;&gt;&gt;
 &lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/greenpeace2.0_S3_5_theschoolsystem.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+/* &lt;audio src=&quot;assets/audio/greenpeace2.0_S3_5_theschoolsystem.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt; */
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
  &lt;main class=&quot;speaking&quot;&gt;
@@ -2980,12 +3111,15 @@ $text
 &lt;audio src=&quot;assets/audio/greenpeace2.0_S3_7_mod9_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
- &lt;main class=&quot;speaking&quot;&gt;
+ &lt;main class=&quot;speaking inlineimg&quot;&gt;
+  &lt;div class=&quot;side-img&quot;&gt;
+&lt;div class=&quot;side-img-wrapper&quot;&gt;&lt;img src=&quot;assets/img/schoolobstacle.jpg&quot; alt=&quot;School Obstacle Card&quot;/&gt;&lt;/div&gt;
+ &lt;/div&gt;
     &lt;div class=&quot;text-wrapper&quot; id=&quot;twrapper&quot;&gt;
 
 &lt;p&gt;Now, let&#39;s understand the obstacles to the change. &lt;/p&gt;
 
-&lt;p&gt;  You’ve written them down already, choose four as a whole group and write them on the &lt;span class=&quot;simple&quot;&gt;Obstacle Cards&lt;/span&gt; &lt;/p&gt;
+&lt;p&gt;You’ve written them down already, choose four as a whole group and write them on the &lt;span class=&quot;simple&quot;&gt;Obstacle Cards&lt;/span&gt; &lt;/p&gt;
 
  &lt;p&gt;When done, click &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/p&gt;
     &lt;/div&gt;
@@ -3000,12 +3134,18 @@ $text
 &lt;div id=&quot;audio&quot;&gt;&lt;audio src=&quot;assets/audio/greenpeace2.0_S3_7_mod9_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
- &lt;main class=&quot;speaking&quot;&gt;
+ &lt;main class=&quot;speaking&quot; id=&quot;mount&quot;&gt;
     &lt;div class=&quot;text-wrapper&quot; id=&quot;twrapper&quot;&gt;
 &lt;p&gt;In four groups - come up with ideas on how to overcome these obstacles. What could be changed? &lt;/p&gt;
 
  &lt;&lt;button &quot;Next&quot;&gt;&gt;
   &lt;&lt;timed 0.5s&gt;&gt;
+    &lt;&lt;addclass &quot;main&quot; &quot;inlineimg&quot;&gt;&gt;
+    &lt;&lt;prepend &quot;#mount&quot;&gt;&gt; 
+      &lt;div class=&quot;side-img&quot;&gt;
+&lt;div class=&quot;side-img-wrapper&quot;&gt;&lt;img src=&quot;assets/img/change.jpg&quot; alt=&quot;Change Card&quot;/&gt;&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;&lt;/prepend&gt;&gt;
     &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
       &lt;audio src=&quot;assets/audio/greenpeace2.0_S3_7_mod9_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
       &lt;&lt;/replace&gt;&gt;
@@ -3057,16 +3197,23 @@ $text
 &lt;div id=&quot;audio&quot;&gt;&lt;audio src=&quot;assets/audio/greenpeace2.0_S3_9_mod10intro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
- &lt;main class=&quot;speaking&quot;&gt;
+ &lt;main class=&quot;speaking inlineimg&quot;&gt;
+ &lt;div class=&quot;side-img&quot;&gt;
+&lt;div class=&quot;side-img-wrapper&quot;&gt;&lt;img src=&quot;assets/img/ask.jpg&quot; alt=&quot;Ask Card&quot;/&gt;&lt;/div&gt;
+ &lt;/div&gt;
     &lt;div class=&quot;text-wrapper&quot; id=&quot;twrapper&quot;&gt;
 
 &lt;p&gt;Teacher, take out the &lt;span class=&quot;simple&quot;&gt;Worthwhile/Winnable Board&lt;/span&gt; and I’ll hand over to you. &lt;/p&gt;
 
 &lt;p&gt;You’re going to turn your &lt;span class=&quot;simple&quot;&gt;4 Change Cards&lt;/span&gt; into &lt;span class=&quot;simple&quot;&gt;1 Ask Card&lt;/span&gt;. &lt;/p&gt;
 
- &lt;p&gt;When you have your Ask, click &lt;&lt;button &quot;Done&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/p&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;div class=&quot;inline-img-wrapper&quot;&gt;
+&lt;img src=&quot;assets/img/wwboard.jpg&quot; alt=&quot;Worthwhile Winnable board&quot;/&gt;
+&lt;/div&gt;
+&lt;br/&gt;&lt;br/&gt;
 
-   
+ &lt;p&gt;When you have your Ask, click &lt;&lt;button &quot;Done&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/p&gt;
     &lt;/div&gt;
 
 &lt;/main&gt;
@@ -3076,7 +3223,7 @@ $text
 &lt;&lt;set $nextpass to &quot;3sessionoutro2&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Session 3&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
 
-&lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;audio src=&quot;assets/audio/greenpeace2.0_S3_10_sessionoutro_0.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking &quot;&gt;
@@ -3119,7 +3266,7 @@ $text
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="120" name="3sessionoutro3" tags="nobr" position="1225,1475" size="100,100">&lt;&lt;set $prevpass to &quot;3sessionoutro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3sessionoutro3&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;cardoptions&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;landing&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Session 3&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
 &lt;div id=&quot;audio&quot;&gt;&lt;audio src=&quot;assets/audio/greenpeace2.0_S3_10_sessionoutro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
 
@@ -3234,11 +3381,14 @@ $text
 &lt;div id=&quot;audio&quot;&gt;&lt;audio src=&quot;assets/audio/greenpeace2.0_S4_4_mod12.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
- &lt;main class=&quot;speaking&quot;&gt;
+ &lt;main class=&quot;speaking inlineimg&quot;&gt;
+   &lt;div class=&quot;side-img&quot;&gt;
+    &lt;div class=&quot;side-img-wrapper&quot;&gt;&lt;img src=&quot;assets/img/target.jpg&quot; alt=&quot;Target Card&quot;/&gt;&lt;/div&gt;
+ &lt;/div&gt;
     &lt;div class=&quot;text-wrapper&quot; id=&quot;twrapper&quot;&gt;
 
 &lt;p&gt;As a group, decide who are the 6 potential targets. 6 potential people to reach to achieve your change. &lt;/p&gt;
-&lt;p&gt;Write them down on the Target Cards. &lt;/p&gt;
+&lt;p&gt;Write them down on the &lt;span class=&quot;white simple&quot;&gt;Target Cards&lt;/span&gt;. &lt;/p&gt;
 &lt;p&gt;You could use Worthwhile/Winnable to work out who is best to target. &lt;/p&gt;
 &lt;p&gt;Or you can just decide. &lt;/p&gt;
 
@@ -3257,7 +3407,10 @@ $text
 &lt;audio src=&quot;assets/audio/greenpeace2.0_S4_5_mod12outro.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
- &lt;main class=&quot;speaking&quot;&gt;
+ &lt;main class=&quot;speaking inlineimg&quot;&gt;
+ &lt;div class=&quot;side-img&quot;&gt;
+    &lt;div class=&quot;side-img-wrapper&quot;&gt;&lt;img src=&quot;assets/img/recipient.jpg&quot; alt=&quot;Recipient Card&quot;/&gt;&lt;/div&gt;
+ &lt;/div&gt;
     &lt;div class=&quot;text-wrapper&quot; id=&quot;twrapper&quot;&gt;
 
 &lt;p&gt;Whoever you have chosen, this is your &lt;span class=&quot;simple&quot;&gt;Recipient&lt;/span&gt;&lt;/p&gt;
@@ -3283,7 +3436,7 @@ $text
 &lt;p&gt;So, what do you know?&lt;/p&gt;
 
 
-&lt;&lt;timed 12s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 13s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
     &lt;/div&gt;
 
 &lt;/main&gt;
@@ -3298,6 +3451,11 @@ $text
  &lt;main class=&quot;speaking&quot;&gt;
     &lt;div class=&quot;text-wrapper&quot; id=&quot;twrapper&quot;&gt;
 &lt;p&gt;Get the &lt;span class=&quot;simple&quot;&gt;Mind Map Board&lt;/span&gt; out. &lt;/p&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;div class=&quot;inline-img-wrapper&quot;&gt;
+&lt;img src=&quot;assets/img/mindmap1.jpg&quot; alt=&quot;Mind Map board&quot;/&gt;
+&lt;/div&gt;
+&lt;br/&gt;&lt;br/&gt;
 &lt;p&gt;This will help you run recon. &lt;/p&gt;
 &lt;p&gt;Recon is when we map everything we know about something or someone. &lt;/p&gt;
 &lt;p&gt;So that we’re prepared. &lt;/p&gt;
@@ -3305,7 +3463,7 @@ $text
 &lt;p&gt;Teacher, over to you. &lt;/p&gt;
 &lt;p&gt;You might want to write these on the board and then there are six empty Recon Cards to fill out with the key information, but you might discover more. &lt;/p&gt;
 
-&lt;&lt;timed 15s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
     &lt;/div&gt;
 
 &lt;/main&gt;
@@ -3315,7 +3473,7 @@ $text
 &lt;&lt;set $nextpass to &quot;4mod13outro&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 13&quot;&gt;&gt;
 &lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
-&lt;div id=&quot;audio&quot;&gt;&lt;audio src=&quot;assets/audio/greenpeace2.0_S4_7_mod13.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
+/* &lt;div id=&quot;audio&quot;&gt;&lt;audio src=&quot;assets/audio/greenpeace2.0_S4_7_mod13.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt; */
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
  &lt;main class=&quot;speaking&quot;&gt;
@@ -3329,7 +3487,11 @@ $text
   &lt;li&gt;How are they impacted by your Focus?&lt;/li&gt;
   &lt;li&gt;Do they have any allies we could reach out to?&lt;/li&gt;
 &lt;/ul&gt;
-
+&lt;br/&gt;
+&lt;div class=&quot;inline-img-wrapper&quot;&gt;
+&lt;img src=&quot;assets/img/mindmap1.jpg&quot; alt=&quot;Mind Map board&quot;/&gt;
+&lt;/div&gt;
+&lt;br/&gt;&lt;br/&gt;
  &lt;p&gt;When done, click &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/p&gt;
 
    
@@ -3476,7 +3638,7 @@ $text
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="137" name="4sessionoutro" tags="nobr" position="850,1725" size="100,100">&lt;&lt;set $prevpass to &quot;4mod14outro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4sessionoutro&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;cardoptions&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;landing&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Session 4&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/greenpeace2.0_S4_12_sessionoutro.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 
@@ -3576,7 +3738,10 @@ $text
 &lt;audio src=&quot;assets/audio/greenpeace2.0_S5_3_mod15intro_2_altwithextrabit.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
- &lt;main class=&quot;speaking&quot;&gt;
+ &lt;main class=&quot;speaking inlineimg&quot;&gt;
+ &lt;div class=&quot;side-img&quot;&gt;
+    &lt;div class=&quot;side-img-wrapper&quot;&gt;&lt;img src=&quot;assets/img/activistcard.jpg&quot; alt=&quot;Activist Card&quot;/&gt;&lt;/div&gt;
+ &lt;/div&gt;
     &lt;div class=&quot;text-wrapper&quot; id=&quot;twrapper&quot;&gt;
 
 &lt;p&gt;Everyone has skills. &lt;/p&gt;
@@ -3704,7 +3869,7 @@ $text
 &lt;p&gt;It’s about us and the roles we want to play. But it’s also about the systems that we’re part of. &lt;/p&gt;
 &lt;p&gt;By understanding &lt;span class=&quot;simple&quot;&gt;Comfort in Action&lt;/span&gt;, we’re able to work as a collective. We make sure everything happens, that all roles are played, but that no one is put at risk, that we’re all comfortable.&lt;/p&gt;
 
-&lt;&lt;timed 19s&gt;&gt;&lt;&lt;set $mod16 to true&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $mod16 to true&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
     &lt;/div&gt;
 
 &lt;/main&gt;
@@ -3774,7 +3939,7 @@ $text
  &lt;main class=&quot;speaking&quot;&gt;
     &lt;div class=&quot;text-wrapper&quot; id=&quot;twrapper&quot;&gt;
 &lt;p&gt;We are going to play a game of fiction. &lt;/p&gt;
-&lt;p&gt;A fiction that might be close reality, &lt;/p&gt;
+&lt;p&gt;A fiction that might be close to reality, &lt;/p&gt;
 &lt;p&gt;But for this game, it’s important to imagine it is fiction. &lt;/p&gt;
 &lt;p&gt;It’s called Burnout. &lt;/p&gt;
 
@@ -3876,7 +4041,10 @@ $text
 &lt;div id=&quot;audio&quot;&gt;&lt;audio src=&quot;assets/audio/greenpeace2.0_S5_7_mod17_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
- &lt;main class=&quot;speaking&quot;&gt;
+ &lt;main class=&quot;speaking inlineimg&quot;&gt;
+  &lt;div class=&quot;side-img&quot;&gt;
+    &lt;div class=&quot;side-img-wrapper&quot;&gt;&lt;img src=&quot;assets/img/resilience.jpg&quot; alt=&quot;Resilience Card&quot;/&gt;&lt;/div&gt;
+ &lt;/div&gt;
     &lt;div class=&quot;text-wrapper&quot; id=&quot;twrapper&quot;&gt;
 
 &lt;p&gt;So, - you’ve seen how I stay resilient, it’s your turn - what is your Resilience Plan? &lt;/p&gt;
@@ -3923,7 +4091,7 @@ $text
 &lt;p&gt;The key thing is to listen to your feelings and always ask for help if you need it. &lt;/p&gt;
 
 
-&lt;&lt;timed 18s&gt;&gt;&lt;&lt;set $mod17 to true&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $mod17 to true&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
     &lt;/div&gt;
 
 &lt;/main&gt;
@@ -4064,7 +4232,7 @@ ADD THE HEISTING BOARD
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="165" name="5sessionoutro3" tags="nobr" position="600,2100" size="100,100">&lt;&lt;set $prevpass to &quot;5sessionoutro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5sessionoutro3&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;cardoptions&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;landing&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Session 5&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/greenpeace2.0_S5_12_sessionoutro_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 
@@ -4335,7 +4503,7 @@ ADD THE HEISTING BOARD
 &lt;p&gt;Or you might have chosen for them to receive it when you aren’t there.&lt;/p&gt;
 &lt;p&gt;You might not know anything that happened.&lt;/p&gt;
 
-&lt;&lt;timed 11s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 12.5s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
     &lt;/div&gt;
 
 &lt;/main&gt;
@@ -4344,7 +4512,7 @@ ADD THE HEISTING BOARD
 &lt;&lt;set $passage to &quot;8mod21intro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8mod21intro3&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 21&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/greenpeace2.0_S8_1_mod21intro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;audio src=&quot;assets/audio/greenpeace2.0_S8_3_mod21intro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
  &lt;main class=&quot;speaking&quot;&gt;
@@ -4356,7 +4524,7 @@ ADD THE HEISTING BOARD
 &lt;p&gt;For all you have done to imagine a different system, and the gift you gave, the spark that might make that a reality.&lt;/p&gt;
 
 
-&lt;&lt;timed 11s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 15s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
     &lt;/div&gt;
 
 &lt;/main&gt;
@@ -4479,7 +4647,7 @@ ADD THE HEISTING BOARD
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="185" name="8sessionoutro4" tags="nobr" position="600,2350" size="100,100">&lt;&lt;set $prevpass to &quot;8sessionoutro3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8sessionoutro4&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;cardoptions&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;landing&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Session 8&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
 
 &lt;audio src=&quot;assets/audio/greenpeace2.0_S8_5_sessionoutro_4.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;

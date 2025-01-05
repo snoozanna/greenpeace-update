@@ -244,12 +244,23 @@ main.speaking.inlineimg {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  width: 90%;
+  gap: 5rem;
+}
+
+main.speaking > .side-img{
+  width: 25%;
 }
 
 main.speaking.inlineimg > img {
   max-width: 300px;
   transform: rotate(-4deg);
   margin-inline-start: 4rem;
+}
+
+.inline-img-wrapper, .side-img-wrapper{
+  border:solid 3px white;
+  transform: rotate(-3deg);
 }
 
 /* FOOTER */

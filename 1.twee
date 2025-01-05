@@ -414,21 +414,21 @@ $(document.head).find('#style-ui-bar').remove();
 <<elseif $module is "Module 4">>
   <<set $modulename to "Heisting">>
 <<elseif $module is "Module 5">>
-  <<set $modulename to "Focus">>
+  <<set $modulename to "Global">>
 <<elseif $module is "Module 6">>
-  <<set $modulename to "Focus Focus">>
+  <<set $modulename to "Focus">>
 <<elseif $module is "Module 7">>
   <<set $modulename to "Moding The System">>
 <<elseif $module is "Module 8">>
-  <<set $modulename to "Imagining Success">>
+  <<set $modulename to "The School System">>
 <<elseif $module is "Module 9">>
-  <<set $modulename to "Comfort In Action">>
+  <<set $modulename to "School Obstacles">>
 <<elseif $module is "Module 10">>
-  <<set $modulename to "Sharing Intelligence/The ASK">>
+  <<set $modulename to "The Ask">>
 <<elseif $module is "Module 11">>
   <<set $modulename to "Gifting Grandma">>
 <<elseif $module is "Module 12">>
-  <<set $modulename to "The Target - Worthwhile/Winnable">>
+  <<set $modulename to "The Target">>
 <<elseif $module is "Module 13">>
   <<set $modulename to "The Recon">>
 <<elseif $module is "Module 14">>
@@ -440,7 +440,7 @@ $(document.head).find('#style-ui-bar').remove();
 <<elseif $module is "Module 17">>
   <<set $modulename to "Toolkit">>
 <<elseif $module is "Module 18">>
-  <<set $modulename to "Our Plan">>
+  <<set $modulename to "Planning">>
 <<elseif $module is "Module 20">>
   <<set $modulename to "Delivery">>
 <<elseif $module is "Module 21">>
@@ -452,7 +452,7 @@ $(document.head).find('#style-ui-bar').remove();
 :: landing [nobr]
 <<set $passage to "landing">>
 <<set $audio to true>>
- <<set $nextpass to "cardoptions">>
+<<set $nextpass to "cardoptions">>
 <div class="wrapper box">
 <main class="codeword landing">
   <div class="logo-wrapper landing">
@@ -477,8 +477,6 @@ $(document.head).find('#style-ui-bar').remove();
 
 <div class="wrapper box">
   <main class="modules">
-  /* <h1 class="title">SESSIONS</h1> */
-    /* <div class="codeword-title-wrapper"><h1 class="title">Enter </h1><h1 class="title">Codeword</h1></div> */
       <div class="menu-wrapper card-options-list">
 
   <<link[img[assets/img/session1.png]]>> 
@@ -504,11 +502,7 @@ $(document.head).find('#style-ui-bar').remove();
    <<goto "session6card">>
   <</link>> 
  
-  /* <<include "session2card">>
-  <<include "session3card">>
-  <<include "session4card">>
-  <<include "session5card">>
-  <<include "session6card">> */
+
   
   </div>
  </main>
@@ -937,8 +931,12 @@ $(document.head).find('#style-ui-bar').remove();
  <div id="mount">
 <p>This is the Extraction Economy Game. </p>
 <p>I’ll summarise, and then you can play. </p>
-<<timed 6s>>
-  <<append "#mount">>
+
+<br/>
+<p><i>Teacher, hand out the resources and then press next.</i></p>
+<<button "Next">>
+
+  <<replace "#mount">>
     <<replace "#audio">>
     <audio src="assets/audio/greenpeace2.0_2_mod1intro_2.mp3"  autoplay id="audio">Audio is not supported on your device</audio>
       <</replace>>
@@ -951,6 +949,7 @@ $(document.head).find('#style-ui-bar').remove();
  <li> But, if you lose half of your resources you are out of the game.  </li>
   
 </ul>
+
 <h4>ACTION COUNTERS:</h4>
 <ul>
   <li>You have Action Counters.</li>
@@ -963,8 +962,10 @@ $(document.head).find('#style-ui-bar').remove();
    <<button "Okay">>
       <<goto $nextpass>>
     <</button>> 
-    <</append>>
-    <</timed>>
+    <</replace>>
+
+  <</button>>
+
     
     
  </div>
@@ -1079,7 +1080,7 @@ countries must play Rock, Paper, Scissors to see who can extract.
      <<elseif $seconds is 0>>   
       <<replace "#timer">><</replace>>
       <<replace "#audio">>
-         <div id="audio"> <audio src="assets/audio/greenpeace2.0_S1_3_mod1game_1_defense.mp3"  autoplay id="audio">Audio is not supported on your device</audio></div><</replace>>
+         <div id="audio"> <audio src="assets/audio/greenpeace2.0_S1_3_mod1game_1_defence.mp3"  autoplay id="audio">Audio is not supported on your device</audio></div><</replace>>
       <<replace "#mount">>
      
           <h2 class="subtitle">Defence</h2>
@@ -1164,7 +1165,7 @@ Walk to the country you want to extract from. </p>
      <<elseif $seconds is 0>>   
       <<replace "#timer">><</replace>>
       <<replace "#audio">>
-         <div id="audio"> <audio src="assets/audio/greenpeace2.0_S1_3_mod1game_1_defense.mp3"  autoplay id="audio">Audio is not supported on your device</audio></div><</replace>>
+         <div id="audio"> <audio src="assets/audio/greenpeace2.0_S1_3_mod1game_1_defence.mp3"  autoplay id="audio">Audio is not supported on your device</audio></div><</replace>>
       <<replace "#mount">>
      
           <h2 class="subtitle">Defence</h2>
@@ -1249,7 +1250,7 @@ Walk to the country you want to extract from. </p>
      <<elseif $seconds is 0>>   
       <<replace "#timer">><</replace>>
       <<replace "#audio">>
-         <div id="audio"> <audio src="assets/audio/greenpeace2.0_S1_3_mod1game_1_defense.mp3"  autoplay id="audio">Audio is not supported on your device</audio></div><</replace>>
+         <div id="audio"> <audio src="assets/audio/greenpeace2.0_S1_3_mod1game_1_defence.mp3"  autoplay id="audio">Audio is not supported on your device</audio></div><</replace>>
       <<replace "#mount">>
      
           <h2 class="subtitle">Defence</h2>
@@ -1334,7 +1335,7 @@ Walk to the country you want to extract from. </p>
      <<elseif $seconds is 0>>   
       <<replace "#timer">><</replace>>
       <<replace "#audio">>
-         <div id="audio"> <audio src="assets/audio/greenpeace2.0_S1_3_mod1game_1_defense.mp3"  autoplay id="audio">Audio is not supported on your device</audio></div><</replace>>
+         <div id="audio"> <audio src="assets/audio/greenpeace2.0_S1_3_mod1game_1_defence.mp3"  autoplay id="audio">Audio is not supported on your device</audio></div><</replace>>
       <<replace "#mount">>
      
           <h2 class="subtitle">Defence</h2>
@@ -1459,8 +1460,8 @@ Walk to the country you want to extract from. </p>
 <p>Those who can take what they want , with no care for what comes next or what is left behind.</p>
 
 
+<<button "Next">> <<set $prevpass to $passage>><<set $mod1 to true>><<goto $nextpass>><</button>>
 
-  <<timed 17s>><<set $prevpass to $passage>><<set $mod1 to true>><<goto $nextpass>><</timed>>
 </div>
   </main>
      <<include "footerskip">>
@@ -1523,6 +1524,8 @@ Walk to the country you want to extract from. </p>
 <p>Let’s start by sharing what you know already. </p>
 <p>When you hear the words Climate Emergency, what is the first thing you think of? Teacher, over to you.</p> 
 
+<br/><br/>
+<p><i>When ready to move on click below.</i></p>
 
     <<button "Next">> <<set $prevpass to $passage>><<goto $nextpass>><</button>>
    </div>
@@ -1625,7 +1628,7 @@ Walk to the country you want to extract from. </p>
 <p> Click <<button "Play">><<set $prevpass to $passage>><<goto $nextpass>><</button>> when you are ready. </p>
 
 
-<<timed 10s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+<<timed 14s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
    </div>
     </main>
 <<include "footerskip">>
@@ -1663,7 +1666,7 @@ Walk to the country you want to extract from. </p>
 <p>How do you think they’re connected? </p>
 
 
-<p>When ready click <<button "Move On">><<set $prevpass to $passage>><<goto $nextpass>><</button>></p>
+<p>When you're ready click <<button "Move On">><<set $prevpass to $passage>><<goto $nextpass>><</button>></p>
 </div>
 
   </main>
@@ -1683,7 +1686,7 @@ Walk to the country you want to extract from. </p>
     </main>
     
 <<include "footervid">>
-     <<timed 191s >><<goto $nextpass>>
+     <<timed 188s >><<goto $nextpass>>
      <</timed>>
 </div>
 
@@ -1701,7 +1704,7 @@ Walk to the country you want to extract from. </p>
 <p>How do you think this all links to us, in the UK? </p>
 
 
-<p>When ready click <<button "Move On">><<set $prevpass to $passage>><<goto $nextpass>><</button>></p>
+<p><<button "Move On">><<set $prevpass to $passage>><<goto $nextpass>><</button>></p>
 </div>
 
   </main>
@@ -1844,7 +1847,7 @@ Walk to the country you want to extract from. </p>
 :: 1sessionoutro [nobr]
 <<set $prevpass to "1mod3codename">>
 <<set $passage to "1sessionoutro">>
-<<set $nextpass to "cardoptions">>
+<<set $nextpass to "landing">>
 <<set $module to "Session 1">><<include "checkmodulenamelist">>
 /* TODO REPLACE  */
 <audio src="assets/audio/greenpeace2.0_S1_9_sessionoutro.mp3" autoplay>Audio is not supported on your device</audio>
@@ -1950,6 +1953,10 @@ Walk to the country you want to extract from. </p>
 <p>For this game you are going to need a Game Board</p>
 <span class="simple">The Heist Game Board</span>
 <br/><br/>
+<div class="inline-img-wrapper">
+<img src="assets/img/heist.jpg" alt="The Heist Game Board"/>
+</div>
+<br/><br/>
 <<button "Next">><<set $prevpass to $passage>><<goto $nextpass>><</button>>
     </div>
 
@@ -2016,6 +2023,11 @@ Walk to the country you want to extract from. </p>
   <main class="speaking">
     <div class="text-wrapper" id="twrapper">
 <p>Teacher, place the  <span class="simple"> Target</span>, the  <span class="simple"> Why</span> & the  <span class="simple"> Artefact</span> cards on <span class="white simple">The Heist Board</span>. </p>
+<br/><br/>
+<div class="inline-img-wrapper">
+<img src="assets/img/heist1.jpg" alt="The Heist Game Board"/>
+</div>
+<br/><br/>
 <<button "Done">><<set $prevpass to $passage>><<goto $nextpass>><</button>>
     </div>
 
@@ -2036,6 +2048,11 @@ Walk to the country you want to extract from. </p>
 <p>  Now, let’s see what challenges you’ll need to overcome in your <span class="white simple">Heist</span>.</p> 
 <p>Shuffle and place <span class="white simple">4 Heist Obstacle Cards</span> on the <span class="white simple">Heist Board</span>. </p>
 <p> Share what you have placed.</p>
+<br/><br/>
+<div class="inline-img-wrapper">
+<img src="assets/img/heist2.jpg" alt="The Heist Game Board"/>
+</div>
+<br/><br/>
 <<button "Done">><<set $prevpass to $passage>><<goto $nextpass>><</button>>
     </div>
 
@@ -2060,8 +2077,17 @@ Walk to the country you want to extract from. </p>
 <p>You want to use these skills to complete the Heist and retrieve the artefact</p>
 
 <p>A <span class="white simple">Heister</span> can’t use a skill twice - but different skills from the same <span class="white simple">Heister</span> can be used to overcome different obstacles.</p>
-
 <p>Good luck. </p>
+<br/><br/>
+
+<div class="inline-img-wrapper">
+<img src="assets/img/heist3.jpg" alt="The Heist Game Board"/>
+</div>
+<br/><br/>
+
+<p><i>Plan your heists and share back. </i></p>
+<p><i>When done click below.</i></p>
+
 
 <<button "Completed">><<set $prevpass to $passage>><<goto $nextpass>><</button>>
     </div>
@@ -2117,13 +2143,16 @@ Walk to the country you want to extract from. </p>
 <<set $passage to "2mod5intro">>
 <<set $nextpass to "2mod5outro">>
 <<set $module to "Module 5">><<include "checkmodulenamelist">>
-<audio src="assets/audio/greenpeace2.0_S2_4_mod5intro_6groups.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/greenpeace2.0_S2_4_mod5intro_smallergroups.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
- <main class="speaking">
+ <main class="speaking inlineimg">
+ <div class="side-img">
+<div class="side-img-wrapper"><img src="assets/img/global.jpg" alt="Global Card"/></div>
+ </div>
     <div class="text-wrapper" id="twrapper">
 
-<p>Teacher, we need 6 groups/let’s get into smaller groups. </p>
+<p>Teacher, let’s get into smaller groups. </p>
 <p>You’ll each receive a <span class="white simple">Global Card</span>. </p>
 
 <p>Each <span class="white simple">Global Card</span> has a human on it. </p>
@@ -2169,9 +2198,9 @@ When finished, click <<button "Move On">><<set $prevpass to $passage>><<goto $ne
 <<set $nextpass to "2mod6intro">>
 <<set $focusoption to "?">>
 <<set $module to "Module 5">><<include "checkmodulenamelist">>
-<audio src="assets/audio/greenpeace2.0_S2_5_mod5outro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<div id="audio"><audio src="assets/audio/greenpeace2.0_S2_5_mod5outro_2.mp3" autoplay>Audio is not supported on your device</audio></div>
 <div class="wrapper">
-  <<include "header">>
+  <div id="headerwrapper"><<include "header">></div>
  <main class="speaking choices">
     <div class="text-wrapper" id="twrapper">
 
@@ -2180,18 +2209,46 @@ When finished, click <<button "Move On">><<set $prevpass to $passage>><<goto $ne
 <p>Teacher, can you hold the vote, and then select which one you have chosen. </p>
 
 <<link "AIR">> 
+  <<set $module to "Module 6">><<include "checkmodulenamelist">>
+  <<replace "#headerwrapper">><<include "header">><</replace>>
   <<set $focus to "Air">>
   <<set $nextpass to "2mod6"+$focus+"options">>
-  <<timed 0.6s>>
+  <<timed 0.2s>>
     <<replace "#twrapper">>
-       <h1 class="subtitle"> Loading: $focus </h1>
+       <h1 class="subtitle"> Chosen theme: $focus </h1>
       <</replace>>
   <</timed>>
-<<timed 3s>>
-  <<set $prevpass to $passage>><<goto $nextpass>>
-  <</timed>>
+  <<timed 0.8s>>
+    <<replace "#audio">>
+      <audio src="assets/audio/greenpeace2.0_S2_6_mod6intro_1.mp3" autoplay>Audio is not supported on your device</audio>
+    
+      <</replace>>
+    <<append "#twrapper">>
+          <p> That’s great - you’ve chosen a theme. </p>
+<p>But the themes were quite broad right? </p>
+<p>There’s a lot to unpick.</p>
+<p>Let’s explode what you have chosen, to get even closer to what you want to change. </p>  
+<</append>>
+    <</timed>>
+    <<timed 13s>>
+ <<replace "#audio">>
+      <audio src="assets/audio/greenpeace2.0_S2_6_mod6intro_2.mp3" autoplay>Audio is not supported on your device</audio>
+      <</replace>>
+    <<replace "#twrapper">>
+<p>This will help you determine what your action is about.</p>
+<p>When you know what that is, you’ll write it on your Focus Card. </p>
+<p>There are 5 directions you could go - 4 we have offered, and 1 open to you if you have other ideas.</p>
+<p>Pick what you think is most appropriate for you.</p>
+<<button "Next">>
+    <<set $prevpass to $passage>><<goto $nextpass>>
+  <</button>>
+  <</replace>>
+      <</timed>>
+
 <</link>>
 <<link "FOOD">> 
+   <<set $module to "Module 6">><<include "checkmodulenamelist">>
+   <<replace "#headerwrapper">><<include "header">><</replace>>
   <<set $focus to "Food">>
    <<set $nextpass to "2mod6"+$focus+"options">>
   <<timed 0.6s>>
@@ -2199,11 +2256,37 @@ When finished, click <<button "Move On">><<set $prevpass to $passage>><<goto $ne
        <h1 class="subtitle"> Loading: $focus </h1>
       <</replace>>
   <</timed>>
-<<timed 3s>>
-  <<set $prevpass to $passage>><<goto $nextpass>>
-  <</timed>>
+<<timed 0.8s>>
+    <<replace "#audio">>
+      <audio src="assets/audio/greenpeace2.0_S2_6_mod6intro_1.mp3" autoplay>Audio is not supported on your device</audio>
+    
+      <</replace>>
+    <<append "#twrapper">>
+      $module
+          <p> That’s great - you’ve chosen a theme. </p>
+<p>But the themes were quite broad right? </p>
+<p>There’s a lot to unpick.</p>
+<p>Let’s explode what you have chosen, to get even closer to what you want to change. </p>  
+<</append>>
+    <</timed>>
+    <<timed 13s>>
+ <<replace "#audio">>
+      <audio src="assets/audio/greenpeace2.0_S2_6_mod6intro_2.mp3" autoplay>Audio is not supported on your device</audio>
+      <</replace>>
+    <<replace "#twrapper">>
+<p>This will help you determine what your action is about.</p>
+<p>When you know what that is, you’ll write it on your Focus Card. </p>
+<p>There are 5 directions you could go - 4 we have offered, and 1 open to you if you have other ideas.</p>
+<p>Pick what you think is most appropriate for you.</p>
+<<button "Next">>
+    <<set $prevpass to $passage>><<goto $nextpass>>
+  <</button>>
+  <</replace>>
+      <</timed>>
 <</link>>
 <<link "NATURE">> 
+   <<set $module to "Module 6">><<include "checkmodulenamelist">>
+   <<replace "#headerwrapper">><<include "header">><</replace>>
   <<set $focus to "Nature">>
 <<set $nextpass to "2mod6"+$focus+"options">>
   <<timed 0.6s>>
@@ -2211,11 +2294,36 @@ When finished, click <<button "Move On">><<set $prevpass to $passage>><<goto $ne
        <h1 class="subtitle"> Loading: $focus </h1>
       <</replace>>
   <</timed>>
-<<timed 3s>>
-  <<set $prevpass to $passage>><<goto $nextpass>>
-  <</timed>>
+<<timed 0.8s>>
+    <<replace "#audio">>
+      <audio src="assets/audio/greenpeace2.0_S2_6_mod6intro_1.mp3" autoplay>Audio is not supported on your device</audio>
+    
+      <</replace>>
+    <<append "#twrapper">>
+          <p> That’s great - you’ve chosen a theme. </p>
+<p>But the themes were quite broad right? </p>
+<p>There’s a lot to unpick.</p>
+<p>Let’s explode what you have chosen, to get even closer to what you want to change. </p>  
+<</append>>
+    <</timed>>
+    <<timed 13s>>
+ <<replace "#audio">>
+      <audio src="assets/audio/greenpeace2.0_S2_6_mod6intro_2.mp3" autoplay>Audio is not supported on your device</audio>
+      <</replace>>
+    <<replace "#twrapper">>
+<p>This will help you determine what your action is about.</p>
+<p>When you know what that is, you’ll write it on your Focus Card. </p>
+<p>There are 5 directions you could go - 4 we have offered, and 1 open to you if you have other ideas.</p>
+<p>Pick what you think is most appropriate for you.</p>
+<<button "Next">>
+    <<set $prevpass to $passage>><<goto $nextpass>>
+  <</button>>
+  <</replace>>
+      <</timed>>
 <</link>>
 <<link "WATER">> 
+   <<set $module to "Module 6">><<include "checkmodulenamelist">>
+   <<replace "#headerwrapper">><<include "header">><</replace>>
   <<set $focus to "Water">>
   <<set $nextpass to "2mod6"+$focus+"options">>
   <<timed 0.6s>>
@@ -2223,14 +2331,37 @@ When finished, click <<button "Move On">><<set $prevpass to $passage>><<goto $ne
        <h1 class="subtitle"> Loading: $focus </h1>
       <</replace>>
   <</timed>>
-<<timed 3s>>
-  <<set $prevpass to $passage>><<goto $nextpass>>
-  <</timed>>
+<<timed 0.8s>>
+    <<replace "#audio">>
+      <audio src="assets/audio/greenpeace2.0_S2_6_mod6intro_1.mp3" autoplay>Audio is not supported on your device</audio>
+    
+      <</replace>>
+    <<append "#twrapper">>
+          <p> That’s great - you’ve chosen a theme. </p>
+<p>But the themes were quite broad right? </p>
+<p>There’s a lot to unpick.</p>
+<p>Let’s explode what you have chosen, to get even closer to what you want to change. </p>  
+<</append>>
+    <</timed>>
+    <<timed 13s>>
+ <<replace "#audio">>
+      <audio src="assets/audio/greenpeace2.0_S2_6_mod6intro_2.mp3" autoplay>Audio is not supported on your device</audio>
+      <</replace>>
+    <<replace "#twrapper">>
+<p>This will help you determine what your action is about.</p>
+<p>When you know what that is, you’ll write it on your Focus Card. </p>
+<p>There are 5 directions you could go - 4 we have offered, and 1 open to you if you have other ideas.</p>
+<p>Pick what you think is most appropriate for you.</p>
+<<button "Next">>
+    <<set $prevpass to $passage>><<goto $nextpass>>
+  <</button>>
+  <</replace>>
+      <</timed>>
 <</link>>
     </div>
 
 </main>
-<<include "footerskip">>
+<<include "footer">>
 </div>
 <<set $mod5 to true>>
 
@@ -3013,7 +3144,7 @@ $text
 :: 2sessionoutro [nobr]
 <<set $prevpass to "chosenfocusoption">>
 <<set $passage to "2sessionoutro">>
-<<set $nextpass to "cardoptions">>
+<<set $nextpass to "landing">>
 <<set $mod3 to true>>
 <<set $module to "Session 2">><<include "checkmodulenamelist">>
 <audio src="assets/audio/greenpeace2.0_S2_7_sessionoutro.mp3" autoplay>Audio is not supported on your device</audio>
@@ -3207,7 +3338,7 @@ $text
 
 <p>Teacher, I’ll leave you to lead this. </p>
 
- <<timed 17s>><<set $prevpass to $passage>><<set $mod1 to true>><<goto $nextpass>><</timed>>
+ <<timed 19s>><<set $prevpass to $passage>><<set $mod1 to true>><<goto $nextpass>><</timed>>
     </div>
 
 </main>
@@ -3220,7 +3351,7 @@ $text
 <<set $nextpass to "3mod8outro">>
 <<set $module to "Module 8">>
 <<include "checkmodulenamelist">>
-<audio src="assets/audio/greenpeace2.0_S3_5_theschoolsystem.mp3" autoplay>Audio is not supported on your device</audio>
+/* <audio src="assets/audio/greenpeace2.0_S3_5_theschoolsystem.mp3" autoplay>Audio is not supported on your device</audio> */
 <div class="wrapper">
   <<include "header">>
  <main class="speaking">
@@ -3277,12 +3408,15 @@ $text
 <audio src="assets/audio/greenpeace2.0_S3_7_mod9_1.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
- <main class="speaking">
+ <main class="speaking inlineimg">
+  <div class="side-img">
+<div class="side-img-wrapper"><img src="assets/img/schoolobstacle.jpg" alt="School Obstacle Card"/></div>
+ </div>
     <div class="text-wrapper" id="twrapper">
 
 <p>Now, let's understand the obstacles to the change. </p>
 
-<p>  You’ve written them down already, choose four as a whole group and write them on the <span class="simple">Obstacle Cards</span> </p>
+<p>You’ve written them down already, choose four as a whole group and write them on the <span class="simple">Obstacle Cards</span> </p>
 
  <p>When done, click <<button "Next">><<set $prevpass to $passage>><<goto $nextpass>><</button>> </p>
     </div>
@@ -3300,12 +3434,18 @@ $text
 <div id="audio"><audio src="assets/audio/greenpeace2.0_S3_7_mod9_2.mp3" autoplay>Audio is not supported on your device</audio></div>
 <div class="wrapper">
   <<include "header">>
- <main class="speaking">
+ <main class="speaking" id="mount">
     <div class="text-wrapper" id="twrapper">
 <p>In four groups - come up with ideas on how to overcome these obstacles. What could be changed? </p>
 
  <<button "Next">>
   <<timed 0.5s>>
+    <<addclass "main" "inlineimg">>
+    <<prepend "#mount">> 
+      <div class="side-img">
+<div class="side-img-wrapper"><img src="assets/img/change.jpg" alt="Change Card"/></div>
+ </div>
+ <</prepend>>
     <<replace "#audio">>
       <audio src="assets/audio/greenpeace2.0_S3_7_mod9_3.mp3" autoplay>Audio is not supported on your device</audio>
       <</replace>>
@@ -3363,16 +3503,23 @@ $text
 <div id="audio"><audio src="assets/audio/greenpeace2.0_S3_9_mod10intro_2.mp3" autoplay>Audio is not supported on your device</audio></div>
 <div class="wrapper">
   <<include "header">>
- <main class="speaking">
+ <main class="speaking inlineimg">
+ <div class="side-img">
+<div class="side-img-wrapper"><img src="assets/img/ask.jpg" alt="Ask Card"/></div>
+ </div>
     <div class="text-wrapper" id="twrapper">
 
 <p>Teacher, take out the <span class="simple">Worthwhile/Winnable Board</span> and I’ll hand over to you. </p>
 
 <p>You’re going to turn your <span class="simple">4 Change Cards</span> into <span class="simple">1 Ask Card</span>. </p>
 
- <p>When you have your Ask, click <<button "Done">><<set $prevpass to $passage>><<goto $nextpass>><</button>> </p>
+<br/><br/>
+<div class="inline-img-wrapper">
+<img src="assets/img/wwboard.jpg" alt="Worthwhile Winnable board"/>
+</div>
+<br/><br/>
 
-   
+ <p>When you have your Ask, click <<button "Done">><<set $prevpass to $passage>><<goto $nextpass>><</button>> </p>
     </div>
 
 </main>
@@ -3386,7 +3533,7 @@ $text
 <<set $nextpass to "3sessionoutro2">>
 <<set $module to "Session 3">><<include "checkmodulenamelist">>
 
-<audio src="" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/greenpeace2.0_S3_10_sessionoutro_0.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking ">
@@ -3436,7 +3583,7 @@ $text
 :: 3sessionoutro3 [nobr]
 <<set $prevpass to "3sessionoutro2">>
 <<set $passage to "3sessionoutro3">>
-<<set $nextpass to "cardoptions">>
+<<set $nextpass to "landing">>
 <<set $module to "Session 3">><<include "checkmodulenamelist">>
 <div id="audio"><audio src="assets/audio/greenpeace2.0_S3_10_sessionoutro_2.mp3" autoplay>Audio is not supported on your device</audio></div>
 
@@ -3566,11 +3713,14 @@ $text
 <div id="audio"><audio src="assets/audio/greenpeace2.0_S4_4_mod12.mp3" autoplay>Audio is not supported on your device</audio></div>
 <div class="wrapper">
   <<include "header">>
- <main class="speaking">
+ <main class="speaking inlineimg">
+   <div class="side-img">
+    <div class="side-img-wrapper"><img src="assets/img/target.jpg" alt="Target Card"/></div>
+ </div>
     <div class="text-wrapper" id="twrapper">
 
 <p>As a group, decide who are the 6 potential targets. 6 potential people to reach to achieve your change. </p>
-<p>Write them down on the Target Cards. </p>
+<p>Write them down on the <span class="white simple">Target Cards</span>. </p>
 <p>You could use Worthwhile/Winnable to work out who is best to target. </p>
 <p>Or you can just decide. </p>
 
@@ -3593,7 +3743,10 @@ $text
 <audio src="assets/audio/greenpeace2.0_S4_5_mod12outro.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
- <main class="speaking">
+ <main class="speaking inlineimg">
+ <div class="side-img">
+    <div class="side-img-wrapper"><img src="assets/img/recipient.jpg" alt="Recipient Card"/></div>
+ </div>
     <div class="text-wrapper" id="twrapper">
 
 <p>Whoever you have chosen, this is your <span class="simple">Recipient</span></p>
@@ -3622,7 +3775,7 @@ $text
 <p>So, what do you know?</p>
 
 
-<<timed 12s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+<<timed 13s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
     </div>
 
 </main>
@@ -3640,6 +3793,11 @@ $text
  <main class="speaking">
     <div class="text-wrapper" id="twrapper">
 <p>Get the <span class="simple">Mind Map Board</span> out. </p>
+<br/><br/>
+<div class="inline-img-wrapper">
+<img src="assets/img/mindmap1.jpg" alt="Mind Map board"/>
+</div>
+<br/><br/>
 <p>This will help you run recon. </p>
 <p>Recon is when we map everything we know about something or someone. </p>
 <p>So that we’re prepared. </p>
@@ -3647,7 +3805,7 @@ $text
 <p>Teacher, over to you. </p>
 <p>You might want to write these on the board and then there are six empty Recon Cards to fill out with the key information, but you might discover more. </p>
 
-<<timed 15s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+<<button "Next">><<set $prevpass to $passage>><<goto $nextpass>><</button>>
     </div>
 
 </main>
@@ -3660,7 +3818,7 @@ $text
 <<set $nextpass to "4mod13outro">>
 <<set $module to "Module 13">>
 <<include "checkmodulenamelist">>
-<div id="audio"><audio src="assets/audio/greenpeace2.0_S4_7_mod13.mp3" autoplay>Audio is not supported on your device</audio></div>
+/* <div id="audio"><audio src="assets/audio/greenpeace2.0_S4_7_mod13.mp3" autoplay>Audio is not supported on your device</audio></div> */
 <div class="wrapper">
   <<include "header">>
  <main class="speaking">
@@ -3674,7 +3832,11 @@ $text
   <li>How are they impacted by your Focus?</li>
   <li>Do they have any allies we could reach out to?</li>
 </ul>
-
+<br/>
+<div class="inline-img-wrapper">
+<img src="assets/img/mindmap1.jpg" alt="Mind Map board"/>
+</div>
+<br/><br/>
  <p>When done, click <<button "Next">><<set $prevpass to $passage>><<goto $nextpass>><</button>> </p>
 
    
@@ -3848,7 +4010,7 @@ $text
 :: 4sessionoutro [nobr]
 <<set $prevpass to "4mod14outro">>
 <<set $passage to "4sessionoutro">>
-<<set $nextpass to "cardoptions">>
+<<set $nextpass to "landing">>
 <<set $module to "Session 4">><<include "checkmodulenamelist">>
 <audio src="assets/audio/greenpeace2.0_S4_12_sessionoutro.mp3" autoplay>Audio is not supported on your device</audio>
 
@@ -3961,7 +4123,10 @@ $text
 <audio src="assets/audio/greenpeace2.0_S5_3_mod15intro_2_altwithextrabit.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
- <main class="speaking">
+ <main class="speaking inlineimg">
+ <div class="side-img">
+    <div class="side-img-wrapper"><img src="assets/img/activistcard.jpg" alt="Activist Card"/></div>
+ </div>
     <div class="text-wrapper" id="twrapper">
 
 <p>Everyone has skills. </p>
@@ -4109,7 +4274,7 @@ $text
 <p>It’s about us and the roles we want to play. But it’s also about the systems that we’re part of. </p>
 <p>By understanding <span class="simple">Comfort in Action</span>, we’re able to work as a collective. We make sure everything happens, that all roles are played, but that no one is put at risk, that we’re all comfortable.</p>
 
-<<timed 19s>><<set $mod16 to true>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+<<button "Next">><<set $mod16 to true>><<set $prevpass to $passage>><<goto $nextpass>><</button>>
     </div>
 
 </main>
@@ -4193,7 +4358,7 @@ $text
  <main class="speaking">
     <div class="text-wrapper" id="twrapper">
 <p>We are going to play a game of fiction. </p>
-<p>A fiction that might be close reality, </p>
+<p>A fiction that might be close to reality, </p>
 <p>But for this game, it’s important to imagine it is fiction. </p>
 <p>It’s called Burnout. </p>
 
@@ -4311,7 +4476,10 @@ $text
 <div id="audio"><audio src="assets/audio/greenpeace2.0_S5_7_mod17_3.mp3" autoplay>Audio is not supported on your device</audio></div>
 <div class="wrapper">
   <<include "header">>
- <main class="speaking">
+ <main class="speaking inlineimg">
+  <div class="side-img">
+    <div class="side-img-wrapper"><img src="assets/img/resilience.jpg" alt="Resilience Card"/></div>
+ </div>
     <div class="text-wrapper" id="twrapper">
 
 <p>So, - you’ve seen how I stay resilient, it’s your turn - what is your Resilience Plan? </p>
@@ -4366,7 +4534,7 @@ $text
 <p>The key thing is to listen to your feelings and always ask for help if you need it. </p>
 
 
-<<timed 18s>><<set $mod17 to true>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+<<button "Next">><<set $mod17 to true>><<set $prevpass to $passage>><<goto $nextpass>><</button>>
     </div>
 
 </main>
@@ -4530,7 +4698,7 @@ ADD THE HEISTING BOARD
 :: 5sessionoutro3 [nobr]
 <<set $prevpass to "5sessionoutro2">>
 <<set $passage to "5sessionoutro3">>
-<<set $nextpass to "cardoptions">>
+<<set $nextpass to "landing">>
 <<set $module to "Session 5">><<include "checkmodulenamelist">>
 <audio src="assets/audio/greenpeace2.0_S5_12_sessionoutro_3.mp3" autoplay>Audio is not supported on your device</audio>
 
@@ -4841,7 +5009,7 @@ ADD THE HEISTING BOARD
 <p>Or you might have chosen for them to receive it when you aren’t there.</p>
 <p>You might not know anything that happened.</p>
 
-<<timed 11s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+<<timed 12.5s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
     </div>
 
 </main>
@@ -4853,7 +5021,7 @@ ADD THE HEISTING BOARD
 <<set $passage to "8mod21intro2">>
 <<set $nextpass to "8mod21intro3">>
 <<set $module to "Module 21">><<include "checkmodulenamelist">>
-<audio src="assets/audio/greenpeace2.0_S8_1_mod21intro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/greenpeace2.0_S8_3_mod21intro_2.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
  <main class="speaking">
@@ -4865,7 +5033,7 @@ ADD THE HEISTING BOARD
 <p>For all you have done to imagine a different system, and the gift you gave, the spark that might make that a reality.</p>
 
 
-<<timed 11s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+<<timed 15s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
     </div>
 
 </main>
@@ -5006,7 +5174,7 @@ ADD THE HEISTING BOARD
 :: 8sessionoutro4 [nobr]
 <<set $prevpass to "8sessionoutro3">>
 <<set $passage to "8sessionoutro4">>
-<<set $nextpass to "cardoptions">>
+<<set $nextpass to "landing">>
 <<set $module to "Session 8">><<include "checkmodulenamelist">>
 
 <audio src="assets/audio/greenpeace2.0_S8_5_sessionoutro_4.mp3" autoplay>Audio is not supported on your device</audio>
