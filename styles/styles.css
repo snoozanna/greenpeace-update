@@ -79,7 +79,7 @@ body {
   /* overflow: hidden; */
   /* overflow: scroll; */
   background: var(--purple);
-  /* background-image: url("../assets/img/backgrounds-32.png"); */
+  background-image: url("../assets/img/backgrounds-32.png");
   background-size: cover;
 }
 

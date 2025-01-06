@@ -938,7 +938,7 @@ $(document.head).find('#style-ui-bar').remove();
 
   <<replace "#mount">>
     <<replace "#audio">>
-    <audio src="assets/audio/greenpeace2.0_2_mod1intro_2.mp3"  autoplay id="audio">Audio is not supported on your device</audio>
+    <audio src="assets/audio/aimofgame.mp3"  autoplay id="audio">Audio is not supported on your device</audio>
       <</replace>>
     <h4>AIM OF THE GAME</h4>
 <ul>
@@ -949,7 +949,21 @@ $(document.head).find('#style-ui-bar').remove();
  <li> But, if you lose half of your resources you are out of the game.  </li>
   
 </ul>
-
+<<button "Next">>
+ <<replace "#audio">>
+    <audio src="assets/audio/actioncounters.mp3"  autoplay id="audio">Audio is not supported on your device</audio>
+      <</replace>>
+  <<replace "#mount">>
+ <h4>AIM OF THE GAME</h4>
+<ul>
+  <li>You will play as countries, every country has resources on their land.</li>
+  <li>You make money by extracting those resources from the land.</li>
+  <li>The goal is to end the game with the most money </li>
+  <li>Every round, you have a debt to pay to the Bank (your teacher!)</li>
+ <li> But, if you lose half of your resources you are out of the game.  </li>
+  
+</ul>
+<br/>
 <h4>ACTION COUNTERS:</h4>
 <ul>
   <li>You have Action Counters.</li>
@@ -964,6 +978,8 @@ $(document.head).find('#style-ui-bar').remove();
     <</button>> 
     <</replace>>
 
+  <</button>>
+<</replace>>
   <</button>>
 
     
