@@ -1745,7 +1745,7 @@ Walk to the country you want to extract from. </p>
 </div>
 
 :: 1mod2int3 [nobr]
-<<set $prevpass to "1mod1vid3">>
+<<set $prevpass to "1mod2int2">>
 <<set $passage to "1mod2int3">>
 <<set $nextpass to "1mod2outro1">>
 <audio src="assets/audio/greenpeace2.0_S1_6_mod2context_9.mp3" autoplay>Audio is not supported on your device</audio>
